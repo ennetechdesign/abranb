@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { cookies, headers } from "next/headers";
-import { Geist, Geist_Mono } from "next/font/google";
+import {
+  Atkinson_Hyperlegible_Mono,
+  Lexend,
+  Merriweather,
+} from "next/font/google";
 
 import { I18nProvider } from "@/app/providers";
 import { LOCALE_COOKIE, LOCALE_HEADER } from "@/i18n/config";
@@ -8,13 +12,19 @@ import { normalizeLocale } from "@/lib/resolve-locale";
 
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const lexend = Lexend({
+  variable: "--font-lexend",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const merriweather = Merriweather({
+  variable: "--font-merriweather",
+  subsets: ["latin"],
+  weight: ["400", "700"],
+});
+
+const atkinsonMono = Atkinson_Hyperlegible_Mono({
+  variable: "--font-atkinson-mono",
   subsets: ["latin"],
 });
 
@@ -37,9 +47,9 @@ export default async function RootLayout({
   return (
     <html
       lang={locale}
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${atkinsonMono.variable} ${lexend.variable} ${merriweather.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col">
+      <body className="font-mono flex min-h-full flex-col bg-background text-foreground">
         <I18nProvider locale={locale}>{children}</I18nProvider>
       </body>
     </html>

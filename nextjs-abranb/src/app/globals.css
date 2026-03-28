@@ -1,26 +1,90 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --palette-lilac: #f2dff2;
+  --palette-purple: #9c5fd9;
+  --palette-purple-muted: #9163bf;
+  --palette-cream: #f2f0d8;
+  --palette-gold: #f2c230;
+  --palette-ink: #090011;
+  --palette-deep: #120020;
+  --palette-charcoal: #322a38;
+  --palette-paper: #fffefb;
+  --palette-ivory: #fffbf0;
+
+  /* Type scale: mobile first (largest → smallest) */
+  --font-size-xx-large: 32px;
+  --font-size-x-large: 28px;
+  --font-size-large: 24px;
+  --font-size-medium: 20px;
+  --font-size-small: 16px;
+  --font-size-x-small: 12px;
+
+  --background: var(--palette-paper);
+  --foreground: var(--palette-ink);
+  --muted-foreground: var(--palette-charcoal);
+  --border-subtle: color-mix(in srgb, var(--palette-charcoal) 28%, transparent);
+  --surface-elevated: var(--palette-ivory);
+}
+
+@media (width >= 768px) {
+  :root {
+    --font-size-xx-large: 36px;
+    --font-size-x-large: 32px;
+    --font-size-large: 28px;
+    --font-size-medium: 24px;
+    --font-size-small: 20px;
+    --font-size-x-small: 16px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: var(--palette-deep);
+    --foreground: var(--palette-paper);
+    --muted-foreground: color-mix(
+      in srgb,
+      var(--palette-ivory) 78%,
+      var(--palette-cream)
+    );
+    --border-subtle: color-mix(in srgb, var(--palette-paper) 22%, transparent);
+    --surface-elevated: var(--palette-ink);
+  }
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border-subtle);
+  --color-surface-elevated: var(--surface-elevated);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+  --color-lilac: var(--palette-lilac);
+  --color-purple: var(--palette-purple);
+  --color-purple-muted: var(--palette-purple-muted);
+  --color-cream: var(--palette-cream);
+  --color-gold: var(--palette-gold);
+  --color-ink: var(--palette-ink);
+  --color-deep: var(--palette-deep);
+  --color-charcoal: var(--palette-charcoal);
+  --color-paper: var(--palette-paper);
+  --color-ivory: var(--palette-ivory);
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  --font-sans: var(--font-lexend), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-merriweather), ui-serif, Georgia, serif;
+  --font-mono: var(--font-atkinson-mono), ui-monospace, monospace;
+
+  /* Semantic type: maps to the size scale above */
+  --text-display: var(--font-size-xx-large);
+  --text-display--line-height: 1.2;
+  --text-title: var(--font-size-x-large);
+  --text-title--line-height: 1.25;
+  --text-heading: var(--font-size-large);
+  --text-heading--line-height: 1.3;
+  --text-lead: var(--font-size-medium);
+  --text-lead--line-height: 1.35;
+  --text-body: var(--font-size-small);
+  --text-body--line-height: 1.45;
+  --text-caption: var(--font-size-x-small);
+  --text-caption--line-height: 1.45;
 }
