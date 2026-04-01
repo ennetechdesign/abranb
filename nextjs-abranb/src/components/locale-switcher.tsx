@@ -15,10 +15,10 @@ export function LocaleSwitcher() {
   };
 
   return (
-    <label className="flex items-center gap-2 text-sm text-neutral-600 dark:text-neutral-400">
+    <label className="text-body text-muted-foreground flex items-center gap-2">
       <span>{t("locale_switch_label")}</span>
       <select
-        className="rounded border border-neutral-300 bg-white px-2 py-1 text-neutral-900 dark:border-neutral-600 dark:bg-neutral-900 dark:text-neutral-100"
+        className="border-border bg-surface-elevated text-foreground rounded border px-2 py-1"
         value={i18n.resolvedLanguage ?? i18n.language}
         onChange={handleChange}
         aria-label={t("locale_switch_label")}
