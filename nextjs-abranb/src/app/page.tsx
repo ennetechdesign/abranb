@@ -2,7 +2,6 @@ import { type SanityDocument } from "next-sanity";
 
 import { PostsList } from "@/components/posts-list";
 import { client } from "@/sanity/client";
-import { LocaleSwitcher } from "@/components/locale-switcher";
 
 const POSTS_QUERY = `*[
   _type == "post"
@@ -16,11 +15,7 @@ export default async function IndexPage() {
 
   return (
     <main className="container mx-auto min-h-screen max-w-3xl p-8">
-      <div className="mb-6 flex flex-wrap items-center justify-end gap-4">
-        <LocaleSwitcher/>
-      </div>
-
-      <PostsList posts={posts}/>
+      <PostsList posts={posts} />
     </main>
   );
 }

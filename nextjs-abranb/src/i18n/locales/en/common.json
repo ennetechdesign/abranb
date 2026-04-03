@@ -4,5 +4,19 @@
   "published": "Published:",
   "locale_switch_label": "Language",
   "locale_pt_BR": "Portuguese (Brazil)",
-  "locale_en": "English"
+  "locale_en": "English",
+  "a11y_open_button": "Accessibility",
+  "a11y_menu_region_label": "Accessibility preferences",
+  "a11y_color_theme": "Color theme",
+  "a11y_color_day": "Day",
+  "a11y_color_night": "Night",
+  "a11y_color_high_contrast": "High contrast",
+  "a11y_text_size": "Text size",
+  "a11y_text_size_normal": "Normal size",
+  "a11y_text_size_large": "Large size",
+  "a11y_font_family": "Text font",
+  "a11y_font_sans": "Sans-serif",
+  "a11y_font_serif": "Serif",
+  "a11y_font_mono": "Monospace",
+  "a11y_language": "Language"
 }
