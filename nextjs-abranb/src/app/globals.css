@@ -12,44 +12,90 @@
   --palette-paper: #fffefb;
   --palette-ivory: #fffbf0;
 
-  /* Type scale: mobile first (largest → smallest) */
-  --font-size-xx-large: 32px;
-  --font-size-x-large: 28px;
-  --font-size-large: 24px;
-  --font-size-medium: 20px;
-  --font-size-small: 16px;
-  --font-size-x-small: 12px;
+  --text-zoom: 1;
+
+  /* Type scale: mobile first (largest → smallest), scaled by --text-zoom */
+  --font-size-xx-large: calc(32px * var(--text-zoom));
+  --font-size-x-large: calc(28px * var(--text-zoom));
+  --font-size-large: calc(24px * var(--text-zoom));
+  --font-size-medium: calc(20px * var(--text-zoom));
+  --font-size-small: calc(16px * var(--text-zoom));
+  --font-size-x-small: calc(12px * var(--text-zoom));
 
   --background: var(--palette-paper);
   --foreground: var(--palette-ink);
   --muted-foreground: var(--palette-charcoal);
   --border-subtle: color-mix(in srgb, var(--palette-charcoal) 28%, transparent);
   --surface-elevated: var(--palette-ivory);
+  --link: var(--palette-purple);
+  --focus-ring: var(--palette-purple);
+
+  /* Pill link button — brand states (same in day/night for consistent CTAs) */
+  --button-primary: var(--palette-gold);
+  --button-primary-hover: color-mix(in srgb, var(--palette-gold) 78%, #ffffff);
+  --button-primary-active: color-mix(in srgb, var(--palette-gold) 55%, #3d3510);
+  --button-primary-active-ring: color-mix(in srgb, var(--palette-gold) 45%, #ffffff);
+
+  --button-secondary: var(--palette-purple);
+  --button-secondary-hover: color-mix(in srgb, var(--palette-purple) 72%, #ffffff);
+  --button-secondary-active: color-mix(in srgb, var(--palette-purple) 45%, var(--palette-deep));
+  --button-secondary-active-ring: color-mix(in srgb, var(--palette-lilac) 55%, #ffffff);
+}
+
+html[data-text-size="large"] {
+  --text-zoom: 1.25;
 }
 
 @media (width >= 768px) {
   :root {
-    --font-size-xx-large: 36px;
-    --font-size-x-large: 32px;
-    --font-size-large: 28px;
-    --font-size-medium: 24px;
-    --font-size-small: 20px;
-    --font-size-x-small: 16px;
+    --font-size-xx-large: calc(36px * var(--text-zoom));
+    --font-size-x-large: calc(32px * var(--text-zoom));
+    --font-size-large: calc(28px * var(--text-zoom));
+    --font-size-medium: calc(24px * var(--text-zoom));
+    --font-size-small: calc(20px * var(--text-zoom));
+    --font-size-x-small: calc(16px * var(--text-zoom));
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: var(--palette-deep);
-    --foreground: var(--palette-paper);
-    --muted-foreground: color-mix(
-      in srgb,
-      var(--palette-ivory) 78%,
-      var(--palette-cream)
-    );
-    --border-subtle: color-mix(in srgb, var(--palette-paper) 22%, transparent);
-    --surface-elevated: var(--palette-ink);
-  }
+html[data-color-scheme="night"] {
+  --background: var(--palette-deep);
+  --foreground: var(--palette-paper);
+  --muted-foreground: color-mix(
+    in srgb,
+    var(--palette-ivory) 78%,
+    var(--palette-cream)
+  );
+  --border-subtle: color-mix(in srgb, var(--palette-paper) 22%, transparent);
+  --surface-elevated: var(--palette-ink);
+  --link: var(--palette-lilac);
+  --focus-ring: var(--palette-gold);
+}
+
+html[data-color-scheme="high-contrast"] {
+  --background: #000000;
+  --foreground: #ffffff;
+  --muted-foreground: #f5f5f5;
+  --border-subtle: #ffffff;
+  --surface-elevated: #0a0a0a;
+  --link: #ffff00;
+  --focus-ring: #ffff00;
+}
+
+html[data-font="sans"] body {
+  font-family: var(--font-sans);
+}
+
+html[data-font="serif"] body {
+  font-family: var(--font-serif);
+}
+
+html[data-font="mono"] body {
+  font-family: var(--font-mono);
+}
+
+*:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
 }
 
 @theme inline {
@@ -58,6 +104,8 @@
   --color-muted-foreground: var(--muted-foreground);
   --color-border: var(--border-subtle);
   --color-surface-elevated: var(--surface-elevated);
+  --color-link: var(--link);
+  --color-focus-ring: var(--focus-ring);
 
   --color-lilac: var(--palette-lilac);
   --color-purple: var(--palette-purple);
@@ -70,11 +118,19 @@
   --color-paper: var(--palette-paper);
   --color-ivory: var(--palette-ivory);
 
+  --color-button-primary: var(--button-primary);
+  --color-button-primary-hover: var(--button-primary-hover);
+  --color-button-primary-active: var(--button-primary-active);
+  --color-button-primary-active-ring: var(--button-primary-active-ring);
+  --color-button-secondary: var(--button-secondary);
+  --color-button-secondary-hover: var(--button-secondary-hover);
+  --color-button-secondary-active: var(--button-secondary-active);
+  --color-button-secondary-active-ring: var(--button-secondary-active-ring);
+
   --font-sans: var(--font-lexend), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-merriweather), ui-serif, Georgia, serif;
   --font-mono: var(--font-atkinson-mono), ui-monospace, monospace;
 
-  /* Semantic type: maps to the size scale above */
   --text-display: var(--font-size-xx-large);
   --text-display--line-height: 1.2;
   --text-title: var(--font-size-x-large);

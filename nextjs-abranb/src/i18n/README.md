@@ -31,7 +31,7 @@ export function Example() {
 
 ## Trocar de idioma
 
-Use o [`LocaleSwitcher`](../components/locale-switcher.tsx) ou chame `i18n.changeLanguage(locale)` junto com [`setLocaleCookie`](../lib/locale-cookie.ts), para o middleware e o HTML gerado no servidor continuarem alinhados.
+Use o [`AccessibilityMenu`](../components/accessibility-menu.tsx) (secção Idioma) ou chame `i18n.changeLanguage(locale)` junto com [`setLocaleCookie`](../lib/locale-cookie.ts), para o middleware e o HTML gerado no servidor continuarem alinhados. Preferências de tema, tipo e fonte usam cookies em [`a11y-preferences.ts`](../lib/a11y-preferences.ts) e [`a11y-cookie.ts`](../lib/a11y-cookie.ts).
 
 ## Idiomas suportados
 

@@ -7,6 +7,18 @@ import {
 } from "next/font/google";
 
 import { I18nProvider } from "@/app/providers";
+import { Header } from "@/components/header";
+import {
+  COLOR_SCHEME_COOKIE,
+  COLOR_SCHEME_HEADER,
+  FONT_FAMILY_COOKIE,
+  FONT_FAMILY_HEADER,
+  TEXT_SIZE_COOKIE,
+  TEXT_SIZE_HEADER,
+  normalizeColorScheme,
+  normalizeFontFamily,
+  normalizeTextSize,
+} from "@/lib/a11y-preferences";
 import { LOCALE_COOKIE, LOCALE_HEADER } from "@/i18n/config";
 import { normalizeLocale } from "@/lib/resolve-locale";
 
@@ -44,13 +56,36 @@ export default async function RootLayout({
     headerStore.get(LOCALE_HEADER) ?? cookieStore.get(LOCALE_COOKIE)?.value,
   );
 
+  const colorScheme = normalizeColorScheme(
+    headerStore.get(COLOR_SCHEME_HEADER) ??
+      cookieStore.get(COLOR_SCHEME_COOKIE)?.value,
+  );
+  const fontFamily = normalizeFontFamily(
+    headerStore.get(FONT_FAMILY_HEADER) ??
+      cookieStore.get(FONT_FAMILY_COOKIE)?.value,
+  );
+  const textSize = normalizeTextSize(
+    headerStore.get(TEXT_SIZE_HEADER) ??
+      cookieStore.get(TEXT_SIZE_COOKIE)?.value,
+  );
+
   return (
     <html
       lang={locale}
+      data-color-scheme={colorScheme}
+      data-font={fontFamily}
+      data-text-size={textSize === "large" ? "large" : undefined}
       className={`${atkinsonMono.variable} ${lexend.variable} ${merriweather.variable} h-full antialiased`}
     >
-      <body className="font-mono flex min-h-full flex-col bg-background text-foreground">
-        <I18nProvider locale={locale}>{children}</I18nProvider>
+      <body className="flex min-h-full flex-col bg-background text-foreground">
+        <I18nProvider locale={locale}>
+          <Header
+            initialColorScheme={colorScheme}
+            initialFontFamily={fontFamily}
+            initialTextSize={textSize}
+          />
+          {children}
+        </I18nProvider>
       </body>
     </html>
   );
