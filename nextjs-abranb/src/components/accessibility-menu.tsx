@@ -153,7 +153,7 @@ export function AccessibilityMenu({
   return (
       <div
           className={[
-            "border-charcoal/15 bg-gold text-ink w-full max-w-2xl rounded-3xl border p-6 shadow-sm sm:p-8",
+            "border-charcoal/15 bg-gold text-ink box-border w-full min-w-50 rounded-3xl border p-6 shadow-sm sm:p-8",
             className,
           ]
             .filter(Boolean)
@@ -161,7 +161,7 @@ export function AccessibilityMenu({
           role="region"
           aria-label={t("a11y_menu_region_label")}
       >
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
+        <div className="grid min-w-0 grid-cols-1 gap-8 sm:grid-cols-2">
           <fieldset className="min-w-0 border-0 p-0">
             <legend className="text-body mb-3 font-semibold">
             {t("a11y_color_theme")}

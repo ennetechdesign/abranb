@@ -105,16 +105,16 @@ export function Header({
                   triggerIcon={<AccessibilityTriggerIcon className="text-purple"/>}
                   showChevron={false}
                   iconOnly={a11yIconOnly}
-                  align="end"
+                  align="center"
                   ariaHasPopup="dialog"
                   panelRole="dialog"
-                  panelClassName="max-h-[min(85vh,calc(100dvh-5rem))] w-[min(100vw-2rem,42rem)] min-w-[min(100vw-2rem,20rem)] overflow-y-auto rounded-lg shadow-lg"
+                  panelClassName="min-w-75 max-w-80 md:min-w-[500px] md:max-w-[500px] overflow-x-hidden overflow-y-auto rounded-lg shadow-lg"
               >
                 <AccessibilityMenu
                     initialColorScheme={initialColorScheme}
                     initialFontFamily={initialFontFamily}
                     initialTextSize={initialTextSize}
-                    className="max-w-none shadow-md"
+                    className="shadow-md"
                 />
               </DropdownMenu>
             </div>
