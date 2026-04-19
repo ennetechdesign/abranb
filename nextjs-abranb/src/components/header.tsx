@@ -16,24 +16,10 @@ import {
   navAboutDropdownItems,
 } from "@/config/nav";
 import type { ColorScheme, FontFamily, TextSize } from "@/lib/a11y-preferences";
+import { faPerson } from "@fortawesome/free-solid-svg-icons";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 const DRAWER_ID = "site-nav-drawer";
-
-function AccessibilityTriggerIcon({ className }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      width={16}
-      height={16}
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden
-    >
-      <path d="M12 2a2.2 2.2 0 1 1 0 4.4 2.2 2.2 0 0 1 0-4.4Zm1.2 6.2H10.8c-.7 0-1.3.4-1.6 1l-2.1 4.4a.9.9 0 0 0 1.6.8l1.8-3.7h.9l1.8 3.7a.9.9 0 1 0 1.6-.8l-2.1-4.4c-.3-.6-.9-1-1.6-1ZM8.5 16.5l-2 2.3a.9.9 0 1 0 1.4 1.2l2.3-2.7a1.4 1.4 0 0 1 1.1-.5h.4c.4 0 .8.2 1.1.5l2.3 2.7a.9.9 0 1 0 1.4-1.2l-2-2.3a3.1 3.1 0 0 0-2.4-1.1h-.4a3.1 3.1 0 0 0-2.4 1.1Z" />
-    </svg>
-  );
-}
 
 export type SiteHeaderProps = {
   initialColorScheme: ColorScheme;
@@ -89,7 +75,6 @@ export function Header({
                 href="/"
                 className="flex min-w-0 items-center gap-2 rounded-md focus-visible:outline-offset-2"
             >
-              {/* TODO: substituir pelo logo da ABRANB*/}
               <LogoMark className="size-9 shrink-0 md:size-10"/>
               <span className="truncate text-heading font-bold uppercase tracking-wide">
                 ABRANB
@@ -102,12 +87,17 @@ export function Header({
               <DropdownMenu
                   triggerVariant="purple"
                   triggerLabel={t("a11y_open_button")}
-                  triggerIcon={<AccessibilityTriggerIcon className="text-purple"/>}
+                  triggerIcon={<FontAwesomeIcon
+                      icon={faPerson}
+                      className="size-[22px] shrink-0"
+                      aria-hidden
+                  />}
                   showChevron={false}
                   iconOnly={a11yIconOnly}
                   align="center"
                   ariaHasPopup="dialog"
                   panelRole="dialog"
+                  triggerClassName="shadow-none"
                   panelClassName="min-w-75 max-w-80 md:min-w-[500px] md:max-w-[500px] overflow-x-hidden overflow-y-auto rounded-lg shadow-lg"
               >
                 <AccessibilityMenu

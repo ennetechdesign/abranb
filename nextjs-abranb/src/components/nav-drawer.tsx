@@ -19,7 +19,7 @@ export type NavDrawerProps = {
 function drawerLinkClass(active: boolean) {
   return [
     "block w-full rounded-md px-2 py-2 text-center text-body transition-colors focus-visible:outline-offset-2",
-    active ? "font-semibold text-button-primary" : "text-white hover:underline",
+    active ? "font-semibold text-button-primary" : "text-white hover:text-(--button-primary-hover)",
   ].join(" ");
 }
 
@@ -121,8 +121,8 @@ export function NavDrawer({ id, open, onClose }: NavDrawerProps) {
           </nav>
         </section>
 
-        <section>
-          <h3 className="mb-4 border-b border-button-primary pb-2 text-center text-lead font-bold text-button-primary">
+        <section className="lg:hidden">
+          <h3 className="mb-4 border-b border-button-primary pb-2 text-center text-lead font-bold text-button-primary ">
             {t("nav_drawer_sections_heading")}
           </h3>
           <nav
