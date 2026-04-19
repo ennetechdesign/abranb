@@ -1,5 +1,7 @@
 import { type SanityDocument } from "next-sanity";
 
+import { HomeScrollToHash } from "@/components/home-scroll-to-hash";
+import { HomeSectionPlaceholders } from "@/components/home-section-placeholders";
 import { PostsList } from "@/components/posts-list";
 import { client } from "@/sanity/client";
 
@@ -14,8 +16,12 @@ export default async function IndexPage() {
   const posts = await client.fetch<SanityDocument[]>(POSTS_QUERY, {}, options);
 
   return (
-    <main className="container mx-auto min-h-screen max-w-3xl p-8">
-      <PostsList posts={posts} />
-    </main>
+    <>
+      < HomeScrollToHash />
+      <main className="container mx-auto min-h-screen max-w-3xl p-8">
+        <PostsList posts={posts} />
+        <HomeSectionPlaceholders />
+      </main>
+    </>
   );
 }

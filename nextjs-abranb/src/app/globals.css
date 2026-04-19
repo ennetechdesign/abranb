@@ -29,6 +29,17 @@
   --surface-elevated: var(--palette-ivory);
   --link: var(--palette-purple);
   --focus-ring: var(--palette-purple);
+
+  /* Pill link button — brand states (same in day/night for consistent CTAs) */
+  --button-primary: var(--palette-gold);
+  --button-primary-hover: color-mix(in srgb, var(--palette-gold) 78%, #ffffff);
+  --button-primary-active: color-mix(in srgb, var(--palette-gold) 55%, #3d3510);
+  --button-primary-active-ring: color-mix(in srgb, var(--palette-gold) 45%, #ffffff);
+
+  --button-secondary: var(--palette-purple);
+  --button-secondary-hover: color-mix(in srgb, var(--palette-purple) 72%, #ffffff);
+  --button-secondary-active: color-mix(in srgb, var(--palette-purple) 45%, var(--palette-deep));
+  --button-secondary-active-ring: color-mix(in srgb, var(--palette-lilac) 55%, #ffffff);
 }
 
 html[data-text-size="large"] {
@@ -106,6 +117,15 @@ html[data-font="mono"] body {
   --color-charcoal: var(--palette-charcoal);
   --color-paper: var(--palette-paper);
   --color-ivory: var(--palette-ivory);
+
+  --color-button-primary: var(--button-primary);
+  --color-button-primary-hover: var(--button-primary-hover);
+  --color-button-primary-active: var(--button-primary-active);
+  --color-button-primary-active-ring: var(--button-primary-active-ring);
+  --color-button-secondary: var(--button-secondary);
+  --color-button-secondary-hover: var(--button-secondary-hover);
+  --color-button-secondary-active: var(--button-secondary-active);
+  --color-button-secondary-active-ring: var(--button-secondary-active-ring);
 
   --font-sans: var(--font-lexend), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-merriweather), ui-serif, Georgia, serif;

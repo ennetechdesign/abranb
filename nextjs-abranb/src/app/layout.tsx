@@ -7,7 +7,7 @@ import {
 } from "next/font/google";
 
 import { I18nProvider } from "@/app/providers";
-import { AccessibilityMenuLauncher } from "@/components/accessibility-menu-launcher";
+import { Header } from "@/components/header";
 import {
   COLOR_SCHEME_COOKIE,
   COLOR_SCHEME_HEADER,
@@ -79,7 +79,7 @@ export default async function RootLayout({
     >
       <body className="flex min-h-full flex-col bg-background text-foreground">
         <I18nProvider locale={locale}>
-          <AccessibilityMenuLauncher
+          <Header
             initialColorScheme={colorScheme}
             initialFontFamily={fontFamily}
             initialTextSize={textSize}
