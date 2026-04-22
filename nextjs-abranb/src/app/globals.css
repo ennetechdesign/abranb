@@ -54,6 +54,7 @@ html[data-text-size="large"] {
 @media (width >= 768px) {
   :root {
     --font-size-xxx-large: calc(48px * var(--text-zoom));
+    --font-size-xx-large: calc(36px * var(--text-zoom));
     --font-size-x-large: calc(32px * var(--text-zoom));
     --font-size-large: calc(28px * var(--text-zoom));
     --font-size-medium: calc(24px * var(--text-zoom));
