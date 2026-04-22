@@ -4,6 +4,7 @@ import { HomeScrollToHash } from "@/components/home-scroll-to-hash";
 import { HomeSectionPlaceholders } from "@/components/home-section-placeholders";
 import { PostsList } from "@/components/posts-list";
 import { client } from "@/sanity/client";
+import Hero from "@/components/componentsHome/hero";
 
 const POSTS_QUERY = `*[
   _type == "post"
@@ -18,9 +19,10 @@ export default async function IndexPage() {
   return (
     <>
       < HomeScrollToHash />
-      <main className="container mx-auto min-h-screen max-w-3xl p-8">
-        <PostsList posts={posts} />
+      <main className="container min-h-screen max-w-full">
+        <Hero />
         <HomeSectionPlaceholders />
+        <PostsList posts={posts} />
       </main>
     </>
   );
