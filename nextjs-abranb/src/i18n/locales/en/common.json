@@ -50,5 +50,10 @@
   "nav_section_placeholder_body": "Placeholder for home page content in this section.",
   "nav_search_open": "Open search",
   "nav_lib_all": "Full catalog",
-  "nav_lib_highlights": "Highlights"
+  "nav_lib_highlights": "Highlights",
+  "about_back_home": "← Back to home",
+  "about_heading": "About",
+  "about_lead": "This page is a placeholder. Replace this copy with your content.",
+  "about_meta_description": "About ABRANB.",
+  "about_meta_title": "About"
 }

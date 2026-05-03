@@ -1,0 +1,39 @@
+{
+  "meta_title": "Nossa História",
+  "meta_description": "Conheça a ABRANB: quem somos e como atuamos.",
+  "hero_title": "Nossa História",
+  "subheading": "O que somos",
+  "body_segments": [
+    { "type": "text", "value": "A " },
+    {
+      "type": "emphasis",
+      "value": "Articulação Brasileira Não-Binárie (ABRANB)"
+    },
+    { "type": "text", "value": " é uma " },
+    { "type": "emphasis", "value": "associação de pessoas não-binárias" },
+    {
+      "type": "text",
+      "value": " e está espalhada no território brasileiro em 14 estados, na forma de seus membros e grupos locais/regionais. Pauta a "
+    },
+    {
+      "type": "emphasis",
+      "value": "não-binariedade de forma ampla em várias temáticas"
+    },
+    {
+      "type": "text",
+      "value": " de acordo com a disponibilidade e vontade de seus membros, funcionando de forma "
+    },
+    { "type": "emphasis", "value": "autônoma" },
+    { "type": "text", "value": " e deliberando de forma " },
+    { "type": "emphasis", "value": "horizontal" },
+    { "type": "text", "value": " e assemblearia " },
+    {
+      "type": "emphasis",
+      "value": "questões pertinentes aos direitos da população não-binária"
+    },
+    {
+      "type": "text",
+      "value": ". Buscamos e já estabelecemos vínculos com defensorias estaduais, cartórios e ambulatórios que visam o cuidado de nossa população, além da Red No Binarie Abya Yala, em uma coordenação da América Latina."
+    }
+  ]
+}

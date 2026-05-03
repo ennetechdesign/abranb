@@ -1,0 +1,48 @@
+/* Content band: light (day) vs charcoal + gold accents (night), per design */
+
+.historia-panel {
+  background-color: var(--palette-paper);
+}
+
+html[data-color-scheme="night"] .historia-panel {
+  background-color: #3c3444;
+}
+
+.historia-subheading {
+  color: var(--palette-purple);
+}
+
+html[data-color-scheme="night"] .historia-subheading {
+  color: var(--palette-golden-yellow);
+}
+
+.historia-rule {
+  width: 3.5rem;
+  height: 2px;
+  flex-shrink: 0;
+  border-radius: 9999px;
+  background-color: var(--palette-purple);
+}
+
+html[data-color-scheme="night"] .historia-rule {
+  height: 4px;
+  background-color: var(--palette-golden-yellow);
+}
+
+.historia-body {
+  color: var(--palette-ink);
+  line-height: 1.55;
+}
+
+html[data-color-scheme="night"] .historia-body {
+  color: color-mix(in srgb, var(--palette-ivory) 90%, transparent);
+}
+
+.historia-body strong {
+  color: var(--palette-purple);
+  font-weight: 700;
+}
+
+html[data-color-scheme="night"] .historia-body strong {
+  color: var(--palette-golden-yellow);
+}
