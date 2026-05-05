@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { cookies, headers } from "next/headers";
 
+import {
+  HistoriaTimeline,
+  type HistoriaTimelineEntry,
+} from "@/components/historia-timeline";
 import { LOCALE_COOKIE, LOCALE_HEADER } from "@/i18n/config";
 import { normalizeLocale } from "@/lib/resolve-locale";
 import { resources } from "@/i18n/resources";
@@ -30,6 +34,7 @@ export default async function HistoryPage() {
   const locale = await getLocale();
   const copy = resources[locale].historia;
   const segments = copy.body_segments as BodySegment[];
+  const timelineEntries = copy.timeline_entries as HistoriaTimelineEntry[];
 
   return (
     <main className="min-h-screen w-full">
@@ -50,7 +55,7 @@ export default async function HistoryPage() {
         </h1>
       </section>
 
-      <section className="historia-panel px-4 py-16 md:px-8 md:py-20">
+      <section className="historia-panel px-8 py-16 md:px-8 md:py-20 md:text-justify">
         <div className="mx-auto flex max-w-3xl flex-col items-center gap-10 md:gap-12">
           <div className="flex flex-col items-center gap-3">
             <h2 className="historia-subheading text-title font-bold">
@@ -58,7 +63,7 @@ export default async function HistoryPage() {
             </h2>
             <span className="historia-rule" aria-hidden />
           </div>
-          <p className="historia-body w-full text-left text-body">
+          <p className="historia-body w-full text-left md:text-justify text-body">
             {segments.map((seg, i) =>
               seg.type === "emphasis" ? (
                 <strong key={i}>{seg.value}</strong>
@@ -69,6 +74,11 @@ export default async function HistoryPage() {
           </p>
         </div>
       </section>
+
+      <HistoriaTimeline
+        title={copy.timeline_title}
+        entries={timelineEntries}
+      />
     </main>
   );
 }

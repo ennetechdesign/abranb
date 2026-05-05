@@ -63,7 +63,7 @@ export function Header({
   return (
     <>
       <header className="sticky top-0 z-[70] border-b border-white/15 bg-purple text-white shadow-md">
-        <div className="mx-auto flex h-14 max-w-[1600px] items-center gap-3 px-4 md:h-16 md:gap-6 md:px-6">
+        <div className="mx-auto flex h-14 max-w-[1600px] items-center gap-3 px-0 md:h-16 md:gap-6">
           <div className="flex min-w-0 shrink-0 items-center gap-2 md:gap-4">
             <HamburgerMenuTrigger
                 ariaControls={DRAWER_ID}

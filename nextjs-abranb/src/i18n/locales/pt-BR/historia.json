@@ -35,5 +35,85 @@
       "type": "text",
       "value": ". Buscamos e já estabelecemos vínculos com defensorias estaduais, cartórios e ambulatórios que visam o cuidado de nossa população, além da Red No Binarie Abya Yala, em uma coordenação da América Latina."
     }
+  ],
+  "timeline_title": "Linha do tempo",
+  "timeline_entries": [
+    {
+      "year": "2021",
+      "side": "left",
+      "body_segments": [
+        {
+          "type": "text",
+          "value": "Em 2021 nasceu a Abranb com princípios de horizontalidade e autonomia"
+        }
+      ]
+    },
+    {
+      "year": "2021",
+      "side": "right",
+      "body_segments": [
+        {
+          "type": "text",
+          "value": "Compartilhou intensamente materiais educativos sobre nossa comunidade na Comissão Interamericana de Direitos Humanos"
+        }
+      ]
+    },
+    {
+      "year": "2022",
+      "side": "left",
+      "body_segments": [
+        {
+          "type": "text",
+          "value": "Expande-se para o máximo de estados brasileiros e organizam-se em núcleos temáticos (Saúde, Direito, etc) e grupos regionais"
+        }
+      ]
+    },
+    {
+      "year": "2022",
+      "side": "right",
+      "body_segments": [
+        { "type": "text", "value": "Produziu documentos fundamentais, como " },
+        { "type": "emphasis", "value": "registro civil não-binário" },
+        { "type": "text", "value": " e linguagem" }
+      ]
+    },
+    {
+      "year": "2023",
+      "side": "left",
+      "body_segments": [
+        { "type": "text", "value": "Finalizou a " },
+        { "type": "emphasis", "value": "síntese das pautas não-binárias" }
+      ]
+    },
+    {
+      "year": "2023",
+      "side": "right",
+      "body_segments": [
+        {
+          "type": "text",
+          "value": "Consolidou dados sobre o funcionamento de ambulatórios trans em diversas cidades, identificando barreiras e serviços modelo"
+        }
+      ]
+    },
+    {
+      "year": "2024",
+      "side": "left",
+      "body_segments": [
+        { "type": "text", "value": "Consolidou o " },
+        { "type": "emphasis", "value": "parecer sobre linguagem" }
+      ]
+    },
+    {
+      "year": "2025",
+      "side": "right",
+      "body_segments": [
+        { "type": "text", "value": "Elaborou o " },
+        { "type": "emphasis", "value": "Mapa da Judicialização ABRANB" },
+        {
+          "type": "text",
+          "value": ", ferramenta para acompanhar processos jurídicos relevantes para a população não-binária"
+        }
+      ]
+    }
   ]
 }
