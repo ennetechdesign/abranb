@@ -1,0 +1,119 @@
+{
+  "meta_title": "Our history",
+  "meta_description": "Learn about ABRANB: who we are and how we work.",
+  "hero_title": "Our history",
+  "subheading": "What we are",
+  "body_segments": [
+    { "type": "text", "value": "The " },
+    {
+      "type": "emphasis",
+      "value": "Brazilian Non-Binary Articulation (ABRANB)"
+    },
+    { "type": "text", "value": " is an " },
+    { "type": "emphasis", "value": "association of non-binary people" },
+    {
+      "type": "text",
+      "value": " spread across Brazil in 14 states through its members and local/regional groups. We put "
+    },
+    {
+      "type": "emphasis",
+      "value": "non-binarity on the agenda broadly across many themes"
+    },
+    {
+      "type": "text",
+      "value": " according to members’ availability and willingness, working "
+    },
+    { "type": "emphasis", "value": "autonomously" },
+    { "type": "text", "value": " and deciding in a " },
+    { "type": "emphasis", "value": "horizontal" },
+    { "type": "text", "value": ", assembly-based way on " },
+    {
+      "type": "emphasis",
+      "value": "issues that matter for non-binary people’s rights"
+    },
+    {
+      "type": "text",
+      "value": ". We seek and have built ties with state public defenders’ offices, civil registries, and clinics focused on care for our community, as well as the Red No Binarie Abya Yala network, coordinating across Latin America."
+    }
+  ],
+  "timeline_title": "Timeline",
+  "timeline_entries": [
+    {
+      "year": "2021",
+      "side": "left",
+      "body_segments": [
+        {
+          "type": "text",
+          "value": "In 2021 ABRANB was founded on principles of horizontality and autonomy"
+        }
+      ]
+    },
+    {
+      "year": "2021",
+      "side": "right",
+      "body_segments": [
+        {
+          "type": "text",
+          "value": "It shared educational materials about our community intensively with the Inter-American Commission on Human Rights"
+        }
+      ]
+    },
+    {
+      "year": "2022",
+      "side": "left",
+      "body_segments": [
+        {
+          "type": "text",
+          "value": "It expanded across as many Brazilian states as possible and organized into thematic hubs (Health, Law, etc.) and regional groups"
+        }
+      ]
+    },
+    {
+      "year": "2022",
+      "side": "right",
+      "body_segments": [
+        { "type": "text", "value": "It produced landmark documents on " },
+        { "type": "emphasis", "value": "non-binary civil registration" },
+        { "type": "text", "value": " and language" }
+      ]
+    },
+    {
+      "year": "2023",
+      "side": "left",
+      "body_segments": [
+        { "type": "text", "value": "It completed the " },
+        { "type": "emphasis", "value": "synthesis of non-binary agendas" }
+      ]
+    },
+    {
+      "year": "2023",
+      "side": "right",
+      "body_segments": [
+        {
+          "type": "text",
+          "value": "It consolidated data on how trans health clinics operate in several cities, identifying barriers and model services"
+        }
+      ]
+    },
+    {
+      "year": "2024",
+      "side": "left",
+      "body_segments": [
+        { "type": "text", "value": "It consolidated the " },
+        { "type": "emphasis", "value": "language guidance" }
+      ]
+    },
+    {
+      "year": "2025",
+      "side": "right",
+      "body_segments": [
+        { "type": "text", "value": "It produced the " },
+        { "type": "emphasis", "value": "ABRANB Litigation Map" },
+        {
+          "type": "text",
+          "value": ", a tool to track legal cases relevant to the non-binary population"
+        }
+      ]
+    }
+  ]
+}

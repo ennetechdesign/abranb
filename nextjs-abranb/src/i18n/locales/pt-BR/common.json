@@ -51,5 +51,10 @@
   "nav_section_placeholder_body": "Esta seção é um espaço reservado para o conteúdo da página inicial.",
   "nav_search_open": "Abrir busca",
   "nav_lib_all": "Acervo",
-  "nav_lib_highlights": "Destaques"
+  "nav_lib_highlights": "Destaques",
+  "about_back_home": "← Voltar ao início",
+  "about_heading": "Sobre",
+  "about_lead": "Esta página é um espaço reservado. Substitua este texto pelo conteúdo desejado.",
+  "about_meta_description": "Sobre a ABRANB.",
+  "about_meta_title": "Sobre"
 }

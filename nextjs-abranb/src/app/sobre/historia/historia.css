@@ -1,0 +1,173 @@
+/* Content band: light (day) vs charcoal + gold accents (night), per design */
+
+.historia-panel {
+  background-color: var(--palette-paper);
+}
+
+html[data-color-scheme="night"] .historia-panel {
+  background-color: #3c3444;
+}
+
+.historia-subheading {
+  color: var(--palette-purple);
+}
+
+html[data-color-scheme="night"] .historia-subheading {
+  color: var(--palette-golden-yellow);
+}
+
+.historia-rule {
+  width: 3.5rem;
+  height: 2px;
+  flex-shrink: 0;
+  border-radius: 9999px;
+  background-color: var(--palette-purple);
+}
+
+html[data-color-scheme="night"] .historia-rule {
+  height: 4px;
+  background-color: var(--palette-golden-yellow);
+}
+
+.historia-body {
+  color: var(--palette-ink);
+  line-height: 1.55;
+}
+
+.historia-body strong {
+  color: var(--palette-purple);
+  font-weight: 700;
+}
+
+html[data-color-scheme="night"] .historia-body {
+  color: color-mix(in srgb, var(--palette-ivory) 90%, transparent);
+}
+
+html[data-color-scheme="night"] .historia-body strong {
+  color: var(--palette-golden-yellow);
+}
+
+/* Timeline — fixed purple/gold (same in day and night) */
+
+.historia-timeline {
+  position: relative;
+  background-color: var(--palette-purple);
+  color: var(--palette-golden-yellow);
+  padding: 2.5rem 1rem 3.5rem;
+}
+
+@media (width >= 768px) {
+  .historia-timeline {
+    padding: 3rem 1.5rem 4rem;
+  }
+}
+
+.historia-timeline-heading {
+  margin: 0 auto 2rem;
+  display: flex;
+  max-width: 48rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  text-align: center;
+  font-size: var(--font-size-x-large);
+  line-height: var(--text-title--line-height);
+  font-weight: 700;
+  color: var(--palette-golden-yellow);
+}
+
+.historia-timeline-heading-rule {
+  width: 13rem;
+  height: 3px;
+  flex-shrink: 0;
+  border-radius: 9999px;
+  background-color: var(--palette-golden-yellow);
+}
+
+.historia-timeline-track {
+  position: relative;
+  margin: 0 auto;
+  max-width: 56rem;
+  padding: 0 0.25rem;
+}
+
+.historia-timeline-spine {
+  pointer-events: none;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  z-index: 0;
+  width: 2px;
+  transform: translateX(-50%);
+  border-radius: 9999px;
+  background-color: var(--palette-golden-yellow);
+}
+
+.historia-timeline-list {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.historia-timeline-year {
+  display: flex;
+  height: 2.75rem;
+  width: 2.75rem;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background-color: var(--palette-gold);
+  font-size: var(--font-size-x-small);
+  font-weight: 400;
+  color: var(--palette-deep);
+}
+
+@media (width >= 768px) {
+  .historia-timeline-year {
+    height: 3.5rem;
+    width: 3.5rem;
+    font-size: var(--font-size-small);
+  }
+
+  [data-text-size="large"] .historia-timeline-year {
+    height: 4.5rem;
+    width: 4.5rem;
+  }
+}
+
+.historia-timeline-card {
+  width: 100%;
+  max-width: 25rem;
+  border-radius: 2.75rem;
+  background-color: var(--palette-gold);
+  padding: 1.25rem 1.35rem;
+  text-align: center;
+  font-size: var(--font-size-small);
+  line-height: 1.55;
+  color: var(--palette-deep);
+}
+
+@media (width >= 768px) {
+  .historia-timeline-card {
+    max-width: min(100%, 20rem);
+    padding: 1.35rem 1.5rem;
+    font-size: var(--font-size-small);
+  }
+}
+
+.historia-timeline-card strong {
+  color: var(--palette-purple-muted);
+  font-weight: 700;
+}
+
+.historia-timeline-connector {
+  height: 2px;
+  width: 3.5rem;
+  flex-shrink: 0;
+  border-radius: 9999px;
+  background-color: var(--palette-golden-yellow);
+}
