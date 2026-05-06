@@ -10,7 +10,7 @@ export function HomeSectionPlaceholders() {
 };
 
   return (
-    <div className="mt-16 flex flex-col gap-20 border-t border-border pt-16">
+    <div className="">
       {navDrawerSections.map((s) => {
         const SectionComponent = sectionComponents[s.sectionId as keyof typeof sectionComponents];
 
@@ -20,7 +20,7 @@ export function HomeSectionPlaceholders() {
           <section
             key={s.sectionId}
             id={s.sectionId}
-            className="scroll-mt-24 rounded-lg border border-border bg-surface-elevated/50 p-6"
+            className="bg-surface-elevated/50"
           >
             <SectionComponent />
           </section>
