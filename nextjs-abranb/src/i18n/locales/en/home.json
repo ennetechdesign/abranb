@@ -1,12 +1,16 @@
 {
-    "title-h1-1": "Non-binary people united by",
-    "title-h1-2": "recognition and appreciation of plurality",
+  "title-h1-1": "Non-binary people united by",
+  "title-h1-2": "recognition and appreciation of plurality",
 
-    "understandNonBinarity": {
-        "title": "Understand non-binarity",
-        "nonBinaryDefinitionText": "A non-binary person is someone who does not fully, always and/or exclusively identify as male or female, and non-binarity is the concept of this.",
-        "glossaryButton": "Access our glossary",
-        "imageAlt": "Illustrative image of a heart with non-binary pride colors",
-        "buttonAriaLabel": "Click to be redirected"
-    }
+  "understandNonBinarity": {
+    "title": "Understand non-binarity",
+    "nonBinaryDefinitionText": "A non-binary person is someone who does not fully, always and/or exclusively identify as male or female, and non-binarity is the concept of this.",
+    "glossaryButton": "Access our glossary",
+    "imageAlt": "Illustrative image of a heart with non-binary pride colors",
+    "buttonAriaLabel": "Click to be redirected"
+  },
+  "whatWeDid": {
+    "title": "What we have done so far",
+    "buttonText": "See more news like this"
+  }
 }

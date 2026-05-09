@@ -1,12 +1,15 @@
 "use client";
 
 import { navDrawerSections } from "@/config/nav";
+import "./componentsHome/home.css";
 import EntendaNB from "./componentsHome/sections/entenda-nb";
+import OQueFizemos from "./componentsHome/sections/OQueFizemos";
 
 // TODO: Montar as seções da página home
 export function HomeSectionPlaceholders() {
   const sectionComponents = {
-  "o-que-e-nao-binario": EntendaNB
+  "o-que-e-nao-binario": EntendaNB,
+  "noticias-abranb": OQueFizemos
 };
 
   return (

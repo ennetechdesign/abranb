@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+.box-slide {
+    @apply min-w-82.5 max-w-82.5 lg:min-w-217 lg:max-h-67.5
+}
+
+html[data-text-size="large"] .box-slide {
+  @apply lg:max-h-full lg:min-w-240 lg:max-w-240;
+}
+
+html[data-text-size="large"] .box-slide picture {
+  @apply w-full min-h-74
+}
+
