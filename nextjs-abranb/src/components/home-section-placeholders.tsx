@@ -1,29 +1,34 @@
 "use client";
 
-import { useTranslation } from "react-i18next";
-
 import { navDrawerSections } from "@/config/nav";
+import "./componentsHome/home.css";
+import EntendaNB from "./componentsHome/sections/entenda-nb";
+import OQueFizemos from "./componentsHome/sections/OQueFizemos";
 
 // TODO: Montar as seções da página home
 export function HomeSectionPlaceholders() {
-  const { t } = useTranslation("common");
+  const sectionComponents = {
+  "o-que-e-nao-binario": EntendaNB,
+  "noticias-abranb": OQueFizemos
+};
 
   return (
-    <div className="mt-16 flex flex-col gap-20 border-t border-border pt-16">
-      {navDrawerSections.map((s) => (
-        <section
-          key={s.sectionId}
-          id={s.sectionId}
-          className="scroll-mt-24 rounded-lg border border-border bg-surface-elevated/50 p-6"
-        >
-          <h2 className="text-heading font-bold text-foreground">
-            {t(s.labelKey)}
-          </h2>
-          <p className="text-body mt-2 text-muted-foreground">
-            {t("nav_section_placeholder_body")}
-          </p>
-        </section>
-      ))}
+    <div className="">
+      {navDrawerSections.map((s) => {
+        const SectionComponent = sectionComponents[s.sectionId as keyof typeof sectionComponents];
+
+        if (!SectionComponent) return null;
+
+        return (
+          <section
+            key={s.sectionId}
+            id={s.sectionId}
+            className="bg-surface-elevated/50"
+          >
+            <SectionComponent />
+          </section>
+        );
+      })}
     </div>
   );
 }

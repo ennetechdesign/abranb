@@ -34,6 +34,7 @@
   --surface-elevated: var(--palette-ivory);
   --link: var(--palette-purple);
   --focus-ring: var(--palette-purple);
+  --title-decoration: var(--palette-purple);
 
   /* Pill link button — brand states (same in day/night for consistent CTAs) */
   --button-primary: var(--palette-gold);
@@ -77,6 +78,7 @@ html[data-color-scheme="night"] {
   --surface-elevated: var(--palette-ink);
   --link: var(--palette-lilac);
   --focus-ring: var(--palette-gold);
+  --title-decoration: var(--palette-gold);
 }
 
 html[data-color-scheme="high-contrast"] {
@@ -88,6 +90,7 @@ html[data-color-scheme="high-contrast"] {
   --surface-elevated: #0a0a0a;
   --link: #ffff00;
   --focus-ring: #ffff00;
+  --title-decoration: var(--palette-gold);
 }
 
 html[data-font="sans"] body {
@@ -117,6 +120,7 @@ html[data-font="mono"] body {
   --color-surface-elevated: var(--surface-elevated);
   --color-link: var(--link);
   --color-focus-ring: var(--focus-ring);
+  --color-title-decoration: var(--title-decoration);
 
   --color-lilac: var(--palette-lilac);
   --color-purple: var(--palette-purple);
@@ -147,6 +151,7 @@ html[data-font="mono"] body {
   --text-title: var(--font-size-x-large);
   --text-title--line-height: 1.25;
   --text-heading-h1: var(--font-size-xxx-large);
+  --text-heading-h1--line-height: 1.45;
   --text-heading: var(--font-size-large);
   --text-heading--line-height: 1.3;
   --text-lead: var(--font-size-medium);
