@@ -12,5 +12,10 @@
   "whatWeDid": {
     "title": "O que fizemos até agora",
     "buttonText": "Saiba de mais notícias como essas"
+  },
+  "ourHistory": {
+    "title": "Nossa história",
+    "description": "A <highlight>Articulação Brasileira Não Binárie (ABRANB)</highlight> reúne <highlight>pessoas não-binárias</highlight> de vários territórios em uma <highlight>organização horizontal</highlight>. Trabalhamos tanto com grupos temáticos quanto específicos a determinados estados para <highlight>realizar ações pertinentes à população não-binária</highlight>, como tomar passos para obter acesso a documentos e saúde.",
+    "buttonText": "Descubra mais sobre nós"
   }
 }

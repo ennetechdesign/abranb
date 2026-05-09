@@ -4,12 +4,14 @@ import { navDrawerSections } from "@/config/nav";
 import "./componentsHome/home.css";
 import EntendaNB from "./componentsHome/sections/entenda-nb";
 import OQueFizemos from "./componentsHome/sections/OQueFizemos";
+import NossaHistoria from "./componentsHome/nossa-historia";
 
 // TODO: Montar as seções da página home
 export function HomeSectionPlaceholders() {
   const sectionComponents = {
   "o-que-e-nao-binario": EntendaNB,
-  "noticias-abranb": OQueFizemos
+  "noticias-abranb": OQueFizemos,
+  "nossa-historia": NossaHistoria
 };
 
   return (

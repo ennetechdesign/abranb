@@ -12,5 +12,10 @@
   "whatWeDid": {
     "title": "What we have done so far",
     "buttonText": "See more news like this"
+  },
+  "ourHistory": {
+    "title": "Our history",
+    "description": "The <highlight>Brazilian Non-Binary Articulation (ABRANB)</highlight> brings together <highlight>non-binary people</highlight> from different regions in a <highlight>horizontal organization</highlight>. We work with both thematic groups and state-specific groups to <highlight>carry out initiatives relevant to the non-binary community</highlight>, such as taking steps to improve access to documents and healthcare.",
+    "buttonText": "Learn more about us"
   }
 }
