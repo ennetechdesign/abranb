@@ -8,7 +8,8 @@ export default function EntendaNB() {
     const { t } = useTranslation("home");
 
     return (
-        <div className="flex flex-col lg:flex-row py-25 px-5 md:px-10 xl:px-20 max-lg:items-center md:justify-between 2xl:justify-evenly">
+        <div className="flex flex-col lg:flex-row py-12.5 lg:py-25 px-5 md:px-10 xl:px-20 max-lg:items-center md:justify-between 
+            2xl:justify-evenly">
             <div className="flex flex-col justify-center items-center lg:items-start lg:w-1/2 lg:mr-15">
 
                 <TitleUnderline title={t("understandNonBinarity.title")} position="start" />
@@ -25,7 +26,7 @@ export default function EntendaNB() {
                 height={300}
                 src="/images/img-coracao-nb.png"
                 alt={t("understandNonBinarity.imageAlt")}
-                className="max-w-80 max-min-h-71 lg:max-w-full lg:max-h-full my-5" />
+                className="max-w-80 max-min-h-71 lg:max-w-full lg:max-h-full mt-10 lg:mt-0" />
         </div>
     )
 }
