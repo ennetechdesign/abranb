@@ -24,7 +24,7 @@ export default function Hero() {
                 <div className=" text-heading-h1 font-normal text-center flex justify-center">
                     <h1 className="text-foreground xl:max-w-166">
                         {t("title-h1-1")}< br />
-                        <span className="bg-purple-yellow font-bold rounded-[100px] px-5 md:px-10 py-1.5 text-background leading-1 [box-decoration-break:clone] [-webkit-box-decoration-break:clone]">
+                        <span className="bg-purple-yellow font-bold rounded-[100px] hyphens-auto px-5 md:px-10 py-1.5 text-background leading-1 [box-decoration-break:clone] [-webkit-box-decoration-break:clone]">
                             {t("title-h1-2")}
                         </span>
                     </h1>

@@ -77,7 +77,7 @@ export default async function RootLayout({
       data-text-size={textSize === "large" ? "large" : undefined}
       className={`${atkinsonMono.variable} ${lexend.variable} ${merriweather.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col bg-background text-foreground">
+      <body className="flex min-h-full flex-col bg-background text-foreground overflow-x-hidden">
         <I18nProvider locale={locale}>
           <Header
             initialColorScheme={colorScheme}

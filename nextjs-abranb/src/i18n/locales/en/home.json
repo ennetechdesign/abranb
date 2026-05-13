@@ -1,4 +1,21 @@
 {
-    "title-h1-1": "Non-binary people united by",
-    "title-h1-2": "recognition and appreciation of plurality"
+  "title-h1-1": "Non-binary people united by",
+  "title-h1-2": "recognition and appreciation of plurality",
+
+  "understandNonBinarity": {
+    "title": "Understand non-binarity",
+    "nonBinaryDefinitionText": "A non-binary person is someone who does not fully, always and/or exclusively identify as male or female, and non-binarity is the concept of this.",
+    "glossaryButton": "Access our glossary",
+    "imageAlt": "Illustrative image of a heart with non-binary pride colors",
+    "buttonAriaLabel": "Click to be redirected"
+  },
+  "whatWeDid": {
+    "title": "What we have done so far",
+    "buttonText": "See more news like this"
+  },
+  "ourHistory": {
+    "title": "Our history",
+    "description": "The <highlight>Brazilian Non-Binary Articulation (ABRANB)</highlight> brings together <highlight>non-binary people</highlight> from different regions in a <highlight>horizontal organization</highlight>. We work with both thematic groups and state-specific groups to <highlight>carry out initiatives relevant to the non-binary community</highlight>, such as taking steps to improve access to documents and healthcare.",
+    "buttonText": "Learn more about us"
+  }
 }
