@@ -62,7 +62,7 @@ export function useCarousel(numItems: number, tamCard: number) {
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex((prevIndex) => (prevIndex + 1) % numItems);
-    }, 9000);
+    }, 15000);
 
     return () => clearInterval(interval);
   }, [numItems]);

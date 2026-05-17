@@ -4,7 +4,7 @@ import { HomeScrollToHash } from "@/components/home-scroll-to-hash";
 import { HomeSectionPlaceholders } from "@/components/home-section-placeholders";
 import { PostsList } from "@/components/posts-list";
 import { client } from "@/sanity/client";
-import Hero from "@/components/componentsHome/hero";
+import Hero from "@/components/componentsHome/sections/hero";
 
 const POSTS_QUERY = `*[
   _type == "post"

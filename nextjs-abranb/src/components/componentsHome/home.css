@@ -1,5 +1,23 @@
 @import "tailwindcss";
 
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.2);
+  border-radius: 999px;
+  backdrop-filter: blur(4px);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255,255,255,0.35);
+}
+
 .box-slide {
     @apply min-w-82.5 max-w-82.5 lg:min-w-217 lg:max-h-67.5
 }

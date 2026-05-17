@@ -4,7 +4,7 @@ import { navDrawerSections } from "@/config/nav";
 import "./componentsHome/home.css";
 import EntendaNB from "./componentsHome/sections/entenda-nb";
 import OQueFizemos from "./componentsHome/sections/OQueFizemos";
-import NossaHistoria from "./componentsHome/nossa-historia";
+import NossaHistoria from "./componentsHome/sections/nossa-historia";
 
 // TODO: Montar as seções da página home
 export function HomeSectionPlaceholders() {
