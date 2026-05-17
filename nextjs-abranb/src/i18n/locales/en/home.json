@@ -21,5 +21,18 @@
   "partnershipCollectives": {
     "title": "Partner Collectives",
     "buttonText": "Discover more of our connections"
+  },
+  "agendaSummary": {
+    "title": "Agenda Summary",
+    "description-1": "Together, we built a summarized list of necessary and specific demands regarding our diverse community, based on consultations in a non-binary forum (3 thousand people) and internal discussions within the coalition (170 people).",
+    "description-2": "Some urgent topics that need to be discussed:",
+
+    "topics": {
+      "topic-1": "Access to civil registration with recognized non-binary identity",
+      "topic-2": "Access to education free from cisnormativity/cisgender supremacy",
+      "topic-3": "Access to personal and collective recognition in the Brazilian language"
+    },
+
+    "button": "Learn more about our demands"
   }
 }

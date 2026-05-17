@@ -21,5 +21,18 @@
   "partnershipCollectives": {
     "title": "Coletives em Parceria",
     "buttonText": "Descubra mais conexões nossas"
+  },
+  "agendaSummary": {
+    "title": "Síntese de Pautas",
+    "description-1": "Construímos juntes uma lista resumida de pautas necessárias e específicas sobre a nossa comunidade diversa a partir de consultas em fórum não-binário (3 mil pessoas) e debates internos da articulação (170 pessoas).",
+    "description-2": "Algumas pautas urgentes que precisam ser discutidas:",
+    
+    "topics": {
+      "topic-1": "Acesso ao registro civil com não-binariedade reconhecida",
+      "topic-2": "Acesso à educação livre de cisnormatividade/supremacia cisgênero",
+      "topic-3": "Acesso ao reconhecimento pessoal e coletivo na língua brasileira"
+    },
+
+    "button": "Entenda mais as nossas pautas"
   }
 }
