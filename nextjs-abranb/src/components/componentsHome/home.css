@@ -30,3 +30,16 @@ html[data-text-size="large"] .box-slide picture {
   @apply w-full min-h-74
 }
 
+/*Sintese de Pautas*/
+
+.bg-linear {
+  @apply bg-linear-to-r from-[#f2c230] to-[#f2c230]/5 py-3 lg:py-5 px-6 lg:px-10 rounded-full
+}
+
+html[data-color-scheme="night"] .bg-linear {
+  @apply bg-linear-to-r from-[#9c5fd9] to-[#9c5fd9]/5
+}
+
+html[data-color-scheme="high-contrast"] .bg-linear {
+  @apply bg-linear-to-r from-[#9c5fd9] to-[#9c5fd9]/5
+}
