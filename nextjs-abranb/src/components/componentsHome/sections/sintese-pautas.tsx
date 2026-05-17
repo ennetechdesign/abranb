@@ -6,7 +6,7 @@ export default function SinteseDePautas() {
     const { t } = useTranslation("home");
     return (
         <div className="flex flex-col items-center justify-center max-w-full md:max-w-2/3 xl:max-w-1/2 mx-auto 
-            text-lead leading-9 lg:leading-10 gap-2.5 px-4">
+            text-lead leading-9 lg:leading-10 gap-2.5 px-4 pb-15 lg:pb-25 ">
             <TitleUnderline title={t("agendaSummary.title")} position="center" />
 
             <div>
