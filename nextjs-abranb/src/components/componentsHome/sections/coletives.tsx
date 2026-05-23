@@ -2,7 +2,7 @@
 import Image from "next/image";
 import TitleUnderline from "@/components/title-underline";
 import { useTranslation } from "react-i18next";
-import { Button } from "@/components/button";
+import BtnLink from "@/components/btn-link";
 
 const coletives = [
     {
@@ -59,16 +59,18 @@ export default function Coletives() {
                                     alt={`Logo ${coletive.instituicao}`}
                                     className="w-20 h-20 min-w-20 lg:min-w-30 lg:w-30 lg:h-30 object-cover rounded-full" />
                             </picture>
-                                <p className="leading-tight text-center">{coletive.instituicao}</p>
-                            
+                            <p className="leading-tight text-center">{coletive.instituicao}</p>
+
                         </a>
                     </li>
                 ))}
             </ul>
 
-            <Button href="/glossario" variant="primary" size="medium">
-                {t("partnershipCollectives.buttonText")}
-            </Button>
+            <BtnLink
+                text={t("partnershipCollectives.buttonText")}
+                variant="yellow/purple"
+                link="/"
+            />
         </div>
     )
 }
