@@ -34,5 +34,14 @@
     },
 
     "button": "Learn more about our demands"
+  },
+  "documentsProduced": {
+    "title": "Produced Documents",
+    "description": "We produce bimonthly and annual documents reporting the activities and developments within our organization, covering several essential topics and working groups involving multiple professional areas that impact our communities.",
+    "buttons": {
+      "civilRegistry": "Non-binary Civil Registry",
+      "annualReport": "1st ABRANB Annual Report",
+      "moreDocuments": "Access more of our documents"
+    }
   }
 }

@@ -23,6 +23,7 @@ export default function NossaHistoria() {
                 <BtnLink
                     text={t("ourHistory.buttonText")}
                     variant="purple"
+                    colorText="paper"
                     link="/"
                 />
             </div>
