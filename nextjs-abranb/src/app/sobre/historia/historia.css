@@ -104,6 +104,14 @@ html[data-color-scheme="night"] .historia-body strong {
   background-color: var(--palette-golden-yellow);
 }
 
+@media (width >= 768px) {
+  .historia-timeline-spine {
+    top: 100px;
+    bottom: 240px;
+  }
+}
+
+
 .historia-timeline-list {
   position: relative;
   z-index: 1;
