@@ -1,8 +1,8 @@
 import { useTranslation } from "react-i18next";
-import { Button } from "../../button";
 import TitleUnderline from "../../title-underline";
 import { Trans } from "react-i18next";
 import BackgroundFixed from "../background-fixed";
+import BtnLink from "@/components/btn-link";
 
 export default function NossaHistoria() {
     const { t } = useTranslation("home");
@@ -20,9 +20,12 @@ export default function NossaHistoria() {
                         }}
                     />
                 </p>
-                <Button href="/" variant="primary" size="medium">
-                    {t("ourHistory.buttonText")}
-                </Button>
+                <BtnLink
+                    text={t("ourHistory.buttonText")}
+                    variant="purple"
+                    colorText="paper"
+                    link="/"
+                />
             </div>
         </BackgroundFixed>
 

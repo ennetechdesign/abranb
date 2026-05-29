@@ -26,7 +26,7 @@
     "title": "Síntese de Pautas",
     "description-1": "Construímos juntes uma lista resumida de pautas necessárias e específicas sobre a nossa comunidade diversa a partir de consultas em fórum não-binário (3 mil pessoas) e debates internos da articulação (170 pessoas).",
     "description-2": "Algumas pautas urgentes que precisam ser discutidas:",
-    
+
     "topics": {
       "topic-1": "Acesso ao registro civil com não-binariedade reconhecida",
       "topic-2": "Acesso à educação livre de cisnormatividade/supremacia cisgênero",
@@ -34,5 +34,14 @@
     },
 
     "button": "Entenda mais as nossas pautas"
+  },
+  "documentsProduced": {
+    "title": "Documentos Produzidos",
+    "description": "Produzimos documentos bimestral e anualmente relatando as movimentações ocorridas dentro da nossa organização sobre diversas pautas essenciais nossas e sobre grupos de trabalho envolvendo várias áreas profissionais que atravessam as nossas comunidades.",
+    "buttons": {
+      "civilRegistry": "Registro civil não-binário",
+      "annualReport": "1° Relatório Anual da ABRANB",
+      "moreDocuments": "Acesse mais de nossos documentos"
+    }
   }
 }
