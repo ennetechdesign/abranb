@@ -32,6 +32,7 @@ export const navDrawerSections: NavSectionEntry[] = [
   { sectionId: "sintese-pautas", labelKey: "nav_section_topics" },
   { sectionId: "documentos-produzidos", labelKey: "nav_section_documents" },
   { sectionId: "arquivos-historicos", labelKey: "nav_section_archives" },
+  { sectionId: "areas-tematicas", labelKey: "nav_section_thematic_areas" },
   { sectionId: "contato", labelKey: "nav_section_contact" },
   { sectionId: "faca-parte", labelKey: "nav_section_join" },
   { sectionId: "doacao", labelKey: "nav_section_donate" },

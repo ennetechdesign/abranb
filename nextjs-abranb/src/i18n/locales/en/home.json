@@ -48,5 +48,10 @@
     "title": "Historical Archives",
     "description": "One of our collective efforts has been gathering images, articles, and books related to our gender-diverse communities (non-binary, trans, and travesti) to help preserve the memory and history of those who came before us.",
     "button": "Access these archives"
+  },
+  "thematicAreas": {
+    "title": "Thematic Areas",
+    "description": "Some of us, as researchers, produce article-based content about our non-binary community across thematic fields such as Health, Technology, Law, and more.",
+    "button": "Dive into our articles"
   }
 }

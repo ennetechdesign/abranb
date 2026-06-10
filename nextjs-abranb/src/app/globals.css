@@ -35,6 +35,7 @@
   --link: var(--palette-purple);
   --focus-ring: var(--palette-purple);
   --title-decoration: var(--palette-purple);
+  --paper-deep: var(--palette-paper);
 
   /* Pill link button — brand states (same in day/night for consistent CTAs) */
   --button-primary: var(--palette-gold);
@@ -79,6 +80,7 @@ html[data-color-scheme="night"] {
   --link: var(--palette-lilac);
   --focus-ring: var(--palette-gold);
   --title-decoration: var(--palette-gold);
+  --paper-deep: var(--palette-deep);
 }
 
 html[data-color-scheme="high-contrast"] {
@@ -91,6 +93,7 @@ html[data-color-scheme="high-contrast"] {
   --link: #ffff00;
   --focus-ring: #ffff00;
   --title-decoration: var(--palette-gold);
+  --paper-deep: var(--palette-deep);
 }
 
 html[data-font="sans"] body {
@@ -121,6 +124,7 @@ html[data-font="mono"] body {
   --color-link: var(--link);
   --color-focus-ring: var(--focus-ring);
   --color-title-decoration: var(--title-decoration);
+  --color-paper-deep: var(--paper-deep);
 
   --color-lilac: var(--palette-lilac);
   --color-purple: var(--palette-purple);
