@@ -53,5 +53,11 @@
     "title": "Áreas Temáticas",
     "description": "Algumes de nós, que somos pesquisadories, produzimos conteúdos em forma de artigo sobre a nossa comunidade não-binária relacionada com áreas temáticas, como Saúde, Tecnologia, Direito, etc.",
     "button": "Afunde-se nos nossos artigos"
+  },
+  "joinOurUnion": {
+    "title": "Faça parte da nossa união",
+    "description": "Costumamos nos comunicar interna e continuamente pelo Telegram para discutir pautas, desenvolver grupos de trabalho, apoiar outras coletives não-bináries e demais movimentações na articulação. Além disso, temos grupos diferentes para cada área temática, como comunicação, programação e saúde.",
+    "button": "Entre na nossa articulação",
+    "timeEstimate": "Leva de 1 a 2 minutos"
   }
 }
