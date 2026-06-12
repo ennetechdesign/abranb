@@ -23,7 +23,7 @@ export default function Doacao() {
                         height={248}
                         src="/images/code-doe.png"
                         alt="QR-code"
-                        className="w-62.5 h-62" />
+                        className="w-62.5 h-62 rounded-[20px]" />
                 </div>
 
                 <div>
