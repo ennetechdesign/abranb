@@ -3,6 +3,7 @@ import type { ComponentType } from "react";
 import HistoriaHero from "./sections/hero";
 import HistoriaIntro from "./sections/intro";
 import HistoriaMapa from "./sections/mapa";
+import HistoriaPrincipios from "./sections/principios";
 import HistoriaTimelineSection from "./sections/timeline";
 import {
   historiaSectionIds,
@@ -11,14 +12,18 @@ import {
   type HistoriaSectionProps,
 } from "./types";
 
-const sectionComponents: Record<
-  HistoriaSectionId,
-  ComponentType<HistoriaSectionProps>
-> = {
+const sectionComponents: {
+  "linha-do-tempo": ({id, copy}: HistoriaSectionProps) => JSX.Element;
+  "o-que-somos": ({id, copy}: HistoriaSectionProps) => JSX.Element;
+  principios: ({id, copy}: HistoriaSectionProps) => JSX.Element;
+  mapa: ({id, copy}: HistoriaSectionProps) => JSX.Element;
+  hero: ({id, copy}: HistoriaSectionProps) => JSX.Element
+} = {
   hero: HistoriaHero,
   "o-que-somos": HistoriaIntro,
   "linha-do-tempo": HistoriaTimelineSection,
   mapa: HistoriaMapa,
+  principios: HistoriaPrincipios,
 };
 
 type HistoriaSectionsProps = {

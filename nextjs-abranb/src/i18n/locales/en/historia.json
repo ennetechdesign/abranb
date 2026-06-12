@@ -143,5 +143,15 @@
       "color": "anulado",
       "segments": [{ "type": "text", "value": "Provision annulled" }]
     }
+  ],
+  "principios_title": "Our Principles",
+  "principios_items": [
+    "Independence/autonomy in relation to other organizations (collectives, NGOs, unions, parties, mandates, companies)",
+    "Horizontality among all members",
+    "Fair distribution of tasks and activities, and collective commitment",
+    "Pursuit of consensus building",
+    "Fair division of speaking time for everyone",
+    "No one speaks on behalf of the articulation without prior consultation with our collective",
+    "No lawsuits or legal measures against another member for personal fights or ego disputes"
   ]
 }
