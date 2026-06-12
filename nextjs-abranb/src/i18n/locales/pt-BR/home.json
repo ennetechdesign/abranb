@@ -59,5 +59,12 @@
     "description": "Costumamos nos comunicar interna e continuamente pelo Telegram para discutir pautas, desenvolver grupos de trabalho, apoiar outras coletives não-bináries e demais movimentações na articulação. Além disso, temos grupos diferentes para cada área temática, como comunicação, programação e saúde.",
     "button": "Entre na nossa articulação",
     "timeEstimate": "Leva de 1 a 2 minutos"
+  },
+  "donation": {
+    "title": "Doe qualquer valor para nós",
+    "description": "Uma doação também é uma forma válida de ajudar pessoas e organizações diversas, e isso conta muito para que a nossa articulação continue de pé em nossas atividades. Juntes, construímos um mundo mais empático e includente para todes. Sua contribuição faz toda a diferença!",
+    "pixLabel": "Copiar chave pix:",
+    "pixButton": "abranb.associacao@gmail.com",
+    "paypalButton": "Doar via PayPal"
   }
 }
