@@ -9,6 +9,7 @@ export type HistoriaTimelineEntry = {
 };
 
 type HistoriaTimelineProps = {
+  id?: string;
   title: string;
   entries: HistoriaTimelineEntry[];
 };
@@ -25,16 +26,17 @@ function renderBodySegments(segments: HistoriaTimelineBodySegment[]) {
 
 /** Desktop: grid 1fr / auto / 1fr so the middle column is geometrically centered on the spine (50%). */
 const rowLayout =
-  "flex flex-col items-center gap-8 pb-8 last:pb-8 md:grid md:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] md:items-center md:gap-x-0 md:pb-14 md:last:pb-10";
+  "flex flex-col items-center gap-4 pb-10 last:pb-8 md:grid md:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] md:items-center md:gap-x-0 md:pb-14 md:last:pb-10";
 
 const yearCell =
   "historia-timeline-year order-1 shrink-0 md:order-none md:col-start-2 md:row-start-1 md:justify-self-center md:z-[2]";
 
-export function HistoriaTimeline({ title, entries }: HistoriaTimelineProps) {
+export function HistoriaTimeline({ id, title, entries }: HistoriaTimelineProps) {
   const headingId = "historia-timeline-heading";
 
   return (
     <section
+      id={id}
       className="historia-timeline"
       aria-labelledby={headingId}
     >
