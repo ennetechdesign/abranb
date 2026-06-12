@@ -124,7 +124,7 @@ export function AccessibilityMenu({
   return (
       <div
           className={[
-            "border-charcoal/15 bg-gold text-ink box-border w-full min-w-50 rounded-3xl border p-6 shadow-sm sm:p-8",
+            "border-charcoal/15 bg-gold text-ink box-border w-full min-w-50 rounded-3xl border p-6 sm:p-8",
             className,
           ]
             .filter(Boolean)

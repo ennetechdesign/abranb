@@ -89,7 +89,7 @@ export function Header({
                   triggerLabel={t("a11y_open_button")}
                   triggerIcon={<FontAwesomeIcon
                       icon={faPerson}
-                      className="size-[22px] shrink-0"
+                      className="size-[16px] shrink-0"
                       aria-hidden
                   />}
                   showChevron={false}

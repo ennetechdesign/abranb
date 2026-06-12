@@ -81,9 +81,9 @@ function triggerVariantClasses(
 ) {
   if (variant === "purple") {
     if (iconOnly) {
-      return "bg-purple text-body flex size-11 shrink-0 items-center justify-center rounded-md font-medium text-white shadow-sm transition-opacity hover:opacity-95 focus-visible:outline-offset-2";
+      return "bg-purple text-body flex size-11 shrink-0 items-center justify-center rounded-md font-medium text-white transition-opacity hover:opacity-95 focus-visible:outline-offset-2";
     }
-    return "bg-purple text-body flex items-center gap-2.5 rounded-md px-4 py-2.5 font-medium text-white shadow-sm transition-opacity hover:opacity-95 focus-visible:outline-offset-2";
+    return "bg-purple text-body flex items-center gap-2.5 rounded-md px-4 py-2.5 font-medium text-white transition-opacity hover:opacity-95 focus-visible:outline-offset-2";
   }
   if (variant === "textOnPurple") {
     return "text-body flex items-center gap-1 font-semibold text-white transition-opacity hover:opacity-90 focus-visible:outline-offset-2";
