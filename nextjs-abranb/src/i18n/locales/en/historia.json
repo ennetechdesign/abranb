@@ -115,5 +115,33 @@
         }
       ]
     }
+  ],
+  "mapa_title": "Official non-binary recognition map by state",
+  "mapa_alt": "Map of Brazil colored by non-binary recognition status in each state",
+  "mapa_legend": [
+    {
+      "color": "provimento",
+      "segments": [
+        { "type": "text", "value": "Recognition by " },
+        { "type": "emphasis", "value": "administrative provision" }
+      ]
+    },
+    {
+      "color": "judicial",
+      "segments": [
+        {
+          "type": "text",
+          "value": "Recognition only through legal action"
+        }
+      ]
+    },
+    {
+      "color": "sem",
+      "segments": [{ "type": "text", "value": "No legal recognition" }]
+    },
+    {
+      "color": "anulado",
+      "segments": [{ "type": "text", "value": "Provision annulled" }]
+    }
   ]
 }
