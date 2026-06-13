@@ -53,5 +53,11 @@
     "title": "Thematic Areas",
     "description": "Some of us, as researchers, produce article-based content about our non-binary community across thematic fields such as Health, Technology, Law, and more.",
     "button": "Dive into our articles"
+  },
+  "joinOurUnion": {
+    "title": "Become Part of Our Network",
+    "description": "We communicate internally and continuously through Telegram to discuss initiatives, develop working groups, support other non-binary collectives, and coordinate activities within the network. We also have dedicated groups for different thematic areas, such as communication, programming, and health.",
+    "button": "Join Our Network",
+    "timeEstimate": "Takes 1 to 2 minutes"
   }
 }

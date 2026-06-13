@@ -10,7 +10,8 @@ type BtnLinkProps = {
     link: string;
     colorText?: string,
     textSize?: string,
-    children?: React.ReactNode | null
+    children?: React.ReactNode | null,
+    target?: string
 }
 
 function variantsBtnsStyles(variant: "yellow/purple" | "purple/yellow" | "purple" | "yellow" | "opacity/yellow") {
@@ -44,10 +45,12 @@ export default function BtnLink({
     variant= "yellow/purple", 
     link, colorText = "deep", 
     textSize = "lead",
-    children = null}: BtnLinkProps) {
+    children = null,
+    target = "_self"
+}: BtnLinkProps) {
 
     return (
-        <Link href={link}>
+        <Link href={link} target={target}  rel="noopener noreferrer">
             <button className={`py-2.5 px-5 md:py-4 md:px-7 inline-flex items-center font-bold justify-center  
                      rounded-4xl text-${textSize} text-${colorText} cursor-pointer ${variantsBtnsStyles(variant)}`}>
                 {children ? 

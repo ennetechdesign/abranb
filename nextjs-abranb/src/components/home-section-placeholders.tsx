@@ -10,6 +10,7 @@ import SinteseDePautas from "./componentsHome/sections/sintese-pautas";
 import DocsProduzidos from "./componentsHome/sections/docs-produzidos";
 import ArquivosHistoricos from "./componentsHome/sections/arquivos-historicos";
 import AreasTematicas from "./componentsHome/sections/areas-tematicas";
+import FacaParte from "./componentsHome/sections/faca-parte";
 
 // TODO: Montar as seções da página home
 export function HomeSectionPlaceholders() {
@@ -21,7 +22,8 @@ export function HomeSectionPlaceholders() {
   "sintese-pautas": SinteseDePautas,
   "documentos-produzidos": DocsProduzidos,
   "arquivos-historicos": ArquivosHistoricos,
-  "areas-tematicas": AreasTematicas
+  "areas-tematicas": AreasTematicas,
+  "faca-parte": FacaParte
 };
 
   return (
