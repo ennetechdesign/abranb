@@ -43,5 +43,10 @@
       "annualReport": "1st ABRANB Annual Report",
       "moreDocuments": "Access more of our documents"
     }
+  },
+  "historicalArchives": {
+    "title": "Historical Archives",
+    "description": "One of our collective efforts has been gathering images, articles, and books related to our gender-diverse communities (non-binary, trans, and travesti) to help preserve the memory and history of those who came before us.",
+    "button": "Access these archives"
   }
 }

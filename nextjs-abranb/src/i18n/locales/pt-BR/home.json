@@ -43,5 +43,10 @@
       "annualReport": "1° Relatório Anual da ABRANB",
       "moreDocuments": "Acesse mais de nossos documentos"
     }
+  },
+  "historicalArchives": {
+    "title": "Arquivos históricos",
+    "description": "Um dos nossos trabalhos na articulação foi reunir imagens, artigos e livros relacionados às nossas comunidades dissidentes de gênero (não-binária, trans, travesti) com o intuito de não deixar o passado de nosses ancestrais ser apagado.",
+    "button": "Acesse esses arquivos"
   }
 }
