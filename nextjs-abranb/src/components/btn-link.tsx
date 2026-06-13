@@ -6,14 +6,14 @@ import Link from "next/link";
 
 type BtnLinkProps = {
     text?: string;
-    variant: "yellow/purple" | "purple" | "yellow" | "opacity/yellow";
+    variant: "yellow/purple" | "purple/yellow" | "purple" | "yellow" | "opacity/yellow";
     link: string;
     colorText?: string,
     textSize?: string,
     children?: React.ReactNode | null
 }
 
-function variantsBtnsStyles(variant: "yellow/purple" | "purple" | "yellow"| "opacity/yellow") {
+function variantsBtnsStyles(variant: "yellow/purple" | "purple/yellow" | "purple" | "yellow" | "opacity/yellow") {
     if (variant === "yellow/purple") {
         return `
             bg-gold/50 border hover:bg-gold border-1 border-gold 
@@ -21,6 +21,14 @@ function variantsBtnsStyles(variant: "yellow/purple" | "purple" | "yellow"| "opa
             [html[data-color-scheme='night']_&]:border-purple [html[data-color-scheme='night']_&]:text-paper 
             [html[data-color-scheme='high-contrast']_&]:bg-purple/50 [html[data-color-scheme='high-contrast']_&]:border-purple 
             [html[data-color-scheme='high-contrast']_&]:hover:bg-purple [html[data-color-scheme='high-contrast']_&]:text-paper
+        `
+    } else if (variant === "purple/yellow") {
+        return `
+            bg-purple/50 border hover:bg-purple border-1 border-purple
+            [html[data-color-scheme='night']_&]:bg-gold/50 [html[data-color-scheme='night']_&]:hover:bg-gold
+            [html[data-color-scheme='night']_&]:border-gold 
+            [html[data-color-scheme='high-contrast']_&]:bg-gold/50 [html[data-color-scheme='high-contrast']_&]:border-gold 
+            [html[data-color-scheme='high-contrast']_&]:hover:bg-gold
         `
     } else if(variant === "purple") {
        return `bg-purple/50 border-1 border-purple hover:bg-purple`

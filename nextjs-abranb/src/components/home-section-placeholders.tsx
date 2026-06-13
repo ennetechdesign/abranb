@@ -9,6 +9,7 @@ import Coletives from "./componentsHome/sections/coletives";
 import SinteseDePautas from "./componentsHome/sections/sintese-pautas";
 import DocsProduzidos from "./componentsHome/sections/docs-produzidos";
 import ArquivosHistoricos from "./componentsHome/sections/arquivos-historicos";
+import AreasTematicas from "./componentsHome/sections/areas-tematicas";
 
 // TODO: Montar as seções da página home
 export function HomeSectionPlaceholders() {
@@ -19,7 +20,8 @@ export function HomeSectionPlaceholders() {
   "nossas-conexoes": Coletives,
   "sintese-pautas": SinteseDePautas,
   "documentos-produzidos": DocsProduzidos,
-  "arquivos-historicos": ArquivosHistoricos
+  "arquivos-historicos": ArquivosHistoricos,
+  "areas-tematicas": AreasTematicas
 };
 
   return (
