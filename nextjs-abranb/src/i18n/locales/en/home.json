@@ -59,5 +59,12 @@
     "description": "We communicate internally and continuously through Telegram to discuss initiatives, develop working groups, support other non-binary collectives, and coordinate activities within the network. We also have dedicated groups for different thematic areas, such as communication, programming, and health.",
     "button": "Join Our Network",
     "timeEstimate": "Takes 1 to 2 minutes"
+  },
+  "donation": {
+    "title": "Donate Any Amount",
+    "description": "A donation is also a meaningful way to support diverse people and organizations, helping our network continue its activities and initiatives. Together, we build a more empathetic and inclusive world for everyone. Your contribution makes a real difference!",
+    "pixLabel": "Copy PIX key:",
+    "pixButton": "abranb.associacao@gmail.com",
+    "paypalButton": "Donate via PayPal"
   }
 }
