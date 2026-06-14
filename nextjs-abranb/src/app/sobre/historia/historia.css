@@ -8,11 +8,19 @@ html[data-color-scheme="night"] .historia-panel {
   background-color: #3c3444;
 }
 
+html[data-color-scheme="high-contrast"] .historia-panel {
+  background-color: #3c3444;
+}
+
 .historia-subheading {
   color: var(--palette-purple);
 }
 
 html[data-color-scheme="night"] .historia-subheading {
+  color: var(--palette-golden-yellow);
+}
+
+html[data-color-scheme="high-contrast"] .historia-subheading {
   color: var(--palette-golden-yellow);
 }
 
@@ -25,6 +33,11 @@ html[data-color-scheme="night"] .historia-subheading {
 }
 
 html[data-color-scheme="night"] .historia-rule {
+  height: 4px;
+  background-color: var(--palette-golden-yellow);
+}
+
+html[data-color-scheme="high-contrast"] .historia-rule {
   height: 4px;
   background-color: var(--palette-golden-yellow);
 }
@@ -45,6 +58,58 @@ html[data-color-scheme="night"] .historia-body {
 
 html[data-color-scheme="night"] .historia-body strong {
   color: var(--palette-golden-yellow);
+}
+
+html[data-color-scheme="high-contrast"] .historia-body {
+  color: #ffffff;
+}
+
+html[data-color-scheme="high-contrast"] .historia-body strong {
+  color: var(--palette-golden-yellow);
+}
+
+/* Map section */
+
+.historia-mapa-image {
+  object-fit: contain;
+}
+
+.historia-mapa-legend {
+  color: var(--palette-ink);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+html[data-color-scheme="night"] .historia-mapa-legend {
+  color: color-mix(in srgb, var(--palette-ivory) 90%, transparent);
+}
+
+html[data-color-scheme="high-contrast"] .historia-mapa-legend {
+  color: #ffffff;
+}
+
+.historia-mapa-legend-dot {
+  flex-shrink: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 9999px;
+}
+
+.historia-mapa-legend-dot--provimento {
+  background-color: #00c86f;
+}
+
+.historia-mapa-legend-dot--judicial {
+  background-color: #9c5fd9;
+}
+
+.historia-mapa-legend-dot--sem {
+  background-color: #f0ede9;
+}
+
+.historia-mapa-legend-dot--anulado {
+  background-color: #f66d7a;
 }
 
 /* Timeline — fixed purple/gold (same in day and night) */

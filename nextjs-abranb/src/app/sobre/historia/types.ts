@@ -12,6 +12,7 @@ export const historiaSectionIds = [
   "hero",
   "o-que-somos",
   "linha-do-tempo",
+  "mapa",
 ] as const;
 
 export type HistoriaSectionId = (typeof historiaSectionIds)[number];

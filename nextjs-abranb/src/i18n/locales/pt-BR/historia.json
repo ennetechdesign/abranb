@@ -115,5 +115,33 @@
         }
       ]
     }
+  ],
+  "mapa_title": "Mapa de reconhecimento não-binário oficial por Estado",
+  "mapa_alt": "Mapa do Brasil colorido por status de reconhecimento não-binário em cada estado",
+  "mapa_legend": [
+    {
+      "color": "provimento",
+      "segments": [
+        { "type": "text", "value": "Reconhecimento por " },
+        { "type": "emphasis", "value": "provimento" }
+      ]
+    },
+    {
+      "color": "judicial",
+      "segments": [
+        {
+          "type": "text",
+          "value": "Reconhecimento apenas através de ações judiciais"
+        }
+      ]
+    },
+    {
+      "color": "sem",
+      "segments": [{ "type": "text", "value": "Sem reconhecimento jurídico" }]
+    },
+    {
+      "color": "anulado",
+      "segments": [{ "type": "text", "value": "Provimento anulado" }]
+    }
   ]
 }
