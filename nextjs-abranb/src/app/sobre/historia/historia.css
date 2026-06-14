@@ -96,7 +96,7 @@ html[data-color-scheme="night"] .historia-body strong {
   position: absolute;
   left: 50%;
   top: 0;
-  bottom: 0;
+  bottom: 40px;
   z-index: 0;
   width: 2px;
   transform: translateX(-50%);
@@ -110,7 +110,6 @@ html[data-color-scheme="night"] .historia-body strong {
     bottom: 240px;
   }
 }
-
 
 .historia-timeline-list {
   position: relative;
@@ -149,7 +148,7 @@ html[data-color-scheme="night"] .historia-body strong {
 
 .historia-timeline-card {
   width: 100%;
-  max-width: 25rem;
+  max-width: 30rem;
   border-radius: 2.75rem;
   background-color: var(--palette-gold);
   padding: 1.25rem 1.35rem;
