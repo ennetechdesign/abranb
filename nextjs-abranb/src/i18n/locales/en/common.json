@@ -55,5 +55,20 @@
   "about_heading": "About",
   "about_lead": "This page is a placeholder. Replace this copy with your content.",
   "about_meta_description": "About ABRANB.",
-  "about_meta_title": "About"
+  "about_meta_title": "About",
+
+  "footer_region_label": "Footer",
+  "footer_social_nav_label": "Social media",
+  "footer_professionals_heading": "Non-Binary Professionals",
+  "footer_professionals_nav_label": "Non-binary professionals",
+  "footer_research_heading": "Research Sources",
+  "footer_research_nav_label": "Research sources",
+  "footer_prof_psychology": "Psychology",
+  "footer_prof_psychology_note": "(register first)",
+  "footer_prof_psychiatry": "Psychiatry",
+  "footer_prof_endocrinology": "Endocrinology",
+  "footer_copyright_motto": "United for a more non-binary world 💜",
+  "footer_social_instagram": "ABRANB on Instagram",
+  "footer_social_facebook": "ABRANB on Facebook",
+  "footer_social_email": "Email ABRANB"
 }

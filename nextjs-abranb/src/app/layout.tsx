@@ -7,6 +7,7 @@ import {
 } from "next/font/google";
 
 import { I18nProvider } from "@/app/providers";
+import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import {
   COLOR_SCHEME_COOKIE,
@@ -85,6 +86,7 @@ export default async function RootLayout({
             initialTextSize={textSize}
           />
           {children}
+          <Footer />
         </I18nProvider>
       </body>
     </html>
