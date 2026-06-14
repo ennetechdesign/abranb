@@ -143,5 +143,15 @@
       "color": "anulado",
       "segments": [{ "type": "text", "value": "Provimento anulado" }]
     }
+  ],
+  "principios_title": "Nossos Princípios",
+  "principios_items": [
+    "Independência/autonomia em relação a outras organizações (coletivos, ONGs, sindicatos, partidos, mandatos, empresas)",
+    "Horizontalidade entre todes es membres",
+    "Distribuição justa de tarefas e atividades, e compromisso coletivo",
+    "Busca na construção de consensos",
+    "Divisão de tempo justa de fala para todes",
+    "Ninguém fala em nome da articulação sem consulta prévia ao nosso coletivo",
+    "Sem processos ou medidas legais contra ume outre membre por brigas pessoais ou disputa de ego"
   ]
 }

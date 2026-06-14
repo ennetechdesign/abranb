@@ -9,7 +9,7 @@ html[data-color-scheme="night"] .historia-panel {
 }
 
 html[data-color-scheme="high-contrast"] .historia-panel {
-  background-color: #3c3444;
+  background-color: var(--palette-deep);
 }
 
 .historia-subheading {
@@ -110,6 +110,89 @@ html[data-color-scheme="high-contrast"] .historia-mapa-legend {
 
 .historia-mapa-legend-dot--anulado {
   background-color: #f66d7a;
+}
+
+/* Principios section */
+
+.historia-principios-list {
+  --historia-principios-accent: var(--palette-gold);
+  --historia-principios-text: var(--palette-ink);
+  --historia-principios-fade: color-mix(
+    in srgb,
+    var(--historia-principios-accent) 5%,
+    transparent
+  );
+
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+html[data-color-scheme="night"] .historia-principios-list {
+  --historia-principios-accent: var(--palette-purple);
+  --historia-principios-text: color-mix(
+    in srgb,
+    var(--palette-ivory) 90%,
+    transparent
+  );
+}
+
+html[data-color-scheme="high-contrast"] .historia-principios-list {
+  --historia-principios-accent: var(--palette-purple);
+  --historia-principios-text: #ffffff;
+}
+
+.historia-principios-item {
+  width: 100%;
+  padding: 0.875rem 1.5rem;
+  border-radius: 50px;
+  text-align: center;
+  font-size: var(--font-size-small);
+  line-height: 1.55;
+  color: var(--historia-principios-text);
+  background: linear-gradient(
+    to bottom,
+    var(--historia-principios-accent),
+    var(--historia-principios-fade)
+  );
+}
+
+@media (width >= 768px) {
+  .historia-principios-list {
+    gap: 2rem;
+  }
+
+  .historia-principios-item {
+    width: auto;
+    max-width: 85%;
+    padding: 1rem 2.5rem;
+    background: none;
+  }
+
+  .historia-principios-item--left {
+    align-self: flex-start;
+    text-align: left;
+    padding-right: 3.5rem;
+    background: linear-gradient(
+      to right,
+      var(--historia-principios-accent),
+      var(--historia-principios-fade)
+    );
+  }
+
+  .historia-principios-item--right {
+    align-self: flex-end;
+    text-align: right;
+    padding-left: 3.5rem;
+    background: linear-gradient(
+      to left,
+      var(--historia-principios-accent),
+      var(--historia-principios-fade)
+    );
+  }
 }
 
 /* Timeline — fixed purple/gold (same in day and night) */
