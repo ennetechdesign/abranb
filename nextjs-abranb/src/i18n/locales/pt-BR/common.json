@@ -56,5 +56,20 @@
   "about_heading": "Sobre",
   "about_lead": "Esta página é um espaço reservado. Substitua este texto pelo conteúdo desejado.",
   "about_meta_description": "Sobre a ABRANB.",
-  "about_meta_title": "Sobre"
+  "about_meta_title": "Sobre",
+
+  "footer_region_label": "Rodapé",
+  "footer_social_nav_label": "Redes sociais",
+  "footer_professionals_heading": "Profissionais Não-Bináries",
+  "footer_professionals_nav_label": "Profissionais não-binários",
+  "footer_research_heading": "Fontes de Pesquisa",
+  "footer_research_nav_label": "Fontes de pesquisa",
+  "footer_prof_psychology": "Psicologia",
+  "footer_prof_psychology_note": "(cadastre-se primeiro)",
+  "footer_prof_psychiatry": "Psiquiatria",
+  "footer_prof_endocrinology": "Endocrinologia",
+  "footer_copyright_motto": "Unides por um mundo mais não-binário 💜",
+  "footer_social_instagram": "Instagram da ABRANB",
+  "footer_social_facebook": "Facebook da ABRANB",
+  "footer_social_email": "Enviar e-mail para a ABRANB"
 }

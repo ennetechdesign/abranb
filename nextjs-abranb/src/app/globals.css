@@ -13,6 +13,8 @@
   --palette-charcoal: #322a38;
   --palette-paper: #fffefb;
   --palette-ivory: #fffbf0;
+  --palette-footer-bronze: #967444;
+  --palette-footer-brown: #3b2621;
 
   --text-zoom: 1;
 
@@ -47,6 +49,13 @@
   --button-secondary-hover: color-mix(in srgb, var(--palette-purple) 72%, #ffffff);
   --button-secondary-active: color-mix(in srgb, var(--palette-purple) 45%, var(--palette-deep));
   --button-secondary-active-ring: color-mix(in srgb, var(--palette-lilac) 55%, #ffffff);
+
+  --footer-bg: var(--palette-gold);
+  --footer-heading: var(--palette-purple);
+  --footer-link: var(--palette-ink);
+  --footer-link-research: var(--palette-ink);
+  --footer-social-ring: var(--palette-purple);
+  --footer-border: color-mix(in srgb, var(--palette-purple) 35%, transparent);
 }
 
 html[data-text-size="large"] {
@@ -81,6 +90,12 @@ html[data-color-scheme="night"] {
   --focus-ring: var(--palette-gold);
   --title-decoration: var(--palette-gold);
   --paper-deep: var(--palette-deep);
+  --footer-bg: var(--palette-footer-bronze);
+  --footer-heading: var(--palette-gold);
+  --footer-link: var(--palette-paper);
+  --footer-link-research: var(--palette-paper);
+  --footer-social-ring: var(--palette-gold);
+  --footer-border: color-mix(in srgb, var(--palette-paper) 25%, transparent);
 }
 
 html[data-color-scheme="high-contrast"] {
@@ -94,6 +109,12 @@ html[data-color-scheme="high-contrast"] {
   --focus-ring: #ffff00;
   --title-decoration: var(--palette-gold);
   --paper-deep: var(--palette-deep);
+  --footer-bg: var(--palette-footer-brown);
+  --footer-heading: var(--palette-gold);
+  --footer-link: var(--palette-paper);
+  --footer-link-research: var(--palette-paper);
+  --footer-social-ring: var(--palette-gold);
+  --footer-border: color-mix(in srgb, var(--palette-paper) 25%, transparent);
 }
 
 html[data-font="sans"] body {
@@ -145,6 +166,13 @@ html[data-font="mono"] body {
   --color-button-secondary-hover: var(--button-secondary-hover);
   --color-button-secondary-active: var(--button-secondary-active);
   --color-button-secondary-active-ring: var(--button-secondary-active-ring);
+
+  --color-footer-bg: var(--footer-bg);
+  --color-footer-heading: var(--footer-heading);
+  --color-footer-link: var(--footer-link);
+  --color-footer-link-research: var(--footer-link-research);
+  --color-footer-social-ring: var(--footer-social-ring);
+  --color-footer-border: var(--footer-border);
 
   --font-sans: var(--font-lexend), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-merriweather), ui-serif, Georgia, serif;
