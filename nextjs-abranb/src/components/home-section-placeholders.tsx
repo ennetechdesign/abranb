@@ -12,6 +12,7 @@ import ArquivosHistoricos from "./componentsHome/sections/arquivos-historicos";
 import AreasTematicas from "./componentsHome/sections/areas-tematicas";
 import FacaParte from "./componentsHome/sections/faca-parte";
 import Doacao from "./componentsHome/sections/doacao";
+import EntreEmContato from "./componentsHome/sections/entre-em-contato";
 
 // TODO: Montar as seções da página home
 export function HomeSectionPlaceholders() {
@@ -24,6 +25,7 @@ export function HomeSectionPlaceholders() {
   "documentos-produzidos": DocsProduzidos,
   "arquivos-historicos": ArquivosHistoricos,
   "areas-tematicas": AreasTematicas,
+  "contato": EntreEmContato,
   "faca-parte": FacaParte,
   "doacao": Doacao,
 };

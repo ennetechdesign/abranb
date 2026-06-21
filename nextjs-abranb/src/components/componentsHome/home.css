@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "../../app/globals.css";
 
 ::-webkit-scrollbar {
   width: 8px;
@@ -9,17 +10,17 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(255,255,255,0.2);
+  background: rgba(255, 255, 255, 0.2);
   border-radius: 999px;
   backdrop-filter: blur(4px);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(255,255,255,0.35);
+  background: rgba(255, 255, 255, 0.35);
 }
 
 .box-slide {
-    @apply min-w-82.5 max-w-82.5 lg:min-w-217 lg:max-h-67.5
+  @apply min-w-82.5 max-w-82.5 lg:min-w-217 lg:max-h-67.5
 }
 
 html[data-text-size="large"] .box-slide {
@@ -42,4 +43,41 @@ html[data-color-scheme="night"] .bg-linear {
 
 html[data-color-scheme="high-contrast"] .bg-linear {
   @apply bg-linear-to-r from-[#9c5fd9] to-[#9c5fd9]/5
+}
+
+
+/*   Form contato  */
+
+.label-contato {
+  @apply text-lead font-semibold mb-2.5 block
+}
+
+.input-contato {
+  @apply border-2 border-purple px-7.5 py-4.5 rounded-[50px] bg-lilac/30
+}
+
+.form-contato {
+  @apply space-y-8 lg:space-y-10 w-full flex flex-col justify-center max-w-[630px]
+}
+
+.input-contato {
+  @apply w-full -outline-offset-0
+}
+
+.btn-contato-submit {
+  @apply cursor-pointer border-2 border-gold bg-gold/50 h-16.5 px-12.5 rounded-[50px] text-lead font-bold
+}
+html[data-color-scheme="night"] .input-contato {
+  @apply border-gold bg-lilac/10
+}
+html[data-color-scheme="high-contrast"] .input-contato {
+  @apply border-gold bg-lilac/5
+}
+
+html[data-color-scheme="night"] .btn-contato-submit {
+  @apply bg-purple/50 hover:bg-purple border-purple text-paper
+}
+
+html[data-color-scheme="high-contrast"] .btn-contato-submit {
+  @apply bg-purple/50 hover:bg-purple border-purple text-paper
 }
