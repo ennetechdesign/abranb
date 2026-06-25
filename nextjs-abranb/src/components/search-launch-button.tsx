@@ -10,7 +10,7 @@ export type SearchLaunchButtonProps = {
 function SearchIcon({ className }: { className?: string }) {
   return (
     <svg
-      className={className}
+      className={`${className} text-background`}
       width={20}
       height={20}
       viewBox="0 0 24 24"
@@ -39,7 +39,7 @@ export function SearchLaunchButton({
     <button
       type="button"
       className={[
-        "inline-flex size-10 shrink-0 items-center justify-center rounded-full bg-button-primary text-ink transition-opacity hover:opacity-95 focus-visible:outline-offset-2 md:size-11",
+        "inline-flex size-10 shrink-0 items-center justify-center rounded-full bg-title-decoration text-ink transition-opacity hover:opacity-95 focus-visible:outline-offset-2 md:size-11",
         className,
       ]
         .filter(Boolean)
