@@ -16,7 +16,7 @@ import {
   navAboutDropdownItems,
 } from "@/config/nav";
 import type { ColorScheme, FontFamily, TextSize } from "@/lib/a11y-preferences";
-import { faPerson } from "@fortawesome/free-solid-svg-icons";
+import { faUniversalAccess } from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 const DRAWER_ID = "site-nav-drawer";
@@ -56,14 +56,14 @@ export function Header({
 
   const navLinkClass = (active: boolean) =>
     [
-      "text-body font-semibold transition-colors focus-visible:outline-offset-2",
-      active ? "text-button-primary" : "text-white hover:opacity-90",
+      "text-body font-semibold text-muted-foreground transition-colors focus-visible:outline-offset-2",
+      active ? " text-title-decoration font-bold" : "hover:text-title-decoration ",
     ].join(" ");
 
   return (
     <>
-      <header className="sticky top-0 z-[70] border-b border-white/15 bg-purple text-white shadow-md">
-        <div className="mx-auto flex h-14 max-w-[1600px] items-center gap-3 px-0 md:h-16 md:gap-6">
+      <header className="sticky top-0 z-70 h-20 border-b border-white/15 bg-background-hero shadow-md">
+        <div className="flex justify-between relative w-full h-full max-md:max-w-400 items-center gap-3 md:gap-6 px-3.75 md:px-7.5">
           <div className="flex min-w-0 shrink-0 items-center gap-2 md:gap-4">
             <HamburgerMenuTrigger
                 ariaControls={DRAWER_ID}
@@ -76,20 +76,20 @@ export function Header({
                 className="flex min-w-0 items-center gap-2 rounded-md focus-visible:outline-offset-2"
             >
               <LogoMark className="size-9 shrink-0 md:size-10"/>
-              <span className="truncate text-heading font-bold uppercase tracking-wide">
+              <span className="truncate text-heading font-medium uppercase tracking-wide hover:text-title-decoration transition-colors">
                 ABRANB
               </span>
             </Link>
           </div>
 
-          <div className="flex min-w-0 flex-1 items-center justify-center md:justify-between">
+          <div className="flex min-w-0 items-center justify-center md:justify-between">
             <div className="flex shrink-0 items-center gap-1 md:gap-2">
               <DropdownMenu
                   triggerVariant="purple"
                   triggerLabel={t("a11y_open_button")}
                   triggerIcon={<FontAwesomeIcon
-                      icon={faPerson}
-                      className="size-[16px] shrink-0"
+                      icon={faUniversalAccess}
+                      className="size-4 text-lg md:text-xl"
                       aria-hidden
                   />}
                   showChevron={false}
@@ -98,7 +98,7 @@ export function Header({
                   ariaHasPopup="dialog"
                   panelRole="dialog"
                   triggerClassName="shadow-none"
-                  panelClassName="min-w-75 max-w-80 md:min-w-[500px] md:max-w-[500px] overflow-x-hidden overflow-y-auto rounded-lg shadow-lg"
+                  panelClassName="min-w-75 max-w-80 sm:min-w-[500px] sm:max-w-[500px] overflow-x-hidden overflow-y-auto rounded-lg shadow-lg"
               >
                 <AccessibilityMenu
                     initialColorScheme={initialColorScheme}
@@ -109,9 +109,9 @@ export function Header({
               </DropdownMenu>
             </div>
           </div>
-          <div className="flex min-w-0 flex-2 items-center justify-end md:justify-between">
+          <div className="flex min-w-0 items-center justify-end md:justify-between">
             <nav
-                className="hidden items-center gap-5 md:flex lg:gap-6"
+                className="hidden items-center gap-5 xl:flex lg:gap-6"
                 aria-label={t("nav_main_label")}
             >
               <Link href="/" className={navLinkClass(pathname === "/")}>

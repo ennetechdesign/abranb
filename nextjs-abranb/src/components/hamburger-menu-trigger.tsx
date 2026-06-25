@@ -21,8 +21,8 @@ function HamburgerIcon({ className }: { className?: string }) {
   return (
     <svg
       className={className}
-      width={22}
-      height={22}
+      width={32}
+      height={32}
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -42,8 +42,8 @@ function CloseIcon({ className }: { className?: string }) {
   return (
     <svg
       className={className}
-      width={22}
-      height={22}
+      width={32}
+      height={32}
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -78,7 +78,7 @@ export function HamburgerMenuTrigger({
     <button
       type="button"
       className={[
-        "inline-flex size-10 items-center justify-center rounded-md text-current transition-opacity hover:opacity-90 focus-visible:outline-offset-2 md:size-11",
+        "inline-flex cursor-pointer size-10 items-center justify-center rounded-md text-current transition-transform duration-200 hover:scale-115 focus-visible:outline-offset-2 md:size-11",
         className,
       ]
         .filter(Boolean)

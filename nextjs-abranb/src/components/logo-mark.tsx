@@ -4,11 +4,11 @@ import Image from "next/image";
 export function LogoMark({ className }: { className?: string }) {
   return (
     <Image
-      src="/logo.jpeg"
+      src="/logo-light.svg"
       alt=""
-      width={256}
-      height={256}
-      className={["object-contain", className].filter(Boolean).join(" ")}
+      width={50}
+      height={50}
+      className={"w-12.5 h-12.5 " + ["object-contain", className].filter(Boolean).join(" ")}
       priority
     />
   );

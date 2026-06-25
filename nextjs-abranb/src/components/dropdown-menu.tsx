@@ -81,19 +81,19 @@ function triggerVariantClasses(
 ) {
   if (variant === "purple") {
     if (iconOnly) {
-      return "bg-purple text-body flex size-11 shrink-0 items-center justify-center rounded-md font-medium text-white transition-opacity hover:opacity-95 focus-visible:outline-offset-2";
+      return "text-body flex size-11 shrink-0 items-center justify-center rounded-md font-medium hover:text-title-decoration cursor-pointer transition-colors focus-visible:outline-offset-2";
     }
-    return "bg-purple text-body flex items-center gap-2.5 rounded-md px-4 py-2.5 font-medium text-white transition-opacity hover:opacity-95 focus-visible:outline-offset-2";
+    return "text-body flex items-center cursor-pointer rounded-md px-4 py-2.5 font-medium transition-colors hover:text-title-decoration transition-colors focus-visible:outline-offset-2";
   }
   if (variant === "textOnPurple") {
-    return "text-body flex items-center gap-1 font-semibold text-white transition-opacity hover:opacity-90 focus-visible:outline-offset-2";
+    return "text-body flex items-center gap-1 font-semibold transition-colors text-muted-foreground hover:text-title-decoration cursor-pointer focus-visible:outline-offset-2";
   }
   return "text-body text-muted-foreground flex items-center gap-1 font-medium transition-colors hover:text-foreground focus-visible:outline-offset-2";
 }
 
 function alignClasses(align: NonNullable<DropdownMenuProps["align"]>) {
   if (align === "center") {
-    return "left-1/2 -translate-x-1/2";
+    return "right-0 max-sm:-translate-y-[15px] -translate-x-[10px] sm:left-1/2 sm:-translate-x-1/2";
   }
   if (align === "end") {
     return "right-0";
@@ -180,7 +180,7 @@ export function DropdownMenu({
   const list = items ?? [];
 
   return (
-    <div ref={rootRef} className={["relative", className].filter(Boolean).join(" ")}>
+    <div ref={rootRef} className={["sm:relative", className].filter(Boolean).join(" ")}>
       <button
         ref={triggerRef}
         type="button"
@@ -197,7 +197,7 @@ export function DropdownMenu({
       >
         {triggerVariant === "purple" && triggerIcon ? (
           <span
-            className="flex size-8 shrink-0 items-center justify-center rounded-full bg-white text-purple"
+            className="flex size-8 shrink-0 items-center justify-center rounded-full"
             aria-hidden
           >
             {triggerIcon}
@@ -205,7 +205,7 @@ export function DropdownMenu({
         ) : null}
         <span
           id={labelId}
-          className={iconOnly && triggerVariant === "purple" ? "sr-only" : undefined}
+          className={`${iconOnly && triggerVariant === "purple" ? "sr-only" : undefined}`}
         >
           {triggerLabel}
         </span>
