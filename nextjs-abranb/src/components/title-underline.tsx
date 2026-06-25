@@ -6,8 +6,8 @@ type TitleUnderlineProps = {
 
 export default function TitleUnderline({ title, color = 'title-decoration', position }: TitleUnderlineProps) {
     return (
-        <div className="flex">
-            <div className={`flex flex-col font-bold items-center max-lg:text-center lg:items-${position} justify-${position}`}>
+        <div className="inline-flex justify-center">
+            <div className={`flex flex-col font-bold items-center max-lg:text-center lg:items-${position} justify-${position} text-${position}`}>
                 <h2 className={`text-display ${color === 'gold' ? 'text-gold' : 'text-title-decoration'} tracking-wide`}>
                     {title}
                 </h2>

@@ -66,5 +66,33 @@
     "pixLabel": "Copy PIX key:",
     "pixButton": "abranb.associacao@gmail.com",
     "paypalButton": "Donate via PayPal"
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "description": "We are open to answering questions, creating new connections, and building partnerships with more people and organizations.",
+    "fields": {
+      "fullName": {
+        "label": "What should we call you?",
+        "placeholder": "Full name"
+      },
+      "organization": {
+        "label": "Which organization do you represent?",
+        "placeholder": "Organization name"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "organization@gmail.com"
+      },
+      "subject": {
+        "label": "Subject (optional)",
+        "placeholder": "Build a new partnership"
+      },
+      "message": {
+        "label": "Tell us what you need",
+        "placeholder": "Hello. How are you all? We hope you're doing well! We would like to ..."
+      }
+    },
+    "submitButton": "Send",
+    "alternativeContactTitle": "Feel free to reach out through other communication channels if you prefer"
   }
 }
