@@ -13,11 +13,11 @@ import {
 } from "./types";
 
 const sectionComponents: {
-  "linha-do-tempo": ({id, copy}: HistoriaSectionProps);
-  "o-que-somos": ({id, copy}: HistoriaSectionProps);
-  principios: ({id, copy}: HistoriaSectionProps);
-  mapa: ({id, copy}: HistoriaSectionProps);
-  hero: ({id, copy}: HistoriaSectionProps)
+  "linha-do-tempo": ({id, copy}: HistoriaSectionProps),
+  "o-que-somos": ({id, copy}: HistoriaSectionProps),
+  principios: ({id, copy}: HistoriaSectionProps),
+  mapa: ({id, copy}: HistoriaSectionProps),
+  hero: ({id, copy}: HistoriaSectionProps),
 } = {
   hero: HistoriaHero,
   "o-que-somos": HistoriaIntro,
