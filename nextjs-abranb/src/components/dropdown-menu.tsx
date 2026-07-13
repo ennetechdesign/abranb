@@ -194,6 +194,7 @@ export function DropdownMenu({
         aria-controls={panelId}
         aria-haspopup={ariaHasPopup}
         onClick={toggle}
+        onMouseEnter={() => setOpen(true)}
       >
         {triggerVariant === "purple" && triggerIcon ? (
           <span
@@ -226,9 +227,11 @@ export function DropdownMenu({
           ]
             .filter(Boolean)
             .join(" ")}
+          onMouseLeave={close}
         >
           {hasItems ? (
-            <div className="min-w-[12rem] rounded-3xl bg-button-primary p-4 text-ink shadow-lg">
+            <div 
+              className="min-w-[12rem] rounded-3xl bg-button-primary p-4 text-ink shadow-lg">
               <div className="flex flex-col items-center gap-3 text-center text-body font-medium">
                 {list.map((item) => (
                   <Link
