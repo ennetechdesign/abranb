@@ -8,7 +8,7 @@ export default function EntendaNB() {
     const { t } = useTranslation("home");
 
     return (
-        <div className="flex flex-col lg:flex-row py-12.5 lg:py-25 px-5 md:px-10 xl:px-20 max-lg:items-center md:justify-between 
+        <div className="flex flex-col lg:flex-row py-12.5 lg:py-25 px-6.5 md:px-10 xl:px-20 items-center md:justify-between 
             2xl:justify-evenly">
             <div className="flex flex-col justify-center items-center lg:items-start lg:w-1/2 lg:mr-15">
 
@@ -26,10 +26,10 @@ export default function EntendaNB() {
 
             <Image
                 width={400}
-                height={300}
+                height={356}
                 src="/images/img-coracao-nb.png"
                 alt={t("understandNonBinarity.imageAlt")}
-                className="max-w-80 max-min-h-71 lg:max-w-full lg:max-h-full mt-10 lg:mt-0" />
+                className="max-w-80 max-min-h-71 lg:max-w-100 lg:max-h-89 lg:min-w-100 lg:min-h-89 mt-10 lg:mt-0" />
         </div>
     )
 }

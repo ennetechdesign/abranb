@@ -10,8 +10,8 @@ type BoxNoticesSlideProps = {
 export default function BoxNoticesSlide({ notice }: { notice: BoxNoticesSlideProps }) {
 
     return (
-        <div className="cursor-grabbing">
-            <div className="flex flex-col lg:flex-row text-ink bg-lilac hover:bg-purple hover:text-white transition-colors 
+        <div className="cursor-grabbing bg-lilac rounded-[40px]">
+            <div className="flex flex-col lg:flex-row text-ink hover:bg-purple hover:text-white transition-colors 
                 duration-300 rounded-[40px] box-slide">
                 <picture className="w-full h-50 lg:min-w-97.5 lg:h-67.5 object-cover rounded-[40px] overflow-hidden">
                     <Image src={notice.foto} width={300} height={300} draggable={false} alt=""
