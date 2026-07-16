@@ -19,12 +19,21 @@
   background: rgba(255, 255, 255, 0.35);
 }
 
+/* O que fizemos */
 .box-slide {
   @apply min-w-82.5 max-w-82.5 lg:min-w-217 lg:max-h-67.5
 }
 
 html[data-text-size="large"] .box-slide {
   @apply lg:max-h-full lg:min-w-240 lg:max-w-240;
+}
+
+html[data-color-scheme="night"] .box-slide {
+  @apply bg-[#120020]/70 text-[#fffefb]  hover:bg-[#9c5fd9];
+}
+
+html[data-color-scheme="high-contrast"] .box-slide {
+  @apply bg-[#120020]/70 text-[#fffefb]  hover:bg-[#9c5fd9];
 }
 
 html[data-text-size="large"] .box-slide picture {
@@ -34,7 +43,7 @@ html[data-text-size="large"] .box-slide picture {
 /*Sintese de Pautas*/
 
 .bg-linear {
-  @apply bg-linear-to-r from-[#f2c230] to-[#f2c230]/5 py-3 lg:py-5 px-6 lg:px-10 rounded-full
+  @apply bg-linear-to-r from-[#f2c230] to-[#f2c230]/5 py-3.5 lg:py-5 px-6 lg:px-10 rounded-full flex hyphens-auto [overflow-wrap:anywhere]
 }
 
 html[data-color-scheme="night"] .bg-linear {

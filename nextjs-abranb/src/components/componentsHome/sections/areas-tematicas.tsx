@@ -16,7 +16,7 @@ export default function AreasTematicas() {
                 alt="Ilustração de arquivos históricos"
                 className="w-79.5 h-75 lg:w-112.5 lg:h-72" />
 
-            <div className="flex flex-col lg:w-2/5 gap-6 max-xl:mb-12.5  lg:ml-15 max-lg:items-center">
+            <div className="flex flex-col items-center lg:w-2/5 gap-6 max-xl:mb-12.5  lg:ml-15 max-lg:items-center">
                 <TitleUnderline title={t("thematicAreas.title")} position="start" />
 
                 <p className="text-lead leading-8.75 lg:leading-10">

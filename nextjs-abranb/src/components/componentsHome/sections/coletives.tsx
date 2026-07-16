@@ -41,14 +41,15 @@ export default function Coletives() {
     const { t } = useTranslation("home");
 
     return (
-        <div className="py-12.5 lg:py-25 px-2.5 lg:px-12.5 flex flex-col justify-center items-center gap-12.5 lg:gap-15">
+        <div className="py-12.5 lg:py-25 px-5 lg:px-12.5 flex flex-col justify-center items-center gap-12.5 lg:gap-15">
 
             <TitleUnderline title={t("partnershipCollectives.title")} position="center" />
 
             <ul className="flex flex-col lg:flex-row lg:flex-wrap gap-7.5 lg:gap-12.5 justify-center items-center">
                 {coletives.map((coletive, i) => (
-                    <li key={i} className="rounded-[100px] pr-7.5 lg:pr-12.5 bg-lilac hover:bg-purple text-charcoal 
-                        hover:text-paper max-w-86 lg:max-w-90 shadow-lg/10 text-body">
+                    <li key={i} className="rounded-[100px] pr-7.5 lg:pr-12.5 bg-lilac hover:bg-purple text-charcoal hover:text-paper max-w-86 
+                        lg:max-w-90 shadow-lg/10 text-body [html[data-color-scheme='night']_&]:bg-lilac/20 [html[data-color-scheme='night']_&]:text-paper 
+                        [html[data-color-scheme='high-contrast']_&]:bg-lilac/20 [html[data-color-scheme='high-contrast']_&]:text-paper">
                         <a href={coletive.link} target="_blank" rel="noopener noreferrer"
                             className="flex justify-start items-center">
                             <picture className="mr-3 lg:mr-4">

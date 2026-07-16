@@ -39,11 +39,11 @@ export default function SlideShow() {
     handleRadioChange } = useCarousel(objNotices.length, 350);
 
   return (
-    <div className="flex flex-col gap-12.5 justify-center items-center">
+    <div className="flex flex-col gap-10 justify-center items-center">
 
       <div className="flex lg:px-[25vw] overflow-x-hidden w-82.5 lg:w-[99vw] justify-start items-center gap-5 
         lg:gap-25 select-none max-lg:overflow-x-scroll"
-        ref={slideRef} 
+        ref={slideRef}
         onMouseDown={handleMouseDown}
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUp}
@@ -57,11 +57,15 @@ export default function SlideShow() {
 
       <div>
         {objNotices.map((_, index) => (
-          <input type="radio" name="slide"
-            key={index}
-            checked={activeIndex === index}
-            className={`appearance-none w-7 h-7 ${activeIndex === index ? 'bg-purple' : 'bg-lilac'} rounded-full mx-2.5 cursor-pointer`}
-            onChange={() => handleRadioChange(index)} />
+          <div key={index} className="inline-flex items-center">
+            <label id="slide" className="inline-flex items-center"></label>
+            <input type="radio" name="slide"
+              checked={activeIndex === index}
+              className={`appearance-none w-7 h-7 rounded-full mx-2.5 cursor-pointer
+                 ${activeIndex === index ? 'bg-purple [html[data-color-scheme="night"]_&]:bg-gold [html[data-color-scheme="high-contrast"]_&]:bg-gold'
+                  : 'bg-lilac [html[data-color-scheme="night"]_&]:bg-gold/50 [html[data-color-scheme="high-contrast"]_&]:bg-gold/50'}`}
+              onChange={() => handleRadioChange(index)} />
+          </div>
         ))}
       </div>
     </div>

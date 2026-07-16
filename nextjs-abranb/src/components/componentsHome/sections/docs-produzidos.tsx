@@ -8,11 +8,11 @@ export default function DocsProduzidos() {
     const { t } = useTranslation("home");
 
     return (
-        <div className="py-12.5 lg:py-17.5 px-5 sm:px-22.5 bg-purple [html[data-color-scheme='high-contrast']_&]:bg-purple/20">
+        <div className="py-12.5 lg:py-17.5 px-6.5 sm:px-22.5 bg-purple [html[data-color-scheme='high-contrast']_&]:bg-purple/20">
             <div className="flex justify-center items-center gap-15 leading-10 text-paper flex-col-reverse lg:flex-row">
                 <Image
-                    width={400}
-                    height={400}
+                    width={366}
+                    height={360}
                     src="/images/undraw_google-docs_fwhy.svg"
                     alt={t("")}
                     className="w-75 h-73.5 lg:w-91.5 lg:h-90" />
@@ -26,13 +26,19 @@ export default function DocsProduzidos() {
 
             <div className="flex flex-col items-center justify-center mt-15 gap-5 md:gap-7.5">
                 <div className="flex items-center justify-center gap-5 md:gap-7.5 max-lg:flex-col">
-                    <BtnLink variant="opacity/yellow" link="/" colorText="paper" textSize="body">
-                        <FontAwesomeIcon icon={faFileLines} aria-hidden className="mr-1" />
+                    <BtnLink variant="opacity/yellow" 
+                        link="https://drive.google.com/file/d/1wg5AYSi5PnXJQZCx1EZ7l1drGFw_muEk/view" 
+                        target="_blank"
+                        colorText="paper" textSize="body">
+                        <FontAwesomeIcon icon={faFileLines} aria-hidden className="mr-1 text-2xl" style={{width: "22px"}}/>
                         <p className="text-start">{t("documentsProduced.buttons.civilRegistry")}</p>
                     </BtnLink>
 
-                    <BtnLink variant="opacity/yellow" link="/" colorText="paper" textSize="body">
-                        <FontAwesomeIcon icon={faFileLines} aria-hidden className="mr-1" />
+                    <BtnLink variant="opacity/yellow" 
+                        link="https://drive.google.com/file/d/1r-N_IdGS7m9p-vdB2dTrLH06qBqfnLQl/view"
+                        target="_blank"
+                        colorText="paper" textSize="body">
+                        <FontAwesomeIcon icon={faFileLines} aria-hidden className="mr-1 text-2xl" style={{width: "22px"}}/>
                         {t("documentsProduced.buttons.annualReport")}
                     </BtnLink>
 

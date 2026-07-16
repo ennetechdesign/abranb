@@ -76,7 +76,7 @@ export function Header({
                 className="flex min-w-0 items-center gap-2 rounded-md focus-visible:outline-offset-2"
             >
               <LogoMark className="size-9 shrink-0 md:size-10"/>
-              <span className="truncate text-heading font-medium uppercase tracking-wide hover:text-title-decoration transition-colors">
+              <span className="truncate text-heading font-medium uppercase tracking-wide">
                 ABRANB
               </span>
             </Link>
@@ -100,12 +100,12 @@ export function Header({
                   triggerClassName="shadow-none"
                   panelClassName="min-w-75 max-w-80 sm:min-w-[500px] sm:max-w-[500px] overflow-x-hidden overflow-y-auto rounded-lg shadow-lg"
               >
-                <AccessibilityMenu
+                   <AccessibilityMenu
                     initialColorScheme={initialColorScheme}
                     initialFontFamily={initialFontFamily}
                     initialTextSize={initialTextSize}
                     className="shadow-md"
-                />
+                  />
               </DropdownMenu>
             </div>
           </div>

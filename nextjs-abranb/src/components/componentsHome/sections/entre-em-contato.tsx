@@ -35,7 +35,7 @@ export default function EntreEmContato() {
             <div className="flex flex-col lg:w-2/5 items-center">
                 <TitleUnderline title={t("contact.title")} position="center" />
 
-                <p className="text-lead leading-8.75 lg:leading-10 mt-6 mb-15 mx-3">
+                <p className="text-lead leading-8.75 lg:leading-10 mt-6 mb-15 mx-3 text-center">
                     {t("contact.description")}
                 </p>
             </div>
@@ -47,7 +47,7 @@ export default function EntreEmContato() {
                     <TitleUnderline title={t("contact.alternativeContactTitle")} position="center" />
                 </div>
 
-                <div className="flex flex-col gap-5 max-xl:items-center">
+                <div className="flex flex-col gap-5 items-center">
                     {contactLinks.map((item) => (
                         <BtnLink
                             key={item.id}

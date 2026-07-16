@@ -56,17 +56,15 @@ export default function BtnLink({
 }: BtnLinkProps) {
 
     return (
-        <Link href={link} target={target} rel="noopener noreferrer">
-            <button className={`py-2.5 px-5 md:py-4 md:px-7 inline-flex items-center font-bold justify-center  
-                     rounded-4xl text-${textSize} text-${colorText} cursor-pointer ${variantsBtnsStyles(variant)}`}>
-                {children ?
-                    children : <>
-                        {text}
-                        <FontAwesomeIcon icon={faAngleRight} className="ml-2" />
-                    </>
-                }
+        <Link href={link} target={target} rel="noopener noreferrer" className={`py-2 px-5 md:py-3 md:px-7 inline-flex grow-0 items-center font-bold justify-center  
+                     rounded-[50px] text-${textSize} cursor-pointer ${variantsBtnsStyles(variant)} text-${colorText}`}>
+            {children ?
+                children : <>
+                    {text}
+                    <FontAwesomeIcon icon={faAngleRight} className="ml-2" style={{ width: "15px", height: "27px" }} />
+                </>
+            }
 
-            </button>
         </Link>
     )
 }

@@ -8,7 +8,7 @@ export default function ArquivosHistoricos() {
 
     return (
         <section className="py-12.5 xl:py-25 px-6.5 xl:px-22.5 flex flex-col lg:flex-row justify-between items-center lg:justify-evenly">
-            <div className="flex flex-col lg:w-2/5 gap-6 max-xl:mb-12.5  lg:mr-15 max-lg:items-center">
+            <div className="flex flex-col items-start lg:w-2/5 gap-6 max-xl:mb-12.5  lg:mr-15 max-lg:items-center">
                 <TitleUnderline title={t("historicalArchives.title")} position="start" />
 
                 <p className="text-lead leading-8.75 lg:leading-10">
