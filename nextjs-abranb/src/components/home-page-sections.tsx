@@ -15,7 +15,7 @@ import Doacao from "./componentsHome/sections/doacao";
 import EntreEmContato from "./componentsHome/sections/entre-em-contato";
 
 // TODO: Montar as seções da página home
-export function HomeSectionPlaceholders() {
+export function HomePageSections() {
   const sectionComponents = {
   "o-que-e-nao-binario": EntendaNB,
   "noticias-abranb": OQueFizemos,
