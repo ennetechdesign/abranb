@@ -1,0 +1,44 @@
+.pautas-list-section {
+  background-color: var(--background);
+}
+
+.pauta-pill {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.85rem 1.25rem;
+  border-radius: 9999px;
+  background-color: var(--palette-gold);
+  color: var(--palette-ink);
+  font-size: var(--text-lead);
+  line-height: 1.35;
+}
+
+.pauta-pill-label {
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+}
+
+.pauta-pill-chevron {
+  flex-shrink: 0;
+  color: currentColor;
+}
+
+html[data-color-scheme="night"] .pauta-pill {
+  background-color: var(--palette-purple);
+  color: var(--palette-paper);
+}
+
+html[data-color-scheme="high-contrast"] .pauta-pill {
+  background-color: var(--palette-purple);
+  color: #ffffff;
+}
+
+@media (min-width: 768px) {
+  .pauta-pill {
+    padding: 1rem 1.75rem;
+  }
+}

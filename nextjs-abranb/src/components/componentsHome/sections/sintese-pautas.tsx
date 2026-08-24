@@ -30,7 +30,7 @@ export default function SinteseDePautas() {
                 <BtnLink
                     text={t("agendaSummary.button")}
                     variant="yellow/purple"
-                    link="/"
+                    link="/sobre/pautas"
                 />
             </div>
 
