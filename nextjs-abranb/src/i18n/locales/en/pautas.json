@@ -3,17 +3,101 @@
   "meta_description": "A summarized list of necessary and specific agendas for the non-binary community, from ABRANB consultations and debates.",
   "hero_title": "Agenda Summary",
   "topics": [
-    "Access to civil registration",
-    "Access to architecture and the city",
-    "Access to health and the \"gender-affirming\" process",
-    "Access to work and income",
-    "Access to education free of binarism and transphobia",
-    "Access to housing",
-    "Access to data, information, and media",
-    "Access to land and permanence on the land",
-    "Access to justice",
-    "Access to budget for non-binary and trans community projects in general",
-    "Access to protection and dignity regarding the prison system",
-    "Access to personal and collective recognition in language"
+    {
+      "title": "Access to civil registration",
+      "items": [
+        "Name rectification and sex mention as “non-binary” or another self-determined option other than male/female on the birth certificate and all other personal documents, in a streamlined way, without requiring reports, payment, or court proceedings;",
+        "Updating all digital systems and institutional forms to add this new option;",
+        "Speeding up pending court cases for document rectification of non-binary people."
+      ]
+    },
+    {
+      "title": "Access to architecture and the city",
+      "items": [
+        "Name rectification and sex mention as “non-binary” or another self-determined option other than male/female on the birth certificate and all other personal documents, in a streamlined way, without requiring reports, payment, or court proceedings;",
+        "Updating all digital systems and institutional forms to add this new option;",
+        "Speeding up pending court cases for document rectification of non-binary people."
+      ]
+    },
+    {
+      "title": "Access to health and the \"gender-affirming\" process",
+      "items": [
+        "Name rectification and sex mention as “non-binary” or another self-determined option other than male/female on the birth certificate and all other personal documents, in a streamlined way, without requiring reports, payment, or court proceedings;",
+        "Updating all digital systems and institutional forms to add this new option;",
+        "Speeding up pending court cases for document rectification of non-binary people."
+      ]
+    },
+    {
+      "title": "Access to work and income",
+      "items": [
+        "Name rectification and sex mention as “non-binary” or another self-determined option other than male/female on the birth certificate and all other personal documents, in a streamlined way, without requiring reports, payment, or court proceedings;",
+        "Updating all digital systems and institutional forms to add this new option;",
+        "Speeding up pending court cases for document rectification of non-binary people."
+      ]
+    },
+    {
+      "title": "Access to education free of binarism and transphobia",
+      "items": [
+        "Name rectification and sex mention as “non-binary” or another self-determined option other than male/female on the birth certificate and all other personal documents, in a streamlined way, without requiring reports, payment, or court proceedings;",
+        "Updating all digital systems and institutional forms to add this new option;",
+        "Speeding up pending court cases for document rectification of non-binary people."
+      ]
+    },
+    {
+      "title": "Access to housing",
+      "items": [
+        "Name rectification and sex mention as “non-binary” or another self-determined option other than male/female on the birth certificate and all other personal documents, in a streamlined way, without requiring reports, payment, or court proceedings;",
+        "Updating all digital systems and institutional forms to add this new option;",
+        "Speeding up pending court cases for document rectification of non-binary people."
+      ]
+    },
+    {
+      "title": "Access to data, information, and media",
+      "items": [
+        "Name rectification and sex mention as “non-binary” or another self-determined option other than male/female on the birth certificate and all other personal documents, in a streamlined way, without requiring reports, payment, or court proceedings;",
+        "Updating all digital systems and institutional forms to add this new option;",
+        "Speeding up pending court cases for document rectification of non-binary people."
+      ]
+    },
+    {
+      "title": "Access to land and permanence on the land",
+      "items": [
+        "Name rectification and sex mention as “non-binary” or another self-determined option other than male/female on the birth certificate and all other personal documents, in a streamlined way, without requiring reports, payment, or court proceedings;",
+        "Updating all digital systems and institutional forms to add this new option;",
+        "Speeding up pending court cases for document rectification of non-binary people."
+      ]
+    },
+    {
+      "title": "Access to justice",
+      "items": [
+        "Name rectification and sex mention as “non-binary” or another self-determined option other than male/female on the birth certificate and all other personal documents, in a streamlined way, without requiring reports, payment, or court proceedings;",
+        "Updating all digital systems and institutional forms to add this new option;",
+        "Speeding up pending court cases for document rectification of non-binary people."
+      ]
+    },
+    {
+      "title": "Access to budget for non-binary and trans community projects in general",
+      "items": [
+        "Name rectification and sex mention as “non-binary” or another self-determined option other than male/female on the birth certificate and all other personal documents, in a streamlined way, without requiring reports, payment, or court proceedings;",
+        "Updating all digital systems and institutional forms to add this new option;",
+        "Speeding up pending court cases for document rectification of non-binary people."
+      ]
+    },
+    {
+      "title": "Access to protection and dignity regarding the prison system",
+      "items": [
+        "Name rectification and sex mention as “non-binary” or another self-determined option other than male/female on the birth certificate and all other personal documents, in a streamlined way, without requiring reports, payment, or court proceedings;",
+        "Updating all digital systems and institutional forms to add this new option;",
+        "Speeding up pending court cases for document rectification of non-binary people."
+      ]
+    },
+    {
+      "title": "Access to personal and collective recognition in language",
+      "items": [
+        "Name rectification and sex mention as “non-binary” or another self-determined option other than male/female on the birth certificate and all other personal documents, in a streamlined way, without requiring reports, payment, or court proceedings;",
+        "Updating all digital systems and institutional forms to add this new option;",
+        "Speeding up pending court cases for document rectification of non-binary people."
+      ]
+    }
   ]
 }

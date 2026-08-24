@@ -69,14 +69,23 @@ function PautasContent({ pautas }: { pautas: Pautas }) {
       </section>
 
       <section className="pautas-list-section w-full my-6">
-        <ul className="pautas-list mx-auto flex w-full list-none flex-col gap-6 px-4 py-8 sm:gap-8 sm:px-6 sm:py-10 md:max-w-2xl md:gap-10 md:px-8 md:py-12 lg:max-w-3xl">
+        <div className="pautas-list mx-auto flex w-full flex-col gap-6 px-4 py-8 sm:gap-8 sm:px-6 sm:py-10 md:max-w-2xl md:gap-10 md:px-8 md:py-12 lg:max-w-3xl">
           {pautas.topics.map((topic) => (
-            <li key={topic} className="pauta-pill">
-              <span className="pauta-pill-label">{topic}</span>
-              <ChevronIcon />
-            </li>
+            <details key={topic.title} className="pauta-item">
+              <summary className="pauta-pill">
+                <span className="pauta-pill-label">{topic.title}</span>
+                <ChevronIcon />
+              </summary>
+              <div className="pauta-body">
+                <ul className="pauta-body-list">
+                  {topic.items.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            </details>
           ))}
-        </ul>
+        </div>
       </section>
     </>
   );

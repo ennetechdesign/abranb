@@ -3,17 +3,123 @@
   "meta_description": "Lista resumida de pautas necessárias e específicas da comunidade não-binária, a partir de consultas e debates da ABRANB.",
   "hero_title": "Síntese de Pautas",
   "topics": [
-    "Acesso ao registro civil",
-    "Acesso à arquitetura e cidade",
-    "Acesso à saúde e ao processo \"transexualizador\"",
-    "Acesso a trabalho e renda",
-    "Acesso à educação livre de binarismo e transmisia",
-    "Acesso a habitação",
-    "Acesso a dados, informação e meios de comunicação",
-    "Acesso à terra e à permanência na terra",
-    "Acesso à justiça",
-    "Acesso ao orçamento para projetos comunitários não-binários e trans em geral",
-    "Acesso a proteção e dignidade sobre o sistema prisional",
-    "Acesso ao reconhecimento pessoal e coletivo na linguagem"
+    {
+      "title": "Acesso ao registro civil",
+      "items": [
+        "Retificação de nome e menção de sexo para “não binário” ou outra opção alternativa a masculino/feminino autodeterminada na certidão e todos os demais documentos pessoais, de forma desburocratizada, sem necessidade de laudos, pagamento ou judicialização;",
+        "Atualização de todos os sistemas digitais e formulários institucionais acrescentando essa nova opção;",
+        "Aceleração das judicializações pendentes de retificação dos documentos de pessoas não-binárias."
+      ]
+    },
+    {
+      "title": "Acesso à arquitetura e cidade",
+      "items": [
+        "Atualização das minutas e leis de códigos de obras e códigos sanitários que recomendam/determinam banheiros para apenas \"2 sexos/gêneros\", para que orientem as soluções arquitetônicas desses espaços sem segregação e exclusão de gênero, por serem atualmente nessa temática incoerentes com a constituição federal, com o reconhecimento jurídico-estatal de pessoas não binárias e tratados dos quais o brasil é signatário sobre direitos humanos e identidade de gênero",
+        "Construção de banheiros sem gênero (para todas as pessoas), com sanitários em cabines seguras, fechadas e individualizadas, sem mictórios expostos. E/ou reforma dos banheiros atuais para banheiros sem segregação de gênero",
+        "Desbinarização dos espaços em geral segregados pelo binário de gênero, através de reformas de instalações existentes ou ofertas de novas instalações."
+      ]
+    },
+    {
+      "title": "Acesso à saúde e ao processo \"transexualizador\"",
+      "items": [
+        "Capacitação de provedores de saúde para lidar com pessoas não-binárias, no acolhimento e comunicação",
+        "Inclusão de nome social, pronomes e menção de gênero não-binário nos registros do sistema de saúde para cadastramento e atualização de cadastros de pacientes que assim se identifiquem",
+        "Explicitação da não binariedade de gênero na resolução do CFM (nº 2.265/2019) que regulamenta o processo “transexualizador”, mencionando nominalmente pessoas não-binarias como sujeito de direito a todos os procedimentos a que tem direito as demais pessoas trans",
+        "Acesso gratuito aos hormônios, medicação psiquiátrica e procedimentos cirúrgicos do processo “transexualizador” pelo sus",
+        "Fortalecimento e interiorização dos ambulatórios trans com equipe",
+        "multidisciplinar que atendam verdadeiramente as demandas físicas e psicológicas de pessoas não-binárias e trans em geral, sem filas absurdas",
+        "Academias públicas para prática de exercício físico gratuita por pessoas não-binárias e LGBTQIAPN+ em geral",
+        "Acesso a banheiros neutros em hospitais psiquiátricos, caps e demais unidades de saúde",
+        "Acesso a dignidade de tratamento psicológico e psiquiátrico sem a violência manicomial, reconhecimento do CFP, CRM e demais órgãos sobre a inclusão de linguagem neutra",
+        "Oferta gratuita de todos os itens necessários a superação da pobreza menstrual de pessoas não-binárias (e demais pessoas que menstruam) em unidades de saúde, centros de referência e ambulatórios trans",
+        "Estratégias de educação e fiscalização para abolição de todas as violências obstétricas da prática médica sobre corpos não-binários e demais capazes de gestar",
+        "Descriminalização e legalização do aborto para pessoas não binárias e demais capazes de gestar, como garantia do direito à autodeterminação e autonomia corporal, superação da mortalidade em clínicas clandestinas e de interrupções realizadas em condições precárias, imperativo de saúde pública."
+      ]
+    },
+    {
+      "title": "Acesso a trabalho e renda",
+      "items": [
+        "Política nacional de capacitação, renda e trabalho com orçamento compatível com o tamanho da população não-binária e trans em geral (4 milhões de pessoas), voltado especificamente a essa população",
+        "Renda básica universal, sem prejuízo dos programas sociais existentes, compatível com o atendimento aos direitos sociais previstos no artigo 6 da constituição federal, considerando ainda o aumento absurdo do custo de vida durante a pandemia",
+        "Aplicação de cotas no serviço público e privado compatível com população não-binária e trans em geral (2% das vagas), com incentivos a quem contrata essa população",
+        "Combate à discriminação laboral a pessoas não-binárias e trans em geral, com campanhas públicas e sanções às empresas que se omitam ou favoreçam a transmisia",
+        "Programa federal de educação em empresas públicas e privadas sobre diversidade de gênero, com contratação remunerada de pessoas não-binárias e trans para conscientização dos quadros empresariais",
+        "Revogação da reforma trabalhista e redução da jornada de trabalho sem redução do salário."
+      ]
+    },
+    {
+      "title": "Acesso à educação livre de binarismo e transmisia",
+      "items": [
+        "Assegurar uso do nome social e pronomes pessoais na escola",
+        "Assegurar acesso a todas as atividades e espaços dentro da escola às pessoas não-binárias de toda faixa etária, sem segregação de gênero, sejam elas estudantes, professoras ou funcionárias",
+        "Assegurar espaços permanentes na grade curricular sobre combate ao binarismo e LGBT+misia em geral, racismo e machismo, assim como integração desses assuntos às disciplinas já existentes",
+        "Cotas para pessoas não binarias e trans em geral na percentagem mínima da proporção dessa população em relação a população brasileira (2%) em universidades públicas e institutos federais",
+        "Assegurar o direito social à educação, eliminando o vestibular como critério de ingresso nas universidades públicas e gratuitas",
+        "Revogação do novo ensino médio proposto pela BNCC."
+      ]
+    },
+    {
+      "title": "Acesso a habitação",
+      "items": [
+        "Orçamento para instalação e manutenção de casas coletivas/comunitárias autogeridas pela população não-binária e trans em todas as unidades da federação",
+        "Cumprir com a determinação do artigo 6 da constituição federal que garante moradia como direito social, assegurando a oferta de moradia para a população não-binária e trans em geral em locais dignos de se viver, seja bancando o aluguel, seja expropriando imóveis que não cumprem com a função social e direcionando a este fim."
+      ]
+    },
+    {
+      "title": "Acesso a dados, informação e meios de comunicação",
+      "items": [
+        "Levantamento de dados sobre população não-binária, com financiamento público de levantamentos sociodemográficos e clínicos relativos à população não-binária no brasil, preferencialmente contratando pessoas dessa população para realizar essas pesquisas",
+        "Inclusão de alternativas a sexo/gênero masculino/feminino no censo IBGE, ofertando pelo menos a opção “não-binário”",
+        "Publicidades estatais em veículos públicos ou privados visibilizando pessoas não-binárias e trans em geral, seja contratando comunicadores desses grupos, seja abordando diretamente a temática de diversidade de gênero",
+        "Portal da transparência para a pasta federal LGBTQIAPNB+, acessível de forma online por qualquer pessoa, fornecendo todos os dados sobre o orçamento público destinado à pasta, bem como descrição de despesas gerais e detalhadas de aplicação desse orçamento para a manutenção de cargos institucionais e em atividades diretas em benefício da população LGBTQIAPNB+."
+      ]
+    },
+    {
+      "title": "Acesso à terra e à permanência na terra",
+      "items": [
+        "Expropriação de terras rurais que não cumprem função social e concessão de terras públicas para LGBTQIAPNB+ vítimas de violência doméstica e familiar, LGBTQIAPNB+ em situação de rua, desempregades e em precariedade econômica dos centros urbanos",
+        "Programa de oferta e financiamento de ferramentas, mudas e sementes agroecológicas às pessoas LGBTQIAPNB+ do campo",
+        "Programas de cisternas e outras técnicas de acesso a água para consumo humano e agricultura comunitária coordenados por pessoas LGBTQIAPNB+",
+        "Programas com orçamento compatível para viabilizar habitação no campo, inclusive habitação multifamiliar para acolhimento e autogestão de pessoas LGBTQIAPNB+",
+        "Fortalecimento do sistema de saúde preventiva e saúde em geral no campo, com medicina comunitária, psicoterapia e disponibilização de testagem de ISTS e medicamentos vinculados ao processo “transexualizador” para não-bináries e trans em geral",
+        "Demarcação de terras indígenas com retomadas de etnias, e de comunidades quilombolas, bem como financiamentos aos projetos de não-bináries e LGBTQIAPNB+ indígenas e quilombolas nas aldeias, quilombos e centros urbanos."
+      ]
+    },
+    {
+      "title": "Acesso à justiça",
+      "items": [
+        "Multiplicação dos núcleos de direitos humanos das defensorias com contratação de pessoal, e instalação de núcleo específico LGBTQIAPNB+ para superar a atual insuficiência da oferta em relação a demanda",
+        "Atendimentos jurídicos online nos núcleos de defensoria e centros de referência, para desburocratizar e baratear os custos de pessoas não-binárias e trans",
+        "Assistência jurídica gratuita para não bináries e trans em geral",
+        "Capacitação sobre gênero e não binariedade nas formações de agentes de segurança, principalmente no atendimento e abordagens da população LGBTQIAPNB+",
+        "Fim da obrigatoriedade do serviço militar, para pessoas não-binárias retificadas ou não, e todas as demais."
+      ]
+    },
+    {
+      "title": "Acesso ao orçamento para projetos comunitários não-binários e trans em geral",
+      "items": [
+        "Editais públicos com orçamento para projetos de enfrentamento a pobreza, à fome, à precariedade habitacional, LGBT+misia, e para promoção cultural e de saúde física e mental de pessoas não-binárias e trans em geral."
+      ]
+    },
+    {
+      "title": "Acesso a proteção e dignidade sobre o sistema prisional",
+      "items": [
+        "Instalação (nos presídios existentes) de alas LGBTQIAPNB+, com banheiros próprios e sem construção de novos presídios",
+        "Fornecimento de itens básicos de higiene e vestuário a pessoas não-binárias e LGBTQIAPNB+ em geral encarceradas, especialmente aquelas sem vínculo e apoio familiar",
+        "Acesso ao serviço ambulatorial trans à pessoa não-binária e trans encarcerada que demande psicoterapia e hormonização",
+        "Políticas de desencarceramento de LGBTQIAPNB+, com capacitação para trabalho e renda e convênios com empresas públicas e privadas para contratação de LGBTQIAPNB+ sobreviventes do cárcere."
+      ]
+    },
+    {
+      "title": "Acesso ao reconhecimento pessoal e coletivo na linguagem",
+      "items": [
+        "Respeito a todo tratamento gramatical reivindicado pelas pessoas independentemente de suas identidades e expressões de gênero",
+        "Capacitação de atendentes nas esferas públicas e privadas para o devido uso de alternativas gramaticais sem e com neolinguagem",
+        "Inclusão do ensino de alternativas gramaticais de gênero sem e com neolinguagem em matérias linguísticas e sociais em instituições públicas e privadas",
+        "Reconhecimento legal da neolinguagem como parte da individualidade e do direito à personalidade",
+        "Acolhimento da neolinguagem em todos os âmbitos enquanto reflexão da língua e um fenômeno de total importância para o reconhecimento social de pessoas não-binárias e dissidentes de gênero em geral",
+        "Suspensão e revogação de todos os projetos de lei que visem proibir o uso, aplicação e circulação de formas neutras e desbinarizadas de linguagem no espaço público, meios de comunicação e instituições públicas e privadas."
+      ]
+    }
   ]
 }
