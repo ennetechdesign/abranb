@@ -1,0 +1,37 @@
+{
+  "meta_title": "Documentos Produzidos",
+  "meta_description": "Pareceres, relatórios bianuais e outros documentos produzidos pela ABRANB.",
+  "hero_title": "Documentos Produzidos",
+  "sections": {
+    "pareceres": {
+      "title": "Pareceres",
+      "docs": [
+        { "label": "Registro civil não-binário", "href": "#" },
+        { "label": "Banheiros e vestiários", "href": "#" },
+        { "label": "Linguagem", "href": "#" }
+      ]
+    },
+    "relatorios": {
+      "title": "Relatórios bianuais das nossas atividades",
+      "docs": [
+        { "label": "1ª Edição - 2021/2022", "href": "#" },
+        { "label": "2ª Edição - 2022/2023", "href": "#" },
+        { "label": "3ª Edição - 2023/2024", "href": "#" },
+        { "label": "4ª Edição - 2025/2026", "href": "#" }
+      ]
+    },
+    "outros": {
+      "title": "Outros documentos da articulação",
+      "docs": [
+        {
+          "label": "Contribuições sobre o debate das cotas trans",
+          "href": "#"
+        },
+        {
+          "label": "Cartilha sobre acolhimento em saúde - Capacitação de profissionais",
+          "href": "#"
+        }
+      ]
+    }
+  }
+}

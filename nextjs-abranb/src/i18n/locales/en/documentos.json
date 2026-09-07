@@ -1,0 +1,37 @@
+{
+  "meta_title": "Produced Documents",
+  "meta_description": "Opinions, biannual reports, and other documents produced by ABRANB.",
+  "hero_title": "Produced Documents",
+  "sections": {
+    "pareceres": {
+      "title": "Opinions",
+      "docs": [
+        { "label": "Non-binary civil registry", "href": "#" },
+        { "label": "Bathrooms and locker rooms", "href": "#" },
+        { "label": "Language", "href": "#" }
+      ]
+    },
+    "relatorios": {
+      "title": "Biannual reports of our activities",
+      "docs": [
+        { "label": "1st Edition - 2021/2022", "href": "#" },
+        { "label": "2nd Edition - 2022/2023", "href": "#" },
+        { "label": "3rd Edition - 2023/2024", "href": "#" },
+        { "label": "4th Edition - 2025/2026", "href": "#" }
+      ]
+    },
+    "outros": {
+      "title": "Other documents from the network",
+      "docs": [
+        {
+          "label": "Contributions to the debate on trans quotas",
+          "href": "#"
+        },
+        {
+          "label": "Guide on welcoming in healthcare - Training for professionals",
+          "href": "#"
+        }
+      ]
+    }
+  }
+}

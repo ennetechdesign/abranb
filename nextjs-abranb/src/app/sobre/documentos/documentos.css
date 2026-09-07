@@ -1,0 +1,184 @@
+/* Day (default): paper outer bands + purple reports band */
+.docs-section {
+  --docs-pill-bg: var(--palette-golden-yellow);
+  --docs-pill-fg: var(--palette-ink);
+  --docs-pill-border: transparent;
+  --docs-pill-shadow: 0 4px 12px
+    color-mix(in srgb, var(--palette-ink) 12%, transparent);
+
+  width: 100%;
+  padding: 3rem 1rem;
+}
+
+.docs-section--outer {
+  background-color: var(--palette-paper);
+}
+
+.docs-section--reports {
+  --docs-pill-bg: color-mix(in srgb, var(--palette-paper) 18%, transparent);
+  --docs-pill-fg: var(--palette-paper);
+  --docs-pill-border: color-mix(in srgb, var(--palette-paper) 85%, transparent);
+  --docs-pill-shadow: none;
+
+  background-color: var(--palette-purple);
+}
+
+.docs-section-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  max-width: 56rem;
+  margin-inline: auto;
+}
+
+.docs-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.docs-list--grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  gap: 1.25rem;
+  width: 100%;
+}
+
+.docs-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  max-width: 100%;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  border: 1.5px solid var(--docs-pill-border);
+  background-color: var(--docs-pill-bg);
+  color: var(--docs-pill-fg);
+  box-shadow: var(--docs-pill-shadow);
+  font-size: var(--font-size-small);
+  font-weight: 700;
+  line-height: 1.35;
+  text-align: center;
+  text-decoration: none;
+  transition:
+    filter 0.15s ease,
+    background-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.docs-pill:hover {
+  filter: brightness(1.08);
+}
+
+.docs-pill:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+
+.docs-pill-icon {
+  flex-shrink: 0;
+  width: 1.1em;
+  height: 1.1em;
+}
+
+.docs-pill-label {
+  min-width: 0;
+}
+
+/* Night: charcoal outer + vibrant purple reports */
+html[data-color-scheme="night"] .docs-section--outer {
+  /* Design ~#503c64: purple washed into charcoal */
+  --docs-pill-bg: color-mix(
+    in srgb,
+    var(--palette-purple) 28%,
+    var(--palette-charcoal)
+  );
+  --docs-pill-fg: var(--palette-paper);
+  --docs-pill-border: var(--palette-purple);
+  --docs-pill-shadow: none;
+
+  background-color: var(--palette-charcoal);
+}
+
+html[data-color-scheme="night"] .docs-section--reports {
+  /* Design ~#b074aa: gold frost over purple (same idea as home docs pills) */
+  --docs-pill-bg: color-mix(in srgb, var(--palette-gold) 25%, transparent);
+  --docs-pill-fg: var(--palette-paper);
+  --docs-pill-border: var(--palette-gold);
+  --docs-pill-shadow: none;
+
+  background-color: var(--palette-purple);
+}
+
+/* High contrast: deep purple bands throughout */
+html[data-color-scheme="high-contrast"] .docs-section--outer {
+  /* Design ~#391c52 */
+  --docs-pill-bg: color-mix(
+    in srgb,
+    var(--palette-purple) 30%,
+    var(--palette-deep)
+  );
+  --docs-pill-fg: #ffffff;
+  --docs-pill-border: var(--palette-purple);
+  --docs-pill-shadow: none;
+
+  background-color: var(--palette-deep);
+}
+
+html[data-color-scheme="high-contrast"] .docs-section--reports {
+  /* Design ~#5e3e40: gold frost over muted purple band */
+  --docs-pill-bg: color-mix(in srgb, var(--palette-gold) 25%, transparent);
+  --docs-pill-fg: #ffffff;
+  --docs-pill-border: var(--palette-gold);
+  --docs-pill-shadow: none;
+
+  background-color: color-mix(
+    in srgb,
+    var(--palette-purple) 55%,
+    var(--palette-deep)
+  );
+}
+
+@media (min-width: 640px) {
+  .docs-section {
+    padding: 3.5rem 1.5rem;
+  }
+
+  .docs-pill {
+    padding: 0.875rem 1.75rem;
+    font-size: var(--font-size-medium);
+  }
+}
+
+@media (min-width: 768px) {
+  .docs-section {
+    padding: 4rem 2rem;
+  }
+
+  .docs-section-inner {
+    gap: 2.5rem;
+  }
+
+  .docs-list {
+    gap: 1.5rem;
+  }
+
+  .docs-list--grid {
+    grid-template-columns: repeat(2, minmax(0, max-content));
+    justify-content: center;
+    gap: 1.5rem 1.75rem;
+  }
+
+  .docs-pill {
+    padding: 1rem 2rem;
+  }
+}
