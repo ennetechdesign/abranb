@@ -99,7 +99,7 @@ html[data-color-scheme="night"] .pauta-item {
   --pauta-accent: var(--palette-purple);
   --pauta-header-bg: var(--palette-purple);
   --pauta-header-fg: var(--palette-paper);
-  --pauta-header-fg-active: var(--palette-paper);
+  --pauta-header-fg-active: var(--palette-golden-yellow);
   --pauta-body-bg: transparent;
   --pauta-body-fg: var(--palette-paper);
 }
@@ -108,7 +108,7 @@ html[data-color-scheme="high-contrast"] .pauta-item {
   --pauta-accent: var(--palette-purple);
   --pauta-header-bg: var(--palette-purple);
   --pauta-header-fg: #ffffff;
-  --pauta-header-fg-active: #ffffff;
+  --pauta-header-fg-active: var(--palette-golden-yellow);
   --pauta-body-bg: transparent;
   --pauta-body-fg: #ffffff;
 }
