@@ -6,12 +6,13 @@
   --pauta-accent: var(--palette-gold);
   --pauta-header-bg: var(--palette-golden-yellow);
   --pauta-header-fg: var(--palette-ink);
+  --pauta-header-fg-active: var(--palette-purple);
   --pauta-body-bg: transparent;
   --pauta-body-fg: var(--palette-ink);
   --pauta-radius: 1.5rem;
 
   border: 2px solid transparent;
-  border-radius: 40px;
+  border-radius: 50px;
   overflow: clip;
   transition: border-color 0.15s ease;
 }
@@ -27,15 +28,20 @@
   justify-content: space-between;
   gap: 0.75rem;
   width: 100%;
-  padding: 0.85rem 1.25rem;
-  border-radius: 9px;
+  padding: 1.25rem 1.75rem;
   background-color: var(--pauta-header-bg);
   color: var(--pauta-header-fg);
-  font-size: var(--font-size-x-large);
-  font-weight: 500;
+  font-size: var(--font-size-large);
+  font-weight: 600;
   line-height: 1.35;
   cursor: pointer;
   list-style: none;
+  transition: color 0.15s ease;
+}
+
+.pauta-pill:hover,
+.pauta-item[open] .pauta-pill {
+  color: var(--pauta-header-fg-active);
 }
 
 .pauta-pill::-webkit-details-marker {
@@ -93,6 +99,7 @@ html[data-color-scheme="night"] .pauta-item {
   --pauta-accent: var(--palette-purple);
   --pauta-header-bg: var(--palette-purple);
   --pauta-header-fg: var(--palette-paper);
+  --pauta-header-fg-active: var(--palette-paper);
   --pauta-body-bg: transparent;
   --pauta-body-fg: var(--palette-paper);
 }
@@ -101,13 +108,14 @@ html[data-color-scheme="high-contrast"] .pauta-item {
   --pauta-accent: var(--palette-purple);
   --pauta-header-bg: var(--palette-purple);
   --pauta-header-fg: #ffffff;
+  --pauta-header-fg-active: #ffffff;
   --pauta-body-bg: transparent;
   --pauta-body-fg: #ffffff;
 }
 
 @media (min-width: 768px) {
   .pauta-pill {
-    padding: 1rem 1.75rem;
+    padding: 1.25rem 2.5rem;
   }
 
   .pauta-body {

@@ -30,8 +30,8 @@ function ChevronIcon() {
   return (
     <svg
       className="pauta-pill-chevron"
-      width="16"
-      height="16"
+      width="1.5em"
+      height="1.5em"
       viewBox="0 0 16 16"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
