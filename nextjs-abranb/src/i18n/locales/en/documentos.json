@@ -6,18 +6,18 @@
     "pareceres": {
       "title": "Opinions",
       "docs": [
-        { "label": "Non-binary civil registry", "href": "#" },
-        { "label": "Bathrooms and locker rooms", "href": "#" },
-        { "label": "Language", "href": "#" }
+        { "label": "Non-binary civil registry", "href": "https://drive.google.com/file/d/1wg5AYSi5PnXJQZCx1EZ7l1drGFw_muEk/view" },
+        { "label": "Bathrooms and locker rooms", "href": "https://drive.google.com/file/d/16W_uZ5ril7NMGGoEQ4MBDyb-PcDRdt_K/view" },
+        { "label": "Language", "href":  "https://drive.google.com/file/d/1uyp6knweai9sOYgz0yrD5-phuALTYjvb/view" }
       ]
     },
     "relatorios": {
       "title": "Biannual reports of our activities",
       "docs": [
-        { "label": "1st Edition - 2021/2022", "href": "#" },
-        { "label": "2nd Edition - 2022/2023", "href": "#" },
-        { "label": "3rd Edition - 2023/2024", "href": "#" },
-        { "label": "4th Edition - 2025/2026", "href": "#" }
+        { "label": "1ª Edition - 2021/2022", "href":  "https://drive.google.com/file/d/1r-N_IdGS7m9p-vdB2dTrLH06qBqfnLQl/view"},
+        { "label": "2ª Edition - 2022/2023", "href": "https://drive.google.com/file/d/185xafifR6xezUUPGIO-ydfWaPdRfjiO7/view" },
+        { "label": "3ª Edition - 2023/2024", "href": "https://drive.google.com/file/d/1W5NM31r2ecV1CgfdbiaNQU1RdC1z85iC/view" },
+        { "label": "4ª Edition - 2025/2026", "href": "https://drive.google.com/file/d/1S-GRtjezVMUy1g2K0TOyQR7payFbe4Ac/view"}
       ]
     },
     "outros": {
@@ -25,11 +25,11 @@
       "docs": [
         {
           "label": "Contributions to the debate on trans quotas",
-          "href": "#"
+          "href": "https://drive.google.com/file/d/1pOTzobAJX_580o-WFNoBn_aqNXOJZ2PQ/view"
         },
         {
           "label": "Guide on welcoming in healthcare - Training for professionals",
-          "href": "#"
+          "href": "https://drive.google.com/file/d/1ckFSFaz4GAkOfvGZkAqO8fvHR5LxR5-3/view"
         }
       ]
     }
