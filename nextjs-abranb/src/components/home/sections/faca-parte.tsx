@@ -10,13 +10,11 @@ export default function FacaParte() {
       descriptionKey="joinOurUnion.description"
       buttonTextKey="joinOurUnion.button"
       buttonHref="https://docs.google.com/forms/d/e/1FAIpQLSdGmXRGOZgk8iRZABKhVHW1ErioY1INCkIdVTsFZ0d9UFKWmQ/viewform"
-      buttonVariant="purple"
-      buttonColorText="paper"
+      buttonVariant="solid-purple"
+      buttonTextColor="paper"
       buttonTarget="_blank"
       timeEstimateKey="joinOurUnion.timeEstimate"
-      icon={
-        <FontAwesomeIcon icon={faWpforms} size="lg" style={{ marginRight: "0.6rem" }} />
-      }
+      icon={<FontAwesomeIcon icon={faWpforms} size="lg" />}
     />
   );
 }

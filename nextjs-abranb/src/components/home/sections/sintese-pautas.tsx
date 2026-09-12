@@ -1,4 +1,4 @@
-import BtnLink from "@/components/btn-link";
+import Button from "@/components/button";
 import TitleUnderline from "@/components/title-underline";
 import { useTranslation } from "react-i18next";
 
@@ -27,11 +27,9 @@ export default function SinteseDePautas() {
             </div>
 
             <div className="mt-10">
-                <BtnLink
-                    text={t("agendaSummary.button")}
-                    variant="yellow/purple"
-                    link="/sobre/pautas"
-                />
+                <Button variant="gold-to-purple" href="/sobre/pautas">
+                    {t("agendaSummary.button")}
+                </Button>
             </div>
 
 

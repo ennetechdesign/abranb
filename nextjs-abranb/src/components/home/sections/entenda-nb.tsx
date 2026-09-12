@@ -2,7 +2,7 @@
 import Image from "next/image";
 import TitleUnderline from "@/components/title-underline";
 import { useTranslation } from "react-i18next";
-import BtnLink from "@/components/btn-link";
+import Button from "@/components/button";
 
 export default function EntendaNB() {
     const { t } = useTranslation("home");
@@ -17,11 +17,9 @@ export default function EntendaNB() {
                     {t("understandNonBinarity.nonBinaryDefinitionText")}
                 </p>
                     
-                <BtnLink 
-                    text={t("understandNonBinarity.glossaryButton")}
-                    variant="yellow/purple"
-                    link="/glossario"
-                />
+                <Button variant="gold-to-purple" href="/glossario">
+                    {t("understandNonBinarity.glossaryButton")}
+                </Button>
             </div>
 
             <Image
