@@ -12,13 +12,10 @@ import {
   type HistoriaSectionProps,
 } from "./types";
 
-const sectionComponents: {
-  "linha-do-tempo": ({id, copy}: HistoriaSectionProps) => any,
-  "o-que-somos": ({id, copy}: HistoriaSectionProps) => any,
-  principios: ({id, copy}: HistoriaSectionProps) => any,
-  mapa: ({id, copy}: HistoriaSectionProps) => any,
-  hero: ({id, copy}: HistoriaSectionProps) => any,
-} = {
+const sectionComponents: Record<
+  HistoriaSectionId,
+  ComponentType<HistoriaSectionProps>
+> = {
   hero: HistoriaHero,
   "o-que-somos": HistoriaIntro,
   "linha-do-tempo": HistoriaTimelineSection,

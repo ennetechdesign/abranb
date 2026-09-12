@@ -1,8 +1,8 @@
 "use client";
 
-import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
+
+import { ChevronIcon } from "@/components/chevron-icon";
 
 export type BtnLinkProps = {
     text?: string;
@@ -62,7 +62,7 @@ export default function BtnLink({
                 {children ?
                     children : <>
                         {text}
-                        <FontAwesomeIcon icon={faAngleRight} className="ml-2" />
+                        <ChevronIcon direction="right" size={18} className="ml-2" />
                     </>
                 }
 

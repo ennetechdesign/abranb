@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import type { HistoriaSectionProps } from "../types";
 
 type LegendSegment = { type: "text" | "emphasis"; value: string };
@@ -34,7 +36,7 @@ export default function HistoriaMapa({ id, copy }: HistoriaSectionProps) {
         </div>
 
         <div className="flex w-full flex-col items-center gap-8 lg:flex-row lg:items-center lg:justify-center lg:gap-12">
-          <img
+          <Image
             src="/mapa-reconhecimento.svg"
             alt={copy.mapa_alt}
             width={329}

@@ -17,7 +17,7 @@ export function ChevronIcon({
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden
-      className={["shrink-0", direction === "right" ? "rotate-90" : "", className]
+      className={["shrink-0", direction === "right" ? "-rotate-90" : "", className]
         .filter(Boolean)
         .join(" ")}
     >
