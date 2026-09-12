@@ -144,6 +144,24 @@ html {
 }
 
 /*
+ * Dropdown panels are normally toggled by JS via `data-open`. While `no-js` is
+ * still on <html> the bundle never hydrated, so hover and keyboard focus reveal
+ * the panel instead - otherwise those menus are the only route to some pages.
+ */
+[data-dropdown-panel] {
+  display: none;
+}
+
+[data-dropdown-panel][data-open="true"] {
+  display: block;
+}
+
+html.no-js [data-dropdown-hoverable]:hover [data-dropdown-panel],
+html.no-js [data-dropdown-hoverable]:focus-within [data-dropdown-panel] {
+  display: block;
+}
+
+/*
  * Fallback for browsers without `scrollbar-color` (Chrome < 121, Safari < 18.2).
  * Modern engines give `scrollbar-color` precedence and ignore these rules.
  */

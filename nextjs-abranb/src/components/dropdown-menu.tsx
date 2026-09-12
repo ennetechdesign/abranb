@@ -225,6 +225,7 @@ export function DropdownMenu({
     <div
       ref={rootRef}
       className={["sm:relative", className].filter(Boolean).join(" ")}
+      data-dropdown-hoverable={openOnHover ? "" : undefined}
       onPointerEnter={handlePointerEnter}
       onPointerLeave={handlePointerLeave}
     >
@@ -258,7 +259,7 @@ export function DropdownMenu({
         </span>
         {showChevron ? <ChevronDown open={open} /> : null}
       </button>
-      {open ? (
+      {open || openOnHover ? (
         <div
           ref={panelRef}
           id={panelId}
@@ -266,6 +267,8 @@ export function DropdownMenu({
           aria-modal={panelRole === "dialog" ? "false" : undefined}
           aria-labelledby={panelLabelledBy}
           aria-label={panelLabelledBy ? undefined : panelAriaLabel}
+          data-dropdown-panel
+          data-open={open}
           className={[
             "absolute top-full z-50 mt-2",
             alignClasses(align),
