@@ -1,7 +1,7 @@
 import TitleUnderline from "@/components/title-underline";
 import SlideShow from "../slide-show";
 import { useTranslation } from "react-i18next";
-import BtnLink from "@/components/btn-link";
+import Button from "@/components/button";
 
 export default function OQueFizemos() {
     const { t } = useTranslation("home");
@@ -14,11 +14,9 @@ export default function OQueFizemos() {
                 <SlideShow />
             </div>
 
-            <BtnLink
-                text={t("whatWeDid.buttonText")}
-                variant="yellow/purple"
-                link="/"
-            />
+            <Button variant="gold-to-purple" href="/">
+                {t("whatWeDid.buttonText")}
+            </Button>
         </div>
     )
 }

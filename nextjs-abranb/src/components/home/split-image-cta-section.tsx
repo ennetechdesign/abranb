@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useTranslation } from "react-i18next";
 
-import BtnLink, { type BtnLinkProps } from "@/components/btn-link";
+import Button, { type ButtonProps } from "@/components/button";
 import TitleUnderline from "@/components/title-underline";
 
 export default function SplitImageCtaSection({
@@ -12,7 +12,7 @@ export default function SplitImageCtaSection({
   buttonTextKey,
   buttonHref,
   buttonVariant,
-  buttonColorText,
+  buttonTextColor,
   image,
   imageSide,
   bgClassName,
@@ -22,8 +22,8 @@ export default function SplitImageCtaSection({
   descriptionKey: string;
   buttonTextKey: string;
   buttonHref: string;
-  buttonVariant: BtnLinkProps["variant"];
-  buttonColorText?: string;
+  buttonVariant: ButtonProps["variant"];
+  buttonTextColor?: ButtonProps["textColor"];
   image: { src: string; width: number; height: number; alt: string; className: string };
   imageSide: "left" | "right";
   bgClassName?: string;
@@ -41,12 +41,9 @@ export default function SplitImageCtaSection({
     >
       <TitleUnderline title={t(titleKey)} position="start" />
       <p className="text-lead leading-8.75 lg:leading-10">{t(descriptionKey)}</p>
-      <BtnLink
-        text={t(buttonTextKey)}
-        variant={buttonVariant}
-        colorText={buttonColorText}
-        link={buttonHref}
-      />
+      <Button variant={buttonVariant} textColor={buttonTextColor} href={buttonHref}>
+        {t(buttonTextKey)}
+      </Button>
     </div>
   );
 

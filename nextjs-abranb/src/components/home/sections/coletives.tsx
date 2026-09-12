@@ -2,7 +2,7 @@
 import Image from "next/image";
 import TitleUnderline from "@/components/title-underline";
 import { useTranslation } from "react-i18next";
-import BtnLink from "@/components/btn-link";
+import Button from "@/components/button";
 
 const coletives = [
     {
@@ -66,11 +66,9 @@ export default function Coletives() {
                 ))}
             </ul>
 
-            <BtnLink
-                text={t("partnershipCollectives.buttonText")}
-                variant="yellow/purple"
-                link="/"
-            />
+            <Button variant="gold-to-purple" href="/">
+                {t("partnershipCollectives.buttonText")}
+            </Button>
         </div>
     )
 }
