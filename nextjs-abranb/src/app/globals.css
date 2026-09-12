@@ -143,6 +143,24 @@ html {
   scrollbar-color: var(--scrollbar-thumb) transparent;
 }
 
+/*
+ * Fallback for browsers without `scrollbar-color` (Chrome < 121, Safari < 18.2).
+ * Modern engines give `scrollbar-color` precedence and ignore these rules.
+ */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 999px;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
