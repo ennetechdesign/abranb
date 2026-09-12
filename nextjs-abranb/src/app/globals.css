@@ -39,6 +39,7 @@
   --focus-ring: var(--palette-purple);
   --title-decoration: var(--palette-purple);
   --paper-deep: var(--palette-paper);
+  --scrollbar-thumb: var(--palette-purple);
 
   /* Pill link button — brand states (same in day/night for consistent CTAs) */
   --button-primary: var(--palette-gold);
@@ -91,6 +92,7 @@ html[data-color-scheme="night"] {
   --focus-ring: var(--palette-gold);
   --title-decoration: var(--palette-gold);
   --paper-deep: var(--palette-deep);
+  --scrollbar-thumb: var(--palette-gold);
   --footer-bg: var(--palette-footer-bronze);
   --footer-heading: var(--palette-gold);
   --footer-link: var(--palette-paper);
@@ -110,6 +112,7 @@ html[data-color-scheme="high-contrast"] {
   --focus-ring: #ffff00;
   --title-decoration: var(--palette-gold);
   --paper-deep: var(--palette-deep);
+  --scrollbar-thumb: var(--palette-gold);
   --footer-bg: var(--palette-footer-brown);
   --footer-heading: var(--palette-gold);
   --footer-link: var(--palette-paper);
@@ -133,6 +136,11 @@ html[data-font="mono"] body {
 *:focus-visible {
   outline: 2px solid var(--focus-ring);
   outline-offset: 2px;
+}
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) transparent;
 }
 
 @theme inline {
