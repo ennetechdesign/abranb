@@ -18,7 +18,7 @@ export const navDrawerPages: NavPageEntry[] = [
   { href: "/sobre/historia", labelKey: "nav_sobre_history" },
   { href: "/sobre/coletivos", labelKey: "nav_sobre_partners" },
   { href: "/sobre/pautas", labelKey: "nav_sobre_topics" },
-  { href: "/documentos", labelKey: "nav_page_documents" },
+  { href: "/sobre/documentos", labelKey: "nav_page_documents" },
   { href: "/arquivos", labelKey: "nav_page_archives" },
   { href: "/blog", labelKey: "nav_page_blog" },
 ];
@@ -43,6 +43,7 @@ export const navAboutDropdownItems: { href: string; labelKey: string }[] = [
   { href: "/sobre/historia", labelKey: "nav_sobre_history" },
   { href: "/sobre/coletivos", labelKey: "nav_sobre_partners" },
   { href: "/sobre/pautas", labelKey: "nav_sobre_topics" },
+  { href: "/sobre/documentos", labelKey: "nav_page_documents" },
 ];
 
 export const navLibraryDropdownItems: { href: string; labelKey: string }[] = [

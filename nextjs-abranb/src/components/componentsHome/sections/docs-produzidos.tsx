@@ -40,7 +40,7 @@ export default function DocsProduzidos() {
                 <BtnLink
                     text={t("documentsProduced.buttons.moreDocuments")}
                     variant="yellow"
-                    link="/"
+                    link="/sobre/documentos"
                 />
             </div>
 
