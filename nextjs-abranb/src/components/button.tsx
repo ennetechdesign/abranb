@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { ComponentProps, ReactNode } from "react";
+import type { ComponentProps, MouseEventHandler, ReactNode } from "react";
 
 import { ChevronIcon } from "@/components/chevron-icon";
 
@@ -104,7 +104,9 @@ export type ButtonProps = {
   icon?: ReactNode;
   className?: string;
   children: ReactNode;
-} & Omit<ComponentProps<typeof Link>, "href" | "className">;
+  onClick?: MouseEventHandler<HTMLButtonElement | HTMLAnchorElement>;
+  "aria-label"?: string;
+} & Omit<ComponentProps<typeof Link>, "href" | "className" | "onClick" | "aria-label">;
 
 export default function Button({
   variant,
@@ -117,6 +119,8 @@ export default function Button({
   icon,
   className,
   children,
+  onClick,
+  "aria-label": ariaLabel,
   ...rest
 }: ButtonProps) {
   const isDocs = docsVariants.has(variant);
@@ -145,14 +149,27 @@ export default function Button({
 
   if (href) {
     return (
-      <Link href={href} target={target} rel={rel} className={classes} {...rest}>
+      <Link
+        href={href}
+        target={target}
+        rel={rel}
+        className={classes}
+        onClick={onClick}
+        aria-label={ariaLabel}
+        {...rest}
+      >
         {content}
       </Link>
     );
   }
 
   return (
-    <button type={type} className={classes}>
+    <button
+      type={type}
+      className={classes}
+      onClick={onClick}
+      aria-label={ariaLabel}
+    >
       {content}
     </button>
   );

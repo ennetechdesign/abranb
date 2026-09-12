@@ -39,6 +39,8 @@
   --focus-ring: var(--palette-purple);
   --title-decoration: var(--palette-purple);
   --paper-deep: var(--palette-paper);
+  --scrollbar-thumb: var(--palette-purple);
+  --pix-logo: var(--palette-purple);
 
   /* Pill link button — brand states (same in day/night for consistent CTAs) */
   --button-primary: var(--palette-gold);
@@ -55,6 +57,8 @@
   --footer-heading: var(--palette-purple);
   --footer-link: var(--palette-ink);
   --footer-link-research: var(--palette-ink);
+  --footer-link-hover-bg: var(--palette-lilac);
+  --footer-link-hover-fg: var(--palette-ink);
   --footer-social-ring: var(--palette-purple);
   --footer-border: color-mix(in srgb, var(--palette-purple) 35%, transparent);
 }
@@ -91,10 +95,14 @@ html[data-color-scheme="night"] {
   --focus-ring: var(--palette-gold);
   --title-decoration: var(--palette-gold);
   --paper-deep: var(--palette-deep);
+  --scrollbar-thumb: var(--palette-gold);
+  --pix-logo: var(--palette-golden-yellow);
   --footer-bg: var(--palette-footer-bronze);
   --footer-heading: var(--palette-gold);
   --footer-link: var(--palette-paper);
   --footer-link-research: var(--palette-paper);
+  --footer-link-hover-bg: var(--palette-charcoal);
+  --footer-link-hover-fg: var(--palette-paper);
   --footer-social-ring: var(--palette-gold);
   --footer-border: color-mix(in srgb, var(--palette-paper) 25%, transparent);
 }
@@ -110,10 +118,15 @@ html[data-color-scheme="high-contrast"] {
   --focus-ring: #ffff00;
   --title-decoration: var(--palette-gold);
   --paper-deep: var(--palette-deep);
+  --scrollbar-thumb: var(--palette-gold);
+  --pix-logo: var(--palette-golden-yellow);
   --footer-bg: var(--palette-footer-brown);
   --footer-heading: var(--palette-gold);
   --footer-link: var(--palette-paper);
   --footer-link-research: var(--palette-paper);
+  /* Footer is already near-black here, so a tint would be invisible: accent the text instead. */
+  --footer-link-hover-bg: transparent;
+  --footer-link-hover-fg: var(--palette-gold);
   --footer-social-ring: var(--palette-gold);
   --footer-border: color-mix(in srgb, var(--palette-paper) 25%, transparent);
 }
@@ -135,6 +148,47 @@ html[data-font="mono"] body {
   outline-offset: 2px;
 }
 
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) transparent;
+}
+
+/*
+ * Dropdown panels are normally toggled by JS via `data-open`. While `no-js` is
+ * still on <html> the bundle never hydrated, so hover and keyboard focus reveal
+ * the panel instead - otherwise those menus are the only route to some pages.
+ */
+[data-dropdown-panel] {
+  display: none;
+}
+
+[data-dropdown-panel][data-open="true"] {
+  display: block;
+}
+
+html.no-js [data-dropdown-hoverable]:hover [data-dropdown-panel],
+html.no-js [data-dropdown-hoverable]:focus-within [data-dropdown-panel] {
+  display: block;
+}
+
+/*
+ * Fallback for browsers without `scrollbar-color` (Chrome < 121, Safari < 18.2).
+ * Modern engines give `scrollbar-color` precedence and ignore these rules.
+ */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 999px;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -147,6 +201,7 @@ html[data-font="mono"] body {
   --color-focus-ring: var(--focus-ring);
   --color-title-decoration: var(--title-decoration);
   --color-paper-deep: var(--paper-deep);
+  --color-pix-logo: var(--pix-logo);
 
   --color-lilac: var(--palette-lilac);
   --color-purple: var(--palette-purple);
@@ -172,6 +227,8 @@ html[data-font="mono"] body {
   --color-footer-heading: var(--footer-heading);
   --color-footer-link: var(--footer-link);
   --color-footer-link-research: var(--footer-link-research);
+  --color-footer-link-hover-bg: var(--footer-link-hover-bg);
+  --color-footer-link-hover-fg: var(--footer-link-hover-fg);
   --color-footer-social-ring: var(--footer-social-ring);
   --color-footer-border: var(--footer-border);
 

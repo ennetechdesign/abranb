@@ -12,19 +12,19 @@ const contactLinks = [
         id: 'instagram',
         icon: faInstagram,
         text: '@abranb.articulacao',
-        link: '',
+        link: 'https://www.instagram.com/abranb.articulacao/',
     },
     {
         id: 'facebook',
         icon: faFacebook,
         text: 'Abranb - Articulação Brasileira Não-Binárie',
-        link: '',
+        link: 'https://www.facebook.com/abranb/?locale=pt_BR',
     },
     {
         id: 'email',
         icon: faEnvelope,
         text: 'abranb.associacao@gmail.com',
-        link: '',
+        link: 'mailto:abranb.associacao@gmail.com',
     },
 ];
 
