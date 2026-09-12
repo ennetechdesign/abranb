@@ -40,6 +40,7 @@
   --title-decoration: var(--palette-purple);
   --paper-deep: var(--palette-paper);
   --scrollbar-thumb: var(--palette-purple);
+  --pix-logo: var(--palette-purple);
 
   /* Pill link button — brand states (same in day/night for consistent CTAs) */
   --button-primary: var(--palette-gold);
@@ -56,6 +57,8 @@
   --footer-heading: var(--palette-purple);
   --footer-link: var(--palette-ink);
   --footer-link-research: var(--palette-ink);
+  --footer-link-hover-bg: var(--palette-lilac);
+  --footer-link-hover-fg: var(--palette-ink);
   --footer-social-ring: var(--palette-purple);
   --footer-border: color-mix(in srgb, var(--palette-purple) 35%, transparent);
 }
@@ -93,10 +96,13 @@ html[data-color-scheme="night"] {
   --title-decoration: var(--palette-gold);
   --paper-deep: var(--palette-deep);
   --scrollbar-thumb: var(--palette-gold);
+  --pix-logo: var(--palette-golden-yellow);
   --footer-bg: var(--palette-footer-bronze);
   --footer-heading: var(--palette-gold);
   --footer-link: var(--palette-paper);
   --footer-link-research: var(--palette-paper);
+  --footer-link-hover-bg: var(--palette-charcoal);
+  --footer-link-hover-fg: var(--palette-paper);
   --footer-social-ring: var(--palette-gold);
   --footer-border: color-mix(in srgb, var(--palette-paper) 25%, transparent);
 }
@@ -113,10 +119,14 @@ html[data-color-scheme="high-contrast"] {
   --title-decoration: var(--palette-gold);
   --paper-deep: var(--palette-deep);
   --scrollbar-thumb: var(--palette-gold);
+  --pix-logo: var(--palette-golden-yellow);
   --footer-bg: var(--palette-footer-brown);
   --footer-heading: var(--palette-gold);
   --footer-link: var(--palette-paper);
   --footer-link-research: var(--palette-paper);
+  /* Footer is already near-black here, so a tint would be invisible: accent the text instead. */
+  --footer-link-hover-bg: transparent;
+  --footer-link-hover-fg: var(--palette-gold);
   --footer-social-ring: var(--palette-gold);
   --footer-border: color-mix(in srgb, var(--palette-paper) 25%, transparent);
 }
@@ -191,6 +201,7 @@ html.no-js [data-dropdown-hoverable]:focus-within [data-dropdown-panel] {
   --color-focus-ring: var(--focus-ring);
   --color-title-decoration: var(--title-decoration);
   --color-paper-deep: var(--paper-deep);
+  --color-pix-logo: var(--pix-logo);
 
   --color-lilac: var(--palette-lilac);
   --color-purple: var(--palette-purple);
@@ -216,6 +227,8 @@ html.no-js [data-dropdown-hoverable]:focus-within [data-dropdown-panel] {
   --color-footer-heading: var(--footer-heading);
   --color-footer-link: var(--footer-link);
   --color-footer-link-research: var(--footer-link-research);
+  --color-footer-link-hover-bg: var(--footer-link-hover-bg);
+  --color-footer-link-hover-fg: var(--footer-link-hover-fg);
   --color-footer-social-ring: var(--footer-social-ring);
   --color-footer-border: var(--footer-border);
 

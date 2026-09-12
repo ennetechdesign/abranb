@@ -68,8 +68,14 @@
   "footer_prof_psychology_note": "(cadastre-se primeiro)",
   "footer_prof_psychiatry": "Psiquiatria",
   "footer_prof_endocrinology": "Endocrinologia",
-  "footer_copyright_motto": "Unides por um mundo mais não-binário 💜",
+  "footer_copyright_motto": "Unides por um mundo menos binário 💟",
   "footer_social_instagram": "Instagram da ABRANB",
   "footer_social_facebook": "Facebook da ABRANB",
-  "footer_social_email": "Enviar e-mail para a ABRANB"
+  "footer_social_email": "Enviar e-mail para a ABRANB",
+
+  "donation": {
+    "pixCopyAria": "Copiar chave PIX abranb.associacao@gmail.com",
+    "pixCopied": "Chave PIX copiada",
+    "pixCopyFailed": "Não foi possível copiar. Selecione o e-mail e copie manualmente."
+  }
 }
