@@ -1,18 +1,18 @@
 "use client";
 
 import { navDrawerSections } from "@/config/nav";
-import "./componentsHome/home.css";
-import EntendaNB from "./componentsHome/sections/entenda-nb";
-import OQueFizemos from "./componentsHome/sections/OQueFizemos";
-import NossaHistoria from "./componentsHome/sections/nossa-historia";
-import Coletives from "./componentsHome/sections/coletives";
-import SinteseDePautas from "./componentsHome/sections/sintese-pautas";
-import DocsProduzidos from "./componentsHome/sections/docs-produzidos";
-import ArquivosHistoricos from "./componentsHome/sections/arquivos-historicos";
-import AreasTematicas from "./componentsHome/sections/areas-tematicas";
-import FacaParte from "./componentsHome/sections/faca-parte";
-import Doacao from "./componentsHome/sections/doacao";
-import EntreEmContato from "./componentsHome/sections/entre-em-contato";
+import "./home/home.css";
+import EntendaNB from "./home/sections/entenda-nb";
+import OQueFizemos from "./home/sections/OQueFizemos";
+import NossaHistoria from "./home/sections/nossa-historia";
+import Coletives from "./home/sections/coletives";
+import SinteseDePautas from "./home/sections/sintese-pautas";
+import DocsProduzidos from "./home/sections/docs-produzidos";
+import ArquivosHistoricos from "./home/sections/arquivos-historicos";
+import AreasTematicas from "./home/sections/areas-tematicas";
+import FacaParte from "./home/sections/faca-parte";
+import Doacao from "./home/sections/doacao";
+import EntreEmContato from "./home/sections/entre-em-contato";
 
 // TODO: Montar as seções da página home
 export function HomePageSections() {

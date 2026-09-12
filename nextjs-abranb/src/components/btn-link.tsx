@@ -4,7 +4,7 @@ import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 
-type BtnLinkProps = {
+export type BtnLinkProps = {
     text?: string;
     variant: "yellow/purple" | "purple/yellow" | "purple" | "yellow" | "opacity/yellow" | "opacity/yellow/purple";
     link: string;
