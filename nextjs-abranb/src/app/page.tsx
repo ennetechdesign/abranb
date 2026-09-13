@@ -1,5 +1,4 @@
-import { HomeScrollToHash } from "./home-scroll-to-hash";
-import { HomePageSections } from "./home-page-sections";
+import { HomeScrollToHash, HomePageSections } from "./home-sections";
 import Hero from "./home-sections/sections/hero";
 
 export default async function IndexPage() {

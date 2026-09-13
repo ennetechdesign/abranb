@@ -1,5 +1,5 @@
 import TitleUnderline from "@/components/title-underline";
-import FormContato from "../form-contato";
+import FormContato from "../components/form-contato";
 import { useTranslation } from "react-i18next";
 import Button from "@/components/button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

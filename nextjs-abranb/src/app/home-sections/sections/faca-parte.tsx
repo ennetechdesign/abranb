@@ -1,7 +1,7 @@
 import { faWpforms } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import CharcoalCtaSection from "../charcoal-cta-section";
+import CharcoalCtaSection from "../components/charcoal-cta-section";
 
 export default function FacaParte() {
   return (
