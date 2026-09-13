@@ -238,9 +238,18 @@ export function DropdownMenu({
         ]
           .filter(Boolean)
           .join(" ")}
+        data-a11y-menu-trigger={
+          ariaHasPopup === "dialog" ? "" : undefined
+        }
         aria-expanded={open}
         aria-controls={panelId}
         aria-haspopup={ariaHasPopup}
+        onMouseDown={(e) => {
+          // Keep keyboard focus; skip focus ring from mouse clicks.
+          if (ariaHasPopup === "dialog" && e.button === 0) {
+            e.preventDefault();
+          }
+        }}
         onClick={toggle}
       >
         {triggerVariant === "purple" && triggerIcon ? (

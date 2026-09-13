@@ -33,7 +33,9 @@ function segmentClass(selected: boolean) {
   return [
     "relative flex flex-1 cursor-pointer items-center justify-center gap-1 px-2 py-3 transition-colors",
     "focus-within:z-10",
-    selected ? "bg-purple text-white" : "bg-transparent text-ink",
+    selected
+      ? "bg-nav-dropdown-selected-bg text-nav-dropdown-selected-fg"
+      : "bg-transparent text-nav-dropdown-fg hover:text-nav-dropdown-hover",
   ].join(" ");
 }
 
@@ -42,6 +44,54 @@ const fontFamilyLabelKey: Record<FontFamily, string> = {
   serif: "a11y_font_serif",
   mono: "a11y_font_mono",
 };
+
+const localeLabelKey: Record<AppLocale, string> = {
+  "pt-BR": "locale_pt_BR",
+  en: "locale_en",
+};
+
+function LanguageMenu({
+  value,
+  onChange,
+  labelledBy,
+}: {
+  value: AppLocale;
+  onChange: (locale: AppLocale) => void;
+  labelledBy: string;
+}) {
+  const { t } = useTranslation("common");
+
+  return (
+    <div
+      className="overflow-hidden rounded-xl border border-nav-dropdown-border"
+      role="radiogroup"
+      aria-labelledby={labelledBy}
+    >
+      {supportedLocales.map((code, index) => (
+        <label
+          key={code}
+          className={[
+            "flex cursor-pointer items-center whitespace-nowrap px-4 py-3 text-body transition-colors",
+            index > 0 ? "border-t border-nav-dropdown-border" : "",
+            value === code
+              ? "bg-nav-dropdown-selected-bg text-nav-dropdown-selected-fg"
+              : "bg-transparent text-nav-dropdown-fg hover:text-nav-dropdown-hover",
+          ].join(" ")}
+        >
+          <input
+            type="radio"
+            name="a11y-language"
+            value={code}
+            checked={value === code}
+            onChange={() => onChange(code)}
+            className="sr-only"
+          />
+          {t(localeLabelKey[code])}
+        </label>
+      ))}
+    </div>
+  );
+}
 
 export function AccessibilityMenu({
   initialColorScheme,
@@ -90,12 +140,15 @@ export function AccessibilityMenu({
     refresh();
   };
 
-  const onLocaleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const next = event.target.value as AppLocale;
+  const onLocaleChange = (next: AppLocale) => {
     void i18n.changeLanguage(next);
     setLocaleCookie(next);
     refresh();
   };
+
+  const resolvedLocale = (i18n.resolvedLanguage ?? i18n.language) as string;
+  const currentLocale: AppLocale =
+    resolvedLocale === "en" ? "en" : "pt-BR";
 
   const colorIcons: Record<ColorScheme, ReactNode> = {
     day: (
@@ -124,7 +177,7 @@ export function AccessibilityMenu({
   return (
       <div
           className={[
-            "border-charcoal/15 bg-gold text-ink box-border w-full min-w-50 rounded-3xl border p-6 sm:p-8",
+            "box-border w-full min-w-50 rounded-3xl border border-nav-dropdown-border bg-nav-dropdown-bg p-6 text-nav-dropdown-fg shadow-lg sm:p-8",
             className,
           ]
             .filter(Boolean)
@@ -138,7 +191,7 @@ export function AccessibilityMenu({
             {t("a11y_color_theme")}
           </legend>
           <div
-            className="border-charcoal/25 divide-charcoal/25 flex overflow-hidden rounded-full border"
+            className="flex overflow-hidden rounded-full border border-nav-dropdown-border"
             role="radiogroup"
             aria-label={t("a11y_color_theme")}
           >
@@ -149,7 +202,7 @@ export function AccessibilityMenu({
               >
                 {index > 0 ? (
                   <span
-                    className="bg-charcoal/25 pointer-events-none absolute top-2 bottom-2 left-0 w-px"
+                    className="pointer-events-none absolute top-2 bottom-2 left-0 w-px bg-nav-dropdown-border"
                     aria-hidden
                   />
                 ) : null}
@@ -176,7 +229,7 @@ export function AccessibilityMenu({
             {t("a11y_text_size")}
           </legend>
           <div
-            className="border-charcoal/25 divide-charcoal/25 flex overflow-hidden rounded-full border"
+            className="flex overflow-hidden rounded-full border border-nav-dropdown-border"
             role="radiogroup"
             aria-label={t("a11y_text_size")}
           >
@@ -187,7 +240,7 @@ export function AccessibilityMenu({
               >
                 {index > 0 ? (
                   <span
-                    className="bg-charcoal/25 pointer-events-none absolute top-2 bottom-2 left-0 w-px"
+                    className="pointer-events-none absolute top-2 bottom-2 left-0 w-px bg-nav-dropdown-border"
                     aria-hidden
                   />
                 ) : null}
@@ -226,16 +279,20 @@ export function AccessibilityMenu({
             {t("a11y_font_family")}
           </legend>
           <div
-            className="border-purple divide-charcoal/25 overflow-hidden rounded-xl border-2"
+            className="overflow-hidden rounded-xl border border-nav-dropdown-border"
             role="radiogroup"
             aria-label={t("a11y_font_family")}
           >
             {fontFamilies.map((value, index) => (
               <label
                 key={value}
-                className={`flex cursor-pointer items-center px-4 py-3 ${
-                  index > 0 ? "border-charcoal/25 border-t" : ""
-                } ${fontFamily === value ? "bg-purple text-white" : "bg-gold text-ink"}`}
+                className={[
+                  "flex cursor-pointer items-center px-4 py-3 transition-colors",
+                  index > 0 ? "border-t border-nav-dropdown-border" : "",
+                  fontFamily === value
+                    ? "bg-nav-dropdown-selected-bg text-nav-dropdown-selected-fg"
+                    : "bg-transparent text-nav-dropdown-fg hover:text-nav-dropdown-hover",
+                ].join(" ")}
               >
                 <input
                   type="radio"
@@ -267,28 +324,11 @@ export function AccessibilityMenu({
           <p className="text-body mb-3 font-semibold" id="a11y-lang-label">
             {t("a11y_language")}
           </p>
-          <div className="relative">
-            <select
-              className="border-purple bg-purple text-body w-full cursor-pointer appearance-none rounded-full border-2 border-transparent py-3 pr-10 pl-4 text-white"
-              value={i18n.resolvedLanguage ?? i18n.language}
-              onChange={onLocaleChange}
-              aria-labelledby="a11y-lang-label"
-            >
-              {supportedLocales.map((code) => (
-                <option key={code} value={code} className="text-ink bg-paper">
-                  {code === "pt-BR" ? t("locale_pt_BR") : t("locale_en")}
-                </option>
-              ))}
-            </select>
-            <span
-              className="pointer-events-none absolute top-1/2 right-4 -translate-y-1/2 text-white"
-              aria-hidden
-            >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M7 10l5 5 5-5z" />
-              </svg>
-            </span>
-          </div>
+          <LanguageMenu
+            value={currentLocale}
+            onChange={onLocaleChange}
+            labelledBy="a11y-lang-label"
+          />
         </div>
       </div>
     </div>
