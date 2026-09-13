@@ -278,14 +278,14 @@ export function DropdownMenu({
             .join(" ")}
         >
           {hasItems ? (
-            <div className="min-w-[12rem] rounded-3xl bg-button-primary p-4 text-ink shadow-lg">
+            <div className="min-w-[12rem] rounded-3xl border border-nav-dropdown-border bg-nav-dropdown-bg p-4 text-nav-dropdown-fg shadow-lg">
               <div className="flex flex-col items-center gap-3 text-center text-body font-medium">
                 {list.map((item) => (
                   <Link
                     key={item.href}
                     href={item.href}
                     role={panelRole === "menu" ? "menuitem" : undefined}
-                    className="hover:underline focus-visible:underline no-underline outline-none"
+                    className="no-underline outline-none transition-colors hover:text-nav-dropdown-hover focus-visible:text-nav-dropdown-hover"
                     onClick={close}
                   >
                     {item.label}
