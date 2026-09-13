@@ -1,18 +1,18 @@
 "use client";
 
 import { navDrawerSections } from "@/config/nav";
-import "./home/home.css";
-import EntendaNB from "./home/sections/entenda-nb";
-import OQueFizemos from "./home/sections/OQueFizemos";
-import NossaHistoria from "./home/sections/nossa-historia";
-import Coletives from "./home/sections/coletives";
-import SinteseDePautas from "./home/sections/sintese-pautas";
-import DocsProduzidos from "./home/sections/docs-produzidos";
-import ArquivosHistoricos from "./home/sections/arquivos-historicos";
-import AreasTematicas from "./home/sections/areas-tematicas";
-import FacaParte from "./home/sections/faca-parte";
-import Doacao from "./home/sections/doacao";
-import EntreEmContato from "./home/sections/entre-em-contato";
+import "./home.css";
+import EntendaNB from "./sections/entenda-nb";
+import OQueFizemos from "./sections/OQueFizemos";
+import NossaHistoria from "./sections/nossa-historia";
+import Coletives from "./sections/coletives";
+import SinteseDePautas from "./sections/sintese-pautas";
+import DocsProduzidos from "./sections/docs-produzidos";
+import ArquivosHistoricos from "./sections/arquivos-historicos";
+import AreasTematicas from "./sections/areas-tematicas";
+import FacaParte from "./sections/faca-parte";
+import Doacao from "./sections/doacao";
+import EntreEmContato from "./sections/entre-em-contato";
 
 // TODO: Montar as seções da página home
 export function HomePageSections() {

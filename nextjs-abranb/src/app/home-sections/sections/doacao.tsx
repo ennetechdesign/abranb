@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
-import TitleUnderline from "../../title-underline";
+import TitleUnderline from "@/components/title-underline";
 import Button from "@/components/button";
 import PixLogo from "@/components/pix-logo";
 import { copyToClipboard } from "@/lib/copy-to-clipboard";
