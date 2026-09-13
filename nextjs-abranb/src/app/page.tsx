@@ -3,10 +3,9 @@ import { HomePageSections } from "@/components/home-page-sections";
 import Hero from "@/components/home/sections/hero";
 
 export default async function IndexPage() {
-
   return (
     <>
-      < HomeScrollToHash />
+      <HomeScrollToHash />
       <main className="container min-h-screen max-w-full">
         <Hero />
         <HomePageSections />
