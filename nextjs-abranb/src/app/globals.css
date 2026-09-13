@@ -62,11 +62,15 @@
   --footer-social-ring: var(--palette-purple);
   --footer-border: color-mix(in srgb, var(--palette-purple) 35%, transparent);
 
-  /* Nav item dropdowns (Sobre / Biblioteca) — day: yellow panel, purple border */
+  /* Nav dropdown panels (Sobre / Biblioteca / Acessibilidade) — day */
   --nav-dropdown-bg: var(--palette-gold);
   --nav-dropdown-fg: var(--palette-ink);
   --nav-dropdown-border: var(--palette-purple);
   --nav-dropdown-hover: var(--palette-purple);
+  --nav-dropdown-selected-bg: var(--palette-purple);
+  --nav-dropdown-selected-fg: #ffffff;
+  --nav-dropdown-lang-list-bg: var(--palette-charcoal);
+  --nav-dropdown-lang-option-fg: #9e96a8;
 }
 
 html[data-text-size="large"] {
@@ -112,11 +116,15 @@ html[data-color-scheme="night"] {
   --footer-social-ring: var(--palette-gold);
   --footer-border: color-mix(in srgb, var(--palette-paper) 25%, transparent);
 
-  /* Nav item dropdowns — purple panel, white border */
+  /* Nav dropdown panels — purple panel, white border */
   --nav-dropdown-bg: var(--palette-purple);
   --nav-dropdown-fg: #ffffff;
   --nav-dropdown-border: #ffffff;
   --nav-dropdown-hover: var(--palette-gold);
+  --nav-dropdown-selected-bg: var(--palette-gold);
+  --nav-dropdown-selected-fg: var(--palette-ink);
+  --nav-dropdown-lang-list-bg: var(--palette-charcoal);
+  --nav-dropdown-lang-option-fg: #ffffff;
 }
 
 html[data-color-scheme="high-contrast"] {
@@ -142,11 +150,15 @@ html[data-color-scheme="high-contrast"] {
   --footer-social-ring: var(--palette-gold);
   --footer-border: color-mix(in srgb, var(--palette-paper) 25%, transparent);
 
-  /* Nav item dropdowns — purple panel, white border */
+  /* Nav dropdown panels — purple panel, white border */
   --nav-dropdown-bg: var(--palette-purple);
   --nav-dropdown-fg: #ffffff;
   --nav-dropdown-border: #ffffff;
   --nav-dropdown-hover: var(--palette-gold);
+  --nav-dropdown-selected-bg: var(--palette-gold);
+  --nav-dropdown-selected-fg: var(--palette-ink);
+  --nav-dropdown-lang-list-bg: var(--palette-deep);
+  --nav-dropdown-lang-option-fg: #ffffff;
 }
 
 html[data-font="sans"] body {
@@ -161,9 +173,24 @@ html[data-font="mono"] body {
   font-family: var(--font-mono);
 }
 
-*:focus-visible {
-  outline: 2px solid var(--focus-ring);
-  outline-offset: 2px;
+@layer base {
+  *:focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 2px;
+  }
+}
+
+/* Acessibilidade trigger: suppress focus chrome entirely (wins over layered utilities). */
+[data-a11y-menu-trigger],
+[data-a11y-menu-trigger]:hover,
+[data-a11y-menu-trigger]:active,
+[data-a11y-menu-trigger]:focus,
+[data-a11y-menu-trigger]:focus-visible,
+[data-a11y-menu-trigger]:focus-within {
+  outline: none !important;
+  outline-offset: 0 !important;
+  box-shadow: none !important;
+  border-color: transparent !important;
 }
 
 html {
@@ -254,6 +281,10 @@ html.no-js [data-dropdown-hoverable]:focus-within [data-dropdown-panel] {
   --color-nav-dropdown-fg: var(--nav-dropdown-fg);
   --color-nav-dropdown-border: var(--nav-dropdown-border);
   --color-nav-dropdown-hover: var(--nav-dropdown-hover);
+  --color-nav-dropdown-selected-bg: var(--nav-dropdown-selected-bg);
+  --color-nav-dropdown-selected-fg: var(--nav-dropdown-selected-fg);
+  --color-nav-dropdown-lang-list-bg: var(--nav-dropdown-lang-list-bg);
+  --color-nav-dropdown-lang-option-fg: var(--nav-dropdown-lang-option-fg);
 
   --font-sans: var(--font-lexend), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-merriweather), ui-serif, Georgia, serif;
