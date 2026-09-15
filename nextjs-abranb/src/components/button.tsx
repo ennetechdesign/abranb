@@ -1,6 +1,8 @@
 import Link from "next/link";
 import type { ComponentProps, ReactNode } from "react";
 
+import { ChevronIcon } from "@/components/chevron-icon";
+
 const sizeConfig = {
   small: {
     text: "text-caption",
@@ -37,28 +39,6 @@ function variantClasses(variant: "primary" | "secondary") {
     "active:bg-button-secondary-active",
     "active:shadow-[inset_0_0_0_1px_var(--button-secondary-active-ring)]",
   ];
-}
-
-function ChevronRight({ pixelSize }: { pixelSize: number }) {
-  return (
-    <svg
-      width={pixelSize}
-      height={pixelSize}
-      viewBox="0 0 12 12"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden
-      className="shrink-0"
-    >
-      <path
-        d="M4.5 2.25 8.25 6 4.5 9.75"
-        stroke="currentColor"
-        strokeWidth="1.75"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
 }
 
 export type ButtonProps = Omit<ComponentProps<typeof Link>, "className"> & {
@@ -107,7 +87,9 @@ export function Button({
         .join(" ")}
     >
       {children}
-      {showChevron ? <ChevronRight pixelSize={s.chevron} /> : null}
+      {showChevron ? (
+        <ChevronIcon direction="right" size={s.chevron} />
+      ) : null}
     </Link>
   );
 }

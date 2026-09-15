@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 export function useCarousel(numItems: number, tamCard: number) {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -8,29 +8,32 @@ export function useCarousel(numItems: number, tamCard: number) {
   const startX = useRef(0);
   const scrollLeft = useRef(0);
 
-  function scrollToCard(activeIndex: number) {
-    const container = slideRef.current;
-    if (!container) return;
+  const scrollToCard = useCallback(
+    (index: number) => {
+      const container = slideRef.current;
+      if (!container) return;
 
-    const card = container.children[activeIndex] as HTMLElement;
-    if (!card) return;
+      const card = container.children[index] as HTMLElement;
+      if (!card) return;
 
-    const cardLeft = card.offsetLeft;
-    const cardWidth = card.offsetWidth;
-    const centroContainer = container.offsetWidth / 2;
+      const cardLeft = card.offsetLeft;
+      const cardWidth = card.offsetWidth;
+      const centroContainer = container.offsetWidth / 2;
 
-    let scroll = 0;
-    if (window.innerWidth < 1024) {
-      scroll = tamCard * activeIndex;
-    } else {
-      scroll = cardLeft + cardWidth / 2 - centroContainer;
-    }
+      let scroll = 0;
+      if (window.innerWidth < 1024) {
+        scroll = tamCard * index;
+      } else {
+        scroll = cardLeft + cardWidth / 2 - centroContainer;
+      }
 
-    container.scrollTo({
-      left: scroll,
-      behavior: "smooth",
-    });
-  }
+      container.scrollTo({
+        left: scroll,
+        behavior: "smooth",
+      });
+    },
+    [tamCard],
+  );
 
   function handleMouseDown(e: React.MouseEvent<HTMLDivElement>) {
     const container = slideRef.current;
@@ -69,7 +72,7 @@ export function useCarousel(numItems: number, tamCard: number) {
 
   useEffect(() => {
     scrollToCard(activeIndex);
-  }, [activeIndex]);
+  }, [activeIndex, scrollToCard]);
 
   return {
     activeIndex,

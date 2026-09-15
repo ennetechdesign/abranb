@@ -7,8 +7,8 @@ export default function Hero() {
 
     return (
         <>
-            <section className="bg-background-hero w-full lg:h-[calc(100vh-64px)] min-h-[calc(100vh-64px)] flex flex-col-reverse xl:flex-row 
-                       justify-start xl:justify-center items-center px-3 md:px-10 pt-5 xl:pt-0 gap-12">
+            <section className="bg-background-hero w-full lg:h-[calc(100vh-64px)] min-h-[calc(100vh-64px)] flex flex-col-reverse xl:flex-row
+                       justify-center items-center px-3 md:px-10 pt-5 xl:pt-0 gap-12">
                 <picture className="md:mr-10 xl:h-full flex justify-end items-end">
                   <Image
                     src="/images/hero3.png"

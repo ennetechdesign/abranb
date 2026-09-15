@@ -10,6 +10,8 @@ import {
   type ReactNode,
 } from "react";
 
+import { ChevronIcon } from "@/components/chevron-icon";
+
 export type DropdownMenuItem = {
   href: string;
   label: ReactNode;
@@ -52,26 +54,16 @@ function focusFirstFocusable(container: HTMLElement) {
 
 function ChevronDown({ open, className }: { open: boolean; className?: string }) {
   return (
-    <svg
+    <ChevronIcon
+      size={14}
       className={[
-        "size-3.5 shrink-0 transition-transform duration-150",
+        "transition-transform duration-150",
         open ? "rotate-180" : "",
         className,
-      ].filter(Boolean)
+      ]
+        .filter(Boolean)
         .join(" ")}
-      viewBox="0 0 12 12"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden
-    >
-      <path
-        d="M2.25 4.5 6 8.25 9.75 4.5"
-        stroke="currentColor"
-        strokeWidth="1.75"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
+    />
   );
 }
 

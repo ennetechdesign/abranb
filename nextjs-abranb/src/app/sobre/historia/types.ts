@@ -4,7 +4,6 @@ export type HistoriaCopy = (typeof resources)["pt-BR"]["historia"];
 
 export type HistoriaSectionProps = {
   id: string;
-  key: string;
   copy: HistoriaCopy;
 };
 
