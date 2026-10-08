@@ -5,6 +5,7 @@ import {
   useCallback,
   useEffect,
   useId,
+  useLayoutEffect,
   useRef,
   useState,
   type PointerEvent as ReactPointerEvent,
@@ -12,6 +13,11 @@ import {
 } from "react";
 
 import { ChevronIcon } from "@/components/chevron-icon";
+
+/** Matches Tailwind's `sm` breakpoint: below it the panel is not anchored to its trigger. */
+const MOBILE_QUERY = "(max-width: 639.98px)";
+/** Minimum gap kept between a centred panel and the viewport edges. */
+const MOBILE_EDGE_GAP_PX = 8;
 
 /** Grace period so the pointer can cross the gap between trigger and panel. */
 const HOVER_CLOSE_DELAY_MS = 150;
@@ -94,7 +100,7 @@ function triggerVariantClasses(
 
 function alignClasses(align: NonNullable<DropdownMenuProps["align"]>) {
   if (align === "center") {
-    return "right-0 max-sm:-translate-y-[15px] -translate-x-[10px] sm:left-1/2 sm:-translate-x-1/2";
+    return "right-0 max-sm:-translate-y-[15px] -translate-x-[10px] sm:right-auto sm:left-1/2 sm:-translate-x-1/2";
   }
   if (align === "end") {
     return "right-0";
@@ -189,6 +195,42 @@ export function DropdownMenu({
     return () => document.removeEventListener("pointerdown", onPointerDown);
   }, [open, closeAndRestoreFocus]);
 
+  /**
+   * Below `sm` the panel is positioned against the header, not the trigger, so
+   * CSS alone cannot centre it. Centre it under the trigger when it fits with
+   * a gap on both sides; otherwise keep the right-aligned CSS fallback.
+   */
+  useLayoutEffect(() => {
+    const panel = panelRef.current;
+    const trigger = triggerRef.current;
+    if (!open || align !== "center" || !panel || !trigger) return;
+
+    const place = () => {
+      panel.style.removeProperty("left");
+      panel.style.removeProperty("right");
+      panel.style.removeProperty("translate");
+      if (!window.matchMedia(MOBILE_QUERY).matches) return;
+
+      const triggerRect = trigger.getBoundingClientRect();
+      const width = panel.offsetWidth;
+      const left = triggerRect.left + triggerRect.width / 2 - width / 2;
+      const fits =
+        left >= MOBILE_EDGE_GAP_PX &&
+        left + width <= window.innerWidth - MOBILE_EDGE_GAP_PX;
+      if (!fits) return;
+
+      const anchorLeft = panel.offsetParent?.getBoundingClientRect().left ?? 0;
+      panel.style.left = `${left - anchorLeft}px`;
+      panel.style.right = "auto";
+      // Replaces the `-translate-x` fallback; keeps the vertical nudge from alignClasses.
+      panel.style.translate = "0 -15px";
+    };
+
+    place();
+    window.addEventListener("resize", place);
+    return () => window.removeEventListener("resize", place);
+  }, [open, align]);
+
   const toggle = () => {
     if (open) {
       close();
@@ -272,20 +314,21 @@ export function DropdownMenu({
           className={[
             "absolute top-full z-50 mt-2",
             alignClasses(align),
+            hasItems ? "w-max" : undefined,
             panelClassName,
           ]
             .filter(Boolean)
             .join(" ")}
         >
           {hasItems ? (
-            <div className="min-w-[12rem] rounded-3xl bg-button-primary p-4 text-ink shadow-lg">
+            <div className="min-w-[12rem] rounded-3xl border border-nav-dropdown-border bg-nav-dropdown-bg p-4 text-nav-dropdown-fg shadow-lg">
               <div className="flex flex-col items-center gap-3 text-center text-body font-medium">
                 {list.map((item) => (
                   <Link
                     key={item.href}
                     href={item.href}
                     role={panelRole === "menu" ? "menuitem" : undefined}
-                    className="hover:underline focus-visible:underline no-underline outline-none"
+                    className="whitespace-nowrap no-underline outline-none transition-colors hover:text-nav-dropdown-hover focus-visible:text-nav-dropdown-hover"
                     onClick={close}
                   >
                     {item.label}

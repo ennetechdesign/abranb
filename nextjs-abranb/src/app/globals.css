@@ -61,6 +61,12 @@
   --footer-link-hover-fg: var(--palette-ink);
   --footer-social-ring: var(--palette-purple);
   --footer-border: color-mix(in srgb, var(--palette-purple) 35%, transparent);
+
+  /* Nav item dropdowns (Sobre / Biblioteca) — day: yellow panel, purple border */
+  --nav-dropdown-bg: var(--palette-gold);
+  --nav-dropdown-fg: var(--palette-ink);
+  --nav-dropdown-border: var(--palette-purple);
+  --nav-dropdown-hover: var(--palette-purple);
 }
 
 html[data-text-size="large"] {
@@ -105,6 +111,12 @@ html[data-color-scheme="night"] {
   --footer-link-hover-fg: var(--palette-paper);
   --footer-social-ring: var(--palette-gold);
   --footer-border: color-mix(in srgb, var(--palette-paper) 25%, transparent);
+
+  /* Nav item dropdowns — purple panel, white border */
+  --nav-dropdown-bg: var(--palette-purple);
+  --nav-dropdown-fg: #ffffff;
+  --nav-dropdown-border: #ffffff;
+  --nav-dropdown-hover: var(--palette-gold);
 }
 
 html[data-color-scheme="high-contrast"] {
@@ -129,6 +141,12 @@ html[data-color-scheme="high-contrast"] {
   --footer-link-hover-fg: var(--palette-gold);
   --footer-social-ring: var(--palette-gold);
   --footer-border: color-mix(in srgb, var(--palette-paper) 25%, transparent);
+
+  /* Nav item dropdowns — purple panel, white border */
+  --nav-dropdown-bg: var(--palette-purple);
+  --nav-dropdown-fg: #ffffff;
+  --nav-dropdown-border: #ffffff;
+  --nav-dropdown-hover: var(--palette-gold);
 }
 
 html[data-font="sans"] body {
@@ -231,6 +249,11 @@ html.no-js [data-dropdown-hoverable]:focus-within [data-dropdown-panel] {
   --color-footer-link-hover-fg: var(--footer-link-hover-fg);
   --color-footer-social-ring: var(--footer-social-ring);
   --color-footer-border: var(--footer-border);
+
+  --color-nav-dropdown-bg: var(--nav-dropdown-bg);
+  --color-nav-dropdown-fg: var(--nav-dropdown-fg);
+  --color-nav-dropdown-border: var(--nav-dropdown-border);
+  --color-nav-dropdown-hover: var(--nav-dropdown-hover);
 
   --font-sans: var(--font-lexend), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-merriweather), ui-serif, Georgia, serif;
