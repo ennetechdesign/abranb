@@ -3,7 +3,7 @@
 import type { ReactNode } from "react";
 import { Trans, useTranslation } from "react-i18next";
 
-import BtnLink, { type BtnLinkProps } from "@/components/btn-link";
+import Button, { type ButtonProps } from "@/components/button";
 import TitleUnderline from "@/components/title-underline";
 import BackgroundFixed from "./background-fixed";
 
@@ -13,7 +13,7 @@ export default function CharcoalCtaSection({
   buttonTextKey,
   buttonHref,
   buttonVariant,
-  buttonColorText = "paper",
+  buttonTextColor = "paper",
   buttonTarget,
   icon,
   timeEstimateKey,
@@ -22,9 +22,9 @@ export default function CharcoalCtaSection({
   descriptionKey: string;
   buttonTextKey: string;
   buttonHref: string;
-  buttonVariant: BtnLinkProps["variant"];
-  buttonColorText?: string;
-  buttonTarget?: string;
+  buttonVariant: ButtonProps["variant"];
+  buttonTextColor?: ButtonProps["textColor"];
+  buttonTarget?: ButtonProps["target"];
   icon?: ReactNode;
   timeEstimateKey?: string;
 }) {
@@ -45,25 +45,15 @@ export default function CharcoalCtaSection({
             />
           </p>
           <div className="flex flex-col items-center gap-5">
-            {icon ? (
-              <BtnLink
-                variant={buttonVariant}
-                colorText={buttonColorText}
-                target={buttonTarget}
-                link={buttonHref}
-              >
-                {icon}
-                {t(buttonTextKey)}
-              </BtnLink>
-            ) : (
-              <BtnLink
-                text={t(buttonTextKey)}
-                variant={buttonVariant}
-                colorText={buttonColorText}
-                target={buttonTarget}
-                link={buttonHref}
-              />
-            )}
+            <Button
+              variant={buttonVariant}
+              textColor={buttonTextColor}
+              target={buttonTarget}
+              href={buttonHref}
+              icon={icon}
+            >
+              {t(buttonTextKey)}
+            </Button>
             {timeEstimateKey ? <p className="text-paper">{t(timeEstimateKey)}</p> : null}
           </div>
         </div>

@@ -2,13 +2,29 @@ import type { Metadata } from "next";
 
 import TitleUnderline from "@/components/title-underline";
 import SecondaryHero from "@/components/secondary-hero";
-import { DocPill } from "@/components/doc-pill";
+import Button, { FileLinesIcon } from "@/components/button";
 import { resources } from "@/i18n/resources";
 import { getServerLocale } from "@/lib/resolve-locale";
 
 import "./documentos.css";
 
 type Documentos = (typeof resources)["pt-BR"]["documentos"];
+type DocItem = Documentos["sections"]["pareceres"]["docs"][number];
+
+function DocPill({
+  doc,
+  variant,
+}: {
+  doc: DocItem;
+  variant: "docs-outer" | "docs-reports";
+}) {
+  const href = doc.href && doc.href !== "#" ? doc.href : "#";
+  return (
+    <Button variant={variant} href={href} icon={<FileLinesIcon className="docs-pill-icon" />}>
+      {doc.label}
+    </Button>
+  );
+}
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getServerLocale();
@@ -37,7 +53,7 @@ function DocsContent({ copy }: { copy: Documentos }) {
           <ul className="docs-list">
             {pareceres.docs.map((doc) => (
               <li key={doc.label}>
-                <DocPill doc={doc} />
+                <DocPill doc={doc} variant="docs-outer" />
               </li>
             ))}
           </ul>
@@ -59,7 +75,7 @@ function DocsContent({ copy }: { copy: Documentos }) {
           <ul className="docs-list docs-list--grid">
             {relatorios.docs.map((doc) => (
               <li key={doc.label}>
-                <DocPill doc={doc} />
+                <DocPill doc={doc} variant="docs-reports" />
               </li>
             ))}
           </ul>
@@ -77,7 +93,7 @@ function DocsContent({ copy }: { copy: Documentos }) {
           <ul className="docs-list">
             {outros.docs.map((doc) => (
               <li key={doc.label}>
-                <DocPill doc={doc} />
+                <DocPill doc={doc} variant="docs-outer" />
               </li>
             ))}
           </ul>

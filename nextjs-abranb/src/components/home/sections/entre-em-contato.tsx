@@ -1,7 +1,7 @@
 import TitleUnderline from "@/components/title-underline";
 import FormContato from "../form-contato";
 import { useTranslation } from "react-i18next";
-import BtnLink from "@/components/btn-link";
+import Button from "@/components/button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram, faFacebook } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
@@ -47,21 +47,23 @@ export default function EntreEmContato() {
                     <TitleUnderline title={t("contact.alternativeContactTitle")} position="center" />
                 </div>
 
-                <div className="flex flex-col gap-5 max-xl:items-center">
+                <div className="flex flex-col gap-5 items-center">
                     {contactLinks.map((item) => (
-                        <BtnLink
+                        <Button
                             key={item.id}
-                            variant="yellow/purple"
-                            link={item.link}
+                            variant="gold-to-purple"
+                            href={item.link}
                             textSize="body"
+                            icon={
+                                <FontAwesomeIcon
+                                    icon={item.icon}
+                                    aria-hidden
+                                    className="size-3.5 shrink-0"
+                                />
+                            }
                         >
-                            <FontAwesomeIcon
-                                icon={item.icon}
-                                aria-hidden
-                                className="size-3.5 shrink-0 mr-2"
-                            />
                             <p>{item.text}</p>
-                        </BtnLink>
+                        </Button>
                     ))}
                 </div>
 

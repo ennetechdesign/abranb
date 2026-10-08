@@ -3,6 +3,8 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import Button from '@/components/button';
+
 
 type UserFormProps = {
     name: string;
@@ -127,10 +129,9 @@ export default function FormContato() {
                 />
             </div>
             <div className='flex justify-center'>
-
-                <button type='submit' className='btn-contato-submit'>
+                <Button variant="outline-gold-to-purple-strong" size="contact" type="submit">
                     {t("contact.submitButton")}
-                </button>
+                </Button>
             </div>
 
         </form>

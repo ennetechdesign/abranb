@@ -29,11 +29,7 @@ function PautasContent({ pautas }: { pautas: Pautas }) {
             <details key={topic.title} className="pauta-item">
               <summary className="pauta-pill" style={{ listStyle: "none" }}>
                 <span className="pauta-pill-label">{topic.title}</span>
-                <ChevronIcon
-                  className="pauta-pill-chevron"
-                  size={24}
-                  strokeWidth={1.5}
-                />
+                <ChevronIcon className="pauta-pill-chevron" size={24} />
               </summary>
               <div className="pauta-body">
                 <ul className="pauta-body-list">

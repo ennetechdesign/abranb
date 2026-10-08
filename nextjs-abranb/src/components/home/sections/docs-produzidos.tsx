@@ -1,4 +1,4 @@
-import BtnLink from "@/components/btn-link";
+import Button from "@/components/button";
 import TitleUnderline from "@/components/title-underline";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
@@ -26,22 +26,30 @@ export default function DocsProduzidos() {
 
             <div className="flex flex-col items-center justify-center mt-15 gap-5 md:gap-7.5">
                 <div className="flex items-center justify-center gap-5 md:gap-7.5 max-lg:flex-col">
-                    <BtnLink variant="opacity/yellow" link="/" colorText="paper" textSize="body">
-                        <FontAwesomeIcon icon={faFileLines} aria-hidden className="mr-1" />
+                    <Button
+                        variant="outline-gold"
+                        href="/"
+                        textColor="paper"
+                        textSize="body"
+                        icon={<FontAwesomeIcon icon={faFileLines} aria-hidden />}
+                    >
                         <p className="text-start">{t("documentsProduced.buttons.civilRegistry")}</p>
-                    </BtnLink>
+                    </Button>
 
-                    <BtnLink variant="opacity/yellow" link="/" colorText="paper" textSize="body">
-                        <FontAwesomeIcon icon={faFileLines} aria-hidden className="mr-1" />
+                    <Button
+                        variant="outline-gold"
+                        href="/"
+                        textColor="paper"
+                        textSize="body"
+                        icon={<FontAwesomeIcon icon={faFileLines} aria-hidden />}
+                    >
                         {t("documentsProduced.buttons.annualReport")}
-                    </BtnLink>
+                    </Button>
 
                 </div>
-                <BtnLink
-                    text={t("documentsProduced.buttons.moreDocuments")}
-                    variant="yellow"
-                    link="/sobre/documentos"
-                />
+                <Button variant="solid-gold" href="/sobre/documentos">
+                    {t("documentsProduced.buttons.moreDocuments")}
+                </Button>
             </div>
 
         </div>

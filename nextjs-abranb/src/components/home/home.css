@@ -64,20 +64,9 @@ html[data-color-scheme="high-contrast"] .bg-linear {
   @apply w-full -outline-offset-0
 }
 
-.btn-contato-submit {
-  @apply cursor-pointer border-2 border-gold bg-gold/50 h-16.5 px-12.5 rounded-[50px] text-lead font-bold
-}
 html[data-color-scheme="night"] .input-contato {
   @apply border-gold bg-lilac/10
 }
 html[data-color-scheme="high-contrast"] .input-contato {
   @apply border-gold bg-lilac/5
-}
-
-html[data-color-scheme="night"] .btn-contato-submit {
-  @apply bg-purple/50 hover:bg-purple border-purple text-paper
-}
-
-html[data-color-scheme="high-contrast"] .btn-contato-submit {
-  @apply bg-purple/50 hover:bg-purple border-purple text-paper
 }

@@ -7,8 +7,8 @@ export default function NossaHistoria() {
       descriptionKey="ourHistory.description"
       buttonTextKey="ourHistory.buttonText"
       buttonHref="/"
-      buttonVariant="purple"
-      buttonColorText="paper"
+      buttonVariant="solid-purple"
+      buttonTextColor="paper"
     />
   );
 }
