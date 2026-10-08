@@ -5,6 +5,7 @@ import {
   useCallback,
   useEffect,
   useId,
+  useLayoutEffect,
   useRef,
   useState,
   type PointerEvent as ReactPointerEvent,
@@ -12,6 +13,11 @@ import {
 } from "react";
 
 import { ChevronIcon } from "@/components/chevron-icon";
+
+/** Matches Tailwind's `sm` breakpoint: below it the panel is not anchored to its trigger. */
+const MOBILE_QUERY = "(max-width: 639.98px)";
+/** Minimum gap kept between a centred panel and the viewport edges. */
+const MOBILE_EDGE_GAP_PX = 8;
 
 /** Grace period so the pointer can cross the gap between trigger and panel. */
 const HOVER_CLOSE_DELAY_MS = 150;
@@ -188,6 +194,42 @@ export function DropdownMenu({
     document.addEventListener("pointerdown", onPointerDown);
     return () => document.removeEventListener("pointerdown", onPointerDown);
   }, [open, closeAndRestoreFocus]);
+
+  /**
+   * Below `sm` the panel is positioned against the header, not the trigger, so
+   * CSS alone cannot centre it. Centre it under the trigger when it fits with
+   * a gap on both sides; otherwise keep the right-aligned CSS fallback.
+   */
+  useLayoutEffect(() => {
+    const panel = panelRef.current;
+    const trigger = triggerRef.current;
+    if (!open || align !== "center" || !panel || !trigger) return;
+
+    const place = () => {
+      panel.style.removeProperty("left");
+      panel.style.removeProperty("right");
+      panel.style.removeProperty("translate");
+      if (!window.matchMedia(MOBILE_QUERY).matches) return;
+
+      const triggerRect = trigger.getBoundingClientRect();
+      const width = panel.offsetWidth;
+      const left = triggerRect.left + triggerRect.width / 2 - width / 2;
+      const fits =
+        left >= MOBILE_EDGE_GAP_PX &&
+        left + width <= window.innerWidth - MOBILE_EDGE_GAP_PX;
+      if (!fits) return;
+
+      const anchorLeft = panel.offsetParent?.getBoundingClientRect().left ?? 0;
+      panel.style.left = `${left - anchorLeft}px`;
+      panel.style.right = "auto";
+      // Replaces the `-translate-x` fallback; keeps the vertical nudge from alignClasses.
+      panel.style.translate = "0 -15px";
+    };
+
+    place();
+    window.addEventListener("resize", place);
+    return () => window.removeEventListener("resize", place);
+  }, [open, align]);
 
   const toggle = () => {
     if (open) {
