@@ -45,6 +45,7 @@ html[data-color-scheme="high-contrast"] .historia-rule {
 .historia-body {
   color: var(--palette-ink);
   line-height: 1.55;
+  text-align: justify;
 }
 
 .historia-body strong {
@@ -233,6 +234,8 @@ html[data-color-scheme="high-contrast"] .historia-principios-list {
 }
 
 .historia-timeline-track {
+  --historia-row-space: 6rem;
+
   position: relative;
   margin: 0 auto;
   max-width: 56rem;
@@ -252,19 +255,66 @@ html[data-color-scheme="high-contrast"] .historia-principios-list {
   background-color: var(--palette-golden-yellow);
 }
 
-@media (width >= 768px) {
-  .historia-timeline-spine {
-    top: 100px;
-    bottom: 240px;
-  }
-}
-
 .historia-timeline-list {
   position: relative;
   z-index: 1;
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+.historia-timeline-row {
+  position: relative;
+  padding-bottom: var(--historia-row-space);
+}
+
+.historia-timeline-row:last-child {
+  --historia-row-space: 2rem;
+}
+
+@media (width >= 768px) {
+  .historia-timeline-track {
+    --historia-row-space: 3.5rem;
+  }
+
+  .historia-timeline-row:last-child {
+    --historia-row-space: 2.5rem;
+  }
+
+  /* The desktop spine is drawn per row instead of as one fixed-height bar, so it
+     always starts at the first year bubble and ends at the last one whatever the
+     card heights are. Rows center their year bubble in the content box, which sits
+     half of the row spacing above the row's own vertical midpoint. */
+  .historia-timeline-spine {
+    display: none;
+  }
+
+  .historia-timeline-row::before,
+  .historia-timeline-row::after {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    left: 50%;
+    width: 2px;
+    transform: translateX(-50%);
+    border-radius: 9999px;
+    background-color: var(--palette-golden-yellow);
+  }
+
+  .historia-timeline-row::before {
+    top: 0;
+    bottom: calc(50% + var(--historia-row-space) / 2);
+  }
+
+  .historia-timeline-row::after {
+    top: calc(50% - var(--historia-row-space) / 2);
+    bottom: 0;
+  }
+
+  .historia-timeline-row:first-child::before,
+  .historia-timeline-row:last-child::after {
+    content: none;
+  }
 }
 
 .historia-timeline-year {

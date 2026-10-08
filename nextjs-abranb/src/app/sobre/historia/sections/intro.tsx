@@ -1,10 +1,6 @@
 import type { HistoriaSectionProps } from "../types";
 
-type BodySegment = { type: "text" | "emphasis"; value: string };
-
 export default function HistoriaIntro({ id, copy }: HistoriaSectionProps) {
-  const segments = copy.body_segments as BodySegment[];
-
   return (
     <section
       id={id}
@@ -17,15 +13,22 @@ export default function HistoriaIntro({ id, copy }: HistoriaSectionProps) {
           </h2>
           <span className="historia-rule" aria-hidden />
         </div>
-        <p className="historia-body w-full text-left md:text-left text-body">
-          {segments.map((seg, i) =>
-            seg.type === "emphasis" ? (
-              <strong key={i}>{seg.value}</strong>
-            ) : (
-              <span key={i}>{seg.value}</span>
-            ),
-          )}
-        </p>
+        <div className="flex w-full flex-col gap-4">
+          {copy.body_paragraphs.map((segments, paragraphIndex) => (
+            <p
+              key={paragraphIndex}
+              className="historia-body w-full text-justify text-body"
+            >
+              {segments.map((seg, i) =>
+                seg.type === "emphasis" ? (
+                  <strong key={i}>{seg.value}</strong>
+                ) : (
+                  <span key={i}>{seg.value}</span>
+                ),
+              )}
+            </p>
+          ))}
+        </div>
       </div>
     </section>
   );

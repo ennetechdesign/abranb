@@ -118,7 +118,7 @@ export function Footer() {
         <div className="flex flex-col items-center gap-4 md:items-start">
           <Link
             href="/"
-            className="rounded-md focus-visible:outline-offset-2"
+            className="rounded-md transition-opacity hover:opacity-80 focus-visible:outline-offset-2"
           >
             <LogoMark className="size-16 shrink-0 md:size-20" />
           </Link>
@@ -129,7 +129,7 @@ export function Footer() {
                   <FooterLink
                     href={link.href}
                     ariaLabel={t(link.labelKey)}
-                    className="flex size-10 items-center justify-center rounded-full border-2 border-footer-social-ring text-footer-heading transition-opacity hover:opacity-80 focus-visible:outline-offset-2"
+                    className="flex size-10 items-center justify-center rounded-full border-2 border-footer-social-ring text-footer-heading transition-colors hover:bg-footer-social-ring hover:text-footer-bg focus-visible:outline-offset-2"
                   >
                     <FontAwesomeIcon
                       icon={socialIcons[link.id]}
@@ -157,7 +157,7 @@ export function Footer() {
               <li key={link.id} className="text-right">
                 <FooterLink
                   href={link.href}
-                  className="inline-flex items-center gap-2 text-footer-link transition-opacity hover:opacity-80 focus-visible:outline-offset-2"
+                  className="-mx-2 inline-flex items-center gap-2 rounded-md px-2 py-1 text-footer-link transition-colors hover:bg-footer-link-hover-bg hover:text-footer-link-hover-fg focus-visible:outline-offset-2"
                 >
                   <span>
                     {t(link.labelKey)}
@@ -193,7 +193,7 @@ export function Footer() {
               <li key={link.id} className="text-right">
                 <FooterLink
                   href={link.href}
-                  className="inline-flex items-center gap-2 text-footer-link-research transition-opacity hover:opacity-80 focus-visible:outline-offset-2"
+                  className="-mx-2 inline-flex items-center gap-2 rounded-md px-2 py-1 text-footer-link-research transition-colors hover:bg-footer-link-hover-bg hover:text-footer-link-hover-fg focus-visible:outline-offset-2"
                 >
                   <span>{link.label}</span>
                   <FontAwesomeIcon

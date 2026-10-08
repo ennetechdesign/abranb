@@ -7,10 +7,14 @@ import {
   useId,
   useRef,
   useState,
+  type PointerEvent as ReactPointerEvent,
   type ReactNode,
 } from "react";
 
 import { ChevronIcon } from "@/components/chevron-icon";
+
+/** Grace period so the pointer can cross the gap between trigger and panel. */
+const HOVER_CLOSE_DELAY_MS = 150;
 
 export type DropdownMenuItem = {
   href: string;
@@ -23,6 +27,11 @@ export type DropdownMenuProps = {
   triggerIcon?: ReactNode;
   /** Defaults: true for `text` / `textOnPurple`, false for `purple`. */
   showChevron?: boolean;
+  /**
+   * Open on mouse hover in addition to click. Ignored for touch and pen input,
+   * which keep the click-to-toggle behaviour.
+   */
+  openOnHover?: boolean;
   align: "start" | "center" | "end";
   /** Classes on the positioned panel wrapper (width, max-height, scroll, etc.). */
   panelClassName?: string;
@@ -98,6 +107,7 @@ export function DropdownMenu({
   triggerLabel,
   triggerIcon,
   showChevron: showChevronProp,
+  openOnHover = false,
   align = "center",
   panelClassName,
   items,
@@ -119,13 +129,36 @@ export function DropdownMenu({
   const rootRef = useRef<HTMLDivElement>(null);
   const triggerRef = useRef<HTMLButtonElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
+  const closeTimerRef = useRef<number | null>(null);
+  /** Hovering must not steal focus, so only click and keyboard opt in. */
+  const focusPanelOnOpenRef = useRef(false);
 
-  const close = useCallback(() => {
-    setOpen(false);
+  const cancelScheduledClose = useCallback(() => {
+    if (closeTimerRef.current === null) return;
+    window.clearTimeout(closeTimerRef.current);
+    closeTimerRef.current = null;
   }, []);
 
+  const close = useCallback(() => {
+    cancelScheduledClose();
+    setOpen(false);
+  }, [cancelScheduledClose]);
+
+  /** Returns focus to the trigger only when focus sits inside the menu. */
+  const closeAndRestoreFocus = useCallback(() => {
+    const focusWasInside =
+      rootRef.current?.contains(document.activeElement) ?? false;
+    close();
+    if (focusWasInside) {
+      triggerRef.current?.focus();
+    }
+  }, [close]);
+
+  useEffect(() => cancelScheduledClose, [cancelScheduledClose]);
+
   useEffect(() => {
-    if (!open) return;
+    if (!open || !focusPanelOnOpenRef.current) return;
+    focusPanelOnOpenRef.current = false;
     const panel = panelRef.current;
     if (panel) {
       focusFirstFocusable(panel);
@@ -137,34 +170,51 @@ export function DropdownMenu({
     const onKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
         e.preventDefault();
-        close();
-        triggerRef.current?.focus();
+        closeAndRestoreFocus();
       }
     };
     document.addEventListener("keydown", onKeyDown);
     return () => document.removeEventListener("keydown", onKeyDown);
-  }, [open, close]);
+  }, [open, closeAndRestoreFocus]);
 
   useEffect(() => {
     if (!open) return;
     const onPointerDown = (e: PointerEvent) => {
       const root = rootRef.current;
       if (root && !root.contains(e.target as Node)) {
-        close();
-        triggerRef.current?.focus();
+        closeAndRestoreFocus();
       }
     };
     document.addEventListener("pointerdown", onPointerDown);
     return () => document.removeEventListener("pointerdown", onPointerDown);
-  }, [open, close]);
+  }, [open, closeAndRestoreFocus]);
 
   const toggle = () => {
-    setOpen((v) => {
-      if (v) {
-        queueMicrotask(() => triggerRef.current?.focus());
-      }
-      return !v;
-    });
+    if (open) {
+      close();
+      triggerRef.current?.focus();
+      return;
+    }
+    focusPanelOnOpenRef.current = true;
+    cancelScheduledClose();
+    setOpen(true);
+  };
+
+  const handlePointerEnter = (e: ReactPointerEvent<HTMLDivElement>) => {
+    if (!openOnHover || e.pointerType !== "mouse") return;
+    cancelScheduledClose();
+    setOpen(true);
+  };
+
+  const handlePointerLeave = (e: ReactPointerEvent<HTMLDivElement>) => {
+    if (!openOnHover || e.pointerType !== "mouse") return;
+    cancelScheduledClose();
+    closeTimerRef.current = window.setTimeout(() => {
+      closeTimerRef.current = null;
+      // A keyboard user may have tabbed into the panel meanwhile.
+      if (rootRef.current?.contains(document.activeElement)) return;
+      setOpen(false);
+    }, HOVER_CLOSE_DELAY_MS);
   };
 
   const hasItems = Boolean(items && items.length > 0);
@@ -172,7 +222,13 @@ export function DropdownMenu({
   const list = items ?? [];
 
   return (
-    <div ref={rootRef} className={["sm:relative", className].filter(Boolean).join(" ")}>
+    <div
+      ref={rootRef}
+      className={["sm:relative", className].filter(Boolean).join(" ")}
+      data-dropdown-hoverable={openOnHover ? "" : undefined}
+      onPointerEnter={handlePointerEnter}
+      onPointerLeave={handlePointerLeave}
+    >
       <button
         ref={triggerRef}
         type="button"
@@ -203,7 +259,7 @@ export function DropdownMenu({
         </span>
         {showChevron ? <ChevronDown open={open} /> : null}
       </button>
-      {open ? (
+      {open || openOnHover ? (
         <div
           ref={panelRef}
           id={panelId}
@@ -211,6 +267,8 @@ export function DropdownMenu({
           aria-modal={panelRole === "dialog" ? "false" : undefined}
           aria-labelledby={panelLabelledBy}
           aria-label={panelLabelledBy ? undefined : panelAriaLabel}
+          data-dropdown-panel
+          data-open={open}
           className={[
             "absolute top-full z-50 mt-2",
             alignClasses(align),

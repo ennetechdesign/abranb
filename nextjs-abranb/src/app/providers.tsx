@@ -27,8 +27,9 @@ function createI18nInstance(initialLocale: string) {
     fallbackLng: defaultLocale,
     supportedLngs: ["pt-BR", "en"],
     resources,
-    ns: ["common"],
+    ns: Object.keys(resources[defaultLocale]),
     defaultNS: "common",
+    fallbackNS: "common",
     detection:
       typeof window !== "undefined"
         ? {

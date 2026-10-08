@@ -120,6 +120,7 @@ export function Header({
               <DropdownMenu
                   triggerVariant="textOnPurple"
                   triggerLabel={t("nav_about")}
+                  openOnHover
                   align="center"
                   ariaHasPopup="menu"
                   panelRole="menu"
@@ -129,6 +130,7 @@ export function Header({
               <DropdownMenu
                   triggerVariant="textOnPurple"
                   triggerLabel={t("nav_biblioteca")}
+                  openOnHover
                   align="center"
                   ariaHasPopup="menu"
                   panelRole="menu"

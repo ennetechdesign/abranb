@@ -65,6 +65,9 @@
     "description": "Uma doação também é uma forma válida de ajudar pessoas e organizações diversas, e isso conta muito para que a nossa articulação continue de pé em nossas atividades. Juntes, construímos um mundo mais empático e includente para todes. Sua contribuição faz toda a diferença!",
     "pixLabel": "Copiar chave pix:",
     "pixButton": "abranb.associacao@gmail.com",
+    "pixCopyAria": "Copiar chave PIX abranb.associacao@gmail.com",
+    "pixCopied": "Chave PIX copiada",
+    "pixCopyFailed": "Não foi possível copiar. Selecione o e-mail e copie manualmente.",
     "paypalButton": "Doar via PayPal"
   },
   "contact": {
