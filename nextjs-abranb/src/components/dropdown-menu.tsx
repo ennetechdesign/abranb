@@ -94,7 +94,7 @@ function triggerVariantClasses(
 
 function alignClasses(align: NonNullable<DropdownMenuProps["align"]>) {
   if (align === "center") {
-    return "right-0 max-sm:-translate-y-[15px] -translate-x-[10px] sm:left-1/2 sm:-translate-x-1/2";
+    return "right-0 max-sm:-translate-y-[15px] -translate-x-[10px] sm:right-auto sm:left-1/2 sm:-translate-x-1/2";
   }
   if (align === "end") {
     return "right-0";
@@ -272,6 +272,7 @@ export function DropdownMenu({
           className={[
             "absolute top-full z-50 mt-2",
             alignClasses(align),
+            hasItems ? "w-max" : undefined,
             panelClassName,
           ]
             .filter(Boolean)
@@ -285,7 +286,7 @@ export function DropdownMenu({
                     key={item.href}
                     href={item.href}
                     role={panelRole === "menu" ? "menuitem" : undefined}
-                    className="no-underline outline-none transition-colors hover:text-nav-dropdown-hover focus-visible:text-nav-dropdown-hover"
+                    className="whitespace-nowrap no-underline outline-none transition-colors hover:text-nav-dropdown-hover focus-visible:text-nav-dropdown-hover"
                     onClick={close}
                   >
                     {item.label}
