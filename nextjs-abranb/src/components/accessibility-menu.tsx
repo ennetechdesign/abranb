@@ -1,6 +1,10 @@
 "use client";
 
-import { faCircleHalfStroke, faMoon, faSun} from "@fortawesome/free-solid-svg-icons";
+import {
+  faCircleHalfStroke,
+  faMoon,
+  faSun,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useRouter } from "next/navigation";
 import { useEffect, useState, type ReactNode } from "react";
@@ -71,7 +75,7 @@ function LanguageMenu({
         <label
           key={code}
           className={[
-            "flex cursor-pointer items-center whitespace-nowrap px-4 py-3 text-body transition-colors",
+            "flex cursor-pointer items-center justify-center whitespace-nowrap px-4 py-3 text-body transition-colors",
             index > 0 ? "border-t border-nav-dropdown-border" : "",
             value === code
               ? "bg-nav-dropdown-selected-bg text-nav-dropdown-selected-fg"
@@ -100,7 +104,7 @@ export function AccessibilityMenu({
   className,
 }: AccessibilityMenuProps) {
   const router = useRouter();
-  const {t, i18n} = useTranslation("common");
+  const { t, i18n } = useTranslation("common");
 
   const [colorScheme, setColorScheme] = useState(initialColorScheme);
   const [fontFamily, setFontFamily] = useState(initialFontFamily);
@@ -147,8 +151,7 @@ export function AccessibilityMenu({
   };
 
   const resolvedLocale = (i18n.resolvedLanguage ?? i18n.language) as string;
-  const currentLocale: AppLocale =
-    resolvedLocale === "en" ? "en" : "pt-BR";
+  const currentLocale: AppLocale = resolvedLocale === "en" ? "en" : "pt-BR";
 
   const colorIcons: Record<ColorScheme, ReactNode> = {
     day: (
@@ -175,19 +178,19 @@ export function AccessibilityMenu({
   };
 
   return (
-      <div
-          className={[
-            "box-border w-full min-w-50 rounded-3xl border border-nav-dropdown-border bg-nav-dropdown-bg p-6 text-nav-dropdown-fg shadow-lg sm:p-8",
-            className,
-          ]
-            .filter(Boolean)
-            .join(" ")}
-          role="region"
-          aria-label={t("a11y_menu_region_label")}
-      >
-        <div className="grid min-w-0 grid-cols-1 gap-8 sm:grid-cols-2">
-          <fieldset className="min-w-0 border-0 p-0">
-            <legend className="text-body mb-3 font-semibold">
+    <div
+      className={[
+        "box-border w-full min-w-50 rounded-3xl border border-nav-dropdown-border bg-nav-dropdown-bg p-6 text-nav-dropdown-fg shadow-lg sm:p-8",
+        className,
+      ]
+        .filter(Boolean)
+        .join(" ")}
+      role="region"
+      aria-label={t("a11y_menu_region_label")}
+    >
+      <div className="grid min-w-0 grid-cols-1 gap-8 sm:grid-cols-2">
+        <fieldset className="min-w-0 border-0 p-0">
+          <legend className="text-body mb-3 font-semibold">
             {t("a11y_color_theme")}
           </legend>
           <div
@@ -234,10 +237,7 @@ export function AccessibilityMenu({
             aria-label={t("a11y_text_size")}
           >
             {textSizes.map((value, index) => (
-              <label
-                key={value}
-                className={segmentClass(textSize === value)}
-              >
+              <label key={value} className={segmentClass(textSize === value)}>
                 {index > 0 ? (
                   <span
                     className="pointer-events-none absolute top-2 bottom-2 left-0 w-px bg-nav-dropdown-border"
@@ -287,7 +287,7 @@ export function AccessibilityMenu({
               <label
                 key={value}
                 className={[
-                  "flex cursor-pointer items-center px-4 py-3 transition-colors",
+                  "flex cursor-pointer items-center justify-center px-4 py-3 transition-colors",
                   index > 0 ? "border-t border-nav-dropdown-border" : "",
                   fontFamily === value
                     ? "bg-nav-dropdown-selected-bg text-nav-dropdown-selected-fg"

@@ -5,10 +5,10 @@
   --palette-lilac: #f2dff2;
   --palette-purple: #9c5fd9;
   --palette-purple-muted: #9163bf;
-  --palette-purple-vibrant: #724CFB;
+  --palette-purple-vibrant: #724cfb;
   --palette-cream: #f2f0d8;
-  --palette-gold: #F2C230;
-  --palette-golden-yellow: #FFCD36;
+  --palette-gold: #f2c230;
+  --palette-golden-yellow: #ffcd36;
   --palette-ink: #090011;
   --palette-deep: #120020;
   --palette-charcoal: #322a38;
@@ -46,12 +46,28 @@
   --button-primary: var(--palette-gold);
   --button-primary-hover: color-mix(in srgb, var(--palette-gold) 78%, #ffffff);
   --button-primary-active: color-mix(in srgb, var(--palette-gold) 55%, #3d3510);
-  --button-primary-active-ring: color-mix(in srgb, var(--palette-gold) 45%, #ffffff);
+  --button-primary-active-ring: color-mix(
+    in srgb,
+    var(--palette-gold) 45%,
+    #ffffff
+  );
 
   --button-secondary: var(--palette-purple);
-  --button-secondary-hover: color-mix(in srgb, var(--palette-purple) 72%, #ffffff);
-  --button-secondary-active: color-mix(in srgb, var(--palette-purple) 45%, var(--palette-deep));
-  --button-secondary-active-ring: color-mix(in srgb, var(--palette-lilac) 55%, #ffffff);
+  --button-secondary-hover: color-mix(
+    in srgb,
+    var(--palette-purple) 72%,
+    #ffffff
+  );
+  --button-secondary-active: color-mix(
+    in srgb,
+    var(--palette-purple) 45%,
+    var(--palette-deep)
+  );
+  --button-secondary-active-ring: color-mix(
+    in srgb,
+    var(--palette-lilac) 55%,
+    #ffffff
+  );
 
   --footer-bg: var(--palette-gold);
   --footer-heading: var(--palette-purple);
@@ -304,4 +320,8 @@ html.no-js [data-dropdown-hoverable]:focus-within [data-dropdown-panel] {
   --text-body--line-height: 1.45;
   --text-caption: var(--font-size-x-small);
   --text-caption--line-height: 1.45;
+}
+
+.border {
+  border-radius: 25px;
 }
