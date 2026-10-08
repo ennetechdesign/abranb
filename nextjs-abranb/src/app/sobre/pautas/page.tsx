@@ -1,21 +1,18 @@
 import type { Metadata } from "next";
 
-import { resources } from "@/i18n/resources";
+import { resources, type LocaleResource } from "@/i18n/resources";
 import { getServerLocale } from "@/lib/resolve-locale";
+import { buildLocaleMetadata } from "@/lib/page-metadata";
 import SecondaryHero from "@/components/secondary-hero";
 import { ChevronIcon } from "@/components/chevron-icon";
 
 import "./pautas.css";
 
-type Pautas = (typeof resources)["pt-BR"]["pautas"];
+type Pautas = LocaleResource<"pautas">;
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getServerLocale();
-  const { meta_title, meta_description } = resources[locale].pautas;
-  return {
-    title: meta_title,
-    description: meta_description,
-  };
+  return buildLocaleMetadata(locale, "pautas");
 }
 
 function PautasContent({ pautas }: { pautas: Pautas }) {
@@ -50,9 +47,5 @@ export default async function PautasPage() {
   const locale = await getServerLocale();
   const pautas = resources[locale].pautas;
 
-  return (
-    <main className="min-h-screen w-full">
-      <PautasContent pautas={pautas} />
-    </main>
-  );
+  return <PautasContent pautas={pautas} />;
 }

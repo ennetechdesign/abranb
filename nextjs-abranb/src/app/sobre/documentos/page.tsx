@@ -3,12 +3,13 @@ import type { Metadata } from "next";
 import TitleUnderline from "@/components/title-underline";
 import SecondaryHero from "@/components/secondary-hero";
 import Button, { FileLinesIcon } from "@/components/button";
-import { resources } from "@/i18n/resources";
+import { resources, type LocaleResource } from "@/i18n/resources";
 import { getServerLocale } from "@/lib/resolve-locale";
+import { buildLocaleMetadata } from "@/lib/page-metadata";
 
 import "./documentos.css";
 
-type Documentos = (typeof resources)["pt-BR"]["documentos"];
+type Documentos = LocaleResource<"documentos">;
 type DocItem = Documentos["sections"]["pareceres"]["docs"][number];
 
 function DocPill({
@@ -28,11 +29,7 @@ function DocPill({
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getServerLocale();
-  const { meta_title, meta_description } = resources[locale].documentos;
-  return {
-    title: meta_title,
-    description: meta_description,
-  };
+  return buildLocaleMetadata(locale, "documentos");
 }
 
 function DocsContent({ copy }: { copy: Documentos }) {
@@ -107,9 +104,5 @@ export default async function DocumentosPage() {
   const locale = await getServerLocale();
   const copy = resources[locale].documentos;
 
-  return (
-    <main className="min-h-screen w-full">
-      <DocsContent copy={copy} />
-    </main>
-  );
+  return <DocsContent copy={copy} />;
 }

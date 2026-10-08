@@ -1,5 +1,5 @@
 import TitleUnderline from "@/components/title-underline";
-import SlideShow from "../slide-show";
+import SlideShow from "../components/slide-show";
 import { useTranslation } from "react-i18next";
 import Button from "@/components/button";
 

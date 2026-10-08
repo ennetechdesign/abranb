@@ -1,4 +1,4 @@
-import SplitImageCtaSection from "../split-image-cta-section";
+import SplitImageCtaSection from "../components/split-image-cta-section";
 
 export default function ArquivosHistoricos() {
   return (

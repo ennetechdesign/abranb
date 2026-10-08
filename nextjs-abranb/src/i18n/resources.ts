@@ -27,3 +27,13 @@ export const resources = {
     documentos: enDocumentos,
   },
 } satisfies Resource;
+
+export type LocaleResource<
+  NS extends keyof (typeof resources)["pt-BR"],
+> = (typeof resources)["pt-BR"][NS];
+
+type HasMeta = { meta_title: string; meta_description: string };
+export type LocaleResourceWithMeta = Extract<
+  (typeof resources)["pt-BR"][keyof (typeof resources)["pt-BR"]],
+  HasMeta
+>;
