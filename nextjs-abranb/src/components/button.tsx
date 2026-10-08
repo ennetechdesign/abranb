@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { ComponentProps, MouseEventHandler, ReactNode } from "react";
+import type { ComponentProps, ReactNode } from "react";
 
 import { ChevronIcon } from "@/components/chevron-icon";
 
@@ -47,7 +47,7 @@ const variantClassMap: Record<Exclude<ButtonVariant, "docs-outer" | "docs-report
     [html[data-color-scheme='high-contrast']_&]:hover:bg-purple [html[data-color-scheme='high-contrast']_&]:text-paper
   `,
   "outline-gold-to-purple-strong": `
-    border-2 border-gold bg-gold/50
+    border-2 border-gold bg-gold/50 hover:bg-gold
     [html[data-color-scheme='night']_&]:bg-purple/50 [html[data-color-scheme='night']_&]:hover:bg-purple
     [html[data-color-scheme='night']_&]:border-purple [html[data-color-scheme='night']_&]:text-paper
     [html[data-color-scheme='high-contrast']_&]:bg-purple/50 [html[data-color-scheme='high-contrast']_&]:border-purple
@@ -93,10 +93,8 @@ function resolveExternal(href: string | undefined, target: ButtonTarget | undefi
   };
 }
 
-export type ButtonProps = {
+type ButtonBaseProps = {
   variant: ButtonVariant;
-  href?: string;
-  type?: "button" | "submit";
   size?: ButtonSize;
   textColor?: ButtonTextColor;
   textSize?: ButtonTextSize;
@@ -104,14 +102,23 @@ export type ButtonProps = {
   icon?: ReactNode;
   className?: string;
   children: ReactNode;
-  onClick?: MouseEventHandler<HTMLButtonElement | HTMLAnchorElement>;
-  "aria-label"?: string;
-} & Omit<ComponentProps<typeof Link>, "href" | "className" | "onClick" | "aria-label">;
+};
+
+type ButtonAsLinkProps = ButtonBaseProps & {
+  href: string;
+  type?: never;
+} & Omit<ComponentProps<typeof Link>, "href" | "className" | "target" | "children">;
+
+type ButtonAsButtonProps = ButtonBaseProps & {
+  href?: undefined;
+  type?: "button" | "submit";
+} & Omit<ComponentProps<"button">, "className" | "children" | "type">;
+
+export type ButtonProps = ButtonAsLinkProps | ButtonAsButtonProps;
 
 export default function Button({
   variant,
   href,
-  type = "button",
   size = "standard",
   textColor = "deep",
   textSize = "lead",
@@ -119,9 +126,7 @@ export default function Button({
   icon,
   className,
   children,
-  onClick,
-  "aria-label": ariaLabel,
-  ...rest
+  ...props
 }: ButtonProps) {
   const isDocs = docsVariants.has(variant);
   const { target, rel } = resolveExternal(href, targetProp);
@@ -147,29 +152,18 @@ export default function Button({
     </>
   );
 
-  if (href) {
+  if (href !== undefined) {
+    const linkRest = props as Omit<ButtonAsLinkProps, keyof ButtonBaseProps | "href">;
     return (
-      <Link
-        href={href}
-        target={target}
-        rel={rel}
-        className={classes}
-        onClick={onClick}
-        aria-label={ariaLabel}
-        {...rest}
-      >
+      <Link href={href} target={target} rel={rel} className={classes} {...linkRest}>
         {content}
       </Link>
     );
   }
 
+  const { type = "button", ...buttonRest } = props as Omit<ButtonAsButtonProps, keyof ButtonBaseProps | "href">;
   return (
-    <button
-      type={type}
-      className={classes}
-      onClick={onClick}
-      aria-label={ariaLabel}
-    >
+    <button {...buttonRest} type={type} className={classes}>
       {content}
     </button>
   );
