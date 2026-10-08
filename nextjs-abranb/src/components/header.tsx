@@ -83,28 +83,28 @@ export function Header({
           </div>
 
           <div className="flex min-w-0 items-center justify-center md:justify-between">
-            <div className="flex shrink-0 items-center gap-1 md:gap-2">
+            <div className="flex shrink-0 items-center gap-1 md:gap-2 outline-none focus-visible:outline-none">
               <DropdownMenu
                   triggerVariant="purple"
                   triggerLabel={t("a11y_open_button")}
                   triggerIcon={<FontAwesomeIcon
                       icon={faUniversalAccess}
-                      className="size-4 text-lg md:text-xl"
+                      className="size-16 text-2xl md:text-2xl"
                       aria-hidden
                   />}
                   showChevron={false}
                   iconOnly={a11yIconOnly}
+                  openOnHover
                   align="center"
                   ariaHasPopup="dialog"
                   panelRole="dialog"
                   triggerClassName="shadow-none"
-                  panelClassName="min-w-75 max-w-80 sm:min-w-[500px] sm:max-w-[500px] overflow-x-hidden overflow-y-auto rounded-lg shadow-lg"
+                  panelClassName="min-w-75 max-w-80 sm:min-w-[500px] sm:max-w-[500px] overflow-x-hidden overflow-y-auto"
               >
                 <AccessibilityMenu
                     initialColorScheme={initialColorScheme}
                     initialFontFamily={initialFontFamily}
                     initialTextSize={initialTextSize}
-                    className="shadow-md"
                 />
               </DropdownMenu>
             </div>
