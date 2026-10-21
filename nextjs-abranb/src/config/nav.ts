@@ -43,9 +43,9 @@ export const navAboutDropdownItems: { href: string; labelKey: string }[] = [
   { href: "/sobre/historia", labelKey: "nav_sobre_history" },
   { href: "/sobre/coletivos", labelKey: "nav_sobre_partners" },
   { href: "/sobre/pautas", labelKey: "nav_sobre_topics" },
-  { href: "/sobre/arquivos", labelKey: "nav_page_archives" },
 ];
 
 export const navLibraryDropdownItems: { href: string; labelKey: string }[] = [
   { href: "/sobre/documentos", labelKey: "nav_page_documents" },
+  { href: "/sobre/arquivos", labelKey: "nav_page_archives" },
 ];
