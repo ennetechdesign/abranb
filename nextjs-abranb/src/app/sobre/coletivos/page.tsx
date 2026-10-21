@@ -56,7 +56,7 @@ function ColetivosContent({ copy }: { copy: Coletivos }) {
       <SecondaryHero title={copy.hero_title} />
 
       <section className="coletivos-locais px-4 py-12 md:py-16">
-        <div className="mx-auto flex max-w-5xl flex-col items-center gap-8 lg:gap-10">
+        <div className="mx-auto flex max-w-6xl flex-col items-center gap-8 lg:gap-10">
           <div className="flex flex-col items-center gap-3">
             <h2 className="coletivos-heading text-display text-center font-bold">
               {copy.locais_title}
@@ -70,7 +70,7 @@ function ColetivosContent({ copy }: { copy: Coletivos }) {
 
           <div className="flex w-full flex-col items-center gap-8 md:flex-row md:justify-center md:gap-12">
             <BrazilMap collectives={localCollectives} alt={copy.map_alt} />
-            <ul className="coletivos-legend flex flex-col gap-4 text-body">
+            <ul className="coletivos-legend flex flex-col gap-3 text-caption">
               <li className="flex items-start gap-3">
                 <span className="coletivos-legend-dot coletivos-legend-dot--with" aria-hidden />
                 {copy.map_legend_with}
