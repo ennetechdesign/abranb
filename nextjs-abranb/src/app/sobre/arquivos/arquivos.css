@@ -1,0 +1,459 @@
+/* Day: paper / ivory bands, purple videos band. Night: charcoal bands. High contrast: deep bands. */
+
+.arq-section {
+  --arq-bg: var(--palette-paper);
+  --arq-text: var(--palette-ink);
+  --arq-card-bg: var(--palette-lilac);
+  --arq-card-border: transparent;
+  --arq-card-link-bg: color-mix(in srgb, var(--palette-gold) 30%, var(--palette-paper));
+  --arq-card-link-fg: var(--palette-ink);
+  --arq-card-link-border: var(--palette-gold);
+  --arq-all-bg: color-mix(in srgb, var(--palette-purple) 45%, var(--palette-paper));
+  --arq-all-fg: var(--palette-ink);
+  --arq-all-border: var(--palette-purple);
+
+  width: 100%;
+  /* Content takes 80% of the viewport on mobile. */
+  padding: 3rem 10%;
+  background-color: var(--arq-bg);
+  color: var(--arq-text);
+}
+
+.arq-section--articles {
+  --arq-bg: var(--palette-ivory);
+  --arq-card-bg: color-mix(in srgb, var(--palette-gold) 30%, var(--palette-paper));
+  --arq-card-border: var(--palette-gold);
+}
+
+.arq-section--videos {
+  --arq-bg: var(--palette-purple);
+  --arq-card-bg: var(--palette-golden-yellow);
+  --arq-card-fg: var(--palette-ink);
+}
+
+html[data-color-scheme="night"] .arq-section {
+  --arq-bg: var(--palette-charcoal);
+  --arq-text: color-mix(in srgb, var(--palette-ivory) 90%, transparent);
+  --arq-card-bg: transparent;
+  --arq-card-border: color-mix(in srgb, var(--palette-lilac) 55%, transparent);
+  --arq-card-link-bg: var(--palette-purple);
+  --arq-card-link-fg: #ffffff;
+  --arq-card-link-border: var(--palette-purple);
+  --arq-all-bg: color-mix(in srgb, var(--palette-gold) 55%, var(--palette-charcoal));
+  --arq-all-fg: var(--palette-paper);
+  --arq-all-border: var(--palette-gold);
+}
+
+html[data-color-scheme="night"] .arq-section--articles {
+  --arq-bg: #3c3444;
+  --arq-card-bg: color-mix(in srgb, var(--palette-purple) 28%, var(--palette-charcoal));
+  --arq-card-border: var(--palette-purple);
+}
+
+html[data-color-scheme="night"] .arq-section--videos {
+  --arq-bg: var(--palette-purple);
+  --arq-card-bg: var(--palette-golden-yellow);
+  --arq-card-border: transparent;
+}
+
+html[data-color-scheme="high-contrast"] .arq-section {
+  --arq-bg: var(--palette-deep);
+  --arq-text: #ffffff;
+  --arq-card-bg: transparent;
+  --arq-card-border: color-mix(in srgb, var(--palette-lilac) 55%, transparent);
+  --arq-card-link-bg: color-mix(in srgb, var(--palette-purple) 30%, var(--palette-deep));
+  --arq-card-link-fg: #ffffff;
+  --arq-card-link-border: transparent;
+  --arq-all-bg: color-mix(in srgb, var(--palette-gold) 55%, var(--palette-deep));
+  --arq-all-fg: #ffffff;
+  --arq-all-border: var(--palette-gold);
+}
+
+html[data-color-scheme="high-contrast"] .arq-section--articles {
+  --arq-bg: color-mix(in srgb, var(--palette-purple) 8%, var(--palette-deep));
+  --arq-card-bg: color-mix(in srgb, var(--palette-purple) 30%, var(--palette-deep));
+  --arq-card-border: var(--palette-purple);
+}
+
+html[data-color-scheme="high-contrast"] .arq-section--videos {
+  --arq-bg: color-mix(in srgb, var(--palette-purple) 28%, var(--palette-deep));
+  --arq-card-bg: #4a2f2c;
+  --arq-card-fg: #ffffff;
+  --arq-card-border: transparent;
+}
+
+.arq-section--videos .arq-video {
+  color: var(--arq-card-fg);
+}
+
+html[data-color-scheme="night"] .arq-section--videos .arq-video {
+  color: var(--palette-ink);
+}
+
+.arq-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  max-width: 52rem;
+  margin-inline: auto;
+}
+
+.arq-inner--wide {
+  max-width: 56rem;
+}
+
+.arq-inner--books {
+  max-width: 64rem;
+}
+
+.arq-icon {
+  flex-shrink: 0;
+  width: 1em;
+  height: 1em;
+}
+
+.arq-book-link .arq-icon,
+.arq-article .arq-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* Images */
+
+.arq-grid,
+.arq-pair {
+  display: grid;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  gap: 2.5rem;
+}
+
+.arq-grid--3,
+.arq-grid--2 {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.arq-pair-block {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 2.5rem;
+  width: 100%;
+}
+
+.arq-pair {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.arq-photo {
+  display: block;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--palette-ink) 25%, transparent);
+}
+
+.arq-photo--portrait,
+.arq-photo--landscape,
+.arq-photo--natural {
+  width: 100%;
+  height: auto;
+}
+
+.arq-photo--wide {
+  /* Zero base width so the image follows the pair above instead of widening it. */
+  width: 0;
+  min-width: 100%;
+  height: auto;
+}
+
+/* Videos */
+
+.arq-videos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.arq-videos li {
+  width: min(100%, 22rem);
+}
+
+/* Thumbnail sits flush on top; the card colour only shows below it. */
+.arq-video {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+  padding-bottom: 1rem;
+  overflow: hidden;
+  border-radius: 2.5rem;
+  background-color: var(--arq-card-bg);
+  text-decoration: none;
+  transition: filter 0.15s ease;
+}
+
+.arq-video:hover {
+  filter: brightness(1.08);
+}
+
+.arq-video-media {
+  display: block;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 2.5rem;
+}
+
+.arq-video-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Scale from the top-left so the transparent right/bottom margin falls outside the frame. */
+.arq-video-thumb--trim {
+  transform: scale(1.045);
+  transform-origin: top left;
+}
+
+.arq-video-title {
+  padding-inline: 1.25rem;
+  font-size: var(--font-size-x-small);
+  font-weight: 600;
+  line-height: 1.3;
+  text-align: center;
+}
+
+/* Books */
+
+.arq-books {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.arq-book {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  overflow: hidden;
+  border: 1.5px solid var(--arq-card-border);
+  border-radius: 1.5rem;
+  background-color: var(--arq-card-bg);
+}
+
+.arq-book-cover {
+  width: 100%;
+  height: auto;
+}
+
+/* "Acessar livro" uses the same pill colours as the article pills in Artigos. */
+.arq-section--books {
+  --arq-card-link-bg: color-mix(in srgb, var(--palette-gold) 30%, var(--palette-paper));
+  --arq-card-link-fg: var(--palette-ink);
+  --arq-card-link-border: var(--palette-gold);
+}
+
+html[data-color-scheme="night"] .arq-section--books {
+  --arq-card-link-bg: color-mix(in srgb, var(--palette-purple) 28%, var(--palette-charcoal));
+  --arq-card-link-fg: #ffffff;
+  --arq-card-link-border: var(--palette-purple);
+}
+
+html[data-color-scheme="high-contrast"] .arq-section--books {
+  --arq-card-link-bg: color-mix(in srgb, var(--palette-purple) 30%, var(--palette-deep));
+  --arq-card-link-fg: #ffffff;
+  --arq-card-link-border: var(--palette-purple);
+}
+
+.arq-book-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 0 1.25rem 1.25rem;
+}
+
+.arq-book-abstract {
+  margin: 0;
+  font-size: var(--font-size-x-small);
+  line-height: 1.5;
+}
+
+.arq-book-link,
+.arq-article,
+.arq-all-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: filter 0.15s ease;
+}
+
+.arq-book-link:hover,
+.arq-article:hover,
+.arq-all-link:hover {
+  filter: brightness(1.08);
+}
+
+.arq-book-link {
+  padding: 0.5rem 1rem;
+  border: 1.5px solid var(--arq-card-link-border);
+  border-radius: 9999px;
+  background-color: var(--arq-card-link-bg);
+  color: var(--arq-card-link-fg);
+  font-size: var(--font-size-x-small);
+}
+
+.arq-all-link {
+  justify-content: center;
+  width: 100%;
+  padding: 0.6rem 1.25rem;
+  border: 1.5px solid var(--arq-all-border);
+  border-radius: 9999px;
+  background-color: var(--arq-all-bg);
+  color: var(--arq-all-fg);
+  font-size: var(--font-size-small);
+}
+
+/* Articles */
+
+.arq-articles {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.arq-article {
+  padding: 1rem 1.25rem;
+  border: 1.5px solid var(--arq-card-border);
+  border-radius: 2.5rem;
+  background-color: var(--arq-card-bg);
+  color: var(--arq-text);
+  font-size: var(--font-size-x-small);
+  line-height: 1.35;
+  text-align: center;
+}
+
+.arq-section--articles .arq-article {
+  color: var(--palette-ink);
+}
+
+html[data-color-scheme="night"] .arq-section--articles .arq-article,
+html[data-color-scheme="high-contrast"] .arq-section--articles .arq-article {
+  color: #ffffff;
+}
+
+.arq-article span {
+  min-width: 0;
+}
+
+@media (width >= 640px) {
+  .arq-section {
+    padding-block: 3.5rem;
+  }
+}
+
+@media (width >= 768px) {
+  .arq-section {
+    padding: 4rem 2rem;
+  }
+
+  .arq-inner {
+    gap: 2.5rem;
+  }
+
+  .arq-grid,
+  .arq-pair,
+  .arq-pair-block,
+  .arq-videos,
+  .arq-books,
+  .arq-articles {
+    gap: 2.5rem;
+  }
+
+  .arq-grid--3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .arq-grid--2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .arq-photo--portrait,
+  .arq-photo--landscape {
+    object-fit: cover;
+  }
+
+  .arq-photo--portrait {
+    aspect-ratio: 3 / 4;
+  }
+
+  .arq-photo--landscape {
+    aspect-ratio: 3 / 2;
+  }
+
+  /* Pair at equal height with natural widths; the wide image follows the pair's width. */
+  .arq-pair-block {
+    width: fit-content;
+    max-width: 100%;
+  }
+
+  .arq-pair {
+    flex-direction: row;
+    justify-content: center;
+    height: 30rem;
+  }
+
+  .arq-pair li {
+    height: 100%;
+  }
+
+  .arq-photo--natural {
+    width: auto;
+    height: 100%;
+  }
+
+  .arq-all-link {
+    width: auto;
+    font-size: var(--font-size-x-small);
+  }
+
+  .arq-book {
+    flex-direction: row;
+    align-items: stretch;
+    gap: 1.5rem;
+  }
+
+  .arq-book-cover {
+    width: 12rem;
+    min-width: 12rem;
+    height: auto;
+    border-radius: 1.5rem 0 0 1.5rem;
+    object-fit: cover;
+  }
+
+  .arq-book-body {
+    align-items: flex-start;
+    justify-content: center;
+    padding: 1.5rem 1.5rem 1.5rem 0;
+  }
+}
