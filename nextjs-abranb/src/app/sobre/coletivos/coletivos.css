@@ -47,8 +47,8 @@ html[data-color-scheme="high-contrast"] .coletivos-locais {
   --coletivos-text: #ffffff;
   --coletivos-pill-bg: var(--palette-golden-yellow);
   --coletivos-pill-fg: var(--palette-ink);
-  --coletivos-pill-hover-bg: var(--palette-deep);
-  --coletivos-pill-hover-fg: var(--palette-golden-yellow);
+  --coletivos-pill-hover-bg: color-mix(in srgb, var(--palette-golden-yellow) 70%, #ffffff);
+  --coletivos-pill-hover-fg: var(--palette-ink);
   --coletivos-pill-border: transparent;
 
   background-color: var(--palette-purple);
@@ -56,6 +56,7 @@ html[data-color-scheme="high-contrast"] .coletivos-locais {
 
 html[data-color-scheme="night"] .coletivos-nacionais {
   --coletivos-pill-bg: var(--palette-gold);
+  --coletivos-pill-hover-bg: color-mix(in srgb, var(--palette-gold) 70%, #ffffff);
 }
 
 html[data-color-scheme="high-contrast"] .coletivos-nacionais {
