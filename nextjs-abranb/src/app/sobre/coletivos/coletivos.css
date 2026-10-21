@@ -32,11 +32,10 @@ html[data-color-scheme="night"] .coletivos-locais {
 html[data-color-scheme="high-contrast"] .coletivos-locais {
   --coletivos-heading: var(--palette-golden-yellow);
   --coletivos-text: #ffffff;
-  --coletivos-pill-bg: color-mix(in srgb, var(--palette-purple) 30%, var(--palette-ink));
+  --coletivos-pill-bg: #3f2f46;
   --coletivos-pill-fg: #ffffff;
-  --coletivos-pill-hover-bg: var(--palette-golden-yellow);
-  --coletivos-pill-hover-fg: var(--palette-ink);
-  --coletivos-pill-border: #ffffff;
+  --coletivos-pill-hover-bg: var(--palette-purple);
+  --coletivos-pill-hover-fg: #ffffff;
   --coletivos-state-active-hover: var(--palette-golden-yellow);
   --coletivos-state-stroke: var(--palette-deep);
 
@@ -60,11 +59,10 @@ html[data-color-scheme="night"] .coletivos-nacionais {
 }
 
 html[data-color-scheme="high-contrast"] .coletivos-nacionais {
-  --coletivos-pill-bg: color-mix(in srgb, var(--palette-purple) 35%, var(--palette-ink));
+  --coletivos-pill-bg: #3f2f46;
   --coletivos-pill-fg: #ffffff;
-  --coletivos-pill-hover-bg: var(--palette-golden-yellow);
-  --coletivos-pill-hover-fg: var(--palette-ink);
-  --coletivos-pill-border: #ffffff;
+  --coletivos-pill-hover-bg: var(--palette-purple);
+  --coletivos-pill-hover-fg: #ffffff;
 
   background-color: color-mix(in srgb, var(--palette-purple) 28%, var(--palette-deep));
 }
