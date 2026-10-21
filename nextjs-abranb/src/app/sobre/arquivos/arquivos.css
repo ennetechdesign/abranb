@@ -3,11 +3,6 @@
 .arq-section {
   --arq-bg: var(--palette-paper);
   --arq-text: var(--palette-ink);
-  --arq-card-bg: var(--palette-lilac);
-  --arq-card-border: transparent;
-  --arq-card-link-bg: color-mix(in srgb, var(--palette-gold) 30%, var(--palette-paper));
-  --arq-card-link-fg: var(--palette-ink);
-  --arq-card-link-border: var(--palette-gold);
   --arq-all-bg: color-mix(in srgb, var(--palette-purple) 45%, var(--palette-paper));
   --arq-all-fg: var(--palette-ink);
   --arq-all-border: var(--palette-purple);
@@ -21,8 +16,6 @@
 
 .arq-section--articles {
   --arq-bg: var(--palette-ivory);
-  --arq-card-bg: color-mix(in srgb, var(--palette-gold) 30%, var(--palette-paper));
-  --arq-card-border: var(--palette-gold);
 }
 
 .arq-section--videos {
@@ -31,14 +24,23 @@
   --arq-card-fg: var(--palette-ink);
 }
 
+/* Book cards */
+.arq-section--books {
+  --arq-card-bg: var(--palette-lilac);
+  --arq-card-border: transparent;
+}
+
+/* Pills: "Acessar livro" and the article links share the same colours. */
+.arq-section--books,
+.arq-section--articles {
+  --arq-pill-bg: color-mix(in srgb, var(--palette-gold) 30%, var(--palette-paper));
+  --arq-pill-fg: var(--palette-ink);
+  --arq-pill-border: var(--palette-gold);
+}
+
 html[data-color-scheme="night"] .arq-section {
   --arq-bg: var(--palette-charcoal);
   --arq-text: color-mix(in srgb, var(--palette-ivory) 90%, transparent);
-  --arq-card-bg: transparent;
-  --arq-card-border: color-mix(in srgb, var(--palette-lilac) 55%, transparent);
-  --arq-card-link-bg: var(--palette-purple);
-  --arq-card-link-fg: #ffffff;
-  --arq-card-link-border: var(--palette-purple);
   --arq-all-bg: color-mix(in srgb, var(--palette-gold) 55%, var(--palette-charcoal));
   --arq-all-fg: var(--palette-paper);
   --arq-all-border: var(--palette-gold);
@@ -46,24 +48,22 @@ html[data-color-scheme="night"] .arq-section {
 
 html[data-color-scheme="night"] .arq-section--articles {
   --arq-bg: #3c3444;
-  --arq-card-bg: color-mix(in srgb, var(--palette-purple) 28%, var(--palette-charcoal));
-  --arq-card-border: var(--palette-purple);
 }
 
 html[data-color-scheme="night"] .arq-section--videos {
   --arq-bg: var(--palette-purple);
-  --arq-card-bg: var(--palette-golden-yellow);
-  --arq-card-border: transparent;
+}
+
+html[data-color-scheme="night"] .arq-section--books,
+html[data-color-scheme="night"] .arq-section--articles {
+  --arq-pill-bg: color-mix(in srgb, var(--palette-purple) 28%, var(--palette-charcoal));
+  --arq-pill-fg: #ffffff;
+  --arq-pill-border: var(--palette-purple);
 }
 
 html[data-color-scheme="high-contrast"] .arq-section {
   --arq-bg: var(--palette-deep);
   --arq-text: #ffffff;
-  --arq-card-bg: transparent;
-  --arq-card-border: color-mix(in srgb, var(--palette-lilac) 55%, transparent);
-  --arq-card-link-bg: color-mix(in srgb, var(--palette-purple) 30%, var(--palette-deep));
-  --arq-card-link-fg: #ffffff;
-  --arq-card-link-border: transparent;
   --arq-all-bg: color-mix(in srgb, var(--palette-gold) 55%, var(--palette-deep));
   --arq-all-fg: #ffffff;
   --arq-all-border: var(--palette-gold);
@@ -71,23 +71,25 @@ html[data-color-scheme="high-contrast"] .arq-section {
 
 html[data-color-scheme="high-contrast"] .arq-section--articles {
   --arq-bg: color-mix(in srgb, var(--palette-purple) 8%, var(--palette-deep));
-  --arq-card-bg: color-mix(in srgb, var(--palette-purple) 30%, var(--palette-deep));
-  --arq-card-border: var(--palette-purple);
 }
 
 html[data-color-scheme="high-contrast"] .arq-section--videos {
   --arq-bg: color-mix(in srgb, var(--palette-purple) 28%, var(--palette-deep));
   --arq-card-bg: #4a2f2c;
   --arq-card-fg: #ffffff;
-  --arq-card-border: transparent;
 }
 
-.arq-section--videos .arq-video {
-  color: var(--arq-card-fg);
+html[data-color-scheme="high-contrast"] .arq-section--books,
+html[data-color-scheme="high-contrast"] .arq-section--articles {
+  --arq-pill-bg: color-mix(in srgb, var(--palette-purple) 30%, var(--palette-deep));
+  --arq-pill-fg: #ffffff;
+  --arq-pill-border: var(--palette-purple);
 }
 
-html[data-color-scheme="night"] .arq-section--videos .arq-video {
-  color: var(--palette-ink);
+html[data-color-scheme="night"] .arq-section--books,
+html[data-color-scheme="high-contrast"] .arq-section--books {
+  --arq-card-bg: transparent;
+  --arq-card-border: color-mix(in srgb, var(--palette-lilac) 55%, transparent);
 }
 
 .arq-inner {
@@ -122,8 +124,7 @@ html[data-color-scheme="night"] .arq-section--videos .arq-video {
 
 /* Images */
 
-.arq-grid,
-.arq-pair {
+.arq-grid {
   display: grid;
   width: 100%;
   margin: 0;
@@ -140,7 +141,6 @@ html[data-color-scheme="night"] .arq-section--videos .arq-video {
 .arq-pair-block {
   display: flex;
   flex-direction: column;
-  align-items: stretch;
   gap: 2.5rem;
   width: 100%;
 }
@@ -149,6 +149,10 @@ html[data-color-scheme="night"] .arq-section--videos .arq-video {
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .arq-photo {
@@ -197,6 +201,7 @@ html[data-color-scheme="night"] .arq-section--videos .arq-video {
   overflow: hidden;
   border-radius: 2.5rem;
   background-color: var(--arq-card-bg);
+  color: var(--arq-card-fg);
   text-decoration: none;
   transition: filter 0.15s ease;
 }
@@ -309,13 +314,17 @@ html[data-color-scheme="high-contrast"] .arq-section--books {
   filter: brightness(1.08);
 }
 
+.arq-book-link,
+.arq-article {
+  border: 1.5px solid var(--arq-pill-border);
+  background-color: var(--arq-pill-bg);
+  color: var(--arq-pill-fg);
+  font-size: var(--font-size-x-small);
+}
+
 .arq-book-link {
   padding: 0.5rem 1rem;
-  border: 1.5px solid var(--arq-card-link-border);
   border-radius: 9999px;
-  background-color: var(--arq-card-link-bg);
-  color: var(--arq-card-link-fg);
-  font-size: var(--font-size-x-small);
 }
 
 .arq-all-link {
@@ -344,22 +353,9 @@ html[data-color-scheme="high-contrast"] .arq-section--books {
 
 .arq-article {
   padding: 1rem 1.25rem;
-  border: 1.5px solid var(--arq-card-border);
   border-radius: 2.5rem;
-  background-color: var(--arq-card-bg);
-  color: var(--arq-text);
-  font-size: var(--font-size-x-small);
   line-height: 1.35;
   text-align: center;
-}
-
-.arq-section--articles .arq-article {
-  color: var(--palette-ink);
-}
-
-html[data-color-scheme="night"] .arq-section--articles .arq-article,
-html[data-color-scheme="high-contrast"] .arq-section--articles .arq-article {
-  color: #ffffff;
 }
 
 .arq-article span {
@@ -381,9 +377,6 @@ html[data-color-scheme="high-contrast"] .arq-section--articles .arq-article {
     gap: 2.5rem;
   }
 
-  .arq-grid,
-  .arq-pair,
-  .arq-pair-block,
   .arq-videos,
   .arq-books,
   .arq-articles {
@@ -439,14 +432,12 @@ html[data-color-scheme="high-contrast"] .arq-section--articles .arq-article {
 
   .arq-book {
     flex-direction: row;
-    align-items: stretch;
     gap: 1.5rem;
   }
 
   .arq-book-cover {
     width: 12rem;
     min-width: 12rem;
-    height: auto;
     border-radius: 1.5rem 0 0 1.5rem;
     object-fit: cover;
   }
