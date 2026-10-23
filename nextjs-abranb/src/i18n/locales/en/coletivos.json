@@ -1,0 +1,11 @@
+{
+  "meta_title": "Partner Collectives",
+  "meta_description": "Local non-binary collectives from each state and national collectives working alongside ABRANB.",
+  "hero_title": "Partner Collectives",
+  "locais_title": "Local Collectives in Each State",
+  "map_hint": "Click on a state to visit its collective",
+  "map_alt": "Map of Brazil divided by state, highlighting the states with a local non-binary collective",
+  "map_legend_with": "States with a local non-binary collective",
+  "map_legend_without": "No local collective mapped",
+  "nacionais_title": "Meet other national collectives"
+}
