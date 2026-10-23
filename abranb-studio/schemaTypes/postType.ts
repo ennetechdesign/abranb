@@ -57,13 +57,46 @@ export const postType = defineType({
       group: 'publicacao',
       options: {
         list: [
-          {title: 'Notícia', value: 'noticia'},
           {title: 'Artigo', value: 'artigo'},
+          {title: 'Notícia', value: 'noticia'},
         ],
         layout: 'radio',
       },
-      initialValue: 'noticia',
+      initialValue: 'artigo',
       validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: 'category',
+      title: 'Categoria',
+      description:
+        'Selecione uma categoria compatível com o tipo de publicação acima.',
+      type: 'reference',
+      group: 'publicacao',
+      to: [{type: 'publicationCategory'}],
+      validation: (rule) =>
+        rule.required().custom(async (value, context) => {
+          if (!value || !value._ref || !context.document) return true
+          const client = context.getClient({apiVersion: '2026-10-01'})
+          const publicationType = context.document.publicationType
+          if (!publicationType) return true
+          const category = await client.fetch<
+            {publicationType: string | null} | null
+          >(
+            `*[_type == "publicationCategory" && _id == $id][0]`,
+            {id: value._ref},
+          )
+          if (category && category.publicationType !== publicationType) {
+            return 'Categoria incompatível com o tipo de publicação selecionado.'
+          }
+          return true
+        }),
+      options: {
+        filter: ({document}) => ({
+          filter:
+            '_type == "publicationCategory" && publicationType == $publicationType',
+          params: {publicationType: document?.publicationType},
+        }),
+      },
     }),
     defineField({
       name: 'slug',
@@ -75,24 +108,36 @@ export const postType = defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
+      name: 'schedulePublication',
+      title: 'Agendar publicação?',
+      type: 'boolean',
+      group: 'publicacao',
+      initialValue: false,
+      description:
+        'Quando ativado, informe a data e o horário em que a publicação deve ser publicada.',
+    }),
+    defineField({
       name: 'publishedAt',
       title: 'Data de publicação',
       type: 'datetime',
       group: 'publicacao',
-      initialValue: () => new Date().toISOString(),
-      validation: (rule) => [
-        rule.required(),
-        rule
-          .custom((value?: string) => {
+      description:
+        'Data e horário efetivos ou planejados para publicação da publicação.',
+      hidden: ({document}) => !document?.schedulePublication,
+      validation: (rule, context) => {
+        if (context?.hidden) return rule.skip()
+        return [
+          rule.required(),
+          rule.custom((value?: string) => {
             if (!value) return true
-            if (Number.isNaN(Date.parse(value))) return 'Informe uma data válida.'
-            if (new Date(value).getTime() > Date.now()) {
-              return 'A data está no futuro. A publicação será exibida como agendada.'
+            if (Number.isNaN(Date.parse(value))) return 'Informe uma data e horário válidos.'
+            if (new Date(value).getTime() <= Date.now()) {
+              return 'Informe uma data e horário futuros.'
             }
             return true
-          })
-          .warning(),
-      ],
+          }),
+        ]
+      },
     }),
     defineField({
       name: 'image',
@@ -196,6 +241,50 @@ export const postType = defineType({
               validation: (rule) => rule.max(200),
             }),
           ],
+        }),
+      ],
+    }),
+    defineField({
+      name: 'references',
+      title: 'Referências e fontes',
+      description:
+        'Fontes utilizadas na produção da notícia ou artigo. Informe o título da fonte e a URL da referência.',
+      type: 'array',
+      group: 'conteudo',
+      of: [
+        defineArrayMember({
+          name: 'sourceReference',
+          type: 'object',
+          title: 'Referência',
+          fields: [
+            defineField({
+              name: 'title',
+              title: 'Título ou nome da fonte',
+              type: 'string',
+              validation: (rule) => rule.required(),
+            }),
+            defineField({
+              name: 'url',
+              title: 'URL da referência',
+              type: 'url',
+              validation: (rule) =>
+                rule
+                  .required()
+                  .uri({scheme: ['http', 'https'], allowRelative: false}),
+            }),
+          ],
+          preview: {
+            select: {
+              title: 'title',
+              url: 'url',
+            },
+            prepare({title, url}) {
+              return {
+                title: title ?? 'Sem título',
+                subtitle: url,
+              }
+            },
+          },
         }),
       ],
     }),
