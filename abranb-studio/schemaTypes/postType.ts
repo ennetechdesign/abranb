@@ -24,9 +24,9 @@ export const postType = defineType({
   ],
   orderings: [
     {
-      title: 'Data de publicação (recentes primeiro)',
-      name: 'publishedAtDesc',
-      by: [{field: 'publishedAt', direction: 'desc'}],
+      title: 'Data de agendamento (recentes primeiro)',
+      name: 'scheduledAtDesc',
+      by: [{field: 'scheduledAt', direction: 'desc'}],
     },
   ],
   fields: [
@@ -114,15 +114,15 @@ export const postType = defineType({
       group: 'publicacao',
       initialValue: false,
       description:
-        'Quando ativado, informe a data e o horário em que a publicação deve ser publicada.',
+        'Quando ativado, informe a data e o horário a partir dos quais a publicação ficará visível publicamente.',
     }),
     defineField({
-      name: 'publishedAt',
-      title: 'Data de publicação',
+      name: 'scheduledAt',
+      title: 'Data de agendamento',
       type: 'datetime',
       group: 'publicacao',
       description:
-        'Data e horário efetivos ou planejados para publicação da publicação.',
+        'Data e horário a partir dos quais a publicação ficará visível publicamente. Obrigatório quando o agendamento estiver ativado.',
       hidden: ({document}) => !document?.schedulePublication,
       validation: (rule, context) => {
         if (context?.hidden) return rule.skip()
@@ -138,6 +138,40 @@ export const postType = defineType({
           }),
         ]
       },
+    }),
+    defineField({
+      name: 'originalPublishedAt',
+      title: 'Data de publicação original',
+      type: 'datetime',
+      group: 'publicacao',
+      description:
+        'Data em que o artigo ou notícia foi originalmente publicado. Pode ser uma data passada para conteúdos do acervo histórico.',
+      validation: (rule, context) => [
+        rule.custom((value?: string) => {
+          if (!value) return true
+          if (Number.isNaN(Date.parse(value))) return 'Informe uma data e horário válidos.'
+          return true
+        }),
+        rule.custom((value?: string, ctx?) => {
+          if (!value) return true
+          const scheduledAt = ctx?.document?.scheduledAt
+          const schedulePublication = ctx?.document?.schedulePublication
+          if (!schedulePublication || !scheduledAt) return true
+          const originalTime = new Date(value as any).getTime()
+          const scheduledTime = new Date(scheduledAt as any).getTime()
+          if (originalTime > scheduledTime) {
+            return 'A data de publicação original não pode ser posterior à data de agendamento.'
+          }
+          return true
+        }),
+      ],
+    }),
+    defineField({
+      name: 'updatedAt',
+      title: 'Data de atualização',
+      type: 'datetime',
+      group: 'publicacao',
+      hidden: true,
     }),
     defineField({
       name: 'image',
@@ -324,11 +358,16 @@ export const postType = defineType({
       subtitle: 'subtitle',
       media: 'image',
       publicationType: 'publicationType',
-      publishedAt: 'publishedAt',
+      scheduledAt: 'scheduledAt',
+      originalPublishedAt: 'originalPublishedAt',
     },
-    prepare({title, subtitle, media, publicationType, publishedAt}) {
+    prepare({title, subtitle, media, publicationType, scheduledAt, originalPublishedAt}) {
       const tipo = publicationType === 'artigo' ? 'Artigo' : 'Notícia'
-      const data = publishedAt ? new Date(publishedAt).toLocaleDateString('pt-BR') : ''
+      const data = scheduledAt
+        ? new Date(scheduledAt).toLocaleDateString('pt-BR')
+        : originalPublishedAt
+          ? new Date(originalPublishedAt).toLocaleDateString('pt-BR')
+          : ''
       return {
         title: title ?? 'Sem título',
         subtitle: [tipo, data].filter(Boolean).join(' · ') || subtitle,
