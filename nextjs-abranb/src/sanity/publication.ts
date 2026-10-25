@@ -33,43 +33,63 @@ export interface Publication {
   subtitle?: string | null;
   publicationType?: PublicationType | null;
   slug: string;
-  publishedAt: string;
+  originalPublishedAt?: string | null;
+  scheduledAt?: string | null;
   authorName?: string | null;
   authorPhoto?: PublicationImage | null;
   authorLink?: string | null;
   coverImage?: PublicationImage | null;
   body?: PortableTextBlock[];
+  category?: {
+    _id: string;
+    title: string;
+    slug: string;
+    publicationType: string;
+  } | null;
 }
 
 /** Opções de fetch padrão: estático com revalidação periódica. */
 export const SANITY_REVALIDATE_OPTIONS = { next: { revalidate: 30 } } as const;
 
-const PUBLICATION_FIELDS = groq`
+/** Publicações agendadas só aparecem quando o horário de publicação chega. */
+export const PUBLISHED_CONDITION = groq`
+  defined(slug.current)
+  && (!coalesce(schedulePublication, false) || (defined(scheduledAt) && scheduledAt <= now()))
+`;
+
+/** Campos públicos de uma publicação, incluindo a categoria referência. */
+export const PUBLICATION_FIELDS = groq`
   _id,
   title,
   subtitle,
   publicationType,
   "slug": slug.current,
-  publishedAt,
+  originalPublishedAt,
+  scheduledAt,
   authorName,
   authorPhoto,
   authorLink,
   "coverImage": image,
-  body
+  body,
+  "category": category->{
+    _id,
+    title,
+    "slug": slug.current,
+    publicationType
+  }
 `;
 
-/** Condição de visibilidade pública: com slug e data válida, nunca futura. */
-const PUBLISHED_CONDITION = groq`
-  defined(slug.current)
-  && defined(publishedAt)
-  && publishedAt <= now()
-`;
+export const PUBLICATIONS_BY_TYPE_QUERY = groq`*[_type == "post" && ${PUBLISHED_CONDITION} && publicationType == $type] | order(coalesce(originalPublishedAt, scheduledAt, _createdAt) desc) [$offset...$limit] {
+  ${PUBLICATION_FIELDS}
+}`;
+
+export const PUBLICATIONS_BY_TYPE_COUNT_QUERY = groq`count(*[_type == "post" && ${PUBLISHED_CONDITION} && publicationType == $type])`;
 
 /**
  * Listagem pública, da mais recente para a mais antiga. O parâmetro
  * `$filter` aceita "todas", "noticia" ou "artigo".
  */
-export const PUBLICATIONS_QUERY = groq`*[_type == "post" && ${PUBLISHED_CONDITION} && ($filter == "todas" || publicationType == $filter)] | order(publishedAt desc) {
+export const PUBLICATIONS_QUERY = groq`*[_type == "post" && ${PUBLISHED_CONDITION} && ($filter == "todas" || publicationType == $filter)] | order(coalesce(originalPublishedAt, scheduledAt, _createdAt) desc) {
   ${PUBLICATION_FIELDS}
 }`;
 
@@ -79,11 +99,11 @@ export const PUBLICATION_DETAIL_QUERY = groq`*[_type == "post" && slug.current =
 }`;
 
 /** Publicações recentes do mesmo tipo, excluindo a atual. */
-export const RELATED_PUBLICATIONS_QUERY = groq`*[_type == "post" && ${PUBLISHED_CONDITION} && slug.current != $slug && publicationType == $publicationType] | order(publishedAt desc)[0...3] {
+export const RELATED_PUBLICATIONS_QUERY = groq`*[_type == "post" && ${PUBLISHED_CONDITION} && slug.current != $slug && publicationType == $publicationType] | order(coalesce(originalPublishedAt, scheduledAt, _createdAt) desc)[0...3] {
   ${PUBLICATION_FIELDS}
 }`;
 
 /** Publicações recentes excluindo os slugs informados (complemento). */
-export const RECENT_PUBLICATIONS_QUERY = groq`*[_type == "post" && ${PUBLISHED_CONDITION} && !(slug.current in $exclude)] | order(publishedAt desc)[0...3] {
+export const RECENT_PUBLICATIONS_QUERY = groq`*[_type == "post" && ${PUBLISHED_CONDITION} && !(slug.current in $exclude)] | order(coalesce(originalPublishedAt, scheduledAt, _createdAt) desc)[0...3] {
   ${PUBLICATION_FIELDS}
 }`;
