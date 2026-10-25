@@ -24,9 +24,9 @@ export const postType = defineType({
   ],
   orderings: [
     {
-      title: 'Data de publicação (recentes primeiro)',
-      name: 'publishedAtDesc',
-      by: [{field: 'publishedAt', direction: 'desc'}],
+      title: 'Data de agendamento (recentes primeiro)',
+      name: 'scheduledAtDesc',
+      by: [{field: 'scheduledAt', direction: 'desc'}],
     },
   ],
   fields: [
@@ -57,13 +57,46 @@ export const postType = defineType({
       group: 'publicacao',
       options: {
         list: [
-          {title: 'Notícia', value: 'noticia'},
           {title: 'Artigo', value: 'artigo'},
+          {title: 'Notícia', value: 'noticia'},
         ],
         layout: 'radio',
       },
-      initialValue: 'noticia',
+      initialValue: 'artigo',
       validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: 'category',
+      title: 'Categoria',
+      description:
+        'Selecione uma categoria compatível com o tipo de publicação acima.',
+      type: 'reference',
+      group: 'publicacao',
+      to: [{type: 'publicationCategory'}],
+      validation: (rule) =>
+        rule.required().custom(async (value, context) => {
+          if (!value || !value._ref || !context.document) return true
+          const client = context.getClient({apiVersion: '2026-10-01'})
+          const publicationType = context.document.publicationType
+          if (!publicationType) return true
+          const category = await client.fetch<
+            {publicationType: string | null} | null
+          >(
+            `*[_type == "publicationCategory" && _id == $id][0]`,
+            {id: value._ref},
+          )
+          if (category && category.publicationType !== publicationType) {
+            return 'Categoria incompatível com o tipo de publicação selecionado.'
+          }
+          return true
+        }),
+      options: {
+        filter: ({document}) => ({
+          filter:
+            '_type == "publicationCategory" && publicationType == $publicationType',
+          params: {publicationType: document?.publicationType},
+        }),
+      },
     }),
     defineField({
       name: 'slug',
@@ -75,24 +108,70 @@ export const postType = defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
-      name: 'publishedAt',
-      title: 'Data de publicação',
+      name: 'schedulePublication',
+      title: 'Agendar publicação?',
+      type: 'boolean',
+      group: 'publicacao',
+      initialValue: false,
+      description:
+        'Quando ativado, informe a data e o horário a partir dos quais a publicação ficará visível publicamente.',
+    }),
+    defineField({
+      name: 'scheduledAt',
+      title: 'Data de agendamento',
       type: 'datetime',
       group: 'publicacao',
-      initialValue: () => new Date().toISOString(),
-      validation: (rule) => [
-        rule.required(),
-        rule
-          .custom((value?: string) => {
+      description:
+        'Data e horário a partir dos quais a publicação ficará visível publicamente. Obrigatório quando o agendamento estiver ativado.',
+      hidden: ({document}) => !document?.schedulePublication,
+      validation: (rule, context) => {
+        if (context?.hidden) return rule.skip()
+        return [
+          rule.required(),
+          rule.custom((value?: string) => {
             if (!value) return true
-            if (Number.isNaN(Date.parse(value))) return 'Informe uma data válida.'
-            if (new Date(value).getTime() > Date.now()) {
-              return 'A data está no futuro. A publicação será exibida como agendada.'
+            if (Number.isNaN(Date.parse(value))) return 'Informe uma data e horário válidos.'
+            if (new Date(value).getTime() <= Date.now()) {
+              return 'Informe uma data e horário futuros.'
             }
             return true
-          })
-          .warning(),
+          }),
+        ]
+      },
+    }),
+    defineField({
+      name: 'originalPublishedAt',
+      title: 'Data de publicação original',
+      type: 'datetime',
+      group: 'publicacao',
+      description:
+        'Data em que o artigo ou notícia foi originalmente publicado. Pode ser uma data passada para conteúdos do acervo histórico.',
+      validation: (rule, context) => [
+        rule.custom((value?: string) => {
+          if (!value) return true
+          if (Number.isNaN(Date.parse(value))) return 'Informe uma data e horário válidos.'
+          return true
+        }),
+        rule.custom((value?: string, ctx?) => {
+          if (!value) return true
+          const scheduledAt = ctx?.document?.scheduledAt
+          const schedulePublication = ctx?.document?.schedulePublication
+          if (!schedulePublication || !scheduledAt) return true
+          const originalTime = new Date(value as any).getTime()
+          const scheduledTime = new Date(scheduledAt as any).getTime()
+          if (originalTime > scheduledTime) {
+            return 'A data de publicação original não pode ser posterior à data de agendamento.'
+          }
+          return true
+        }),
       ],
+    }),
+    defineField({
+      name: 'updatedAt',
+      title: 'Data de atualização',
+      type: 'datetime',
+      group: 'publicacao',
+      hidden: true,
     }),
     defineField({
       name: 'image',
@@ -200,6 +279,50 @@ export const postType = defineType({
       ],
     }),
     defineField({
+      name: 'references',
+      title: 'Referências e fontes',
+      description:
+        'Fontes utilizadas na produção da notícia ou artigo. Informe o título da fonte e a URL da referência.',
+      type: 'array',
+      group: 'conteudo',
+      of: [
+        defineArrayMember({
+          name: 'sourceReference',
+          type: 'object',
+          title: 'Referência',
+          fields: [
+            defineField({
+              name: 'title',
+              title: 'Título ou nome da fonte',
+              type: 'string',
+              validation: (rule) => rule.required(),
+            }),
+            defineField({
+              name: 'url',
+              title: 'URL da referência',
+              type: 'url',
+              validation: (rule) =>
+                rule
+                  .required()
+                  .uri({scheme: ['http', 'https'], allowRelative: false}),
+            }),
+          ],
+          preview: {
+            select: {
+              title: 'title',
+              url: 'url',
+            },
+            prepare({title, url}) {
+              return {
+                title: title ?? 'Sem título',
+                subtitle: url,
+              }
+            },
+          },
+        }),
+      ],
+    }),
+    defineField({
       name: 'authorName',
       title: 'Nome da pessoa autora',
       type: 'string',
@@ -235,11 +358,16 @@ export const postType = defineType({
       subtitle: 'subtitle',
       media: 'image',
       publicationType: 'publicationType',
-      publishedAt: 'publishedAt',
+      scheduledAt: 'scheduledAt',
+      originalPublishedAt: 'originalPublishedAt',
     },
-    prepare({title, subtitle, media, publicationType, publishedAt}) {
+    prepare({title, subtitle, media, publicationType, scheduledAt, originalPublishedAt}) {
       const tipo = publicationType === 'artigo' ? 'Artigo' : 'Notícia'
-      const data = publishedAt ? new Date(publishedAt).toLocaleDateString('pt-BR') : ''
+      const data = scheduledAt
+        ? new Date(scheduledAt).toLocaleDateString('pt-BR')
+        : originalPublishedAt
+          ? new Date(originalPublishedAt).toLocaleDateString('pt-BR')
+          : ''
       return {
         title: title ?? 'Sem título',
         subtitle: [tipo, data].filter(Boolean).join(' · ') || subtitle,
