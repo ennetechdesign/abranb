@@ -30,8 +30,6 @@
   --gl-fg: var(--palette-paper);
   --gl-title: var(--palette-gold);
   --gl-em: var(--palette-paper);
-  --gl-res-bg: color-mix(in srgb, var(--palette-gold) 25%, transparent);
-  --gl-res-border: var(--palette-gold);
 }
 
 .gl-section--yellow {
@@ -41,19 +39,24 @@
   --gl-em: var(--palette-purple);
 }
 
-html[data-color-scheme="night"] .gl-section--page {
-  --gl-bg: var(--palette-charcoal);
-  --gl-fg: color-mix(in srgb, var(--palette-ivory) 90%, transparent);
+/* Night and high contrast share the dark look of the page band. */
+html:is([data-color-scheme="night"], [data-color-scheme="high-contrast"]) .gl-section--page {
   --gl-title: var(--palette-golden-yellow);
   --gl-em: var(--palette-golden-yellow);
   --gl-panel-bg: transparent;
   --gl-panel-border: color-mix(in srgb, var(--palette-lilac) 55%, transparent);
-  --gl-card-bg: color-mix(in srgb, var(--palette-purple) 28%, var(--palette-charcoal));
   --gl-card-border: var(--palette-purple);
   --gl-card-fg: #ffffff;
   --gl-card-em: var(--palette-golden-yellow);
 }
 
+html[data-color-scheme="night"] .gl-section--page {
+  --gl-bg: var(--palette-charcoal);
+  --gl-fg: color-mix(in srgb, var(--palette-ivory) 90%, transparent);
+  --gl-card-bg: color-mix(in srgb, var(--palette-purple) 28%, var(--palette-charcoal));
+}
+
+/* High contrast also darkens the cards inside the purple band. */
 html[data-color-scheme="high-contrast"] .gl-section {
   --gl-fg: #ffffff;
   --gl-card-bg: color-mix(in srgb, var(--palette-purple) 30%, var(--palette-deep));
@@ -64,10 +67,6 @@ html[data-color-scheme="high-contrast"] .gl-section {
 
 html[data-color-scheme="high-contrast"] .gl-section--page {
   --gl-bg: var(--palette-deep);
-  --gl-title: var(--palette-golden-yellow);
-  --gl-em: var(--palette-golden-yellow);
-  --gl-panel-bg: transparent;
-  --gl-panel-border: color-mix(in srgb, var(--palette-lilac) 55%, transparent);
 }
 
 html[data-color-scheme="high-contrast"] .gl-section--purple {
@@ -97,15 +96,12 @@ html[data-color-scheme="high-contrast"] .gl-section--yellow {
   max-width: 72rem;
 }
 
-.gl-inner--panel {
-  width: 100%;
-  max-width: 56rem;
-}
-
 .gl-stack {
   display: flex;
   flex-direction: column;
   gap: 3rem;
+  width: 100%;
+  max-width: 56rem;
 }
 
 .gl-row {
@@ -279,6 +275,8 @@ html[data-color-scheme="high-contrast"] .gl-tool .gl-photo {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+  width: 100%;
+  max-width: 56rem;
   padding: 1.25rem;
   border: 1.5px solid var(--gl-panel-border);
   border-radius: 2rem;
@@ -381,9 +379,9 @@ html[data-color-scheme="high-contrast"] .gl-tool .gl-photo {
   align-items: flex-start;
   gap: 0.75rem;
   padding: 0.9rem 1.25rem;
-  border: 1px solid var(--gl-res-border, var(--palette-gold));
+  border: 1px solid var(--palette-gold);
   border-radius: 2rem;
-  background-color: var(--gl-res-bg, color-mix(in srgb, var(--palette-gold) 25%, transparent));
+  background-color: color-mix(in srgb, var(--palette-gold) 25%, transparent);
 }
 
 .gl-resource-icon {

@@ -3,22 +3,6 @@
  * The copy lives in the `glossario` locale files; `**word**` marks highlighted words.
  */
 
-export type Block = { kind: "p"; text: string } | { kind: "ul"; items: string[] };
-
-export type PillData = {
-  title?: string;
-  blocks: Block[];
-  /** Centred, narrower, title-less pill. */
-  aside?: boolean;
-};
-
-export type PanelData = {
-  title: string;
-  intro: Block[];
-  pills?: PillData[];
-  outro?: Block[];
-};
-
 const img = "/images/glossario";
 
 export type PhotoData = { src: string; width: number; height: number };
@@ -27,7 +11,7 @@ export const images = {
   identidade: { src: `${img}/identidade-de-genero.png`, width: 1152, height: 928 },
   generoImposto: { src: `${img}/genero-designado-ao-nascer.jpg`, width: 360, height: 367 },
   expressao: { src: `${img}/expressao-de-genero.jpg`, width: 2000, height: 2000 },
-  intersexo: { src: `${img}/intersexo.jpg`, width: 360, height: 240 },
+  intersexo: { src: `${img}/intersexo.webp`, width: 1920, height: 1280 },
   intersexoFoto: { src: `${img}/intersexo-foto.png`, width: 360, height: 240 },
 } satisfies Record<string, PhotoData>;
 

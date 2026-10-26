@@ -1,29 +1,9 @@
 import type { ReactNode } from "react";
 
-import type { Block, PanelData, PillData } from "./content";
-
 /** Locale-file shapes: a string is a paragraph, a string array is a bullet list. */
 export type RawBlock = string | string[];
 export type RawPill = { title: string; blocks: RawBlock[] };
 export type RawPanel = { title: string; intro: RawBlock[]; pills: RawPill[]; outro: RawBlock[] };
-
-export const toBlocks = (raw: RawBlock[]): Block[] =>
-  raw.map((b) => (typeof b === "string" ? { kind: "p", text: b } : { kind: "ul", items: b }));
-
-/** A pill without a title is the centred "aside" pill. */
-export const toPills = (raw: RawPill[]): PillData[] =>
-  raw.map((pill) => ({
-    title: pill.title || undefined,
-    blocks: toBlocks(pill.blocks),
-    aside: !pill.title,
-  }));
-
-export const toPanel = (raw: RawPanel): PanelData => ({
-  title: raw.title,
-  intro: toBlocks(raw.intro),
-  pills: raw.pills.length ? toPills(raw.pills) : undefined,
-  outro: raw.outro.length ? toBlocks(raw.outro) : undefined,
-});
 
 const LINK = /\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g;
 
@@ -82,17 +62,17 @@ export function Rich({ text }: { text: string }) {
   return <>{nodes}</>;
 }
 
-export function Blocks({ blocks }: { blocks: Block[] }) {
+function Blocks({ blocks }: { blocks: RawBlock[] }) {
   return (
     <>
       {blocks.map((block, i) =>
-        block.kind === "p" ? (
+        typeof block === "string" ? (
           <p key={i}>
-            <Rich text={block.text} />
+            <Rich text={block} />
           </p>
         ) : (
           <ul key={i} className="gl-bullets">
-            {block.items.map((item) => (
+            {block.map((item) => (
               <li key={item}>
                 <Rich text={item} />
               </li>
@@ -104,20 +84,63 @@ export function Blocks({ blocks }: { blocks: Block[] }) {
   );
 }
 
+/** Body copy: a single `text` paragraph and/or `blocks`, plus any extra `children` (e.g. a heading). */
+export function Prose({
+  text,
+  blocks = [],
+  children,
+}: {
+  text?: string;
+  blocks?: RawBlock[];
+  children?: ReactNode;
+}) {
+  return (
+    <div className="gl-prose">
+      {children}
+      {text && <Blocks blocks={[text]} />}
+      <Blocks blocks={blocks} />
+    </div>
+  );
+}
+
+/** A coloured band of the page. `wide` is for rows that put an image beside text. */
+export function Section({
+  id,
+  tone,
+  wide = false,
+  children,
+}: {
+  id: string;
+  tone: "page" | "purple" | "yellow";
+  wide?: boolean;
+  children: ReactNode;
+}) {
+  return (
+    <section className={`gl-section gl-section--${tone}`} aria-labelledby={`gl-${id}`}>
+      <div className={`gl-inner${wide ? " gl-inner--wide" : ""}`}>{children}</div>
+    </section>
+  );
+}
+
+/** Image and text side by side on desktop, stacked on mobile. */
+export function Row({ children }: { children: ReactNode }) {
+  return <div className="gl-row">{children}</div>;
+}
+
 export function Heading({
   id,
   children,
   align = "center",
   long = false,
 }: {
-  id?: string;
+  id: string;
   children: ReactNode;
   align?: "center" | "start";
   long?: boolean;
 }) {
   return (
     <h2
-      id={id}
+      id={`gl-${id}`}
       className={`gl-heading gl-heading--${align}${long ? " gl-heading--long" : ""}`}
     >
       {children}
@@ -125,9 +148,9 @@ export function Heading({
   );
 }
 
-export function Pill({ pill, number }: { pill: PillData; number?: number }) {
+function Pill({ pill, number }: { pill: RawPill; number?: number }) {
   return (
-    <li className={`gl-pill${pill.aside ? " gl-pill--aside" : ""}`}>
+    <li className={`gl-pill${pill.title ? "" : " gl-pill--aside"}`}>
       {pill.title && (
         <div className="gl-pill-head">
           {number !== undefined && (
@@ -145,35 +168,23 @@ export function Pill({ pill, number }: { pill: PillData; number?: number }) {
   );
 }
 
-export function Pills({
-  pills,
-  numbered = false,
-}: {
-  pills: PillData[];
-  numbered?: boolean;
-}) {
+export function Pills({ pills, numbered = false }: { pills: RawPill[]; numbered?: boolean }) {
   return (
     <ul className="gl-pills">
       {pills.map((pill, i) => (
-        <Pill key={pill.title ?? i} pill={pill} number={numbered ? i + 1 : undefined} />
+        <Pill key={pill.title || i} pill={pill} number={numbered ? i + 1 : undefined} />
       ))}
     </ul>
   );
 }
 
-export function Panel({ panel }: { panel: PanelData }) {
+export function Panel({ panel }: { panel: RawPanel }) {
   return (
     <div className="gl-panel">
       <h3 className="gl-panel-title">{panel.title}</h3>
-      <div className="gl-prose">
-        <Blocks blocks={panel.intro} />
-      </div>
-      {panel.pills && <Pills pills={panel.pills} />}
-      {panel.outro && (
-        <div className="gl-prose">
-          <Blocks blocks={panel.outro} />
-        </div>
-      )}
+      <Prose blocks={panel.intro} />
+      {panel.pills.length > 0 && <Pills pills={panel.pills} />}
+      {panel.outro.length > 0 && <Prose blocks={panel.outro} />}
     </div>
   );
 }
