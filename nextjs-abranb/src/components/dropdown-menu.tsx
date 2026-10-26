@@ -58,6 +58,8 @@ export type DropdownMenuProps = {
    * exposed to screen readers via `sr-only`.
    */
   iconOnly?: boolean;
+  /** Highlights the trigger (e.g. when the current page is one of its items). */
+  active?: boolean;
 };
 
 function focusFirstFocusable(container: HTMLElement) {
@@ -85,6 +87,7 @@ function ChevronDown({ open, className }: { open: boolean; className?: string })
 function triggerVariantClasses(
   variant: DropdownMenuProps["triggerVariant"],
   iconOnly: boolean,
+  active: boolean,
 ) {
   if (variant === "purple") {
     if (iconOnly) {
@@ -93,7 +96,10 @@ function triggerVariantClasses(
     return "text-body flex items-center cursor-pointer rounded-md px-4 py-2.5 font-medium transition-colors hover:text-title-decoration transition-colors focus-visible:outline-offset-2";
   }
   if (variant === "textOnPurple") {
-    return "text-body flex items-center gap-1 font-semibold transition-colors text-muted-foreground hover:text-title-decoration cursor-pointer focus-visible:outline-offset-2";
+    return [
+      "text-body flex items-center gap-1 transition-colors hover:text-title-decoration cursor-pointer focus-visible:outline-offset-2",
+      active ? "font-bold text-title-decoration" : "font-semibold text-muted-foreground",
+    ].join(" ");
   }
   return "text-body text-muted-foreground flex items-center gap-1 font-medium transition-colors hover:text-foreground focus-visible:outline-offset-2";
 }
@@ -124,6 +130,7 @@ export function DropdownMenu({
   className,
   triggerClassName,
   iconOnly = false,
+  active = false,
 }: DropdownMenuProps) {
   const showChevron =
     showChevronProp ??
@@ -275,7 +282,7 @@ export function DropdownMenu({
         ref={triggerRef}
         type="button"
         className={[
-          triggerVariantClasses(triggerVariant, iconOnly),
+          triggerVariantClasses(triggerVariant, iconOnly, active),
           triggerClassName,
         ]
           .filter(Boolean)
@@ -283,6 +290,7 @@ export function DropdownMenu({
         data-a11y-menu-trigger={
           ariaHasPopup === "dialog" ? "" : undefined
         }
+        aria-current={active ? "true" : undefined}
         aria-expanded={open}
         aria-controls={panelId}
         aria-haspopup={ariaHasPopup}

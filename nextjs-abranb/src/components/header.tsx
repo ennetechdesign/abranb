@@ -54,6 +54,11 @@ export function Header({
     label: t(item.labelKey),
   }));
 
+  const isActiveSection = (items: { href: string }[]) =>
+    items.some(
+      (item) => pathname === item.href || pathname.startsWith(`${item.href}/`),
+    );
+
   const navLinkClass = (active: boolean) =>
     [
       "text-body font-semibold text-muted-foreground transition-colors focus-visible:outline-offset-2",
@@ -62,7 +67,11 @@ export function Header({
 
   return (
     <>
-      <header className="sticky top-0 z-70 h-20 border-b border-white/15 bg-background-hero shadow-md">
+      <header
+        className={`sticky top-0 z-70 h-20 border-b border-white/15 shadow-md ${
+          pathname === "/" ? "bg-background-hero" : "bg-header"
+        }`}
+      >
         <div className="flex justify-between relative w-full h-full max-md:max-w-400 items-center gap-3 md:gap-6 px-3.75 md:px-7.5">
           <div className="flex min-w-0 shrink-0 items-center gap-2 md:gap-4">
             <HamburgerMenuTrigger
@@ -120,6 +129,7 @@ export function Header({
               <DropdownMenu
                   triggerVariant="textOnPurple"
                   triggerLabel={t("nav_about")}
+                  active={isActiveSection(navAboutDropdownItems)}
                   openOnHover
                   align="center"
                   ariaHasPopup="menu"
@@ -130,6 +140,7 @@ export function Header({
               <DropdownMenu
                   triggerVariant="textOnPurple"
                   triggerLabel={t("nav_biblioteca")}
+                  active={isActiveSection(navLibraryDropdownItems)}
                   openOnHover
                   align="center"
                   ariaHasPopup="menu"
