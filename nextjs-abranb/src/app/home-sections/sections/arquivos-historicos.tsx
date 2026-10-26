@@ -6,7 +6,7 @@ export default function ArquivosHistoricos() {
       titleKey="historicalArchives.title"
       descriptionKey="historicalArchives.description"
       buttonTextKey="historicalArchives.button"
-      buttonHref="/"
+      buttonHref="/sobre/arquivos"
       buttonVariant="gold-to-purple"
       imageSide="right"
       image={{
