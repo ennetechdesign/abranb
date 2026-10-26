@@ -253,10 +253,22 @@ html[data-color-scheme="high-contrast"] .arq-section--books {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  position: relative;
   overflow: hidden;
-  border: 1.5px solid var(--arq-card-border);
   border-radius: 1.5rem;
-  background-color: var(--arq-card-bg);
+  /* Almost transparent on mobile (5% of the card colour); solid again from 768px. */
+  background-color: color-mix(in srgb, var(--arq-card-bg) 5%, transparent);
+}
+
+/* On mobile the fill is almost transparent, so a soft outline separates the books.
+   It is an overlay so the cover image can never hide any side of it. */
+.arq-book::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1.5px solid color-mix(in srgb, var(--palette-purple) 35%, transparent);
+  border-radius: inherit;
+  pointer-events: none;
 }
 
 .arq-book-cover {
@@ -433,6 +445,12 @@ html[data-color-scheme="high-contrast"] .arq-section--books {
   .arq-book {
     flex-direction: row;
     gap: 1.5rem;
+    border: 1.5px solid var(--arq-card-border);
+    background-color: var(--arq-card-bg);
+  }
+
+  .arq-book::after {
+    display: none;
   }
 
   .arq-book-cover {
