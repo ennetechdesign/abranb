@@ -4,7 +4,7 @@ import type { AppLocale } from "@/i18n/config";
 
 export function buildLocaleMetadata(
   locale: AppLocale,
-  namespace: "historia" | "pautas" | "documentos" | "coletivos" | "arquivos",
+  namespace: "historia" | "pautas" | "documentos" | "coletivos" | "arquivos" | "glossario",
 ): Metadata {
   const meta = resources[locale][namespace] as LocaleResourceWithMeta;
   return {

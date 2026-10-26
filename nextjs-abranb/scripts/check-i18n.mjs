@@ -89,6 +89,12 @@ function flattenLeavesWithSubpath(value, prefix = "") {
   return out;
 }
 
+// Subtrees whose copy was written separately per language (language-specific content,
+// e.g. the Portuguese grammar sections), so their paragraph/bullet structure may differ.
+const localeSpecificKeys = {
+  glossario: ["linguagem.", "neolinguagem."],
+};
+
 let hasError = false;
 const namespaces = readdirSync(path.join(localesDir, locales[0])).map((f) =>
   f.replace(/\.json$/, ""),
@@ -104,6 +110,7 @@ for (const namespace of namespaces) {
   const keySetsByLocale = locales.map((locale) => flattenKeys(jsonByLocale[locale]));
   const allKeys = new Set(keySetsByLocale.flatMap((s) => [...s]));
   for (const key of allKeys) {
+    if (localeSpecificKeys[namespace]?.some((prefix) => key.startsWith(prefix))) continue;
     const missing = locales.filter((_, i) => !keySetsByLocale[i].has(key));
     if (missing.length > 0) {
       hasError = true;

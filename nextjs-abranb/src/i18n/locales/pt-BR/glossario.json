@@ -1,0 +1,340 @@
+{
+  "meta_title": "Glossário",
+  "meta_description": "Glossário com termos comuns em textos sobre a defesa dos direitos de pessoas não-binárias: identidade, expressão e modalidade de gênero, linguagem, transição e mais.",
+  "hero_title": "Glossário",
+  "identidade": {
+    "title": "Identidade de gênero",
+    "lead": "É como cada pessoa entende o(s) próprio(s) gênero(s) ou sua ausência. Por exemplo, um homem tem a identidade de gênero homem porque essa palavra faz sentido para ele. Cada pessoa pode ter razões diferentes para se identificar de certa forma.",
+    "follow_up": "O termo \"identidade de gênero\" inclui mulher, homem e outros gêneros, mas nem toda identidade de gênero é um gênero. Por exemplo, agênero é uma identidade de gênero usada por pessoas que não têm nenhum gênero. Assim, agênero é uma identidade de gênero, mas não é um gênero em si."
+  },
+  "nao_binarie": {
+    "title": "O que é não-binárie?",
+    "intro": [
+      "É uma pessoa que não é nem sempre, somente e fortemente mulher ou homem. Pode ser alguém que não é nenhum dos dois, que sente ter mais de um gênero, ou que se conecta apenas em parte com ser homem ou mulher.",
+      "Muitas pessoas se classificam apenas como não-binárias em questão de gênero, mas há muitos outros termos mais específicos. Por exemplo:"
+    ],
+    "pills": [
+      {
+        "title": "Agênero",
+        "blocks": [
+          "Pessoa que não tem gênero, ou que tem alguma experiência comparável com a de ausência de gênero."
+        ]
+      },
+      {
+        "title": "Gênero-fluido",
+        "blocks": [
+          "Pessoa cujo gênero muda com o tempo. Por exemplo, alguém que em alguns dias se sente homem e em outros se sente mulher."
+        ]
+      },
+      {
+        "title": "Poligênero/multigênero",
+        "blocks": [
+          "Pessoa que tem mais de um gênero, seja ao mesmo tempo ou de forma alternada (assim também se encaixando em gênero-fluido)."
+        ]
+      },
+      {
+        "title": "Demigênero",
+        "blocks": [
+          "Pessoa com uma ligação parcial com uma identidade de gênero. Pode sentir que tem uma versão mais fraca de certo gênero, ou querer dar destaque a um entre vários gêneros. Exemplos: demimulher, demiagênero."
+        ]
+      },
+      {
+        "title": "Aporagênero",
+        "blocks": [
+          "Pessoa que tem um gênero, mas esse gênero é diferente de mulher, homem ou qualquer gênero entre esses dois."
+        ]
+      }
+    ],
+    "outro": [
+      "Pessoas não-binárias, e outras que se sentem fora do binário mulher/homem mas não se chamam de não-binárias, têm lutas políticas em comum.",
+      "Porém, identidades mais específicas também têm suas particularidades. Estas pessoas têm o direito de usar termos que expliquem suas vivências além de só “estar fora do binário homem/mulher”.",
+      "O fato de “não-binárie” ser um termo grande e muito usado não é motivo para fazer piada ou atacar pessoas aporagênero, poligênero, agênero e outras."
+    ]
+  },
+  "genero_imposto": {
+    "title": "Gênero imposto ao nascer",
+    "text": "Na maior parte do mundo, é obrigatório registrar bebês que recém nasceram com um campo de \"sexo\" com base nas suas genitálias. Isso costuma influenciar como a criança vai ser tratada e criada: como alguém que crescerá para ser homem ou mulher. Esse é o chamado gênero (ou sexo) imposto ao nascer.",
+    "image_alt": "Pé de um bebê recém-nascido com pulseira de identificação rosa"
+  },
+  "modalidade": {
+    "title": "Modalidade de gênero",
+    "lead": "É a forma de descrever a relação de alguém com o gênero que foi imposto ao nascer. Transgênero e cisgênero são as modalidades de gênero que tendem a ser mais conhecidas.",
+    "panels": [
+      {
+        "title": "Transgênero",
+        "intro": [
+          "Pessoa cuja identidade de gênero não está completamente de acordo com o gênero imposto ao nascer.",
+          "Alguns termos mais específicos dentro de transgênero:"
+        ],
+        "pills": [
+          {
+            "title": "Transfeminine",
+            "blocks": [
+              "Pessoa em que o \"sexo feminino\" não foi imposto ao nascer (na maioria dos casos), mas cuja identidade tem relação com feminilidade ou com ser mulher. Inclui mulheres trans e algumas pessoas não-binárias."
+            ]
+          },
+          {
+            "title": "Transmasculine",
+            "blocks": [
+              "Pessoa em que o \"sexo masculino\" não foi imposto ao nascer (na maioria dos casos), mas cuja identidade tem relação com masculinidade ou com ser homem. Inclui homens trans e algumas pessoas não-binárias."
+            ]
+          },
+          {
+            "title": "Transneutre",
+            "blocks": [
+              "Pessoa com identidade ou transição em direção à neutralidade de gênero."
+            ]
+          },
+          {
+            "title": "",
+            "blocks": [
+              "Outros termos transicionais menos comuns incluem: transandrógine, transouterine e transxenine."
+            ]
+          }
+        ],
+        "outro": []
+      },
+      {
+        "title": "Cisgênero",
+        "intro": [
+          "Pessoa que se identifica com o mesmo gênero que foi imposto a ela ao nascer e que não sofreu prejuízo por esta questão. É quem está dentro do que a sociedade espera em modalidade de gênero."
+        ],
+        "pills": [],
+        "outro": []
+      },
+      {
+        "title": "Cisdissidente",
+        "intro": [
+          "Termo que inclui qualquer pessoa que não seja cisgênero. A maioria das pessoas prefere usar termos mais específicos para elas mesmas, como transgênero, mas o termo cisdissidente é útil para incluir outros termos em contextos relevantes."
+        ],
+        "pills": [],
+        "outro": []
+      },
+      {
+        "title": "Isogênero",
+        "intro": [
+          "Pessoa que não se considera cisgênero ou transgênero. Isso pode acontecer por diferentes motivos, como:",
+          [
+            "Ser uma pessoa não-binária com uma conexão parcial com o gênero imposto a ela ao nascer, e que portanto não se sente incluída e/ou confortável com a ideia de ser transgênero;",
+            "Ser uma pessoa não-binária que, mesmo não se identificando nem parcialmente com o seu gênero imposto ao nascer, considera que o termo transgênero carrega conotações ou expectativas indesejadas (como pessoas sem gênero que consideram o termo transgênero muito associado com ter gênero);",
+            "Ser uma pessoa que desobedece expectativas de gênero, mesmo sendo homem ou mulher, e que por isso não se sente confortável se dizendo trans ou cis mesmo que as definições mais populares de um desses termos tecnicamente inclua a forma com a qual se identifica."
+          ]
+        ],
+        "pills": [],
+        "outro": []
+      }
+    ]
+  },
+  "expressao": {
+    "title": "Expressão de gênero",
+    "image_alt": "Ilustração de uma pessoa barbada de coque, sorrindo, cercada de símbolos de gênero",
+    "paragraphs": [
+      "É como alguém se autoidentifica com base em roupas, acessórios, jeito de se mover, mudanças no corpo, como pede para ser tratada, etc.",
+      "Nem sempre a expressão de gênero “combina” com a identidade de gênero. Por exemplo, há homens que consideram suas expressões femininas.",
+      "Assim como existem vários gêneros, também existem várias formas de categorizar expressão de gênero: feminina, masculina, neutra e andrógina são algumas. Também há pessoas que preferem não categorizar suas expressões de gênero de acordo com termos associados com gênero."
+    ]
+  },
+  "transicao": {
+    "title": "Transição",
+    "lead": "É o conjunto de mudanças que uma pessoa faz para se sentir mais alinhada com sua identidade e/ou expressão de gênero. Pode incluir:",
+    "pills": [
+      {
+        "title": "Processos legais",
+        "blocks": [
+          "Mudar o nome e/ou o campo “sexo” nos documentos (a chamada retificação)."
+        ]
+      },
+      {
+        "title": "Processos sociais",
+        "blocks": [
+          "Pedir para ser tratade com outra linguagem pessoal, por outro nome e por outro(s) termo(s) de identidade de gênero."
+        ]
+      },
+      {
+        "title": "Processos físicos",
+        "blocks": [
+          "Sociais: mudanças em vestuário, acessórios, maquiagem e expressão corporal.",
+          "Corporais: terapia hormonal e cirurgias para modificar características sexuais."
+        ]
+      }
+    ],
+    "outro": "Ninguém precisa passar por algum destes processos para se considerar não-binárie ou transgênero, e eles não são exclusivos de pessoas cisdissidentes. Porém, são um fator comum o suficiente para ser levado em consideração ao fazer planos que envolvem pessoas não-binárias (ou cisdissidentes num geral)."
+  },
+  "intersexo": {
+    "title": "Intersexo",
+    "first": {
+      "image_alt": "Círculo roxo sobre fundo amarelo, símbolo da bandeira intersexo",
+      "blocks": [
+        "Algumas pessoas naturalmente nascem (ou desenvolvem a partir da puberdade) características sexuais que não são consideradas \"típicas\" dentro de uma visão binária de sexo. Por exemplo:",
+        [
+          "Níveis de estrogênio e/ou testosterona fora dos padrões esperados;",
+          "Cromossomos sexuais diferentes de quem é só XX ou só XY, como XXY ou XXX;",
+          "Genitálias que divergem do padrão vagina + vulva com clitóris de tamanho médio ou testículos visíveis + pênis de tamanho médio."
+        ],
+        "O termo intersexo cobre dezenas de variações, as quais podem ou não estar \"no meio\" dos sexos \"típicos\". Experiências intersexo não devem ser encaradas como uniformes em questões como a forma que foram registradas ao nascer, as características sexuais que possuem ou as imposições sociais de determinados gêneros em cada etapa de suas vidas."
+      ]
+    },
+    "second": {
+      "image_alt": "Pessoa sorrindo à beira de um rio, segurando a bandeira intersexo aberta atrás de si",
+      "blocks": [
+        "Pessoas intersexo podem ter qualquer modalidade ou identidade de gênero. Nem toda pessoa intersexo é não-binária.",
+        "Mesmo assim, há questões comuns a estes dois grupos. Algumas delas:",
+        [
+          "O pânico moral contra corpos fora do padrão em espaços separados entre mulheres e homens;",
+          "Os padrões de beleza que impõem padrões de corpos extremamente ‘femininos’ ou ‘masculinos’ como os mais belos/atraentes;",
+          "A dificuldade social em reconhecer corpos de pessoas intersexo e não-binárias como coerentes com as suas identidades de gênero."
+        ]
+      ]
+    }
+  },
+  "cissexismo": {
+    "title": "Cissexismo ou cisnormatividade",
+    "lead": "Referem-se à opressão e à norma social que tratam corpos e identidades cisgênero como o jeito natural, ideal ou verdadeiro de ser.",
+    "pills": [
+      {
+        "title": "Exemplos comuns",
+        "blocks": [
+          [
+            "Achar que o gênero imposto ao nascer sempre foi o “gênero original” de uma pessoa cisdissidente;",
+            "Presumir ou validar o gênero de alguém só pelo quanto a pessoa “parece” um homem ou uma mulher cisgênero;",
+            "Montar bancos de dados que não preveem que alguém precise mudar campos de nome ou gênero."
+          ]
+        ]
+      },
+      {
+        "title": "Formas mais graves",
+        "blocks": [
+          [
+            "Violência física, verbal ou sexual contra alguém por ser cisdissidente;",
+            "Leis que punem quem se veste, ou pede para ser tratade, de um jeito que não combina com o campo ‘sexo’ em seus documentos."
+          ]
+        ]
+      }
+    ],
+    "wide": {
+      "title": "Exorsexismo ou binarismo de gênero",
+      "intro": [
+        "Referem-se à opressão e à norma social que só reconhece mulher e homem como gêneros possíveis, tratando-os também como \"opostos\" que não podem ser experienciados ao mesmo tempo.",
+        "Exorsexismo é um subtipo de cissexismo: toda instância de exorsexismo é uma consequência do cissexismo, mesmo quando perpetuada por alguém cisdissidente."
+      ],
+      "pills": [
+        {
+          "title": "Exemplos de exorsexismo",
+          "blocks": [
+            [
+              "Dizer que os únicos \"gêneros de verdade\" são mulher e homem, que todas as pessoas podem ser categorizadas corretamente em um destes gêneros;",
+              "Generalizar pessoas não-binárias, acreditando que nenhuma pessoa não-binária faz transição física ou que todas as pessoas não-binárias aceitam qualquer linguagem pessoal;",
+              "Acreditar que as opções \"feminino\" e \"masculino\" são suficientes em banheiros, formulários de cadastro ou documentações."
+            ]
+          ]
+        }
+      ],
+      "outro": []
+    }
+  },
+  "nota": {
+    "title": "Nota",
+    "paragraphs": [
+      "Este glossário explica só os termos mais comuns em textos sobre a defesa dos direitos de pessoas não-binárias, passando uma noção básica acerca do que é a não-binaridade e questões acerca disso.",
+      "É possível se aprofundar mais, fique à vontade:"
+    ],
+    "resources": [
+      {
+        "title": "Vocabulário usado em círculos NHINCQ+ inclusivos",
+        "description": "Lista mais longa de palavras sobre heterodissidência, cisdissidência e assuntos parecidos.",
+        "english": false
+      },
+      {
+        "title": "Glossário: Termos Sobre Gêneros, Sexualidades, Romanticidades, Corporalidades, Feminismo, Não-Monogamia, Preconceitos",
+        "description": "Um pouco desatualizado, mas tem mais sobre corpo e tipos de preconceito.",
+        "english": false
+      },
+      {
+        "title": "Isso é disforia de gênero, PSI",
+        "description": "Site que explica o que é disforia de gênero e ajuda a pessoa a entender se passa por isso.",
+        "english": false
+      },
+      {
+        "title": "Orientando.org",
+        "description": "Site que lista e explica várias identidades de gênero, orientações e assuntos parecidos.",
+        "english": false
+      },
+      {
+        "title": "Wiki Diversidades",
+        "description": "Vários artigos sobre identidade de gênero, orientações e assuntos relacionados.",
+        "english": false
+      }
+    ],
+    "english_badge": "em inglês"
+  },
+  "fontes_title": "Fontes utilizadas nas informações dadas",
+  "linguagem": {
+    "title": "Linguagem pessoal ou tratamento gramatical",
+    "note": "",
+    "image_alt": "Ilustração de três pessoas rotuladas “Ela”, “Ele” e “Elu”",
+    "lead": [
+      "São as palavras que devem ser usadas para se referir a uma pessoa em referência a gêneros gramaticais (muitas vezes referenciados como \"feminino\", \"masculino\" ou \"neutro\", embora seja recomendável especificar tratamentos de formas mais diretas). Por exemplo, algumas pessoas querem ser chamadas de ela, amiga e professora, outras de ele, amigo e professor, e outras preferem formas diferentes, que saem da língua padrão, como elu, amigue e professore."
+    ],
+    "explanation": [
+      "Geralmente, pessoas expressam suas linguagens pessoais utilizando apenas o pronome pessoal (como ela, ele ou elu), mas também quem especifica outros elementos. Por exemplo, caso alguém diga que sua linguagem pessoal é “**ê/elu/e**”, provavelmente significa que a pessoa está utilizando o modelo “**artigo/pronome/final de palavra**”. Ou seja:"
+    ],
+    "pills": [
+      {
+        "title": "Artigo",
+        "blocks": [
+          "Ao invés de dizer “**a** colega” ou “**o** colega”, deve-se dizer “**ê** colega” para se referir a alguém que tem o artigo “**ê**”."
+        ]
+      },
+      {
+        "title": "Pronome",
+        "blocks": [
+          "Ao invés de utilizar \"**ela**\" ou \"**ele**\" para substituir o nome da pessoa, é assim que se fala sobre alguém que indica ter o pronome “**elu**”:",
+          [
+            "**Elu** é legal.",
+            "A maçã é **delu**."
+          ]
+        ]
+      },
+      {
+        "title": "Final de palavra, que também pode ser chamado de flexão ou terminação",
+        "blocks": [
+          "Ao invés de usar palavras como “um**a**”, “querid**a**”, “um” ou “querid**o**”, deve-se usar “um**e**” e “querid**e**” para quem indica o final de palavra “**e**”."
+        ]
+      }
+    ],
+    "tool_alt": "Site Meu conjunto: o conjunto de linguagem ê/elu/e com a pessoa de nome Marinette e exemplos de frases",
+    "tool_label": "Site para criar conjuntos de linguagem personalizados"
+  },
+  "neolinguagem": {
+    "title": "Neolinguagem",
+    "note": "",
+    "lead": "Refere-se a quaisquer elementos de gênero gramatical não inclusos oficialmente na língua portuguesa padrão. A neolinguagem serve para:",
+    "pills": [
+      {
+        "title": "Linguagem genérica",
+        "blocks": [
+          "Haver uma forma não marcada de se referir a pessoas hipotéticas ou desconhecidas. Exemplo:",
+          [
+            "**Ê brasileire** precisa lutar pelos seus direitos."
+          ],
+          "Referir-se a grupos de gênero misto (inclusive se forem somente homens com o conjunto o/ele/o e mulheres com o conjunto a/ela/a), sem priorizar o tratamento associado a homens (o/ele/o e palavras derivadas, como *amigo* ou *professor*). Exemplo:",
+          [
+            "**Todes es alunes** estão presentes em sala."
+          ]
+        ]
+      },
+      {
+        "title": "Expressão pessoal",
+        "blocks": [
+          "Permitir que pessoas com diversas experiências não-binárias ou dissidentes de gênero se expressem além dos gêneros gramaticais comumente associados com feminilidade e masculinidade. Exemplos:",
+          [
+            "-/elu/e, como em (“**professore** esqueceu o caderno **delu** aqui”) (o traço simboliza a ausência do elemento, do artigo neste caso)",
+            "y/ély/-y, como em “**y professory** esqueceu o caderno **dély** aqui” (algumas pessoas enfatizam que o último elemento é um final de palavra usando o hífen antes dele)",
+            "xe/eld/e, como em “**xe professore** esqueceu o caderno **deld** aqui”"
+          ]
+        ]
+      }
+    ],
+    "outro": "Vale lembrar que “neolinguagem” é similar ao termo \"linguagem neutra\", porém é menos ambíguo e não carrega a conotação de neutralidade. Afinal, neolinguagem não é mais neutra do que os gêneros gramaticais ditos \"femininos\" ou \"masculinos\", que também podem ser reivindicados por pessoas de quaisquer expressões ou identidades de gênero."
+  }
+}
