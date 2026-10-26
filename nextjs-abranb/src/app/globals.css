@@ -19,6 +19,9 @@
 
   --text-zoom: 1;
 
+  /* Height of the under-construction bar above the header. */
+  --banner-h: 2.25rem;
+
   /* Type scale: mobile first (largest → smallest), scaled by --text-zoom */
   --font-size-xxx-large: calc(36px * var(--text-zoom));
   --font-size-xx-large: calc(32px * var(--text-zoom));
@@ -329,4 +332,35 @@ html.no-js [data-dropdown-hoverable]:focus-within [data-dropdown-panel] {
 
 .border {
   border-radius: 25px;
+}
+
+/* Under-construction notice: black text on yellow, hazard stripes along the bottom edge. */
+.construction-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  height: var(--banner-h);
+  padding-inline: 1rem;
+  background-color: var(--palette-golden-yellow);
+  background-image: repeating-linear-gradient(
+    -45deg,
+    #000000 0 0.5rem,
+    var(--palette-golden-yellow) 0.5rem 1rem
+  );
+  background-repeat: no-repeat;
+  background-size: 100% 0.25rem;
+  background-position: bottom;
+  color: #000000;
+  font-size: var(--font-size-x-small);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.construction-banner p {
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

@@ -83,7 +83,7 @@ export function NavDrawer({ id, open, onClose }: NavDrawerProps) {
     <>
       <button
         type="button"
-        className="fixed inset-0 top-14 z-[55] bg-deep/55 backdrop-blur-[2px] md:top-16"
+        className="fixed inset-0 top-[calc(3.5rem+var(--banner-h))] z-[55] bg-deep/55 backdrop-blur-[2px] md:top-[calc(4rem+var(--banner-h))]"
         aria-hidden
         tabIndex={-1}
         onClick={onClose}
@@ -94,7 +94,7 @@ export function NavDrawer({ id, open, onClose }: NavDrawerProps) {
         role="dialog"
         aria-modal="true"
         aria-label={t("nav_drawer_title")}
-        className="fixed left-0 top-14 z-[60] flex h-[calc(100dvh-3.5rem)] w-[min(100%,22rem)] max-w-[85vw] flex-col overflow-y-auto bg-purple-muted/95 px-4 pb-8 pt-6 shadow-xl md:top-16 md:h-[calc(100dvh-4rem)]"
+        className="fixed left-0 top-[calc(3.5rem+var(--banner-h))] z-[60] flex h-[calc(100dvh-3.5rem-var(--banner-h))] w-[min(100%,22rem)] max-w-[85vw] flex-col overflow-y-auto bg-purple-muted/95 px-4 pb-8 pt-6 shadow-xl md:top-16 md:h-[calc(100dvh-4rem)]"
       >
         <section className="mb-10">
           <h3 className="mb-4 border-b border-button-primary pb-2 text-center text-lead font-bold text-button-primary">
