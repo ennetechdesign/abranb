@@ -10,6 +10,8 @@ import ptBRPautas from "./locales/pt-BR/pautas.json";
 import enPautas from "./locales/en/pautas.json";
 import ptBRDocumentos from "./locales/pt-BR/documentos.json";
 import enDocumentos from "./locales/en/documentos.json";
+import ptBRColetivos from "./locales/pt-BR/coletivos.json";
+import enColetivos from "./locales/en/coletivos.json";
 
 export const resources = {
   "pt-BR": {
@@ -18,6 +20,7 @@ export const resources = {
     historia: ptBRHistoria,
     pautas: ptBRPautas,
     documentos: ptBRDocumentos,
+    coletivos: ptBRColetivos,
   },
   en: {
     common: enCommon,
@@ -25,6 +28,7 @@ export const resources = {
     historia: enHistoria,
     pautas: enPautas,
     documentos: enDocumentos,
+    coletivos: enColetivos,
   },
 } satisfies Resource;
 
