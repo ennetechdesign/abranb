@@ -19,7 +19,6 @@
   "a11y_font_serif": "Com serifa",
   "a11y_font_mono": "Monoespaçada",
   "a11y_language": "Idioma",
-
   "nav_hamburger_open_menu": "Abrir menu principal",
   "nav_about": "Sobre",
   "nav_biblioteca": "Biblioteca",
@@ -57,7 +56,6 @@
   "about_lead": "Esta página é um espaço reservado. Substitua este texto pelo conteúdo desejado.",
   "about_meta_description": "Sobre a ABRANB.",
   "about_meta_title": "Sobre",
-
   "footer_region_label": "Rodapé",
   "footer_social_nav_label": "Redes sociais",
   "footer_professionals_heading": "Profissionais Não-Bináries",
@@ -72,10 +70,10 @@
   "footer_social_instagram": "Instagram da ABRANB",
   "footer_social_facebook": "Facebook da ABRANB",
   "footer_social_email": "Enviar e-mail para a ABRANB",
-
   "donation": {
     "pixCopyAria": "Copiar chave PIX abranb.associacao@gmail.com",
     "pixCopied": "Chave PIX copiada",
     "pixCopyFailed": "Não foi possível copiar. Selecione o e-mail e copie manualmente."
-  }
+  },
+  "construction_notice": "Site em construção"
 }

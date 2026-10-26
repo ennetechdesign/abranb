@@ -68,7 +68,7 @@ export function Header({
   return (
     <>
       <header
-        className={`sticky top-0 z-70 h-20 border-b border-white/15 shadow-md ${
+        className={`relative h-20 border-b border-white/15 shadow-md ${
           pathname === "/" ? "bg-background-hero" : "bg-header"
         }`}
       >

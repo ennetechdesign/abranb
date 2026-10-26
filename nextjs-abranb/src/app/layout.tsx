@@ -7,6 +7,7 @@ import {
 } from "next/font/google";
 
 import { I18nProvider } from "@/app/providers";
+import { ConstructionBanner } from "@/components/construction-banner";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { JsEnabled } from "@/components/js-enabled";
@@ -22,6 +23,7 @@ import {
   normalizeTextSize,
 } from "@/lib/a11y-preferences";
 import { LOCALE_COOKIE, LOCALE_HEADER } from "@/i18n/config";
+import { resources } from "@/i18n/resources";
 import { normalizeLocale } from "@/lib/resolve-locale";
 
 import "./globals.css";
@@ -86,11 +88,14 @@ export default async function RootLayout({
       <body className="flex min-h-full flex-col bg-background text-foreground overflow-x-hidden">
         <JsEnabled />
         <I18nProvider locale={locale}>
-          <Header
-            initialColorScheme={colorScheme}
-            initialFontFamily={fontFamily}
-            initialTextSize={textSize}
-          />
+          <div className="sticky top-0 z-70">
+            <ConstructionBanner message={resources[locale].common.construction_notice} />
+            <Header
+              initialColorScheme={colorScheme}
+              initialFontFamily={fontFamily}
+              initialTextSize={textSize}
+            />
+          </div>
           {children}
           <Footer />
         </I18nProvider>
