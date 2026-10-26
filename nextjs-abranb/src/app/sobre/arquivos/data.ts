@@ -9,18 +9,18 @@ export type ArchiveImage = {
 
 /** Gallery blocks, in display order: 3x2 grid, 2x2 grid, a portrait pair, then a single wide image. */
 export const imageGrid3: ArchiveImage[] = [
-  { src: `${base}/imagens/1-primeiro-coletivo-lesbico.jfif`, alt: "Primeiro coletivo lésbico: pessoas reunidas em frente a um restaurante, em registro de 19 de agosto", width: 474, height: 661 },
-  { src: `${base}/imagens/2-cintura-fina.jfif`, alt: "Recorte de jornal com o título “Cintura Fina está de novo na Capital”", width: 480, height: 640 },
+  { src: `${base}/imagens/1-primeiro-coletivo-lesbico.jpg`, alt: "Primeiro coletivo lésbico: pessoas reunidas em frente a um restaurante, em registro de 19 de agosto", width: 474, height: 661 },
+  { src: `${base}/imagens/2-cintura-fina.jpg`, alt: "Recorte de jornal com o título “Cintura Fina está de novo na Capital”", width: 480, height: 640 },
   { src: `${base}/imagens/3-primavera-nao-binarie.png`, alt: "Capa do livro A primavera não-binárie: protagonismo trans não-binárie no fazer científico", width: 301, height: 427 },
   { src: `${base}/imagens/4-androginos.png`, alt: "Reportagem “Os andróginos” sobre uma nova minoria, com cinco pessoas maquiadas", width: 304, height: 379 },
   { src: `${base}/imagens/5-indigenas-lgbt.png`, alt: "Duas pessoas indígenas se beijando, envoltas em uma bandeira do arco-íris", width: 373, height: 374 },
-  { src: `${base}/imagens/6-indigenas-lgbt.jfif`, alt: "Grupo de pessoas indígenas LGBTQIA+ em uma passarela, com a bandeira do arco-íris", width: 640, height: 800 },
+  { src: `${base}/imagens/6-indigenas-lgbt.jpg`, alt: "Grupo de pessoas indígenas LGBTQIA+ em uma passarela, com a bandeira do arco-íris", width: 640, height: 800 },
 ];
 
 export const imageGrid2: ArchiveImage[] = [
-  { src: `${base}/imagens/7-coletive.jfif`, alt: "Quatro pessoas posando juntas em frente a uma parede descascada", width: 720, height: 489 },
-  { src: `${base}/imagens/8-majur-cacique-trans.jfif`, alt: "Majur, cacique trans, em meio à mata, com cabelo curto vermelho e blusa vermelha", width: 620, height: 410 },
-  { src: `${base}/imagens/9-galf.jfif`, alt: "Grupo reunido em torno de uma coluna com cartaz, em foto antiga do GALF", width: 474, height: 266 },
+  { src: `${base}/imagens/7-coletive.jpg`, alt: "Quatro pessoas posando juntas em frente a uma parede descascada", width: 720, height: 489 },
+  { src: `${base}/imagens/8-majur-cacique-trans.jpg`, alt: "Majur, cacique trans, em meio à mata, com cabelo curto vermelho e blusa vermelha", width: 620, height: 410 },
+  { src: `${base}/imagens/9-galf.jpg`, alt: "Grupo reunido em torno de uma coluna com cartaz, em foto antiga do GALF", width: 474, height: 266 },
   { src: `${base}/imagens/10-marcha.jpg`, alt: "Marcha com faixa “Contra a discriminação do/a trabalhador/a homossexual”", width: 640, height: 360 },
 ];
 
