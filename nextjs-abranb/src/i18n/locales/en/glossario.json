@@ -1,0 +1,348 @@
+{
+  "meta_title": "Glossary",
+  "meta_description": "Glossary of common terms in texts about defending the rights of non-binary people: gender identity, expression and modality, language, transition and more.",
+  "hero_title": "Glossary",
+  "identidade": {
+    "title": "Gender identity",
+    "lead": "It is how each person understands their own gender(s) or the absence of one. For example, a man has the gender identity man because that word makes sense to him. Each person can have different reasons for identifying in a certain way.",
+    "follow_up": "The term \"gender identity\" includes woman, man and other genders, but not every gender identity is a gender. For example, agender is a gender identity used by people who have no gender at all. Thus, agender is a gender identity, but it is not a gender in itself."
+  },
+  "nao_binarie": {
+    "title": "What is non-binary?",
+    "intro": [
+      "A person who is not always, only and strongly a woman or a man. They may be someone who is neither of the two, who feels they have more than one gender, or who connects only in part with being a man or a woman.",
+      "Many people classify themselves simply as non-binary when it comes to gender, but there are many other, more specific terms. For example:"
+    ],
+    "pills": [
+      {
+        "title": "Agender",
+        "blocks": [
+          "A person who has no gender, or who has an experience comparable to the absence of gender."
+        ]
+      },
+      {
+        "title": "Genderfluid",
+        "blocks": [
+          "A person whose gender changes over time. For example, someone who feels like a man on some days and like a woman on others."
+        ]
+      },
+      {
+        "title": "Polygender/multigender",
+        "blocks": [
+          "A person who has more than one gender, either at the same time or alternating (thus also fitting into genderfluid)."
+        ]
+      },
+      {
+        "title": "Demigender",
+        "blocks": [
+          "A person with a partial connection to a gender identity. They may feel they have a weaker version of a certain gender, or want to highlight one among several genders. Examples: demiwoman, demiagender."
+        ]
+      },
+      {
+        "title": "Aporagender",
+        "blocks": [
+          "A person who has a gender, but that gender is different from woman, man or any gender between those two."
+        ]
+      }
+    ],
+    "outro": [
+      "Non-binary people, and others who feel outside the woman/man binary but do not call themselves non-binary, share political struggles.",
+      "However, more specific identities also have their own particularities. These people have the right to use terms that explain their experiences beyond just “being outside the man/woman binary”.",
+      "The fact that “non-binary” is a broad and widely used term is no reason to make jokes about or attack aporagender, polygender, agender and other people."
+    ]
+  },
+  "genero_imposto": {
+    "title": "Gender imposed at birth",
+    "text": "In most of the world, newborn babies must be registered with a \"sex\" field based on their genitals. This tends to influence how the child will be treated and raised: as someone who will grow up to be a man or a woman. This is what is called gender (or sex) imposed at birth.",
+    "image_alt": "A newborn baby's foot wearing a pink identification bracelet"
+  },
+  "modalidade": {
+    "title": "Gender modality",
+    "lead": "It is the way of describing someone's relationship with the gender that was imposed on them at birth. Transgender and cisgender are the gender modalities that tend to be best known.",
+    "panels": [
+      {
+        "title": "Transgender",
+        "intro": [
+          "A person whose gender identity does not completely match the gender imposed at birth.",
+          "Some more specific terms within transgender:"
+        ],
+        "pills": [
+          {
+            "title": "Transfeminine",
+            "blocks": [
+              "A person for whom the \"female sex\" was not imposed at birth (in most cases), but whose identity relates to femininity or to being a woman. Includes trans women and some non-binary people."
+            ]
+          },
+          {
+            "title": "Transmasculine",
+            "blocks": [
+              "A person for whom the \"male sex\" was not imposed at birth (in most cases), but whose identity relates to masculinity or to being a man. Includes trans men and some non-binary people."
+            ]
+          },
+          {
+            "title": "Transneutre",
+            "blocks": [
+              "A person whose identity or transition is towards gender neutrality."
+            ]
+          },
+          {
+            "title": "",
+            "blocks": [
+              "Other, less common transitional terms include: transandrogynous, transouterine and transxenine."
+            ]
+          }
+        ],
+        "outro": []
+      },
+      {
+        "title": "Cisgender",
+        "intro": [
+          "A person who identifies with the same gender that was imposed on them at birth and who has not been harmed by this. It is whoever falls within what society expects in terms of gender modality."
+        ],
+        "pills": [],
+        "outro": []
+      },
+      {
+        "title": "Cisdissident",
+        "intro": [
+          "A term that includes anyone who is not cisgender. Most people prefer to use more specific terms for themselves, such as transgender, but the term cisdissident is useful for including other terms in relevant contexts."
+        ],
+        "pills": [],
+        "outro": []
+      },
+      {
+        "title": "Isogender",
+        "intro": [
+          "A person who does not consider themselves cisgender or transgender. This can happen for different reasons, such as:",
+          [
+            "Being a non-binary person with a partial connection to the gender imposed on them at birth, who therefore does not feel included in and/or comfortable with the idea of being transgender;",
+            "Being a non-binary person who, even though they do not identify even partially with their gender imposed at birth, considers that the term transgender carries unwanted connotations or expectations (such as genderless people who find the term transgender too closely tied to having a gender);",
+            "Being a person who defies gender expectations, even while being a man or a woman, and who therefore does not feel comfortable calling themselves trans or cis even though the most popular definitions of one of those terms technically include the way they identify."
+          ]
+        ],
+        "pills": [],
+        "outro": []
+      }
+    ]
+  },
+  "expressao": {
+    "title": "Gender expression",
+    "image_alt": "Illustration of a smiling bearded person with a bun, surrounded by gender symbols",
+    "paragraphs": [
+      "It is how someone self-identifies based on clothes, accessories, the way they move, changes to their body, how they ask to be treated, etc.",
+      "Gender expression does not always “match” gender identity. For example, there are men who consider their expressions feminine.",
+      "Just as there are many genders, there are also many ways of categorizing gender expression: feminine, masculine, neutral and androgynous are some. There are also people who prefer not to categorize their gender expressions according to terms associated with gender."
+    ]
+  },
+  "transicao": {
+    "title": "Transition",
+    "lead": "It is the set of changes a person makes to feel more aligned with their gender identity and/or expression. It can include:",
+    "pills": [
+      {
+        "title": "Legal processes",
+        "blocks": [
+          "Changing the name and/or the “sex” field on documents (known as rectification)."
+        ]
+      },
+      {
+        "title": "Social processes",
+        "blocks": [
+          "Asking to be treated with a different personal language, by a different name and by different gender identity term(s)."
+        ]
+      },
+      {
+        "title": "Physical processes",
+        "blocks": [
+          "Social: changes in clothing, accessories, makeup and body expression.",
+          "Bodily: hormone therapy and surgeries to modify sex characteristics."
+        ]
+      }
+    ],
+    "outro": "Nobody needs to go through any of these processes to consider themselves non-binary or transgender, and they are not exclusive to cisdissident people. However, they are common enough to be taken into account when making plans that involve non-binary people (or cisdissident people in general)."
+  },
+  "intersexo": {
+    "title": "Intersex",
+    "first": {
+      "image_alt": "Purple circle on a yellow background, the symbol of the intersex flag",
+      "blocks": [
+        "Some people are naturally born with (or develop from puberty onwards) sex characteristics that are not considered \"typical\" within a binary view of sex. For example:",
+        [
+          "Estrogen and/or testosterone levels outside the expected ranges;",
+          "Sex chromosomes different from those of someone who is only XX or only XY, such as XXY or XXX;",
+          "Genitals that differ from the standard of vagina + vulva with an average-sized clitoris, or visible testicles + an average-sized penis."
+        ],
+        "The term intersex covers dozens of variations, which may or may not be \"in between\" the \"typical\" sexes. Intersex experiences should not be seen as uniform in matters such as how they were registered at birth, the sex characteristics they have, or the social imposition of particular genders at each stage of their lives."
+      ]
+    },
+    "second": {
+      "image_alt": "A person smiling by a river, holding the intersex flag open behind them",
+      "blocks": [
+        "Intersex people can have any gender modality or identity. Not every intersex person is non-binary.",
+        "Even so, there are issues common to these two groups. Some of them:",
+        [
+          "The moral panic about bodies outside the norm in spaces separated between women and men;",
+          "Beauty standards that impose extremely ‘feminine’ or ‘masculine’ bodies as the most beautiful/attractive;",
+          "The social difficulty in recognizing the bodies of intersex and non-binary people as consistent with their gender identities."
+        ]
+      ]
+    }
+  },
+  "cissexismo": {
+    "title": "Cissexism or cisnormativity",
+    "lead": "They refer to the oppression and the social norm that treat cisgender bodies and identities as the natural, ideal or true way of being.",
+    "pills": [
+      {
+        "title": "Common examples",
+        "blocks": [
+          [
+            "Assuming that the gender imposed at birth was always the “original gender” of a cisdissident person;",
+            "Presuming or validating someone's gender only by how much the person “looks like” a cisgender man or woman;",
+            "Building databases that do not anticipate that someone may need to change name or gender fields."
+          ]
+        ]
+      },
+      {
+        "title": "More serious forms",
+        "blocks": [
+          [
+            "Physical, verbal or sexual violence against someone for being cisdissident;",
+            "Laws that punish those who dress, or ask to be treated, in a way that does not match the ‘sex’ field on their documents."
+          ]
+        ]
+      }
+    ],
+    "wide": {
+      "title": "Exorsexism or gender binarism",
+      "intro": [
+        "They refer to the oppression and the social norm that only recognize woman and man as possible genders, also treating them as \"opposites\" that cannot be experienced at the same time.",
+        "Exorsexism is a subtype of cissexism: every instance of exorsexism is a consequence of cissexism, even when perpetuated by someone who is cisdissident."
+      ],
+      "pills": [
+        {
+          "title": "Examples of exorsexism",
+          "blocks": [
+            [
+              "Saying that the only \"real genders\" are woman and man, and that all people can be correctly categorized into one of these genders;",
+              "Generalizing about non-binary people, believing that no non-binary person undergoes physical transition or that all non-binary people accept any personal language;",
+              "Believing that the options \"female\" and \"male\" are sufficient in restrooms, registration forms or documentation."
+            ]
+          ]
+        }
+      ],
+      "outro": []
+    }
+  },
+  "nota": {
+    "title": "Note",
+    "paragraphs": [
+      "This glossary explains only the most common terms in texts about defending the rights of non-binary people, giving a basic notion of what non-binariness is and related issues.",
+      "You can go deeper, feel free:"
+    ],
+    "resources": [
+      {
+        "title": "Vocabulário usado em círculos NHINCQ+ inclusivos",
+        "description": "A longer list of words about heterodissidence, cisdissidence and similar topics.",
+        "english": false
+      },
+      {
+        "title": "Glossário: Termos Sobre Gêneros, Sexualidades, Romanticidades, Corporalidades, Feminismo, Não-Monogamia, Preconceitos",
+        "description": "A little outdated, but has more about bodies and types of prejudice.",
+        "english": false
+      },
+      {
+        "title": "Isso é disforia de gênero, PSI",
+        "description": "Site that explains what gender dysphoria is and helps people understand whether they experience it.",
+        "english": false
+      },
+      {
+        "title": "Orientando.org",
+        "description": "Site that lists and explains many gender identities, orientations and similar topics.",
+        "english": false
+      },
+      {
+        "title": "Wiki Diversidades",
+        "description": "Many articles about gender identity, orientations and related topics.",
+        "english": false
+      }
+    ],
+    "english_badge": "in English"
+  },
+  "fontes_title": "Sources used for the information provided",
+  "linguagem": {
+    "title": "Personal language set",
+    "note": "Note: this section is about Portuguese grammar, so its examples are kept in Portuguese; they cannot be translated without losing their meaning.",
+    "image_alt": "Illustration of three people bearing the pronouns “Ela” (she/her), “Ele” (he/him) and “Elu” (a neopronoun commonly used as an equivalent to they/them).",
+    "lead": [
+      "A way to talk about the grammatical gender that should be used to refer to someone. For instance, some people prefer to be referred with words such as “she”, “her” and “sister”, others prefer “he”, “him” and “brother”, and there are also those who prefer different words.",
+      "In English, it is common to focus on pronouns, since most adjectives, nouns, numerals and so on are either not separated by grammatical gender or mainly based on gender identity. In Portuguese, while many have adopted the idea of “pronouns” as the sole identifier of grammatical gender, it is also necessary to consider other elements."
+    ],
+    "explanation": [
+      "Those who want to express their personal language sets in English can follow patterns such as they/them/their/theirs/themself and she/her/her/hers/herself when discussing neopronouns (pronouns outside normative English grammar, such as ey/em/eir/eirs/emself). It is possible to read more about this subject in [The Transgender Dictionary](https://thetransgenderdictionary.com/p/pronoun) or [Pronouns.page](https://en.pronouns.page/pronouns).",
+      "In Portuguese, there is a similar proposal which can be roughly translated as “the **article/pronoun/word ending** model”:"
+    ],
+    "pills": [
+      {
+        "title": "Article (definite article)",
+        "blocks": [
+          "In Portuguese, the word for “the” is gendered. “The student” can be translated to either “**a** estudante” or “**o** estudante” when it comes to normative grammar, but neoarticles also exist, so someone can also be referred to as “**ê** estudante” or “**le** estudante” (for instance), depending on their personal preferences."
+        ]
+      },
+      {
+        "title": "Pronoun (third person personal pronoun)",
+        "blocks": [
+          "Both she/her (“**ela**”) and he/him (“**ele**”) exist within normative Portuguese grammar, but there is no perfect equivalent to they/them or it/its pronouns (only neopronouns serving similar functions). There are also contractions between pronouns and prepositions, which can still be applied to most neopronouns in use:",
+          [
+            "**Elu** é legal. [“***They**” are cool.*]",
+            "A maçã é **delu** *(de + elu)*. [*The apple is “**of them**” [theirs].*]",
+            "Pensando **nelu** *(em + elu)*. [*Thinking “**in them**” [of them].*]"
+          ],
+          "“**Elu**” is probably the most common neopronoun within lusophone nonbinary communities, and therefore it's common to see it being translated to they/them (and vice-versa). Other neopronouns used by many include “**ile**” and “**éli**”. [Some translate it/its as a personal pronoun to “**ilo**”](https://medium.com/@oltiel/adapta%C3%A7%C3%A3o-de-pronomes-usando-neolinguagem-22495125f3bd), which is based on demonstrative pronouns such as “isto” (*this*) and “isso” (*that*)."
+        ]
+      },
+      {
+        "title": "Word ending (not specific to one word class)",
+        "blocks": [
+          "While not all words in Portuguese have grammatical genders, most conversations end up requiring at least a specified “**word ending**” (“final de palavra”, not an official grammatical term). [While there are plenty of irregular cases if one looks for them](https://orientando.org/neolinguagem/neoflexoes/), applying alternative word endings (neoendings) in most cases tends to be simple:",
+          [
+            "Replacing a normative “**a**” or “**o**” with the desired neoending (*sortud**a**/sortud**o** → sortud**e*** for *lucky*);",
+            "Replacing a normative “**a**” or the lack of a final vowel associated with an *o* ending with the desired neoending (*autor**a**/autor → autor**e*** for *author*)."
+          ]
+        ]
+      }
+    ],
+    "tool_alt": "Meu conjunto website: the ê/elu/e language set for a person named Marinette, with example sentences",
+    "tool_label": "Website for creating custom language sets"
+  },
+  "neolinguagem": {
+    "title": "Neolanguage",
+    "note": "Note: this section is about Portuguese grammar, so its examples are kept in Portuguese; they cannot be translated without losing their meaning.",
+    "lead": "Describes all elements of grammatical genders that don't exist within normative grammar. Neopronouns are included here. In Portuguese, neolanguage is used for mainly two things:",
+    "pills": [
+      {
+        "title": "Generic language",
+        "blocks": [
+          "Generic language is what is used when referring to hypothetical people:",
+          [
+            "**Ê brasileire** precisa lutar pelos seus direitos. (***The Brazilian [person]** must fight for their rights*)"
+          ],
+          "Or when addressing or describing mixed-gender groups (even those composed solely by men and women whose pronouns are he/him and or their equivalents):",
+          [
+            "**Todes es alunes** estão presentes em sala. (***All students** are present in the room.*)"
+          ],
+          "In English, they/them usage is mostly uncontroversial in those cases, even if there are some people who insist on constructions such as \"s/he\" or \"his or her\". However, all singular and plural forms in normative Portuguese have gendered connotations, with the plural form of the grammatical gender associated with masculinity being the \"default\" generic language set. With neolanguage, it's possible to write in Portuguese without essentially using he/him pronouns as the default."
+        ]
+      },
+      {
+        "title": "Personal expression",
+        "blocks": [
+          "Instead of having to choose between language sets associated with femininity or masculinity, nonbinary and/or gender non-conforming folks can include neolanguage in their language sets, such as:",
+          [
+            "y/ély/y (*y* as article, *ély* as pronoun, *y* as word ending)",
+            "xe/eld/e (*xe* as article, *eld* as pronoun, *e* as word ending)"
+          ]
+        ]
+      }
+    ],
+    "outro": "The term \"gender-neutral language\" is common in both English and Portuguese, and it's frequently used to only describe neolanguage in Portuguese. However, this causes issues, since not only anyone of any gender can use any pronouns - including men using they/them or nonbinary folks using she/her - but, in lusophone contexts, it's not uncommon to also use \"gender-neutral language\" either to erase the necessity of neolanguage or to treat all neolanguage as a single interchangeable grammatical gender."
+  }
+}
