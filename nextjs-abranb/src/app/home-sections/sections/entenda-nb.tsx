@@ -17,17 +17,17 @@ export default function EntendaNB() {
                     {t("understandNonBinarity.nonBinaryDefinitionText")}
                 </p>
                     
-                <Button variant="gold-to-purple" href="/glossario">
+                <Button variant="gold-to-purple" href="/sobre/glossario">
                     {t("understandNonBinarity.glossaryButton")}
                 </Button>
             </div>
 
             <Image
                 width={400}
-                height={300}
+                height={356}
                 src="/images/img-coracao-nb.png"
                 alt={t("understandNonBinarity.imageAlt")}
-                className="max-w-80 max-min-h-71 lg:max-w-full lg:max-h-full mt-10 lg:mt-0" />
+                className="h-auto w-auto max-w-80 lg:max-w-full mt-10 lg:mt-0" />
         </div>
     )
 }

@@ -28,7 +28,7 @@ export default function DocsProduzidos() {
                 <div className="flex items-center justify-center gap-5 md:gap-7.5 max-lg:flex-col">
                     <Button
                         variant="outline-gold"
-                        href="/"
+                        href="https://drive.google.com/file/d/1wg5AYSi5PnXJQZCx1EZ7l1drGFw_muEk/view"
                         textColor="paper"
                         textSize="body"
                         icon={<FontAwesomeIcon icon={faFileLines} aria-hidden />}
@@ -38,7 +38,7 @@ export default function DocsProduzidos() {
 
                     <Button
                         variant="outline-gold"
-                        href="/"
+                        href="/sobre/documentos"
                         textColor="paper"
                         textSize="body"
                         icon={<FontAwesomeIcon icon={faFileLines} aria-hidden />}
