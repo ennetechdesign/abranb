@@ -1,53 +1,41 @@
 @reference "../globals.css";
 
 .box-slide {
-  @apply min-w-82.5 max-w-82.5 lg:min-w-217 lg:max-h-67.5
+  @apply h-[360px] w-[86vw] min-w-0 max-w-[850px] sm:h-[360px] lg:h-[270px];
 }
 
 html[data-text-size="large"] .box-slide {
-  @apply lg:max-h-full lg:min-w-240 lg:max-w-240;
+  @apply h-[440px] sm:h-[440px] lg:h-[340px];
 }
 
 html[data-text-size="large"] .box-slide picture {
-  @apply w-full min-h-74
+  @apply h-[210px] min-h-0 sm:h-[210px] lg:h-full lg:w-[40%];
 }
 
-/*Sintese de Pautas*/
-
+/* Síntese de Pautas */
 .bg-linear {
-  @apply bg-linear-to-r from-[#f2c230] to-[#f2c230]/5 py-3 lg:py-5 px-6 lg:px-10 rounded-full
+  @apply bg-linear-to-r from-[#f2c230] to-[#f2c230]/5 px-6 py-3 lg:px-10 lg:py-5 rounded-full;
 }
 
-html[data-color-scheme="night"] .bg-linear {
-  @apply bg-linear-to-r from-[#9c5fd9] to-[#9c5fd9]/5
-}
-
+html[data-color-scheme="night"] .bg-linear,
 html[data-color-scheme="high-contrast"] .bg-linear {
-  @apply bg-linear-to-r from-[#9c5fd9] to-[#9c5fd9]/5
+  @apply bg-linear-to-r from-[#9c5fd9] to-[#9c5fd9]/5;
 }
 
-
-/*   Form contato  */
-
+/* Formulário de contato */
 .label-contato {
-  @apply text-lead font-semibold mb-2.5 block
+  @apply mb-2.5 block text-lead font-semibold;
 }
 
 .input-contato {
-  @apply border-2 border-purple px-7.5 py-4.5 rounded-[50px] bg-lilac/30
+  @apply w-full rounded-[50px] border-2 border-purple bg-lilac/30 px-7.5 py-4.5 -outline-offset-0;
+}
+
+html[data-color-scheme="night"] .input-contato,
+html[data-color-scheme="high-contrast"] .input-contato {
+  @apply border-gold bg-lilac/10;
 }
 
 .form-contato {
-  @apply space-y-8 lg:space-y-10 w-full flex flex-col justify-center max-w-[630px]
-}
-
-.input-contato {
-  @apply w-full -outline-offset-0
-}
-
-html[data-color-scheme="night"] .input-contato {
-  @apply border-gold bg-lilac/10
-}
-html[data-color-scheme="high-contrast"] .input-contato {
-  @apply border-gold bg-lilac/5
+  @apply flex w-full max-w-[630px] flex-col justify-center space-y-8 lg:space-y-10;
 }

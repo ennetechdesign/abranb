@@ -10,7 +10,7 @@ export default function OQueFizemos() {
         <div className="px-5 flex flex-col justify-center items-center bg-lilac/10 py-12.5 lg:py-25">
             <TitleUnderline title={t("whatWeDid.title")} position="center" />
 
-            <div className="mt-15 mb-12.5">
+            <div className="mt-15 mb-12.5 w-full min-w-0 max-w-full">
                 <SlideShow />
             </div>
 

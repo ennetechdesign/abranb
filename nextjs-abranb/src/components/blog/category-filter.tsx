@@ -21,7 +21,7 @@ export function CategoryFilter({
   const items = [
     { href: `/blog/${type}?view=todos`, label: `Ver todas as ${typeLabel.toLowerCase()}` },
     ...categories.map((category) => ({
-      href: `/blog/${type}/categoria/${category.slug}`,
+      href: `/blog/categoria/${category.slug}?type=${type}`,
       label: category.title,
     })),
   ];
@@ -30,8 +30,8 @@ export function CategoryFilter({
     <DropdownMenu
       triggerVariant="textOnPurple"
       triggerLabel={ALL_OPTION_LABEL}
-      align="start"
-      panelClassName="w-72"
+      align="end"
+      panelClassName="max-w-[calc(100vw-1rem)]"
       items={items}
       ariaHasPopup="menu"
       panelRole="menu"

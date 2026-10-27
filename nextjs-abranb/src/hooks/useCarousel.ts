@@ -1,44 +1,26 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 
-export function useCarousel(numItems: number, tamCard: number) {
+export function useCarousel(numItems: number) {
   const [activeIndex, setActiveIndex] = useState(0);
   const slideRef = useRef<HTMLDivElement>(null);
-
   const isDragging = useRef(false);
   const startX = useRef(0);
   const scrollLeft = useRef(0);
 
-  const scrollToCard = useCallback(
-    (index: number) => {
-      const container = slideRef.current;
-      if (!container) return;
+  const scrollToCard = useCallback((index: number) => {
+    const container = slideRef.current;
+    const card = container?.children[index] as HTMLElement | undefined;
+    if (!container || !card) return;
 
-      const card = container.children[index] as HTMLElement;
-      if (!card) return;
-
-      const cardLeft = card.offsetLeft;
-      const cardWidth = card.offsetWidth;
-      const centroContainer = container.offsetWidth / 2;
-
-      let scroll = 0;
-      if (window.innerWidth < 1024) {
-        scroll = tamCard * index;
-      } else {
-        scroll = cardLeft + cardWidth / 2 - centroContainer;
-      }
-
-      container.scrollTo({
-        left: scroll,
-        behavior: "smooth",
-      });
-    },
-    [tamCard],
-  );
+    const cardCenter = card.getBoundingClientRect().left + card.getBoundingClientRect().width / 2;
+    const containerCenter = container.getBoundingClientRect().left + container.clientWidth / 2;
+    const scroll = container.scrollLeft + cardCenter - containerCenter;
+    container.scrollTo({ left: Math.max(0, scroll), behavior: "smooth" });
+  }, []);
 
   function handleMouseDown(e: React.MouseEvent<HTMLDivElement>) {
     const container = slideRef.current;
     if (!container) return;
-
     isDragging.current = true;
     startX.current = e.pageX;
     scrollLeft.current = container.scrollLeft;
@@ -48,10 +30,7 @@ export function useCarousel(numItems: number, tamCard: number) {
     const container = slideRef.current;
     if (!container || !isDragging.current) return;
     e.preventDefault();
-
-    const x = e.pageX;
-    const walk = x - startX.current;
-    container.scrollLeft = scrollLeft.current - walk;
+    container.scrollLeft = scrollLeft.current - (e.pageX - startX.current);
   }
 
   function handleMouseUp() {
@@ -63,10 +42,8 @@ export function useCarousel(numItems: number, tamCard: number) {
   }
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveIndex((prevIndex) => (prevIndex + 1) % numItems);
-    }, 15000);
-
+    if (numItems <= 1) return;
+    const interval = setInterval(() => setActiveIndex((previous) => (previous + 1) % numItems), 15000);
     return () => clearInterval(interval);
   }, [numItems]);
 
@@ -74,12 +51,5 @@ export function useCarousel(numItems: number, tamCard: number) {
     scrollToCard(activeIndex);
   }, [activeIndex, scrollToCard]);
 
-  return {
-    activeIndex,
-    slideRef,
-    handleMouseDown,
-    handleMouseMove,
-    handleMouseUp,
-    handleRadioChange,
-  };
+  return { activeIndex, slideRef, handleMouseDown, handleMouseMove, handleMouseUp, handleRadioChange };
 }
