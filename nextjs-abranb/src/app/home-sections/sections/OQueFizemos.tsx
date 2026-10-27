@@ -14,7 +14,7 @@ export default function OQueFizemos() {
                 <SlideShow />
             </div>
 
-            <Button variant="gold-to-purple" href="/">
+            <Button variant="gold-to-purple" href="/blog">
                 {t("whatWeDid.buttonText")}
             </Button>
         </div>
