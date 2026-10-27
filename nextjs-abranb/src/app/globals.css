@@ -203,6 +203,34 @@ html[data-font="mono"] body {
   }
 }
 
+html[data-color-scheme="night"] .publication-card,
+html[data-color-scheme="high-contrast"] .publication-card,
+html[data-color-scheme="night"] .box-slide,
+html[data-color-scheme="high-contrast"] .box-slide {
+  background-color: #120020b2;
+  color: var(--foreground);
+}
+
+html[data-color-scheme="night"] .publication-card .publication-card-title,
+html[data-color-scheme="high-contrast"] .publication-card .publication-card-title {
+  color: var(--foreground);
+}
+
+html[data-color-scheme="night"] .publication-card .publication-card-subtitle,
+html[data-color-scheme="high-contrast"] .publication-card .publication-card-subtitle {
+  color: var(--muted-foreground);
+}
+
+html[data-color-scheme="night"] .radio-slide-active,
+html[data-color-scheme="high-contrast"] .radio-slide-active {
+  background-color: var(--palette-gold);
+}
+
+html[data-color-scheme="night"] .radio-slide,
+html[data-color-scheme="high-contrast"] .radio-slide {
+  background-color: #f2c23080;
+}
+
 /* Acessibilidade trigger: suppress focus chrome entirely (wins over layered utilities). */
 [data-a11y-menu-trigger],
 [data-a11y-menu-trigger]:hover,
