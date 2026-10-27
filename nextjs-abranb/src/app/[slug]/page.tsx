@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { PortableText } from "next-sanity";
 import { notFound } from "next/navigation";
-import Link from "next/link";
 import Image from "next/image";
+import SlideShow, { type SlideShowNotice } from "@/app/home-sections/components/slide-show";
+import Button from "@/components/button";
 import { client } from "@/sanity/client";
 import {
   PUBLICATION_DETAIL_QUERY,
@@ -34,6 +35,18 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
   const dateLabel = displayDate ? new Date(displayDate).toLocaleDateString("pt-BR", { day: "2-digit", month: "2-digit", year: "numeric" }) : null;
   const text = JSON.stringify(post.body ?? []);
   const readingMinutes = Math.max(1, Math.ceil(text.split(/\s+/).length / 200));
+  const relatedSlides: SlideShowNotice[] = related.map((item, index) => {
+    const relatedCover = getImageUrl(item.coverImage, 900, 600);
+    return {
+      id: index + 1,
+      foto: relatedCover ?? "/images/imagem-indisponivel.png",
+      titulo: item.title,
+      descricao: item.subtitle ?? "Leia esta publicação da ABRANB.",
+      href: `/${item.slug}`,
+      imageAlt: relatedCover ? (item.coverImage?.alt || item.title) : "Imagem indisponível",
+      imageFit: relatedCover ? "cover" : "contain",
+    };
+  });
 
   return <main className="min-h-screen w-full">
     <article className="px-4 pb-0 pt-8 sm:px-8 sm:pt-10">
@@ -51,13 +64,9 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
       </div>
     </article>
     {related.length > 0 && <section className="bg-lilac/20 px-4 py-10 text-center sm:px-8 sm:py-14">
-      <h2 className="mx-auto mb-8 w-fit border-b-2 border-gold px-1 pb-2 text-2xl font-bold text-gold sm:text-3xl">Descubra mais novidades</h2>
-      <div className="mx-auto flex max-w-[1440px] snap-x gap-6 overflow-x-auto px-3 pb-3 scrollbar-hidden sm:gap-16">{related.slice(0, 2).map((item) => {
-        const relatedCover = getImageUrl(item.coverImage, 600, 400);
-        const relatedImage = relatedCover ?? "/images/imagem-indisponivel.png";
-        return <Link key={item._id} href={`/${item.slug}`} className="group flex h-[190px] w-[min(82vw,670px)] flex-shrink-0 snap-center overflow-hidden sm:h-[210px] rounded-[32px] bg-lilac text-left shadow-sm transition-shadow hover:shadow-md sm:rounded-[42px]">{relatedImage && <div className="relative h-full w-[40%] flex-shrink-0 bg-[#eee]"><Image src={relatedImage} alt={relatedCover ? (item.coverImage?.alt || item.title) : "Imagem indisponível"} fill sizes="300px" className={relatedCover ? "object-cover" : "object-contain"} /></div>}<div className="flex min-w-0 flex-1 flex-col justify-center overflow-hidden p-3 sm:p-5"><h3 className="mb-2 line-clamp-2 break-words text-lg font-bold leading-tight text-deep group-hover:text-link sm:text-2xl">{item.title}</h3>{item.subtitle && <p className="line-clamp-3 text-sm leading-relaxed text-muted-foreground sm:text-base">{item.subtitle}</p>}</div></Link>;
-      })}</div>
-      <Link href={`/blog/${publicationType}`} className="mt-8 inline-flex rounded-full border border-purple bg-purple px-6 py-3 font-semibold text-white shadow-sm transition hover:brightness-95">Acessar {publicationType === "artigo" ? "todos os artigos" : "todas as notícias"} <span className="ml-2" aria-hidden="true">›</span></Link>
+      <div className="mb-8 text-center"><TitleUnderline title="Descubra mais novidades" position="center" /></div>
+      <div className="mx-auto w-full max-w-[1440px] min-w-0"><SlideShow notices={relatedSlides} label="Publicações relacionadas" /></div>
+      <div className="mt-8 flex justify-center"><Button variant="gold-to-purple" href={`/blog/${publicationType}`}>Acessar {publicationType === "artigo" ? "todos os artigos" : "todas as notícias"}</Button></div>
     </section>}
   </main>;
 }
