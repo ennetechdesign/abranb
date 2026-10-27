@@ -79,7 +79,7 @@
         "placeholder": "Full name"
       },
       "organization": {
-        "label": "Which organization do you represent?",
+        "label": "Which organization do you represent? (optional)",
         "placeholder": "Organization name"
       },
       "email": {
@@ -96,6 +96,18 @@
       }
     },
     "submitButton": "Send",
-    "alternativeContactTitle": "Feel free to reach out through other communication channels if you prefer"
+    "alternativeContactTitle": "Feel free to reach out through other communication channels if you prefer",
+    "errors": {
+      "required": "This field is required.",
+      "nameTooShort": "Enter at least 2 characters.",
+      "emailInvalid": "Enter a valid email.",
+      "messageTooShort": "Write at least 10 characters.",
+      "tooLong": "Text is too long."
+    },
+    "submitStatus": {
+      "sending": "Sending",
+      "sent": "Sent",
+      "error": "Failed to send. Try again"
+    }
   }
 }

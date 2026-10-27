@@ -51,3 +51,40 @@ html[data-color-scheme="night"] .input-contato {
 html[data-color-scheme="high-contrast"] .input-contato {
   @apply border-gold bg-lilac/5
 }
+
+.error-contato {
+  @apply mt-2.5 px-7.5 font-semibold;
+  font-size: var(--font-size-small);
+  color: #b3261e;
+}
+html[data-color-scheme="night"] .error-contato {
+  color: #ff8a80;
+}
+html[data-color-scheme="high-contrast"] .error-contato {
+  color: var(--focus-ring);
+}
+
+.input-contato[aria-invalid="true"] {
+  border-color: #b3261e;
+}
+html[data-color-scheme="night"] .input-contato[aria-invalid="true"] {
+  border-color: #ff8a80;
+}
+html[data-color-scheme="high-contrast"] .input-contato[aria-invalid="true"] {
+  border-color: var(--focus-ring);
+  border-style: dashed;
+}
+
+.status-spinner {
+  animation: status-spin 0.8s linear infinite;
+}
+@keyframes status-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .status-spinner {
+    animation-duration: 3s;
+  }
+}

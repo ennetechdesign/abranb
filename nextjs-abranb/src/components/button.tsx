@@ -47,11 +47,14 @@ const variantClassMap: Record<Exclude<ButtonVariant, "docs-outer" | "docs-report
     [html[data-color-scheme='high-contrast']_&]:hover:bg-purple [html[data-color-scheme='high-contrast']_&]:text-paper
   `,
   "outline-gold-to-purple-strong": `
-    border-2 border-gold bg-gold/50 hover:bg-gold
+    border-2 border-gold bg-gold/50 hover:bg-gold active:brightness-95
+    disabled:cursor-default disabled:bg-gold disabled:brightness-95
     [html[data-color-scheme='night']_&]:bg-purple/50 [html[data-color-scheme='night']_&]:hover:bg-purple
+    [html[data-color-scheme='night']_&]:disabled:bg-purple
     [html[data-color-scheme='night']_&]:border-purple [html[data-color-scheme='night']_&]:text-paper
     [html[data-color-scheme='high-contrast']_&]:bg-purple/50 [html[data-color-scheme='high-contrast']_&]:border-purple
     [html[data-color-scheme='high-contrast']_&]:hover:bg-purple [html[data-color-scheme='high-contrast']_&]:text-paper
+    [html[data-color-scheme='high-contrast']_&]:disabled:bg-purple
   `,
 };
 
