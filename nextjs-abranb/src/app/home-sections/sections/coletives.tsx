@@ -66,7 +66,7 @@ export default function Coletives() {
                 ))}
             </ul>
 
-            <Button variant="gold-to-purple" href="/">
+            <Button variant="gold-to-purple" href="/sobre/coletivos">
                 {t("partnershipCollectives.buttonText")}
             </Button>
         </div>

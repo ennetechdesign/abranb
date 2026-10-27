@@ -42,6 +42,8 @@ const merriweather = Merriweather({
 const atkinsonMono = Atkinson_Hyperlegible_Mono({
   variable: "--font-atkinson-mono",
   subsets: ["latin"],
+  adjustFontFallback: false,
+  fallback: ["monospace"],
 });
 
 export const metadata: Metadata = {

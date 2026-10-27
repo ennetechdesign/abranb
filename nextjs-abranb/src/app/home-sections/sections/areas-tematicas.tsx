@@ -6,7 +6,7 @@ export default function AreasTematicas() {
       titleKey="thematicAreas.title"
       descriptionKey="thematicAreas.description"
       buttonTextKey="thematicAreas.button"
-      buttonHref="/"
+      buttonHref="/blog"
       buttonVariant="purple-to-gold"
       buttonTextColor="paper-deep"
       imageSide="left"

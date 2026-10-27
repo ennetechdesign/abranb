@@ -6,7 +6,7 @@ export default function NossaHistoria() {
       titleKey="ourHistory.title"
       descriptionKey="ourHistory.description"
       buttonTextKey="ourHistory.buttonText"
-      buttonHref="/"
+      buttonHref="/sobre/historia"
       buttonVariant="solid-purple"
       buttonTextColor="paper"
     />
