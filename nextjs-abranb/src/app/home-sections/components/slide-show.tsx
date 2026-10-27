@@ -29,7 +29,7 @@ export default function SlideShow({ notices = homeNotices, label = "Destaques" }
       {notices.map((notice) => <BoxNoticesSlide notice={notice} key={notice.id} />)}
     </div>
     {notices.length > 1 && <div className="flex max-w-[92vw] flex-wrap items-center justify-center gap-2" role="group" aria-label={`${label}: escolher postagem`}>
-      {notices.map((notice, index) => <input type="radio" name={`slide-${label}`} key={notice.id} checked={activeIndex === index} aria-label={`Mostrar ${notice.titulo}`} className={`h-5 w-5 cursor-pointer appearance-none rounded-full sm:h-6 sm:w-6 ${activeIndex === index ? "bg-purple" : "bg-lilac"}`} onChange={() => handleRadioChange(index)} />)}
+      {notices.map((notice, index) => <input type="radio" name={`slide-${label}`} key={notice.id} checked={activeIndex === index} aria-label={`Mostrar ${notice.titulo}`} className={`h-5 w-5 cursor-pointer appearance-none rounded-full sm:h-6 sm:w-6 ${activeIndex === index ? "radio-slide-active" : "radio-slide"}`} onChange={() => handleRadioChange(index)} />)}
     </div>}
   </div>;
 }

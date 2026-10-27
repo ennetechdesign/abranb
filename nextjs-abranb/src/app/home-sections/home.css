@@ -4,6 +4,27 @@
   @apply h-[360px] w-[86vw] min-w-0 max-w-[850px] sm:h-[360px] lg:h-[270px];
 }
 
+html[data-color-scheme="high-contrast"] .box-slide,
+html[data-color-scheme="night"] .box-slide {
+  @apply bg-[#120020B2] text-foreground
+}
+
+.radio-slide-active {
+  @apply bg-purple
+}
+
+.radio-slide {
+  @apply bg-lilac
+}
+
+html[data-color-scheme="high-contrast"] .radio-slide-active, html[data-color-scheme="night"] .radio-slide-active {
+  @apply bg-gold
+}
+
+html[data-color-scheme="high-contrast"] .radio-slide, html[data-color-scheme="night"] .radio-slide {
+  @apply bg-[#F2C23080]
+}
+
 html[data-text-size="large"] .box-slide {
   @apply h-[440px] sm:h-[440px] lg:h-[340px];
 }

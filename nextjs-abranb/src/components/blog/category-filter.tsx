@@ -7,6 +7,7 @@ type CategoryFilterProps = {
   categories: PublicationCategory[];
   typeLabel: string;
   type: "artigo" | "noticia";
+  selectedCategorySlug?: string;
   "aria-label"?: string;
 };
 
@@ -16,6 +17,7 @@ export function CategoryFilter({
   categories,
   typeLabel,
   type,
+  selectedCategorySlug,
   "aria-label": ariaLabel,
 }: CategoryFilterProps) {
   const items = [
@@ -23,16 +25,19 @@ export function CategoryFilter({
     ...categories.map((category) => ({
       href: `/blog/categoria/${category.slug}?type=${type}`,
       label: category.title,
+      current: category.slug === selectedCategorySlug,
     })),
   ];
+  const selectedCategory = categories.find((category) => category.slug === selectedCategorySlug);
 
   return (
     <DropdownMenu
       triggerVariant="textOnPurple"
-      triggerLabel={ALL_OPTION_LABEL}
+      triggerLabel={selectedCategory ? <span className="max-w-[55vw] truncate sm:max-w-64" title={selectedCategory.title}>{selectedCategory.title}</span> : ALL_OPTION_LABEL}
       align="end"
       panelClassName="max-w-[calc(100vw-1rem)]"
       items={items}
+      active={Boolean(selectedCategory)}
       ariaHasPopup="menu"
       panelRole="menu"
       panelAriaLabel={ariaLabel ?? `Filtrar ${typeLabel.toLowerCase()} por categoria`}

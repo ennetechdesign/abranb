@@ -9,6 +9,7 @@ import {
   type PublicationCategory,
 } from "@/sanity/blog";
 import type { Publication } from "@/sanity/publication";
+import Button from "../button";
 
 const LABELS = { artigo: "Artigos", noticia: "Notícias" } as const;
 type PublicationType = keyof typeof LABELS;
@@ -55,7 +56,10 @@ export async function BlogTypePage({ type }: {
 
   return <main className="min-h-screen w-full"><BlogTabs type={type} categories={categories} /><div className="pb-10 pt-3 sm:pb-16">{populatedCategories.map(({ category, posts, totalCount }, index) => <section key={category._id} className={`flex flex-col items-center px-4 py-9 sm:px-6 sm:py-12 ${index % 2 ? "bg-lilac/20" : "bg-background"}`}>
     <h2 className="mb-7 max-w-full border-b-2 border-title-decoration px-1 pb-2 text-center text-xl font-bold text-title-decoration sm:mb-9 sm:text-3xl">{category.title}</h2>
-    <div className="w-full"><SlideShow notices={toSlides(posts)} label={`${label}: ${category.title}`} /></div>
-    <Link className="mt-7 inline-flex items-center rounded-full border border-gold bg-gold px-5 py-2.5 text-sm font-bold text-deep shadow-sm transition hover:brightness-95 sm:mt-8 sm:text-base" href={`/blog/categoria/${category.slug}?type=${type}`}>Acessar lista completa <span className="ml-2 text-xl" aria-hidden="true">›</span><span className="sr-only"> de {category.title} ({totalCount} publicações)</span></Link>
+    <div className="w-full mb-14"><SlideShow notices={toSlides(posts)} label={`${label}: ${category.title}`} /></div>
+    <Button variant="gold-to-purple" href={`/blog/categoria/${category.slug}?type=${type}`}>
+      Acessar lista completa
+      <span className="sr-only"> de {category.title} ({totalCount} publicações)</span>
+    </Button>
   </section>)}{populatedCategories.length === 0 && <p className="py-16 text-center text-lead text-muted-foreground">Ainda não há {label.toLowerCase()} publicados.</p>}</div></main>;
 }
