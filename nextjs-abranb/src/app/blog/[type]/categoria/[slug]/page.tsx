@@ -19,16 +19,19 @@ export async function generateMetadata({ params }: { params: Promise<{ type: str
 
 export default async function CategoryPage({ params, searchParams }: {
   params: Promise<{ type: string; slug: string }>;
-  searchParams: Promise<{ page?: string }>;
+  searchParams: Promise<{ page?: string | string[] }>;
 }) {
   const [{ type, slug }, { page: pageParam }] = await Promise.all([params, searchParams]);
   if (!isPublicationType(type)) notFound();
   const category = await fetchCategoryBySlug(slug, type);
   if (!category) notFound();
   const label = type === "artigo" ? "Artigos" : "Notícias";
-  const currentPage = Math.max(1, Number.parseInt(pageParam ?? "1", 10) || 1);
-  const [totalCount, posts] = await Promise.all([
-    countPublicationsByCategory({ type, categoryId: category._id }),
+  const totalCount = await countPublicationsByCategory({ type, categoryId: category._id });
+  const totalPages = Math.ceil(totalCount / POSTS_PER_PAGE);
+  const parsedPage = typeof pageParam === "string" && /^\d+$/.test(pageParam) ? Number(pageParam) : 1;
+  const validPage = Number.isSafeInteger(parsedPage) && parsedPage > 0 ? parsedPage : 1;
+  const currentPage = totalPages === 0 ? 1 : Math.min(validPage, totalPages);
+  const [posts] = await Promise.all([
     fetchPublicationsByCategory({ type, categoryId: category._id, offset: (currentPage - 1) * POSTS_PER_PAGE, limit: POSTS_PER_PAGE }),
   ]);
 
@@ -40,7 +43,7 @@ export default async function CategoryPage({ params, searchParams }: {
     <section className="px-4 pb-14 pt-10 sm:px-6 sm:pt-14">
       <div className="mx-auto max-w-4xl">
         <div className="mb-8 text-center sm:mb-10"><TitleUnderline title={category.title} color="title-decoration" position="center" /><p className="mt-3 text-sm text-muted-foreground sm:text-base">Lista completa de {label.toLowerCase()}</p></div>
-        <PublicationList posts={posts} currentPage={currentPage} totalPages={Math.ceil(totalCount / POSTS_PER_PAGE)} totalCount={totalCount} baseHref={`/blog/${type}/categoria/${slug}`} emptyMessage={`Ainda não há ${label.toLowerCase()} nesta categoria.`} aria-label={`${label} da categoria ${category.title}`} />
+        <PublicationList posts={posts} currentPage={currentPage} totalPages={totalPages} totalCount={totalCount} baseHref={`/blog/${type}/categoria/${slug}`} emptyMessage={`Ainda não há ${label.toLowerCase()} nesta categoria.`} aria-label={`${label} da categoria ${category.title}`} />
       </div>
     </section>
   </main>;

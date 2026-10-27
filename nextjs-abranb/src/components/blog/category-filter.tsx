@@ -19,7 +19,7 @@ export function CategoryFilter({
   "aria-label": ariaLabel,
 }: CategoryFilterProps) {
   const items = [
-    { href: `/blog/${type}?view=todos`, label: `Ver todas as ${typeLabel.toLowerCase()}` },
+    { href: `/blog/${type}`, label: `Ver todas as ${typeLabel.toLowerCase()}` },
     ...categories.map((category) => ({
       href: `/blog/categoria/${category.slug}?type=${type}`,
       label: category.title,

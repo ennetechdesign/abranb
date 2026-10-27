@@ -1,15 +1,11 @@
 import Link from "next/link";
 import SlideShow, { type SlideShowNotice } from "@/app/home-sections/components/slide-show";
 import { CategoryFilter } from "@/components/blog/category-filter";
-import { Pagination } from "@/components/blog/pagination";
 import { getImageUrl } from "@/sanity/image";
 import {
   countPublicationsByCategory,
-  countPublicationsByType,
   fetchCategories,
   fetchPublicationsByCategory,
-  fetchPublicationsByType,
-  POSTS_PER_PAGE,
   type PublicationCategory,
 } from "@/sanity/blog";
 import type { Publication } from "@/sanity/publication";
@@ -42,23 +38,11 @@ function BlogTabs({ type, categories }: { type: PublicationType; categories: Pub
   </nav>;
 }
 
-export async function BlogTypePage({ type, pageParam, showAll }: {
+export async function BlogTypePage({ type }: {
   type: PublicationType;
-  pageParam?: string;
-  showAll?: boolean;
 }) {
   const label = LABELS[type];
-  const currentPage = Math.max(1, Number.parseInt(pageParam ?? "1", 10) || 1);
   const categories = await fetchCategories(type);
-
-  if (showAll) {
-    const [totalCount, posts] = await Promise.all([
-      countPublicationsByType(type),
-      fetchPublicationsByType({ type, offset: (currentPage - 1) * POSTS_PER_PAGE, limit: POSTS_PER_PAGE }),
-    ]);
-    const slides = toSlides(posts);
-    return <main className="min-h-screen w-full"><BlogTabs type={type} categories={categories} /><section className="flex min-h-[55vh] flex-col items-center px-0 pb-12 pt-10 sm:pb-16 sm:pt-14"><h1 className="mb-8 px-5 text-center text-2xl font-bold text-title-decoration sm:mb-12 sm:text-3xl">Todas as {label.toLowerCase()}</h1>{slides.length ? <div className="w-full"><SlideShow notices={slides} label={label} /></div> : <p className="px-5 py-12 text-center text-lead text-muted-foreground">Ainda não há {label.toLowerCase()} publicados.</p>}<div className="mt-8 w-full"><Pagination currentPage={currentPage} totalPages={Math.ceil(totalCount / POSTS_PER_PAGE)} baseHref={`/blog/${type}?view=todos`} aria-label={`Paginação de ${label.toLowerCase()}`} /></div></section></main>;
-  }
 
   const categorySections = await Promise.all(categories.map(async (category) => {
     const [posts, totalCount] = await Promise.all([
