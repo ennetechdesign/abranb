@@ -4,71 +4,114 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import Button from '@/components/button';
+import { StatusIcon } from '@/components/status-icon';
+import { validateContact, type ContactField, type ContactInput } from '@/lib/contact-schema';
+import { sendContact } from '../actions/send-contact';
 
+type SubmitStatus = 'idle' | 'sending' | 'sent' | 'error';
 
-type UserFormProps = {
-    name: string;
-    organization: string;
-    email: string;
-    subject: string;
-    textDescription: string;
+const emptyForm: ContactInput = {
+    name: '',
+    organization: '',
+    email: '',
+    subject: '',
+    textDescription: '',
 };
 
 export default function FormContato() {
     const { t } = useTranslation("home");
-    const [userForm, setUserForm] = useState<UserFormProps>({
-        name: '',
-        organization: '',
-        email: '',
-        subject: '',
-        textDescription: '',
-    });
+    const [userForm, setUserForm] = useState<ContactInput>(emptyForm);
+    const [honeypot, setHoneypot] = useState('');
+    const [touched, setTouched] = useState<Partial<Record<ContactField, boolean>>>({});
+    const [submitted, setSubmitted] = useState(false);
+    const [status, setStatus] = useState<SubmitStatus>('idle');
 
+    const validation = validateContact(userForm);
+    const errors = validation.success ? {} : validation.errors;
+
+    function errorFor(field: ContactField) {
+        return touched[field] || submitted ? errors[field] : undefined;
+    }
+
+    function fieldProps(field: ContactField) {
+        const error = errorFor(field);
+        return {
+            id: field,
+            value: userForm[field],
+            onChange: handleChange,
+            onBlur: () => setTouched((prev) => ({ ...prev, [field]: true })),
+            'aria-invalid': error ? true : undefined,
+            'aria-describedby': error ? `${field}-error` : undefined,
+        };
+    }
+
+    function renderError(field: ContactField) {
+        const error = errorFor(field);
+        if (!error) return null;
+        return (
+            <p id={`${field}-error`} className="error-contato">
+                {t(error)}
+            </p>
+        );
+    }
 
     function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
         const { id, value } = e.target;
         setUserForm((prev) => ({ ...prev, [id]: value }));
+        // Any edit resets the button so the chevron comes back.
+        setStatus((prev) => (prev === 'sending' ? prev : 'idle'));
     }
 
     async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
+        if (status === 'sending') return;
 
-        if (!userForm.name || !userForm.subject || !userForm.email || !userForm.textDescription) {
-            alert('Por favor, preencha os campos obrigatórios.');
+        setSubmitted(true);
+        if (!validation.success) {
+            const firstInvalid = (Object.keys(emptyForm) as ContactField[]).find((f) => errors[f]);
+            if (firstInvalid) document.getElementById(firstInvalid)?.focus();
             return;
         }
-        try {
-            console.log('Formulário enviado:', userForm);
-            alert('Email enviada com sucesso! 🎉');
 
-            setUserForm({
-                name: '',
-                organization: '',
-                email: '',
-                subject: '',
-                textDescription: '',
-            });
-        } catch (error) {
-            alert('Erro ao enviar email. Tente novamente.');
-            console.log(error)
+        setStatus('sending');
+        try {
+            const result = await sendContact(userForm, honeypot);
+            if (result.ok) {
+                setStatus('sent');
+                setUserForm(emptyForm);
+                setTouched({});
+                setSubmitted(false);
+            } else {
+                setStatus('error');
+            }
+        } catch {
+            setStatus('error');
         }
     }
 
+    const buttonIcon =
+        status === 'sending' ? <StatusIcon name="spinner" />
+        : status === 'sent' ? <StatusIcon name="check" />
+        : status === 'error' ? <StatusIcon name="error" />
+        : undefined;
+
+    const buttonLabel = status === 'idle' ? t("contact.submitButton") : t(`contact.submitStatus.${status}`);
+
     return (
-        <form onSubmit={handleSubmit} className="form-contato">
+        <form onSubmit={handleSubmit} noValidate className="form-contato">
             <div>
                 <label htmlFor="name" className="label-contato">
                     {t("contact.fields.fullName.label")}
                 </label>
                 <input
                     type="text"
-                    id="name"
-                    value={userForm.name}
-                    onChange={handleChange}
                     required
+                    autoComplete="name"
                     className="input-contato"
                     placeholder={t("contact.fields.fullName.placeholder")}
+                    {...fieldProps('name')}
                 />
+                {renderError('name')}
             </div>
 
             <div>
@@ -77,12 +120,12 @@ export default function FormContato() {
                 </label>
                 <input
                     type="text"
-                    id="organization"
-                    value={userForm.organization}
-                    onChange={handleChange}
+                    autoComplete="organization"
                     className="input-contato"
                     placeholder={t("contact.fields.organization.placeholder")}
+                    {...fieldProps('organization')}
                 />
+                {renderError('organization')}
             </div>
 
             <div>
@@ -91,13 +134,13 @@ export default function FormContato() {
                 </label>
                 <input
                     type="email"
-                    id="email"
-                    value={userForm.email}
-                    onChange={handleChange}
                     required
+                    autoComplete="email"
                     className="input-contato"
                     placeholder={t("contact.fields.email.placeholder")}
+                    {...fieldProps('email')}
                 />
+                {renderError('email')}
             </div>
 
             <div>
@@ -106,12 +149,11 @@ export default function FormContato() {
                 </label>
                 <input
                     type="text"
-                    id="subject"
-                    value={userForm.subject}
-                    onChange={handleChange}
                     className="input-contato"
                     placeholder={t("contact.fields.subject.placeholder")}
+                    {...fieldProps('subject')}
                 />
+                {renderError('subject')}
             </div>
 
             <div>
@@ -119,21 +161,42 @@ export default function FormContato() {
                     {t("contact.fields.message.label")}
                 </label>
                 <textarea
-                    id="textDescription"
-                    value={userForm.textDescription}
-                    onChange={handleChange}
                     required
                     rows={6}
                     className="input-contato resize-y"
                     placeholder={t("contact.fields.message.placeholder")}
+                    {...fieldProps('textDescription')}
+                />
+                {renderError('textDescription')}
+            </div>
+
+            {/* Honeypot: hidden from people, tempting to bots. */}
+            <div aria-hidden className="absolute -left-[9999px] h-0 w-0 overflow-hidden">
+                <input
+                    type="text"
+                    name="website"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    value={honeypot}
+                    onChange={(e) => setHoneypot(e.target.value)}
                 />
             </div>
+
             <div className='flex justify-center'>
-                <Button variant="outline-gold-to-purple-strong" size="contact" type="submit">
-                    {t("contact.submitButton")}
+                <Button
+                    variant="outline-gold-to-purple-strong"
+                    size="contact"
+                    type="submit"
+                    icon={buttonIcon}
+                    disabled={status === 'sending' || status === 'sent'}
+                >
+                    {buttonLabel}
                 </Button>
             </div>
 
+            <p role="status" aria-live="polite" className="sr-only">
+                {status === 'idle' ? '' : buttonLabel}
+            </p>
         </form>
     );
 }

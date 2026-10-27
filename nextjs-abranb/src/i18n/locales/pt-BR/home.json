@@ -79,7 +79,7 @@
         "placeholder": "Nome completo"
       },
       "organization": {
-        "label": "Qual organização você representa?",
+        "label": "Qual organização você representa? (opcional)",
         "placeholder": "Nome da organização"
       },
       "email": {
@@ -96,6 +96,18 @@
       }
     },
     "submitButton": "Enviar",
-    "alternativeContactTitle": "Fique à vontade caso prefira outras redes de comunicação"
+    "alternativeContactTitle": "Fique à vontade caso prefira outras redes de comunicação",
+    "errors": {
+      "required": "Este campo é obrigatório.",
+      "nameTooShort": "Digite pelo menos 2 caracteres.",
+      "emailInvalid": "Digite um email válido.",
+      "messageTooShort": "Escreva pelo menos 10 caracteres.",
+      "tooLong": "Texto muito longo."
+    },
+    "submitStatus": {
+      "sending": "Enviando",
+      "sent": "Enviado",
+      "error": "Erro ao enviar. Tentar novamente"
+    }
   }
 }
