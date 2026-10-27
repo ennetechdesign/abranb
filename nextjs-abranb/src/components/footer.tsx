@@ -120,7 +120,7 @@ export function Footer() {
             href="/"
             className="rounded-md transition-opacity hover:opacity-80 focus-visible:outline-offset-2"
           >
-            <LogoMark className="size-16 shrink-0 md:size-20" />
+            <LogoMark themed className="size-16 shrink-0 md:size-20" />
           </Link>
           <nav aria-label={t("footer_social_nav_label")} className="max-w-50 text-right md:w-full">
             <ul className="flex items-center gap-3">

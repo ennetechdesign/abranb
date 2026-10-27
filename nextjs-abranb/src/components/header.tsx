@@ -84,7 +84,7 @@ export function Header({
                 href="/"
                 className="flex min-w-0 items-center gap-2 rounded-md focus-visible:outline-offset-2"
             >
-              <LogoMark className="size-9 shrink-0 md:size-10"/>
+              <LogoMark themed className="size-9 shrink-0 md:size-10" />
               <span className="truncate text-heading font-medium uppercase tracking-wide hover:text-title-decoration transition-colors">
                 ABRANB
               </span>
