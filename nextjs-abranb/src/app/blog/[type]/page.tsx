@@ -11,13 +11,12 @@ export async function generateMetadata({ params }: { params: Promise<{ type: str
   return { title: type === "artigo" ? "Artigos" : "Notícias", description: `Publicações da ABRANB: ${type === "artigo" ? "artigos" : "notícias"}, organizadas por categoria.` };
 }
 
-export default async function PublicationTypeRoute({ params, searchParams }: {
+export default async function PublicationTypeRoute({ params }: {
   params: Promise<{ type: string }>;
-  searchParams: Promise<{ view?: string; page?: string }>;
 }) {
-  const [{ type }, query] = await Promise.all([params, searchParams]);
+  const { type } = await params;
   if (!isPublicationType(type)) notFound();
-  return <BlogTypePage type={type} pageParam={query.page} showAll={query.view === "todos"} />;
+  return <BlogTypePage type={type} />;
 }
 
 

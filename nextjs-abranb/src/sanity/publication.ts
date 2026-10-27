@@ -79,7 +79,7 @@ export const PUBLICATION_FIELDS = groq`
   }
 `;
 
-export const PUBLICATIONS_BY_TYPE_QUERY = groq`*[_type == "post" && ${PUBLISHED_CONDITION} && publicationType == $type] | order(coalesce(originalPublishedAt, scheduledAt, _createdAt) desc) [$offset...$limit] {
+export const PUBLICATIONS_BY_TYPE_QUERY = groq`*[_type == "post" && ${PUBLISHED_CONDITION} && publicationType == $type] | order(coalesce(originalPublishedAt, scheduledAt, _createdAt) desc) [$offset...$end] {
   ${PUBLICATION_FIELDS}
 }`;
 

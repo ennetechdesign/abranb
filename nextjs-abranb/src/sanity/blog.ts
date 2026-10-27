@@ -35,7 +35,7 @@ export const CATEGORY_BY_SLUG_QUERY = groq`*[_type == "publicationCategory" && s
 }`;
 
 /** Publicações de uma categoria, da mais recente para a mais antiga, com limite. */
-export const PUBLICATIONS_BY_CATEGORY_QUERY = groq`*[_type == "post" && ${PUBLISHED_CONDITION} && publicationType == $type && category._ref == $categoryId] | order(coalesce(originalPublishedAt, scheduledAt, _createdAt) desc) [$offset...$limit] {
+export const PUBLICATIONS_BY_CATEGORY_QUERY = groq`*[_type == "post" && ${PUBLISHED_CONDITION} && publicationType == $type && category._ref == $categoryId] | order(coalesce(originalPublishedAt, scheduledAt, _createdAt) desc) [$offset...$end] {
   ${PUBLICATION_FIELDS}
 }`;
 
@@ -62,7 +62,11 @@ export async function fetchPublicationsByType({ type, offset, limit }: {
   offset: number;
   limit: number;
 }): Promise<Publication[]> {
-  return client.fetch<Publication[]>(PUBLICATIONS_BY_TYPE_QUERY, { type, offset, limit }, options);
+  return client.fetch<Publication[]>(PUBLICATIONS_BY_TYPE_QUERY, {
+    type,
+    offset,
+    end: offset + limit,
+  }, options);
 }
 
 export async function countPublicationsByType(type: "artigo" | "noticia"): Promise<number> {
@@ -80,11 +84,12 @@ export async function fetchPublicationsByCategory({
   offset: number;
   limit: number;
 }): Promise<Publication[]> {
-  return client.fetch<Publication[]>(
-    PUBLICATIONS_BY_CATEGORY_QUERY,
-    { type, categoryId, offset, limit },
-    options,
-  );
+  return client.fetch<Publication[]>(PUBLICATIONS_BY_CATEGORY_QUERY, {
+    type,
+    categoryId,
+    offset,
+    end: offset + limit,
+  }, options);
 }
 
 export async function countPublicationsByCategory({
