@@ -260,8 +260,16 @@ export function DropdownMenu({
     cancelScheduledClose();
     closeTimerRef.current = window.setTimeout(() => {
       closeTimerRef.current = null;
-      // A keyboard user may have tabbed into the panel meanwhile.
-      if (rootRef.current?.contains(document.activeElement)) return;
+      // A keyboard user may have tabbed into the panel meanwhile. Mouse-clicked
+      // items also keep focus, but are not :focus-visible, so they don't count.
+      const active = document.activeElement;
+      if (
+        active instanceof HTMLElement &&
+        rootRef.current?.contains(active) &&
+        active.matches(":focus-visible")
+      ) {
+        return;
+      }
       setOpen(false);
     }, HOVER_CLOSE_DELAY_MS);
   };
