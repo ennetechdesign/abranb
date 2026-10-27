@@ -55,6 +55,12 @@ html[data-color-scheme="high-contrast"] .bg-linear {
 html[data-color-scheme="night"] .input-contato,
 html[data-color-scheme="high-contrast"] .input-contato {
   @apply border-gold bg-lilac/10;
+  @apply w-full rounded-[50px] border-2 border-purple bg-lilac/30 px-7.5 py-4.5 -outline-offset-0;
+}
+
+html[data-color-scheme="night"] .input-contato,
+html[data-color-scheme="high-contrast"] .input-contato {
+  @apply border-gold bg-lilac/10;
 }
 
 .form-contato {
