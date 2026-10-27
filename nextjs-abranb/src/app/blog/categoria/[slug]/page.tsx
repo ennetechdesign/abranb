@@ -3,16 +3,18 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import TitleUnderline from "@/components/title-underline";
 import { PublicationList } from "@/components/blog/publication-list";
-import {
-  fetchCategoryBySlug,
-  countPublicationsByCategory,
-  fetchPublicationsByCategory,
-  POSTS_PER_PAGE,
-} from "@/sanity/blog";
+import { countPublicationsByCategory, fetchCategoryBySlug, fetchPublicationsByCategory, POSTS_PER_PAGE } from "@/sanity/blog";
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
-  const { slug } = await params;
-  const category = await fetchCategoryBySlug(slug);
+type PublicationType = "artigo" | "noticia";
+const isPublicationType = (type: string | undefined): type is PublicationType => type === "artigo" || type === "noticia";
+
+export async function generateMetadata({ params, searchParams }: {
+  params: Promise<{ slug: string }>;
+  searchParams: Promise<{ type?: string }>;
+}): Promise<Metadata> {
+  const [{ slug }, { type: typeParam }] = await Promise.all([params, searchParams]);
+  const type = isPublicationType(typeParam) ? typeParam : undefined;
+  const category = await fetchCategoryBySlug(slug, type);
   if (!category) return { title: "Categoria não encontrada" };
   const label = category.publicationType === "noticia" ? "Notícias" : "Artigos";
   return { title: `${category.title} | ${label}`, description: `Publicações de ${label.toLowerCase()} da categoria ${category.title}.` };
@@ -20,20 +22,22 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function CategoryPage({ params, searchParams }: {
   params: Promise<{ slug: string }>;
-  searchParams: Promise<{ page?: string }>;
+  searchParams: Promise<{ page?: string; type?: string }>;
 }) {
-  const { slug } = await params;
-  const { page: pageParam } = await searchParams;
-  const category = await fetchCategoryBySlug(slug);
+  const [{ slug }, { page: pageParam, type: typeParam }] = await Promise.all([params, searchParams]);
+  const typeFilter = isPublicationType(typeParam) ? typeParam : undefined;
+  if (typeParam && !typeFilter) notFound();
+  const category = await fetchCategoryBySlug(slug, typeFilter);
   if (!category) notFound();
 
-  const type: "artigo" | "noticia" = category.publicationType === "noticia" ? "noticia" : "artigo";
+  const type: PublicationType = category.publicationType === "noticia" ? "noticia" : "artigo";
   const label = type === "noticia" ? "Notícias" : "Artigos";
   const currentPage = Math.max(1, Number.parseInt(pageParam ?? "1", 10) || 1);
   const [totalCount, posts] = await Promise.all([
     countPublicationsByCategory({ type, categoryId: category._id }),
     fetchPublicationsByCategory({ type, categoryId: category._id, offset: (currentPage - 1) * POSTS_PER_PAGE, limit: POSTS_PER_PAGE }),
   ]);
+  const baseHref = `/blog/categoria/${slug}?type=${type}`;
 
   return <main className="min-h-screen w-full">
     <nav aria-label="Tipos de publicação" className="mx-auto flex w-full max-w-6xl items-center gap-3 px-5 pt-7 sm:gap-5 sm:pt-9">
@@ -42,8 +46,8 @@ export default async function CategoryPage({ params, searchParams }: {
     </nav>
     <section className="px-4 pb-14 pt-10 sm:px-6 sm:pt-14">
       <div className="mx-auto max-w-4xl">
-        <div className="mb-8 text-center sm:mb-10"><TitleUnderline title={category.title} color="title-decoration" position="center" /><p className="mt-3 text-sm text-muted-foreground sm:text-base">{label} nesta categoria</p></div>
-        <PublicationList posts={posts} currentPage={currentPage} totalPages={Math.ceil(totalCount / POSTS_PER_PAGE)} totalCount={totalCount} baseHref={`/blog/categoria/${slug}`} emptyMessage={`Ainda não há ${label.toLowerCase()} nesta categoria.`} aria-label={`${label} da categoria ${category.title}`} />
+        <div className="mb-8 text-center sm:mb-10"><TitleUnderline title={category.title} color="title-decoration" position="center" /><p className="mt-3 text-sm text-muted-foreground sm:text-base">Lista completa de {label.toLowerCase()}</p></div>
+        <PublicationList posts={posts} currentPage={currentPage} totalPages={Math.ceil(totalCount / POSTS_PER_PAGE)} totalCount={totalCount} baseHref={baseHref} emptyMessage={`Ainda não há ${label.toLowerCase()} nesta categoria.`} aria-label={`${label} da categoria ${category.title}`} />
       </div>
     </section>
   </main>;

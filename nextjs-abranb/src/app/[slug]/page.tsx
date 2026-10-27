@@ -55,12 +55,14 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
       <div className="mx-auto flex max-w-[1440px] snap-x gap-6 overflow-x-auto px-3 pb-3 scrollbar-hidden sm:gap-16">{related.slice(0, 2).map((item) => {
         const relatedCover = getImageUrl(item.coverImage, 600, 400);
         const relatedImage = relatedCover ?? "/images/imagem-indisponivel.png";
-        return <Link key={item._id} href={`/${item.slug}`} className="group flex w-[min(82vw,670px)] flex-shrink-0 snap-center overflow-hidden rounded-[32px] bg-lilac text-left shadow-sm transition-shadow hover:shadow-md sm:rounded-[42px]">{relatedImage && <div className="relative min-h-36 w-[40%] flex-shrink-0 sm:min-h-48"><Image src={relatedImage} alt={relatedCover ? (item.coverImage?.alt || item.title) : "Imagem indisponível"} fill sizes="300px" className="object-cover" /></div>}<div className="flex flex-col justify-center p-4 sm:p-6"><h3 className="mb-2 text-lg font-bold leading-tight text-deep group-hover:text-link sm:text-2xl">{item.title}</h3>{item.subtitle && <p className="line-clamp-3 text-sm leading-relaxed text-muted-foreground sm:text-base">{item.subtitle}</p>}</div></Link>;
+        return <Link key={item._id} href={`/${item.slug}`} className="group flex h-[190px] w-[min(82vw,670px)] flex-shrink-0 snap-center overflow-hidden sm:h-[210px] rounded-[32px] bg-lilac text-left shadow-sm transition-shadow hover:shadow-md sm:rounded-[42px]">{relatedImage && <div className="relative h-full w-[40%] flex-shrink-0 bg-[#eee]"><Image src={relatedImage} alt={relatedCover ? (item.coverImage?.alt || item.title) : "Imagem indisponível"} fill sizes="300px" className={relatedCover ? "object-cover" : "object-contain"} /></div>}<div className="flex min-w-0 flex-1 flex-col justify-center overflow-hidden p-3 sm:p-5"><h3 className="mb-2 line-clamp-2 break-words text-lg font-bold leading-tight text-deep group-hover:text-link sm:text-2xl">{item.title}</h3>{item.subtitle && <p className="line-clamp-3 text-sm leading-relaxed text-muted-foreground sm:text-base">{item.subtitle}</p>}</div></Link>;
       })}</div>
       <Link href={`/blog/${publicationType}?view=todos`} className="mt-8 inline-flex rounded-full border border-purple bg-purple px-6 py-3 font-semibold text-white shadow-sm transition hover:brightness-95">Acessar {publicationType === "artigo" ? "todos os artigos" : "todas as notícias"} <span className="ml-2" aria-hidden="true">›</span></Link>
     </section>}
   </main>;
 }
+
+
 
 
 

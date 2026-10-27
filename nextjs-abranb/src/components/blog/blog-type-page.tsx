@@ -29,15 +29,16 @@ function toSlides(posts: Publication[]): SlideShowNotice[] {
       descricao: post.subtitle ?? "Leia esta publicação da ABRANB.",
       href: `/${post.slug}`,
       imageAlt: coverUrl ? (post.coverImage?.alt ?? post.title) : "Imagem indisponível",
+      imageFit: coverUrl ? "cover" : "contain",
     };
   });
 }
 function BlogTabs({ type, categories }: { type: PublicationType; categories: PublicationCategory[] }) {
-  return <nav aria-label="Tipos de publicação e categorias" className="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-4 px-5 pt-7 sm:pt-9">
-    <div className="flex items-center gap-3 sm:gap-5">
-      {(["artigo", "noticia"] as const).map((item) => <Link key={item} href={`/blog/${item}`} aria-current={type === item ? "page" : undefined} className={`rounded-full px-4 py-2 text-sm font-medium sm:text-lg ${type === item ? "bg-gold text-deep shadow-sm" : "text-foreground hover:bg-surface-elevated"}`}>{LABELS[item]}</Link>)}
+  return <nav aria-label="Tipos de publicação e categorias" className="mx-auto flex w-full min-w-0 max-w-6xl flex-wrap items-center justify-between gap-x-4 gap-y-3 px-4 pt-6 sm:px-5 sm:pt-9">
+    <div className="flex shrink-0 items-center gap-2 sm:gap-5">
+      {(["artigo", "noticia"] as const).map((item) => <Link key={item} href={`/blog/${item}`} aria-current={type === item ? "page" : undefined} className={`shrink-0 whitespace-nowrap rounded-full px-3 py-2 text-sm font-medium sm:px-4 sm:text-lg ${type === item ? "bg-gold text-deep shadow-sm" : "text-foreground hover:bg-surface-elevated"}`}>{LABELS[item]}</Link>)}
     </div>
-    <CategoryFilter categories={categories} type={type} typeLabel={LABELS[type]} aria-label={`Filtrar ${LABELS[type].toLowerCase()} por categoria`} />
+    <div className="ml-auto shrink-0"><CategoryFilter categories={categories} type={type} typeLabel={LABELS[type]} aria-label={`Filtrar ${LABELS[type].toLowerCase()} por categoria`} /></div>
   </nav>;
 }
 
@@ -71,7 +72,6 @@ export async function BlogTypePage({ type, pageParam, showAll }: {
   return <main className="min-h-screen w-full"><BlogTabs type={type} categories={categories} /><div className="pb-10 pt-3 sm:pb-16">{populatedCategories.map(({ category, posts, totalCount }, index) => <section key={category._id} className={`flex flex-col items-center px-4 py-9 sm:px-6 sm:py-12 ${index % 2 ? "bg-lilac/20" : "bg-background"}`}>
     <h2 className="mb-7 max-w-full border-b-2 border-title-decoration px-1 pb-2 text-center text-xl font-bold text-title-decoration sm:mb-9 sm:text-3xl">{category.title}</h2>
     <div className="w-full"><SlideShow notices={toSlides(posts)} label={`${label}: ${category.title}`} /></div>
-    <Link className="mt-7 inline-flex items-center rounded-full border border-gold bg-gold px-5 py-2.5 text-sm font-bold text-deep shadow-sm transition hover:brightness-95 sm:mt-8 sm:text-base" href={`/blog/${type}/categoria/${category.slug}`}>Acessar lista completa <span className="ml-2 text-xl" aria-hidden="true">›</span><span className="sr-only"> de {category.title} ({totalCount} publicações)</span></Link>
+    <Link className="mt-7 inline-flex items-center rounded-full border border-gold bg-gold px-5 py-2.5 text-sm font-bold text-deep shadow-sm transition hover:brightness-95 sm:mt-8 sm:text-base" href={`/blog/categoria/${category.slug}?type=${type}`}>Acessar lista completa <span className="ml-2 text-xl" aria-hidden="true">›</span><span className="sr-only"> de {category.title} ({totalCount} publicações)</span></Link>
   </section>)}{populatedCategories.length === 0 && <p className="py-16 text-center text-lead text-muted-foreground">Ainda não há {label.toLowerCase()} publicados.</p>}</div></main>;
 }
-
