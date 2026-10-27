@@ -10,6 +10,7 @@ import {
   type Publication,
 } from "@/sanity/publication";
 import { getImageUrl } from "@/sanity/image";
+import TitleUnderline from "@/components/title-underline";
 
 const options = { next: { revalidate: 30 } };
 
@@ -37,8 +38,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
   return <main className="min-h-screen w-full">
     <article className="px-4 pb-0 pt-8 sm:px-8 sm:pt-10">
       <header className="mx-auto max-w-3xl text-center">
-        <h1 className="text-3xl font-bold leading-tight text-gold sm:text-4xl lg:text-5xl">{post.title}</h1>
-        <div className="mx-auto my-4 h-0.5 w-3/4 bg-gold sm:my-5" />
+        <TitleUnderline title={post.title} position="center"/>
         {post.subtitle && <p className="text-base leading-snug text-muted-foreground sm:text-xl">{post.subtitle}</p>}
         <div className="mx-auto mt-6 flex max-w-3xl flex-wrap items-center justify-between gap-4 text-xs text-muted-foreground sm:mt-8 sm:text-sm">
           <div className="flex items-center gap-2">{authorImage ? <Image src={authorImage} alt="" width={32} height={32} className="h-8 w-8 rounded-full object-cover" /> : <Image src="/logo.jpeg" alt="" width={32} height={32} className="h-8 w-8 rounded-full object-cover" />}<span>{post.authorName || "Abranb"}</span></div>

@@ -25,6 +25,7 @@ const HOVER_CLOSE_DELAY_MS = 150;
 export type DropdownMenuItem = {
   href: string;
   label: ReactNode;
+  current?: boolean;
 };
 
 export type DropdownMenuProps = {
@@ -353,7 +354,8 @@ export function DropdownMenu({
                     key={item.href}
                     href={item.href}
                     role={panelRole === "menu" ? "menuitem" : undefined}
-                    className="whitespace-nowrap no-underline outline-none transition-colors hover:text-nav-dropdown-hover focus-visible:text-nav-dropdown-hover"
+                    aria-current={item.current ? "page" : undefined}
+                    className={`whitespace-nowrap no-underline outline-none transition-colors hover:text-nav-dropdown-hover focus-visible:text-nav-dropdown-hover ${item.current ? "font-bold text-nav-dropdown-hover" : ""}`}
                     onClick={close}
                   >
                     {item.label}

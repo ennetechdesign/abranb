@@ -203,6 +203,22 @@ html[data-font="mono"] body {
   }
 }
 
+html[data-color-scheme="night"] .publication-card,
+html[data-color-scheme="high-contrast"] .publication-card {
+  background-color: #120020b2;
+  color: var(--foreground);
+}
+
+html[data-color-scheme="night"] .publication-card .publication-card-title,
+html[data-color-scheme="high-contrast"] .publication-card .publication-card-title {
+  color: var(--foreground);
+}
+
+html[data-color-scheme="night"] .publication-card .publication-card-subtitle,
+html[data-color-scheme="high-contrast"] .publication-card .publication-card-subtitle {
+  color: var(--muted-foreground);
+}
+
 /* Acessibilidade trigger: suppress focus chrome entirely (wins over layered utilities). */
 [data-a11y-menu-trigger],
 [data-a11y-menu-trigger]:hover,
