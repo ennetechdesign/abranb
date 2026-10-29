@@ -80,23 +80,13 @@ html[data-color-scheme="high-contrast"] .input-contato {
 .error-contato {
   @apply mt-2.5 px-7.5 font-semibold;
   font-size: var(--font-size-small);
-  color: #b3261e;
-}
-html[data-color-scheme="night"] .error-contato {
-  color: #ff8a80;
-}
-html[data-color-scheme="high-contrast"] .error-contato {
-  color: var(--focus-ring);
+  color: #d32f2f;
 }
 
 .input-contato[aria-invalid="true"] {
-  border-color: #b3261e;
-}
-html[data-color-scheme="night"] .input-contato[aria-invalid="true"] {
-  border-color: #ff8a80;
+  border-color: #d32f2f;
 }
 html[data-color-scheme="high-contrast"] .input-contato[aria-invalid="true"] {
-  border-color: var(--focus-ring);
   border-style: dashed;
 }
 
