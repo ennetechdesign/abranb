@@ -16,6 +16,7 @@
   --palette-ivory: #fffbf0;
   --palette-footer-bronze: #967444;
   --palette-footer-brown: #3b2621;
+  --palette-red: #d32f2f;
 
   --text-zoom: 1;
 
@@ -42,6 +43,9 @@
   --surface-elevated: var(--palette-ivory);
   --link: var(--palette-purple);
   --focus-ring: var(--palette-purple);
+  /* Not overridden per theme: errors stay red everywhere. */
+  --error: var(--palette-red);
+  --error-foreground: var(--palette-paper);
   --title-decoration: var(--palette-purple);
   --paper-deep: var(--palette-paper);
   --scrollbar-thumb: var(--palette-purple);
@@ -296,6 +300,8 @@ html.no-js [data-dropdown-hoverable]:focus-within [data-dropdown-panel] {
   --color-surface-elevated: var(--surface-elevated);
   --color-link: var(--link);
   --color-focus-ring: var(--focus-ring);
+  --color-error: var(--error);
+  --color-error-foreground: var(--error-foreground);
   --color-title-decoration: var(--title-decoration);
   --color-paper-deep: var(--paper-deep);
   --color-pix-logo: var(--pix-logo);

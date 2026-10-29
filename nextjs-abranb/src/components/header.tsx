@@ -10,7 +10,6 @@ import { DropdownMenu } from "@/components/dropdown-menu";
 import { HamburgerMenuTrigger } from "@/components/hamburger-menu-trigger";
 import { LogoMark } from "@/components/logo-mark";
 import { NavDrawer } from "@/components/nav-drawer";
-import { SearchLaunchButton } from "@/components/search-launch-button";
 import {
   navLibraryDropdownItems,
   navAboutDropdownItems,
@@ -155,10 +154,6 @@ export function Header({
                 {t("nav_page_blog")}
               </Link>
             </nav>
-          </div>
-
-          <div className="flex shrink-0 items-center gap-1 md:gap-2">
-            <SearchLaunchButton/>
           </div>
         </div>
       </header>

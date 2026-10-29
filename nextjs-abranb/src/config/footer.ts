@@ -64,7 +64,7 @@ export const footerResearchLinks: FooterResearchLink[] = [
   { id: "abrai", href: "https://abrai.org.br/", label: "Abrai" },
   {
     id: "multiplas-identidades",
-    href: "https://www.instagram.com/multiplasidentidades/",
+    href: "https://multiplasidentidades.nekoweb.org/",
     label: "Múltiplas Identidades",
   },
 ];

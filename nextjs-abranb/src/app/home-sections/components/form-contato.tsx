@@ -188,6 +188,7 @@ export default function FormContato() {
                     size="contact"
                     type="submit"
                     icon={buttonIcon}
+                    className={status === 'error' ? '!border-error !bg-error !text-error-foreground hover:!bg-error' : undefined}
                     disabled={status === 'sending' || status === 'sent'}
                 >
                     {buttonLabel}
