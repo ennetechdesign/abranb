@@ -1,9 +1,10 @@
 import TitleUnderline from "@/components/title-underline";
 import SlideShow from "../components/slide-show";
+import type { SlideShowNotice } from "../components/slide-show";
 import { useTranslation } from "react-i18next";
 import Button from "@/components/button";
 
-export default function OQueFizemos() {
+export default function OQueFizemos({ notices }: { notices: SlideShowNotice[] }) {
     const { t } = useTranslation("home");
 
     return (
@@ -11,7 +12,7 @@ export default function OQueFizemos() {
             <TitleUnderline title={t("whatWeDid.title")} position="center" />
 
             <div className="mt-15 mb-12.5 w-full min-w-0 max-w-full">
-                <SlideShow />
+                <SlideShow notices={notices} />
             </div>
 
             <Button variant="gold-to-purple" href="/blog">

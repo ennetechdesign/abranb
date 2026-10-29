@@ -6,7 +6,7 @@
 
 html[data-color-scheme="high-contrast"] .box-slide,
 html[data-color-scheme="night"] .box-slide {
-  @apply bg-[#120020B2] text-foreground
+  @apply bg-[#f2dff233] text-foreground hover:bg-purple
 }
 
 .radio-slide-active {
