@@ -80,11 +80,11 @@ html[data-color-scheme="high-contrast"] .input-contato {
 .error-contato {
   @apply mt-2.5 px-7.5 font-semibold;
   font-size: var(--font-size-small);
-  color: #d32f2f;
+  color: var(--error);
 }
 
 .input-contato[aria-invalid="true"] {
-  border-color: #d32f2f;
+  border-color: var(--error);
 }
 html[data-color-scheme="high-contrast"] .input-contato[aria-invalid="true"] {
   border-style: dashed;
