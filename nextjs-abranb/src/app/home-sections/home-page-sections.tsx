@@ -13,12 +13,12 @@ import AreasTematicas from "./sections/areas-tematicas";
 import FacaParte from "./sections/faca-parte";
 import Doacao from "./sections/doacao";
 import EntreEmContato from "./sections/entre-em-contato";
+import type { SlideShowNotice } from "./components/slide-show";
 
 // TODO: Montar as seções da página home
-export function HomePageSections() {
+export function HomePageSections({ homeNotices }: { homeNotices: SlideShowNotice[] }) {
   const sectionComponents = {
   "o-que-e-nao-binario": EntendaNB,
-  "noticias-abranb": OQueFizemos,
   "nossa-historia": NossaHistoria,
   "nossas-conexoes": Coletives,
   "sintese-pautas": SinteseDePautas,
@@ -33,6 +33,18 @@ export function HomePageSections() {
   return (
     <div className="">
       {navDrawerSections.map((s) => {
+        if (s.sectionId === "noticias-abranb") {
+          return (
+            <section
+              key={s.sectionId}
+              id={s.sectionId}
+              className="bg-surface-elevated/50"
+            >
+              <OQueFizemos notices={homeNotices} />
+            </section>
+          );
+        }
+
         const SectionComponent = sectionComponents[s.sectionId as keyof typeof sectionComponents];
 
         if (!SectionComponent) return null;
