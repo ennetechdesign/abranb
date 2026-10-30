@@ -14,7 +14,7 @@ type BoxNoticesSlideProps = {
 };
 
 export default function BoxNoticesSlide({ notice }: { notice: BoxNoticesSlideProps }) {
-  const content = <div className="box-slide group flex h-[360px] w-[86vw] min-w-0 max-w-[850px] flex-col overflow-hidden rounded-[50px] bg-lilac text-ink transition-colors duration-300 hover:bg-purple hover:text-white sm:h-[360px] sm:rounded-[40px] lg:h-[270px] lg:flex-row">
+  const content = <div className="box-slide group flex h-[360px] w-[86vw] min-w-0 max-w-[850px] flex-col overflow-hidden rounded-[50px] bg-lilac text-ink transition-colors duration-300 hover:bg-purple hover:text-white sm:h-[360px] sm:rounded-[50px] lg:h-[270px] lg:flex-row">
     <picture className={`rounded-[50px] relative block h-[190px] w-full shrink-0 overflow-hidden sm:h-[190px] lg:h-full lg:w-[40%]`}>
       <Image src={notice.foto} fill sizes="(max-width: 1023px) 86vw, 340px" draggable={false} alt={notice.imageAlt ?? ""} className={`rounded-[50px] rounded-tr-[50px] h-full w-full ${notice.imageFit === "contain" ? "object-contain" : "object-cover transition-transform duration-500 group-hover:scale-105"}`} />
     </picture>

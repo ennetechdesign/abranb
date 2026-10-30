@@ -408,3 +408,8 @@ html.no-js [data-dropdown-hoverable]:focus-within [data-dropdown-panel] {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+html[data-color-scheme="night"] .box-slide:hover,
+html[data-color-scheme="high-contrast"] .box-slide:hover {
+  background-color: var(--palette-purple);
+  color: #ffffff;
+}
