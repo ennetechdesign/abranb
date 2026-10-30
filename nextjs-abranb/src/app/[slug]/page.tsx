@@ -62,16 +62,16 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
   return <main className="min-h-screen w-full">
     <article className="px-4 pb-0 pt-8 sm:px-8 sm:pt-10">
       <header className="mx-auto max-w-3xl text-center">
-        <TitleUnderline title={post.title} position="center"/>
-        {post.subtitle && <p className="text-base leading-snug text-muted-foreground sm:text-xl">{post.subtitle}</p>}
-        {post.category?.slug && <Link href={`/blog/categoria/${post.category.slug}?type=${publicationType}`} className="mt-3 inline-flex rounded-full bg-lilac px-4 py-1.5 text-sm font-semibold text-deep hover:bg-purple hover:text-white">{post.category.title}</Link>}
-        <div className="mx-auto mt-6 flex max-w-3xl flex-wrap items-center justify-between gap-4 text-xs text-muted-foreground sm:mt-8 sm:text-sm">
+        <div className="block mb-6"><TitleUnderline title={post.title} position="center"/></div>
+        {post.subtitle && <p className="text-body leading-snug text-muted-foreground sm:text-lead">{post.subtitle}</p>}
+        {post.category?.slug && <Link href={`/blog/categoria/${post.category.slug}?type=${publicationType}`} className="mt-3 inline-flex rounded-full bg-lilac px-4 py-1.5 text-caption font-semibold text-deep hover:bg-purple hover:text-white">{post.category.title}</Link>}
+        <div className="mx-auto mt-6 flex max-w-3xl flex-wrap items-center justify-between gap-4 text-caption text-muted-foreground sm:mt-8">
           <div className="flex items-center gap-2">{authorImage ? <Image src={authorImage} alt="" width={32} height={32} className="h-8 w-8 rounded-full object-cover" /> : <Image src="/logo.jpeg" alt="" width={32} height={32} className="h-8 w-8 rounded-full object-cover" />}{post.authorLink ? <a href={post.authorLink} target="_blank" rel="noopener noreferrer" className="underline decoration-link underline-offset-2">{post.authorName || "Abranb"}</a> : <span>{post.authorName || "Abranb"}</span>}</div>
           <span>{readingMinutes} minuto{readingMinutes === 1 ? "" : "s"} de leitura{dateLabel ? ` · ${dateLabel}` : ""}</span>
         </div>
       </header>
       {imageUrl && <div className={`relative mx-auto mt-7 w-full overflow-hidden rounded-[28px] bg-[#eee] sm:mt-8 sm:rounded-[40px] ${coverUrl ? "aspect-[2.5/1] max-w-6xl" : "aspect-[4/3] max-w-2xl"}`}><Image src={imageUrl} alt={imageAlt} fill priority sizes="(max-width: 768px) 100vw, 1200px" className={coverUrl ? "object-cover" : "object-contain"} /></div>}
-      <div className="prose prose-lg mx-auto max-w-[680px] py-8 text-foreground prose-p:my-5 prose-p:leading-[1.8] prose-a:text-link prose-a:underline prose-headings:text-foreground prose-img:mx-auto prose-img:rounded-[32px] sm:py-10">
+      <div className="prose mx-auto max-w-[680px] py-8 text-body text-foreground prose-p:my-5 prose-p:text-body prose-p:leading-[1.8] prose-li:text-body prose-blockquote:text-body prose-h1:text-heading-h1 prose-h2:text-title prose-h3:text-heading prose-h4:text-body prose-a:text-link prose-a:underline prose-headings:text-foreground prose-img:mx-auto prose-img:rounded-[32px] sm:py-10">
         {Array.isArray(post.body) && <PortableText value={post.body} components={{
           types: {
             bodyImage: ({ value }) => {
@@ -82,7 +82,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
                 <div className="relative mx-auto aspect-[4/3] w-full overflow-hidden rounded-2xl bg-surface-elevated">
                   <Image src={bodyImageUrl} alt={image.alt ?? ""} fill sizes="(max-width: 768px) 100vw, 680px" className="object-contain" />
                 </div>
-                {image.caption && <figcaption className="mt-2 text-center text-sm text-muted-foreground">{image.caption}</figcaption>}
+                {image.caption && <figcaption className="mt-2 text-center text-caption text-muted-foreground">{image.caption}</figcaption>}
               </figure>;
             },
           },
@@ -95,8 +95,8 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
         }} />}
       </div>
       {post.references?.length ? <section aria-labelledby="publication-references" className="mx-auto max-w-[680px] border-t border-border-subtle py-6 sm:py-8">
-        <h2 id="publication-references" className="mb-4 text-xl font-bold text-foreground">Fontes e referências</h2>
-        <ol className="list-decimal space-y-2 pl-6 text-sm leading-relaxed text-muted-foreground sm:text-base">
+        <h2 id="publication-references" className="mb-4 text-title font-bold text-foreground">Fontes e referências</h2>
+        <ol className="list-decimal space-y-2 pl-6 text-body leading-relaxed text-muted-foreground">
           {post.references.map((reference, index) => <li key={reference._key ?? `${reference.url}-${index}`}>
             <a href={reference.url} target="_blank" rel="noopener noreferrer" className="text-link underline underline-offset-2">{reference.title}</a>
           </li>)}

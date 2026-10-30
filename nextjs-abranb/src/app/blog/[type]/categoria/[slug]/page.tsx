@@ -42,8 +42,8 @@ export default async function CategoryPage({ params, searchParams }: {
   return <main className="min-h-screen w-full">
     <nav aria-label="Tipos de publicação e categorias" className="mx-auto flex w-full min-w-0 max-w-6xl flex-col items-center gap-y-3 px-4 pt-6 sm:flex-row sm:justify-between sm:gap-x-4 sm:px-5 sm:pt-9">
       <div className="flex shrink-0 items-center justify-center gap-2 sm:gap-5">
-        <Link href="/blog/artigo" aria-current={type === "artigo" ? "page" : undefined} className={`shrink-0 whitespace-nowrap rounded-full px-3 py-2 text-sm font-medium sm:px-4 sm:text-lg ${type === "artigo" ? "bg-gold text-deep shadow-sm" : "text-foreground hover:bg-surface-elevated"}`}>Artigos</Link>
-        <Link href="/blog/noticia" aria-current={type === "noticia" ? "page" : undefined} className={`shrink-0 whitespace-nowrap rounded-full px-3 py-2 text-sm font-medium sm:px-4 sm:text-lg ${type === "noticia" ? "bg-gold text-deep shadow-sm" : "text-foreground hover:bg-surface-elevated"}`}>Notícias</Link>
+        <Link href="/blog/artigo" aria-current={type === "artigo" ? "page" : undefined} className={`shrink-0 whitespace-nowrap rounded-full px-3 py-2 text-body font-medium sm:px-4 ${type === "artigo" ? "bg-gold text-deep shadow-sm" : "text-foreground hover:bg-surface-elevated"}`}>Artigos</Link>
+        <Link href="/blog/noticia" aria-current={type === "noticia" ? "page" : undefined} className={`shrink-0 whitespace-nowrap rounded-full px-3 py-2 text-body font-medium sm:px-4 ${type === "noticia" ? "bg-gold text-deep shadow-sm" : "text-foreground hover:bg-surface-elevated"}`}>Notícias</Link>
       </div>
       <div className="flex w-full justify-center sm:ml-auto sm:w-auto sm:justify-end"><CategoryFilter categories={categories} type={type} typeLabel={label} selectedCategorySlug={category.slug} aria-label={`Filtrar ${label.toLowerCase()} por categoria`} /></div>
     </nav>

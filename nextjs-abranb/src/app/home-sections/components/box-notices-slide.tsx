@@ -19,8 +19,8 @@ export default function BoxNoticesSlide({ notice }: { notice: BoxNoticesSlidePro
       <Image src={notice.foto} fill sizes="(max-width: 1023px) 86vw, 340px" draggable={false} alt={notice.imageAlt ?? ""} className={`rounded-[50px] rounded-tr-[50px] h-full w-full ${notice.imageFit === "contain" ? "object-contain" : "object-cover transition-transform duration-500 group-hover:scale-105"}`} />
     </picture>
     <div className="flex h-[170px] min-h-0 min-w-0 flex-1 flex-col justify-center overflow-hidden px-4 py-3 text-left sm:h-[170px] sm:px-5 sm:py-4 lg:h-full lg:px-6 lg:py-5">
-      <h3 className="mb-2 line-clamp-2 break-words text-base font-bold leading-tight sm:text-xl lg:text-title">{notice.titulo}</h3>
-      <p className="line-clamp-3 break-words text-sm leading-relaxed sm:text-base lg:text-body">{notice.descricao}</p>
+      <h3 className="mb-2 line-clamp-2 break-words text-body font-bold leading-tight sm:text-lead lg:text-title">{notice.titulo}</h3>
+      <p className="line-clamp-3 break-words text-caption leading-relaxed sm:text-body lg:text-body">{notice.descricao}</p>
     </div>
   </div>;
   return notice.href ? <Link href={notice.href} className="block w-[86vw] min-w-0 max-w-[850px] shrink-0 snap-center" aria-label={`Ler: ${notice.titulo}`}>{content}</Link> : <div className="w-[86vw] min-w-0 max-w-[850px] shrink-0 snap-center">{content}</div>;
