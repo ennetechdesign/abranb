@@ -1,12 +1,15 @@
 import type { Metadata } from "next";
-import { PortableText } from "next-sanity";
+import { groq, PortableText } from "next-sanity";
 import { notFound } from "next/navigation";
+import Link from "next/link";
 import Image from "next/image";
 import SlideShow, { type SlideShowNotice } from "@/app/home-sections/components/slide-show";
 import Button from "@/components/button";
 import { client } from "@/sanity/client";
 import {
+  PUBLISHED_CONDITION,
   PUBLICATION_DETAIL_QUERY,
+  PUBLICATION_FIELDS,
   RELATED_PUBLICATIONS_QUERY,
   type Publication,
 } from "@/sanity/publication";
@@ -14,6 +17,14 @@ import { getImageUrl } from "@/sanity/image";
 import TitleUnderline from "@/components/title-underline";
 
 const options = { next: { revalidate: 30 } };
+const INDIVIDUAL_PUBLICATION_QUERY = groq`*[_type == "post" && slug.current == $slug && ${PUBLISHED_CONDITION}][0] {
+  ${PUBLICATION_FIELDS},
+  "references": references[]{ _key, title, url }
+}`;
+
+type PublicationDetail = Publication & {
+  references?: { _key?: string; title: string; url: string }[] | null;
+};
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const post = await client.fetch<Publication | null>(PUBLICATION_DETAIL_QUERY, await params, options);
@@ -23,7 +34,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function PostPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const post = await client.fetch<Publication | null>(PUBLICATION_DETAIL_QUERY, { slug }, options);
+  const post = await client.fetch<PublicationDetail | null>(INDIVIDUAL_PUBLICATION_QUERY, { slug }, options);
   if (!post) notFound();
   const publicationType = post.publicationType === "artigo" ? "artigo" : "noticia";
   const related = await client.fetch<Publication[]>(RELATED_PUBLICATIONS_QUERY, { slug, publicationType }, options);
@@ -53,15 +64,44 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
       <header className="mx-auto max-w-3xl text-center">
         <TitleUnderline title={post.title} position="center"/>
         {post.subtitle && <p className="text-base leading-snug text-muted-foreground sm:text-xl">{post.subtitle}</p>}
+        {post.category?.slug && <Link href={`/blog/categoria/${post.category.slug}?type=${publicationType}`} className="mt-3 inline-flex rounded-full bg-lilac px-4 py-1.5 text-sm font-semibold text-deep hover:bg-purple hover:text-white">{post.category.title}</Link>}
         <div className="mx-auto mt-6 flex max-w-3xl flex-wrap items-center justify-between gap-4 text-xs text-muted-foreground sm:mt-8 sm:text-sm">
-          <div className="flex items-center gap-2">{authorImage ? <Image src={authorImage} alt="" width={32} height={32} className="h-8 w-8 rounded-full object-cover" /> : <Image src="/logo.jpeg" alt="" width={32} height={32} className="h-8 w-8 rounded-full object-cover" />}<span>{post.authorName || "Abranb"}</span></div>
+          <div className="flex items-center gap-2">{authorImage ? <Image src={authorImage} alt="" width={32} height={32} className="h-8 w-8 rounded-full object-cover" /> : <Image src="/logo.jpeg" alt="" width={32} height={32} className="h-8 w-8 rounded-full object-cover" />}{post.authorLink ? <a href={post.authorLink} target="_blank" rel="noopener noreferrer" className="underline decoration-link underline-offset-2">{post.authorName || "Abranb"}</a> : <span>{post.authorName || "Abranb"}</span>}</div>
           <span>{readingMinutes} minuto{readingMinutes === 1 ? "" : "s"} de leitura{dateLabel ? ` · ${dateLabel}` : ""}</span>
         </div>
       </header>
       {imageUrl && <div className={`relative mx-auto mt-7 w-full overflow-hidden rounded-[28px] bg-[#eee] sm:mt-8 sm:rounded-[40px] ${coverUrl ? "aspect-[2.5/1] max-w-6xl" : "aspect-[4/3] max-w-2xl"}`}><Image src={imageUrl} alt={imageAlt} fill priority sizes="(max-width: 768px) 100vw, 1200px" className={coverUrl ? "object-cover" : "object-contain"} /></div>}
       <div className="prose prose-lg mx-auto max-w-[680px] py-8 text-foreground prose-p:my-5 prose-p:leading-[1.8] prose-a:text-link prose-a:underline prose-headings:text-foreground prose-img:mx-auto prose-img:rounded-[32px] sm:py-10">
-        {Array.isArray(post.body) && <PortableText value={post.body} />}
+        {Array.isArray(post.body) && <PortableText value={post.body} components={{
+          types: {
+            bodyImage: ({ value }) => {
+              const image = value as unknown as { alt?: string; caption?: string };
+              const bodyImageUrl = getImageUrl(value, 1400, 1050);
+              if (!bodyImageUrl) return null;
+              return <figure className="my-8">
+                <div className="relative mx-auto aspect-[4/3] w-full overflow-hidden rounded-2xl bg-surface-elevated">
+                  <Image src={bodyImageUrl} alt={image.alt ?? ""} fill sizes="(max-width: 768px) 100vw, 680px" className="object-contain" />
+                </div>
+                {image.caption && <figcaption className="mt-2 text-center text-sm text-muted-foreground">{image.caption}</figcaption>}
+              </figure>;
+            },
+          },
+          marks: {
+            link: ({ children, value }) => {
+              const link = value as { href?: string; blank?: boolean };
+              return link.href ? <a href={link.href} target={link.blank ? "_blank" : undefined} rel={link.blank ? "noopener noreferrer" : undefined}>{children}</a> : <>{children}</>;
+            },
+          },
+        }} />}
       </div>
+      {post.references?.length ? <section aria-labelledby="publication-references" className="mx-auto max-w-[680px] border-t border-border-subtle py-6 sm:py-8">
+        <h2 id="publication-references" className="mb-4 text-xl font-bold text-foreground">Fontes e referências</h2>
+        <ol className="list-decimal space-y-2 pl-6 text-sm leading-relaxed text-muted-foreground sm:text-base">
+          {post.references.map((reference, index) => <li key={reference._key ?? `${reference.url}-${index}`}>
+            <a href={reference.url} target="_blank" rel="noopener noreferrer" className="text-link underline underline-offset-2">{reference.title}</a>
+          </li>)}
+        </ol>
+      </section> : null}
     </article>
     {related.length > 0 && <section className="bg-lilac/20 px-4 py-10 text-center sm:px-8 sm:py-14">
       <div className="mb-8 text-center"><TitleUnderline title="Descubra mais novidades" position="center" /></div>
