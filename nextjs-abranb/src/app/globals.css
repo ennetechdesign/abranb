@@ -215,6 +215,16 @@ html[data-color-scheme="high-contrast"] .box-slide {
   color: var(--foreground);
 }
 
+.box-slide,
+.box-slide picture,
+.box-slide picture img {
+  border-radius: 50px;
+}
+
+.box-slide picture {
+  clip-path: inset(0 round 50px);
+}
+
 html[data-color-scheme="night"] .publication-card .publication-card-title,
 html[data-color-scheme="high-contrast"] .publication-card .publication-card-title {
   color: var(--foreground);

@@ -20,7 +20,7 @@ export default async function IndexPage() {
       descricao: post.subtitle ?? "",
       href: `/${post.slug}`,
       imageAlt: imageUrl ? (post.coverImage?.alt ?? post.title) : "Imagem indisponível",
-      imageFit: imageUrl ? "cover" : "contain",
+      imageFit: "cover",
     };
   });
 

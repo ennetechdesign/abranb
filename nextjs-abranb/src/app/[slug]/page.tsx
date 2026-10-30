@@ -44,7 +44,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
       descricao: item.subtitle ?? "Leia esta publicação da ABRANB.",
       href: `/${item.slug}`,
       imageAlt: relatedCover ? (item.coverImage?.alt || item.title) : "Imagem indisponível",
-      imageFit: relatedCover ? "cover" : "contain",
+      imageFit: "cover",
     };
   });
 

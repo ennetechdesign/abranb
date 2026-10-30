@@ -26,7 +26,7 @@ function toSlides(posts: Publication[]): SlideShowNotice[] {
       descricao: post.subtitle ?? "Leia esta publicação da ABRANB.",
       href: `/${post.slug}`,
       imageAlt: coverUrl ? (post.coverImage?.alt ?? post.title) : "Imagem indisponível",
-      imageFit: coverUrl ? "cover" : "contain",
+      imageFit: "cover",
     };
   });
 }
