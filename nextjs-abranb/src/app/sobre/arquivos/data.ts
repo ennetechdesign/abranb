@@ -127,7 +127,7 @@ export const books: ArchiveBook[] = [
     cover: `${base}/livros/3-entraves-acesso-saude.png`,
     width: 634,
     height: 896,
-    url: "https://www.researchgate.net/profile/Brune-Bonassi/publication/397738846_ENTRAVES_NO_ACESSO_A_SAUDE_PARA_PESSOAS_NAO_BINARIAS_E_MULTIPLICIDADE_ONTOLOGICA_LEGAL_EM_TERRITORIOS_BRASILEIROS/links/691d208bde81430982722cd8/ENTRAVES-NO-ACESSO-A-SAUDE-PARA-PESSOAS-NAO-BINARIAS-E-MULTIPLICIDADE-ONTOLOGICA-LEGAL-EM-TERRITORIOS-BRASILEIROS.pdf",
+    url: "https://drive.google.com/file/d/1hAd22u9k_OpXiAyP2g767SH2FseU7JHN/view?usp=drive_link",
   },
 ];
 
