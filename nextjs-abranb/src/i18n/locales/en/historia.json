@@ -5,43 +5,10 @@
   "subheading": "What we are",
   "body_paragraphs": [
     [
-      { "type": "text", "value": "The " },
-      {
-        "type": "emphasis",
-        "value": "Brazilian Non-Binary Articulation (ABRANB)"
-      },
-      { "type": "text", "value": " is an " },
-      { "type": "emphasis", "value": "association of non-binary people" },
-      {
-        "type": "text",
-        "value": " spread across Brazil in 14 states through its members and local/regional groups."
-      }
+      { "type": "text", "value": "The Brazilian Non-Binary Articulation (ABRANB) is a network founded in 2021 that brings together non-binary people and collectives from various territories in Brazil in a horizontal and independent organization." }
     ],
     [
-      { "type": "text", "value": "We put " },
-      {
-        "type": "emphasis",
-        "value": "non-binarity on the agenda broadly across many themes"
-      },
-      {
-        "type": "text",
-        "value": " according to members’ availability and willingness, working "
-      },
-      { "type": "emphasis", "value": "autonomously" },
-      { "type": "text", "value": " and deciding in a " },
-      { "type": "emphasis", "value": "horizontal" },
-      { "type": "text", "value": ", assembly-based way on " },
-      {
-        "type": "emphasis",
-        "value": "issues that matter for non-binary people’s rights"
-      },
-      { "type": "text", "value": "." }
-    ],
-    [
-      {
-        "type": "text",
-        "value": "We seek and have built ties with state public defenders’ offices, civil registries, and clinics focused on care for our community, as well as the Red No Binarie Abya Yala network, coordinating across Latin America."
-      }
+      { "type": "text", "value": "We work through both thematic and state-level territorial groups to carry out actions relevant to the non-binary population, advancing respect for our autonomy and dignity in access to services, social rights and other needs of the community." }
     ]
   ],
   "intro_image_membres_alt": "Group of ABRANB members standing and holding Trans and Non-Binary pride flags",
