@@ -57,3 +57,13 @@ export const fontes = {
     { label: "Exorsexismo - Plume", url: "https://amplifi.casa/~/Asterismos/exorsexismo" },
   ] as SourceLink[],
 };
+
+/** Link targets for the "Nota" resource cards, in the same order as `nota.resources` in the locale files. */
+export const notaResourceUrls = [
+  "https://ajudanhincq.wordpress.com/2019/09/27/vocabulario-usado-em-circulos-nhincq-inclusivos/",
+  "https://espectrometria-nao-binaria.tumblr.com/post/95841791923/gloss%C3%A1rio-termos-sobre-g%C3%AAneros-sexualidades",
+  "https://genderdysphoria.fyi/pt/",
+  "https://diversidades.fandom.com/pt-br/wiki/Wiki_Diversidades",
+  "https://nonbinary.wiki/wiki/Main_Page",
+  "https://lgbtqia.wiki/wiki/LGBTQIA%2B_Wiki",
+];

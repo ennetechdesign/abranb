@@ -376,12 +376,26 @@ html[data-color-scheme="high-contrast"] .gl-tool .gl-photo {
 
 .gl-resource {
   display: flex;
+  color: inherit;
+  text-decoration: none;
+  transition: background-color 0.15s ease, transform 0.15s ease;
   align-items: flex-start;
   gap: 0.75rem;
   padding: 0.9rem 1.25rem;
   border: 1px solid var(--palette-gold);
   border-radius: 2rem;
   background-color: color-mix(in srgb, var(--palette-gold) 25%, transparent);
+}
+
+.gl-resource:hover,
+.gl-resource:focus-visible {
+  background-color: color-mix(in srgb, var(--palette-gold) 45%, transparent);
+  transform: translateY(-1px);
+}
+
+.gl-resource:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
 }
 
 .gl-resource-icon {

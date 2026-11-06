@@ -14,6 +14,7 @@ import {
   fontes,
   images,
   linguagem as linguagemData,
+  notaResourceUrls,
   type PhotoData,
   type SourceLink,
 } from "./content";
@@ -197,16 +198,18 @@ export default async function GlossarioPage() {
         <Heading id="nota">{nota.title}</Heading>
         <Prose blocks={nota.paragraphs} />
         <ul className="gl-resources">
-          {nota.resources.map((resource) => (
-            <li key={resource.title} className="gl-resource">
-              <FontAwesomeIcon icon={faGlobe} aria-hidden className="gl-resource-icon" />
-              <div>
-                <p className="gl-resource-title">
-                  {resource.title}
-                  {resource.english && <span className="gl-badge">{nota.english_badge}</span>}
-                </p>
-                <p className="gl-resource-description">{resource.description}</p>
-              </div>
+          {nota.resources.map((resource, index) => (
+            <li key={resource.title}>
+              <ExternalLink href={notaResourceUrls[index]} className="gl-resource">
+                <FontAwesomeIcon icon={faGlobe} aria-hidden className="gl-resource-icon" />
+                <div>
+                  <p className="gl-resource-title">
+                    {resource.title}
+                    {resource.english && <span className="gl-badge">{nota.english_badge}</span>}
+                  </p>
+                  <p className="gl-resource-description">{resource.description}</p>
+                </div>
+              </ExternalLink>
             </li>
           ))}
         </ul>
