@@ -20,6 +20,7 @@ import {
   type FontFamily,
   type TextSize,
   colorSchemes,
+  isColorScheme,
   fontFamilies,
   textSizes,
 } from "@/lib/a11y-preferences";
@@ -114,6 +115,12 @@ export function AccessibilityMenu({
     setColorScheme(initialColorScheme);
   }, [initialColorScheme]);
 
+  // On a first visit the page may have switched to the browser's preferred scheme before hydration.
+  useEffect(() => {
+    const applied = document.documentElement.dataset.colorScheme;
+    if (isColorScheme(applied)) setColorScheme(applied);
+  }, []);
+
   useEffect(() => {
     setFontFamily(initialFontFamily);
   }, [initialFontFamily]);
@@ -128,6 +135,7 @@ export function AccessibilityMenu({
 
   const onColorChange = (value: ColorScheme) => {
     setColorScheme(value);
+    document.documentElement.setAttribute("data-color-scheme", value);
     setColorSchemeCookie(value);
     refresh();
   };

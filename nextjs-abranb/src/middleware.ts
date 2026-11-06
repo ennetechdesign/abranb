@@ -8,7 +8,7 @@ import {
   FONT_FAMILY_HEADER,
   TEXT_SIZE_COOKIE,
   TEXT_SIZE_HEADER,
-  normalizeColorScheme,
+  isColorScheme,
   normalizeFontFamily,
   normalizeTextSize,
 } from "@/lib/a11y-preferences";
@@ -26,7 +26,9 @@ export function middleware(request: NextRequest) {
   const locale = isSupportedLocale(localeExisting) ? localeExisting : defaultLocale;
 
   const colorExisting = request.cookies.get(COLOR_SCHEME_COOKIE)?.value;
-  const colorScheme = normalizeColorScheme(colorExisting);
+  // No default is stored: without a cookie the page decides from the browser's
+  // prefers-color-scheme (see COLOR_SCHEME_INIT_SCRIPT), falling back to "day".
+  const colorStored = isColorScheme(colorExisting) ? colorExisting : undefined;
 
   const fontExisting = request.cookies.get(FONT_FAMILY_COOKIE)?.value;
   const fontFamily = normalizeFontFamily(fontExisting);
@@ -36,7 +38,7 @@ export function middleware(request: NextRequest) {
 
   const requestHeaders = new Headers(request.headers);
   requestHeaders.set(LOCALE_HEADER, locale);
-  requestHeaders.set(COLOR_SCHEME_HEADER, colorScheme);
+  if (colorStored) requestHeaders.set(COLOR_SCHEME_HEADER, colorStored);
   requestHeaders.set(FONT_FAMILY_HEADER, fontFamily);
   requestHeaders.set(TEXT_SIZE_HEADER, textSize);
 
@@ -56,14 +58,6 @@ export function middleware(request: NextRequest) {
     response.cookies.set({
       name: LOCALE_COOKIE,
       value: locale,
-      ...cookieOpts,
-    });
-  }
-
-  if (colorExisting !== colorScheme) {
-    response.cookies.set({
-      name: COLOR_SCHEME_COOKIE,
-      value: colorScheme,
       ...cookieOpts,
     });
   }
