@@ -5,10 +5,20 @@
   "subheading": "O que somos",
   "body_paragraphs": [
     [
-      { "type": "text", "value": "A Articulação Brasileira Não Binárie (ABRANB) é uma articulação fundada em 2021 que reúne pessoas e coletivos não-binários de vários territórios no Brasil em uma organização horizontal e independente." }
+      { "type": "text", "value": "A " },
+      { "type": "emphasis", "value": "Articulação Brasileira Não Binárie (ABRANB)" },
+      { "type": "text", "value": " é uma articulação fundada em 2021 que reúne " },
+      { "type": "emphasis", "value": "pessoas e coletivos não-binários" },
+      { "type": "text", "value": " de vários territórios no Brasil em uma " },
+      { "type": "emphasis", "value": "organização horizontal e independente" },
+      { "type": "text", "value": "." }
     ],
     [
-      { "type": "text", "value": "Atuamos tanto com núcleos temáticos quanto territoriais a nível de estados para realizar ações pertinentes à população não-binária, que façam avançar o respeito a nossa autonomia e dignidade no acesso a serviços, direitos sociais e outras necessidades da comunidade." }
+      { "type": "text", "value": "Atuamos tanto com núcleos temáticos quanto territoriais a nível de estados para " },
+      { "type": "emphasis", "value": "realizar ações pertinentes à população não-binária" },
+      { "type": "text", "value": ", que façam avançar o respeito a nossa " },
+      { "type": "emphasis", "value": "autonomia e dignidade no acesso a serviços, direitos sociais" },
+      { "type": "text", "value": " e outras necessidades da comunidade." }
     ]
   ],
   "intro_image_membres_alt": "Grupo de membres da ABRANB em pé, segurando bandeiras do orgulho trans e não-binário",

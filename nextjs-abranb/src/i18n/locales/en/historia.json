@@ -5,10 +5,20 @@
   "subheading": "What we are",
   "body_paragraphs": [
     [
-      { "type": "text", "value": "The Brazilian Non-Binary Articulation (ABRANB) is a network founded in 2021 that brings together non-binary people and collectives from various territories in Brazil in a horizontal and independent organization." }
+      { "type": "text", "value": "The " },
+      { "type": "emphasis", "value": "Brazilian Non-Binary Articulation (ABRANB)" },
+      { "type": "text", "value": " is a network founded in 2021 that brings together " },
+      { "type": "emphasis", "value": "non-binary people and collectives" },
+      { "type": "text", "value": " from various territories in Brazil in a " },
+      { "type": "emphasis", "value": "horizontal and independent organization" },
+      { "type": "text", "value": "." }
     ],
     [
-      { "type": "text", "value": "We work through both thematic and state-level territorial groups to carry out actions relevant to the non-binary population, advancing respect for our autonomy and dignity in access to services, social rights and other needs of the community." }
+      { "type": "text", "value": "We work through both thematic and state-level territorial groups to " },
+      { "type": "emphasis", "value": "carry out actions relevant to the non-binary population" },
+      { "type": "text", "value": ", advancing respect for our " },
+      { "type": "emphasis", "value": "autonomy and dignity in access to services, social rights" },
+      { "type": "text", "value": " and other needs of the community." }
     ]
   ],
   "intro_image_membres_alt": "Group of ABRANB members standing and holding Trans and Non-Binary pride flags",
