@@ -43,7 +43,7 @@ export function normalizeFontFamily(value: string | undefined): FontFamily {
 export const TEXT_SIZE_COOKIE = "NEXT_TEXT_SIZE";
 export const TEXT_SIZE_HEADER = "x-next-text-size";
 
-export const defaultTextSize = "normal";
+export const defaultTextSize = "large";
 export const textSizes = ["normal", "large"] as const;
 export type TextSize = (typeof textSizes)[number];
 
