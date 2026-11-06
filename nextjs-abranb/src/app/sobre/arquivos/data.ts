@@ -73,7 +73,7 @@ export const videos: ArchiveVideo[] = [
     title: "Chamada na Secretaria de Saúde do Ceará",
     thumbnail: `${base}/videos/4-secretaria-saude-ceara.png`,
     width: 336,
-    height: 338,
+    height: 258,
     url: "https://www.instagram.com/p/DFOXNaVqUi2/",
   },
   {
