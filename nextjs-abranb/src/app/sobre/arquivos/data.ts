@@ -69,6 +69,27 @@ export const videos: ArchiveVideo[] = [
     height: 360,
     url: "https://www.youtube.com/live/QdwBR4WC1TY?si=ugMiJosrEl5xbSRC",
   },
+  {
+    title: "Chamada na Secretaria de Saúde do Ceará",
+    thumbnail: `${base}/videos/4-secretaria-saude-ceara.png`,
+    width: 336,
+    height: 338,
+    url: "https://www.instagram.com/p/DFOXNaVqUi2/",
+  },
+  {
+    title: "Audiência pública na Assembléia Legislativa de Minas Gerais",
+    thumbnail: `${base}/videos/5-audiencia-alemg.png`,
+    width: 728,
+    height: 408,
+    url: "https://www.instagram.com/p/CsjRAO0ommw/",
+  },
+  {
+    title: "Audiência pública na câmara legislativa do Distrito Federal",
+    thumbnail: `${base}/videos/6-audiencia-cldf.png`,
+    width: 1087,
+    height: 754,
+    url: "https://www.instagram.com/p/Coj91UtK2kc/",
+  },
 ];
 
 export type ArchiveBook = {
