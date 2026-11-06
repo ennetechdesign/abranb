@@ -51,10 +51,10 @@ export const fontes = {
     { label: "Transandrógine - Orientando", url: "https://orientando.org/listas/lista-de-generos/transandrogine/" },
     { label: "Transxenine - Orientando", url: "https://orientando.org/listas/lista-de-generos/transxenine/" },
     { label: "Modalidades de gênero - Orientando", url: "https://orientando.org/listas/lista-de-modalidades-de-genero/" },
-    { label: "Linguagem pessoal - Plume", url: "https://amplifi.casa/~/Asterismos/tudo-ou-pelo-menos-muita-coisa-sobre-linguagem-pessoal" },
+    { label: "Linguagem pessoal - Asterismos", url: "https://amplifi.casa/~/Asterismos/tudo-ou-pelo-menos-muita-coisa-sobre-linguagem-pessoal" },
     { label: "Linguagem, poder e sexismo (módulo para uma sequência didática)", url: "https://subversiveopendiscoursebr.wordpress.com/2013/07/31/linguagem-poder-e-sexismo-modulo-para-uma-sequencia-didatica/" },
     { label: "O que é ser Intersexo", url: "https://abrai.org.br/informacoes-e-recursos/definicao-de-intersexo/" },
-    { label: "Exorsexismo - Plume", url: "https://amplifi.casa/~/Asterismos/exorsexismo" },
+    { label: "Exorsexismo - Asterismos", url: "https://amplifi.casa/~/Asterismos/exorsexismo" },
   ] as SourceLink[],
 };
 
