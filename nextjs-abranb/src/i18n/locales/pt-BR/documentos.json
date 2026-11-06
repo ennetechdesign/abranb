@@ -1,6 +1,6 @@
 {
   "meta_title": "Documentos Produzidos",
-  "meta_description": "Pareceres, relatórios bianuais e outros documentos produzidos pela ABRANB.",
+  "meta_description": "Pareceres, relatórios anuais e outros documentos produzidos pela ABRANB.",
   "hero_title": "Documentos Produzidos",
   "sections": {
     "pareceres": {
@@ -12,7 +12,7 @@
       ]
     },
     "relatorios": {
-      "title": "Relatórios bianuais das nossas atividades",
+      "title": "Relatórios anuais das nossas atividades",
       "docs": [
         { "label": "1ª Edição - 2021/2022", "href": "https://drive.google.com/file/d/1r-N_IdGS7m9p-vdB2dTrLH06qBqfnLQl/view" },
         { "label": "2ª Edição - 2022/2023", "href": "https://drive.google.com/file/d/185xafifR6xezUUPGIO-ydfWaPdRfjiO7/view" },
