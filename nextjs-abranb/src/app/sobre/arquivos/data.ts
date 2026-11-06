@@ -121,13 +121,13 @@ export const books: ArchiveBook[] = [
     url: "https://drive.google.com/file/d/1Z8jP2e4jFjCxKS4vKtlNuNbVcx_1WvX4/view",
   },
   {
-    title: "Léxico Guarani",
+    title: "Entraves no acesso à saúde para pessoas não binárias e multiplicidade ontológica legal em territórios brasileiros",
     abstract:
-      "LÉXICO GUARANI, DIALETO MBYÁ com informações úteis para o ensino médio, a aprendizagem e a pesquisa lingüística Robert A. Dooley, SIL GUARANI-PORTUGUÊS Versão de 9 de março de 2006, 11:32:00",
-    cover: `${base}/livros/3-lexico-guarani.png`,
-    width: 609,
-    height: 789,
-    url: "https://drive.google.com/file/d/11t21H93WsHlr4gadAzwTP837nrd4JTFz/view",
+      "O acesso à saúde de populações não cissexuais no Brasil enfrenta diversos entraves. De modo geral, o preconceito estrutural, a não disponibilidade de medicamentos para a terapia hormonal, a falta de capacitação de equipes, a ausência de um projeto terapêutico singular, e o longo histórico de patologização afetam diretamente. Em pessoas não binárias, outros fatores entravam esse acesso, como a ininteligibilidade que leva profissionais a buscarem hormonizar de forma binária, com os mesmos protocolos; ou, ainda, a arquitetura dos postos de saúde e outros locais da rede, que por oferecer apenas banheiros binários, exercem uma pressão silenciosa e cisnormativa nos corpos. Esta tese teve como objetivo mapear esse campo, onde tão poucas pesquisas já percorreram. De modo mais específico: a) trazer problematizações sobre a “identidade” não binária nas políticas públicas, b) contextualizar historicamente o rastro perverso da patologização/pecadologização e efeitos de corpo; e c) lançar propostas para a melhoria do acolhimento e atendimento de pessoas não binárias na rede pública de saúde. Sua justificativa está na necessidade de observância e efetivação da garantia do direito fundamental que é o acesso à saúde, independentemente da identidade de gênero. Teve como inspiração metodológica a prática autoetnográfica feminista e dos estudos de gênero, onde usei a força criativa da fabulação crítica para trazer novamente a história da patologização, mas dessa vez voltando o olhar para populações não binárias. As principais contribuições estão no campo das políticas públicas de saúde, embora seja possível encontrar problematizações filosóficas que podem ser expandidas para outros campos, principalmente o direito civil. Esta tese se mostra um material onde profissionais podem buscar informações para sua capacitação, bem como usuáries podem se informar sobre seus direitos.",
+    cover: `${base}/livros/3-entraves-acesso-saude.png`,
+    width: 634,
+    height: 896,
+    url: "https://www.researchgate.net/profile/Brune-Bonassi/publication/397738846_ENTRAVES_NO_ACESSO_A_SAUDE_PARA_PESSOAS_NAO_BINARIAS_E_MULTIPLICIDADE_ONTOLOGICA_LEGAL_EM_TERRITORIOS_BRASILEIROS/links/691d208bde81430982722cd8/ENTRAVES-NO-ACESSO-A-SAUDE-PARA-PESSOAS-NAO-BINARIAS-E-MULTIPLICIDADE-ONTOLOGICA-LEGAL-EM-TERRITORIOS-BRASILEIROS.pdf",
   },
 ];
 
