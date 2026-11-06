@@ -19,7 +19,7 @@
     "buttonText": "Descubra mais sobre nós"
   },
   "partnershipCollectives": {
-    "title": "Coletives em Parceria",
+    "title": "Coletivos em Parceria",
     "buttonText": "Descubra mais conexões nossas"
   },
   "agendaSummary": {
@@ -56,7 +56,7 @@
   },
   "joinOurUnion": {
     "title": "Faça parte da nossa união",
-    "description": "Costumamos nos comunicar interna e continuamente pelo Telegram para discutir pautas, desenvolver grupos de trabalho, apoiar outras coletives não-bináries e demais movimentações na articulação. Além disso, temos grupos diferentes para cada área temática, como comunicação, programação e saúde.",
+    "description": "Costumamos nos comunicar interna e continuamente pelo Telegram para discutir pautas, desenvolver grupos de trabalho, apoiar outros coletivos não-bináries e demais movimentações na articulação. Além disso, temos grupos diferentes para cada área temática, como comunicação, programação e saúde.",
     "button": "Entre na nossa articulação",
     "timeEstimate": "Leva de 1 a 2 minutos"
   },
