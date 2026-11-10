@@ -11,6 +11,7 @@ import {
 import {
   faFacebook,
   faInstagram,
+  faLinktree,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
@@ -30,6 +31,7 @@ import {
 const socialIcons: Record<FooterSocialLink["id"], IconDefinition> = {
   instagram: faInstagram,
   facebook: faFacebook,
+  linktree: faLinktree,
   email: faEnvelope,
 };
 

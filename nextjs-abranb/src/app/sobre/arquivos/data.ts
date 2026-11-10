@@ -69,6 +69,27 @@ export const videos: ArchiveVideo[] = [
     height: 360,
     url: "https://www.youtube.com/live/QdwBR4WC1TY?si=ugMiJosrEl5xbSRC",
   },
+  {
+    title: "Chamada na Secretaria de Saúde do Ceará",
+    thumbnail: `${base}/videos/4-secretaria-saude-ceara.png`,
+    width: 336,
+    height: 258,
+    url: "https://www.instagram.com/p/DFOXNaVqUi2/",
+  },
+  {
+    title: "Audiência pública na Assembléia Legislativa de Minas Gerais",
+    thumbnail: `${base}/videos/5-audiencia-alemg.png`,
+    width: 728,
+    height: 408,
+    url: "https://www.instagram.com/p/CsjRAO0ommw/",
+  },
+  {
+    title: "Audiência pública na câmara legislativa do Distrito Federal",
+    thumbnail: `${base}/videos/6-audiencia-cldf.png`,
+    width: 1087,
+    height: 754,
+    url: "https://www.instagram.com/p/Coj91UtK2kc/",
+  },
 ];
 
 export type ArchiveBook = {
@@ -100,13 +121,13 @@ export const books: ArchiveBook[] = [
     url: "https://drive.google.com/file/d/1Z8jP2e4jFjCxKS4vKtlNuNbVcx_1WvX4/view",
   },
   {
-    title: "Léxico Guarani",
+    title: "Entraves no acesso à saúde para pessoas não binárias e multiplicidade ontológica legal em territórios brasileiros",
     abstract:
-      "LÉXICO GUARANI, DIALETO MBYÁ com informações úteis para o ensino médio, a aprendizagem e a pesquisa lingüística Robert A. Dooley, SIL GUARANI-PORTUGUÊS Versão de 9 de março de 2006, 11:32:00",
-    cover: `${base}/livros/3-lexico-guarani.png`,
-    width: 609,
-    height: 789,
-    url: "https://drive.google.com/file/d/11t21H93WsHlr4gadAzwTP837nrd4JTFz/view",
+      "O acesso à saúde de populações não cissexuais no Brasil enfrenta diversos entraves. De modo geral, o preconceito estrutural, a não disponibilidade de medicamentos para a terapia hormonal, a falta de capacitação de equipes, a ausência de um projeto terapêutico singular, e o longo histórico de patologização afetam diretamente. Em pessoas não binárias, outros fatores entravam esse acesso, como a ininteligibilidade que leva profissionais a buscarem hormonizar de forma binária, com os mesmos protocolos; ou, ainda, a arquitetura dos postos de saúde e outros…",
+    cover: `${base}/livros/3-entraves-acesso-saude.png`,
+    width: 634,
+    height: 896,
+    url: "https://drive.google.com/file/d/1hAd22u9k_OpXiAyP2g767SH2FseU7JHN/view?usp=drive_link",
   },
 ];
 

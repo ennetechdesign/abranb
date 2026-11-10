@@ -1,6 +1,6 @@
 {
-  "title-h1-1": "Pessoas não-binárias unidas por",
-  "title-h1-2": "reconhecimento e valorização da pluralidade",
+  "title-h1-1": "Pessoas não binárias unidas contra o binarismo de gênero,",
+  "title-h1-2": "por reconhecimento e valorização da diversidade.",
 
   "understandNonBinarity": {
     "title": "Entenda a não-binariedade",
@@ -19,7 +19,7 @@
     "buttonText": "Descubra mais sobre nós"
   },
   "partnershipCollectives": {
-    "title": "Coletives em Parceria",
+    "title": "Coletivos em Parceria",
     "buttonText": "Descubra mais conexões nossas"
   },
   "agendaSummary": {
@@ -56,13 +56,13 @@
   },
   "joinOurUnion": {
     "title": "Faça parte da nossa união",
-    "description": "Costumamos nos comunicar interna e continuamente pelo Telegram para discutir pautas, desenvolver grupos de trabalho, apoiar outras coletives não-bináries e demais movimentações na articulação. Além disso, temos grupos diferentes para cada área temática, como comunicação, programação e saúde.",
+    "description": "Costumamos nos comunicar interna e continuamente pelo Telegram para discutir pautas, desenvolver grupos de trabalho, apoiar outros coletivos não-bináries e demais movimentações na articulação. Além disso, temos grupos diferentes para cada área temática, como comunicação, programação e saúde.",
     "button": "Entre na nossa articulação",
     "timeEstimate": "Leva de 1 a 2 minutos"
   },
   "donation": {
     "title": "Doe qualquer valor para nós",
-    "description": "Uma doação também é uma forma válida de ajudar pessoas e organizações diversas, e isso conta muito para que a nossa articulação continue de pé em nossas atividades. Juntes, construímos um mundo mais empático e includente para todes. Sua contribuição faz toda a diferença!",
+    "description": "A ABRANB funciona de forma totalmente autofinanciada e solidária entre pessoas não binárias e aliadas, sem patrocínio de empresas ou governos. Por isso é fundamental o seu apoio contribuindo com qualquer valor, se possível regularmente (sugerimos pix programado). Temos demandas econômicas contínuas para elaboração de materiais, construção de atividades, aquisição de ferramentas e intervenções territoriais. Essa luta é responsabilidade coletiva de toda a sociedade. Contamos com seu fortalecimento!",
     "pixLabel": "Copiar chave pix:",
     "pixButton": "abranb.associacao@gmail.com",
     "pixCopyAria": "Copiar chave PIX abranb.associacao@gmail.com",

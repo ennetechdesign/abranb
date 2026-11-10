@@ -1,6 +1,6 @@
 {
   "meta_title": "Produced Documents",
-  "meta_description": "Opinions, biannual reports, and other documents produced by ABRANB.",
+  "meta_description": "Opinions, annual reports, and other documents produced by ABRANB.",
   "hero_title": "Produced Documents",
   "sections": {
     "pareceres": {
@@ -12,7 +12,7 @@
       ]
     },
     "relatorios": {
-      "title": "Biannual reports of our activities",
+      "title": "Annual reports of our activities",
       "docs": [
         { "label": "1ª Edition - 2021/2022", "href":  "https://drive.google.com/file/d/1r-N_IdGS7m9p-vdB2dTrLH06qBqfnLQl/view"},
         { "label": "2ª Edition - 2022/2023", "href": "https://drive.google.com/file/d/185xafifR6xezUUPGIO-ydfWaPdRfjiO7/view" },
@@ -30,6 +30,10 @@
         {
           "label": "Guide on welcoming in healthcare - Training for professionals",
           "href": "https://drive.google.com/file/d/1ckFSFaz4GAkOfvGZkAqO8fvHR5LxR5-3/view"
+        },
+        {
+          "label": "Note on period poverty",
+          "href": "https://drive.google.com/file/d/1EkoKJrqkdoSaYnkNpMCV8ElOYjfgqGs9/view"
         }
       ]
     }

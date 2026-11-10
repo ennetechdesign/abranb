@@ -255,14 +255,19 @@
         "english": false
       },
       {
-        "title": "Orientando.org",
-        "description": "Site que lista e explica várias identidades de gênero, orientações e assuntos parecidos.",
-        "english": false
-      },
-      {
         "title": "Wiki Diversidades",
         "description": "Vários artigos sobre identidade de gênero, orientações e assuntos relacionados.",
         "english": false
+      },
+      {
+        "title": "Nonbinary Wiki",
+        "description": "Foca mais em história e informações práticas do que em explicar cada identidade.",
+        "english": true
+      },
+      {
+        "title": "LGBTQIA+ Wiki",
+        "description": "Tem milhares de páginas sobre identidades e conceitos.",
+        "english": true
       }
     ],
     "english_badge": "em inglês"

@@ -1,5 +1,5 @@
 export type FooterSocialLink = {
-  id: "instagram" | "facebook" | "email";
+  id: "instagram" | "facebook" | "linktree" | "email";
   href: string;
   labelKey: string;
 };
@@ -28,6 +28,11 @@ export const footerSocialLinks: FooterSocialLink[] = [
     id: "facebook",
     href: "https://www.facebook.com/abranb",
     labelKey: "footer_social_facebook",
+  },
+  {
+    id: "linktree",
+    href: "https://linktr.ee/abranb.articulacao",
+    labelKey: "footer_social_linktree",
   },
   {
     id: "email",

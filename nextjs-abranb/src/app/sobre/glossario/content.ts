@@ -51,9 +51,19 @@ export const fontes = {
     { label: "Transandrógine - Orientando", url: "https://orientando.org/listas/lista-de-generos/transandrogine/" },
     { label: "Transxenine - Orientando", url: "https://orientando.org/listas/lista-de-generos/transxenine/" },
     { label: "Modalidades de gênero - Orientando", url: "https://orientando.org/listas/lista-de-modalidades-de-genero/" },
-    { label: "Linguagem pessoal - Plume", url: "https://amplifi.casa/~/Asterismos/tudo-ou-pelo-menos-muita-coisa-sobre-linguagem-pessoal" },
+    { label: "Linguagem pessoal - Asterismos", url: "https://amplifi.casa/~/Asterismos/tudo-ou-pelo-menos-muita-coisa-sobre-linguagem-pessoal" },
     { label: "Linguagem, poder e sexismo (módulo para uma sequência didática)", url: "https://subversiveopendiscoursebr.wordpress.com/2013/07/31/linguagem-poder-e-sexismo-modulo-para-uma-sequencia-didatica/" },
     { label: "O que é ser Intersexo", url: "https://abrai.org.br/informacoes-e-recursos/definicao-de-intersexo/" },
-    { label: "Exorsexismo - Plume", url: "https://amplifi.casa/~/Asterismos/exorsexismo" },
+    { label: "Exorsexismo - Asterismos", url: "https://amplifi.casa/~/Asterismos/exorsexismo" },
   ] as SourceLink[],
 };
+
+/** Link targets for the "Nota" resource cards, in the same order as `nota.resources` in the locale files. */
+export const notaResourceUrls = [
+  "https://ajudanhincq.wordpress.com/2019/09/27/vocabulario-usado-em-circulos-nhincq-inclusivos/",
+  "https://espectrometria-nao-binaria.tumblr.com/post/95841791923/gloss%C3%A1rio-termos-sobre-g%C3%AAneros-sexualidades",
+  "https://genderdysphoria.fyi/pt/",
+  "https://diversidades.fandom.com/pt-br/wiki/Wiki_Diversidades",
+  "https://nonbinary.wiki/wiki/Main_Page",
+  "https://lgbtqia.wiki/wiki/LGBTQIA%2B_Wiki",
+];

@@ -20,8 +20,8 @@
 
   --text-zoom: 1;
 
-  /* Height of the under-construction bar above the header. */
-  --banner-h: 2.25rem;
+  /* Height of the under-construction bar above the header (0 when the banner isn't rendered). */
+  --banner-h: 0rem;
 
   /* Type scale: mobile first (largest → smallest), scaled by --text-zoom */
   --font-size-xxx-large: calc(36px * var(--text-zoom));
@@ -376,6 +376,10 @@ html.no-js [data-dropdown-hoverable]:focus-within [data-dropdown-panel] {
 
 .border {
   border-radius: 25px;
+}
+
+:root:has(.construction-banner) {
+  --banner-h: 2.25rem;
 }
 
 /* Under-construction notice: black text on yellow, hazard stripes along the bottom edge. */

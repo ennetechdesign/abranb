@@ -14,10 +14,12 @@ import { JsEnabled } from "@/components/js-enabled";
 import {
   COLOR_SCHEME_COOKIE,
   COLOR_SCHEME_HEADER,
+  COLOR_SCHEME_INIT_SCRIPT,
   FONT_FAMILY_COOKIE,
   FONT_FAMILY_HEADER,
   TEXT_SIZE_COOKIE,
   TEXT_SIZE_HEADER,
+  isColorScheme,
   normalizeColorScheme,
   normalizeFontFamily,
   normalizeTextSize,
@@ -66,10 +68,12 @@ export default async function RootLayout({
     headerStore.get(LOCALE_HEADER) ?? cookieStore.get(LOCALE_COOKIE)?.value,
   );
 
-  const colorScheme = normalizeColorScheme(
+  const storedColorScheme =
     headerStore.get(COLOR_SCHEME_HEADER) ??
-      cookieStore.get(COLOR_SCHEME_COOKIE)?.value,
-  );
+    cookieStore.get(COLOR_SCHEME_COOKIE)?.value;
+  const colorScheme = normalizeColorScheme(storedColorScheme);
+  // First visit: no stored choice, so the browser's preference is applied client-side before paint.
+  const followBrowserScheme = !isColorScheme(storedColorScheme ?? undefined);
   const fontFamily = normalizeFontFamily(
     headerStore.get(FONT_FAMILY_HEADER) ??
       cookieStore.get(FONT_FAMILY_COOKIE)?.value,
@@ -82,12 +86,16 @@ export default async function RootLayout({
   return (
     <html
       lang={locale}
+      suppressHydrationWarning
       data-color-scheme={colorScheme}
       data-font={fontFamily}
       data-text-size={textSize === "large" ? "large" : undefined}
       className={`no-js ${atkinsonMono.variable} ${lexend.variable} ${merriweather.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col bg-background text-foreground overflow-x-hidden">
+        {followBrowserScheme && (
+          <script dangerouslySetInnerHTML={{ __html: COLOR_SCHEME_INIT_SCRIPT }} />
+        )}
         <JsEnabled />
         <I18nProvider locale={locale}>
           <div className="sticky top-0 z-70">

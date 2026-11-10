@@ -15,7 +15,7 @@ function renderSegments(segments: BodySegment[]) {
 }
 
 export default function HistoriaIntro({ id, copy }: HistoriaSectionProps) {
-  const [paragraph1, paragraph2, paragraph3] = copy.body_paragraphs;
+  const [paragraph1, paragraph2] = copy.body_paragraphs;
 
   return (
     <section
@@ -58,10 +58,6 @@ export default function HistoriaIntro({ id, copy }: HistoriaSectionProps) {
               className="h-auto w-full rounded-3xl object-cover md:w-[40%] md:shrink-0"
             />
           </div>
-
-          <p className="historia-body mx-auto md:w-[65%] text-justify text-body">
-            {renderSegments(paragraph3)}
-          </p>
         </div>
       </div>
     </section>
