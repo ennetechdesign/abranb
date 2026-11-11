@@ -71,8 +71,22 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
         </div>
       </header>
       {imageUrl && <div className={`relative mx-auto mt-7 w-full overflow-hidden rounded-[28px] bg-[#eee] sm:mt-8 sm:rounded-[40px] ${coverUrl ? "aspect-[2.5/1] max-w-6xl" : "aspect-[4/3] max-w-2xl"}`}><Image src={imageUrl} alt={imageAlt} fill priority sizes="(max-width: 768px) 100vw, 1200px" className={coverUrl ? "object-cover" : "object-contain"} /></div>}
-      <div className="prose mx-auto max-w-[680px] py-8 text-body text-foreground prose-p:my-5 prose-p:text-body prose-p:leading-[1.8] prose-li:text-body prose-blockquote:text-body prose-h1:text-heading-h1 prose-h2:text-title prose-h3:text-heading prose-h4:text-body prose-a:text-link prose-a:underline prose-headings:text-foreground prose-img:mx-auto prose-img:rounded-[32px] sm:py-10">
+      <div className="publication-content mx-auto max-w-[680px] py-8 text-body text-foreground sm:py-10">
         {Array.isArray(post.body) && <PortableText value={post.body} components={{
+          block: {
+            h2: ({ children }) => <h2 style={{ color: "var(--foreground)", fontSize: "var(--font-size-xx-large)", fontWeight: 700, lineHeight: 1.25, margin: "1.75rem 0 0.75rem" }}>{children}</h2>,
+            h3: ({ children }) => <h3 style={{ color: "var(--foreground)", fontSize: "var(--font-size-x-large)", fontWeight: 700, lineHeight: 1.25, margin: "1.75rem 0 0.75rem" }}>{children}</h3>,
+            h4: ({ children }) => <h4 style={{ color: "var(--foreground)", fontSize: "var(--font-size-large)", fontWeight: 700, lineHeight: 1.25, margin: "1.75rem 0 0.75rem" }}>{children}</h4>,
+            blockquote: ({ children }) => <blockquote style={{ borderLeft: "4px solid var(--title-decoration)", color: "var(--muted-foreground)", margin: "1.5rem 0", paddingLeft: "1rem" }}>{children}</blockquote>,
+          },
+          list: {
+            bullet: ({ children }) => <ul style={{ listStyleType: "disc", margin: "1.25rem 0", paddingLeft: "1.75rem" }}>{children}</ul>,
+            number: ({ children }) => <ol style={{ listStyleType: "decimal", margin: "1.25rem 0", paddingLeft: "1.75rem" }}>{children}</ol>,
+          },
+          listItem: {
+            bullet: ({ children }) => <li style={{ margin: "0.4rem 0", paddingLeft: "0.25rem" }}>{children}</li>,
+            number: ({ children }) => <li style={{ margin: "0.4rem 0", paddingLeft: "0.25rem" }}>{children}</li>,
+          },
           types: {
             bodyImage: ({ value }) => {
               const image = value as unknown as { alt?: string; caption?: string };
@@ -87,6 +101,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
             },
           },
           marks: {
+            code: ({ children }) => <code className="publication-inline-code" style={{ borderRadius: "0.25rem", background: "var(--surface-elevated)", padding: "0.125rem 0.375rem", fontFamily: "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace", fontSize: "0.9em" }}>{children}</code>,
             link: ({ children, value }) => {
               const link = value as { href?: string; blank?: boolean };
               return link.href ? <a href={link.href} target={link.blank ? "_blank" : undefined} rel={link.blank ? "noopener noreferrer" : undefined}>{children}</a> : <>{children}</>;

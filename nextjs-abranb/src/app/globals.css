@@ -1,6 +1,58 @@
 @import "@fortawesome/fontawesome-svg-core/styles.css";
 @import "tailwindcss";
 
+/* Rich text from Sanity: Tailwind preflight resets headings and list markers. */
+.publication-content p {
+  margin-block: 1.25rem;
+  line-height: 1.8;
+}
+
+.publication-content h1,
+.publication-content h2,
+.publication-content h3,
+.publication-content h4 {
+  margin-block: 1.75rem 0.75rem;
+  color: var(--foreground);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.publication-content h1 { font-size: var(--font-size-xxx-large); }
+.publication-content h2 { font-size: var(--font-size-xx-large); }
+.publication-content h3 { font-size: var(--font-size-x-large); }
+.publication-content h4 { font-size: var(--font-size-large); }
+
+.publication-content ul,
+.publication-content ol {
+  margin-block: 1.25rem;
+  padding-inline-start: 1.75rem;
+}
+
+.publication-content ul { list-style-type: disc; }
+.publication-content ol { list-style-type: decimal; }
+.publication-content li { margin-block: 0.4rem; padding-inline-start: 0.25rem; }
+.publication-content li::marker { color: var(--title-decoration); }
+
+.publication-content blockquote {
+  margin-block: 1.5rem;
+  border-inline-start: 4px solid var(--title-decoration);
+  padding-inline-start: 1rem;
+  color: var(--muted-foreground);
+}
+
+.publication-content a { color: var(--link); text-decoration: underline; text-underline-offset: 2px; }
+.publication-content img { margin-inline: auto; border-radius: 32px; }
+
+.publication-inline-code {
+  border-radius: 0.25rem;
+  background: var(--surface-elevated);
+  padding: 0.125rem 0.375rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.9em;
+}
+
+
+
 :root {
   --palette-lilac: #f2dff2;
   --palette-purple: #9c5fd9;
